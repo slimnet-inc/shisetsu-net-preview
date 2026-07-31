@@ -1,0 +1,490 @@
+/* =====================================================================
+   ★全体スケールのノブ（ここだけ人間が触る）
+   全長さはrem（1rem = ブラウザ標準16px × 下記%）。
+   75% = カンプ(1440px)の0.75倍 = コンテンツ幅1080px。
+   例: 78%にしたければ font-size: 78%; に変えるだけ。
+   ===================================================================== */
+html { font-size: 75%; }
+
+/* =====================================================================
+   施設ネット by スリム光｜分岐FV（Figma: 分岐FV 1:2 / 1440x2186）
+   カンプ実測値ベースの静的実装。基準幅90rem。
+   フォント：Noto Sans JP（500/700/900）、DIN Alternate（数字・英字）、Inter（コピーライト）
+   ===================================================================== */
+
+:root {
+  --fv-blue:   #2177DE;
+  --fv-orange: #F88727;
+  --fv-wedge-blue:   #E8F0FB;
+  --fv-wedge-orange: #FBF1E8;
+  --font-jp:  "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --font-din: "DIN Alternate", "Arial Narrow", "Roboto Condensed", var(--font-jp);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+img { display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+html, body { overflow-x: clip; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-jp);
+  background: #fff;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+}
+
+.fv-page {
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+/* =====================  header  ===================== */
+.fv-header {
+  position: relative;
+  height: 8.90625rem;
+  background: #fff;
+}
+.fv-header__logo {
+  position: absolute;
+  left: 4.84375rem;
+  top: 2.604375rem;
+}
+.fv-header__logo img {
+  width: 23.488125rem;
+  height: 3.698125rem;
+  object-fit: contain;
+}
+.fv-header__contact {
+  position: absolute;
+  left: 53.073125rem;
+  top: 1.823125rem;
+}
+.fv-header__tel {
+  display: block;
+  font-family: var(--font-din);
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 3.75rem;
+  letter-spacing: 0.3rem;
+  color: #000;
+  white-space: nowrap;
+}
+.fv-header__hours {
+  position: absolute;
+  left: 6.66625rem;   /* 955.83 - 849.17 */
+  top: 3.54125rem;     /* 85.83 - 29.17 */
+  white-space: nowrap;
+}
+.fv-header__hours-label {
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1.354375rem;
+  letter-spacing: 0.05625rem;
+}
+.fv-header__hours-time {
+  font-family: var(--font-din);
+  font-weight: 700;
+  font-size: 1.100625rem;
+  line-height: 1.37625rem;
+  letter-spacing: 0.11rem;
+}
+.fv-header__cta {
+  position: absolute;
+  left: 75.416875rem;
+  top: 1.875rem;
+  width: 10.46875rem;
+  height: 5.208125rem;
+  border-radius: 0.520625rem;
+  background: var(--fv-blue);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.424375rem;
+  letter-spacing: 0.085625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .15s ease;
+}
+.fv-header__cta:hover { opacity: .85; }
+
+/* =====================  main（青背景）  ===================== */
+.fv-main {
+  position: relative;
+  padding-bottom: 4.4375rem;   /* features下端(2020.8) → 白帯(2092) */
+  overflow: hidden;
+  /* 青#2177DE＋テクスチャ(soft-light 50%)は bg_hero_baked.jpg に事前合成済み
+     （元素材: assets/bg_texture.png。ブレンドCSSは描画不安定のため不使用） */
+  background: var(--fv-blue) url("../assets/bg_hero_baked.jpg") top center / cover no-repeat;
+}
+.fv-main__in > * { position: relative; }
+
+/* ---- キャッチコピー ---- */
+.fv-copy {
+  position: relative;
+  height: 41.40625rem;   /* hero上端(142.5) → カード上端(805) */
+  text-align: center;
+  color: #fff;
+}
+.fv-copy__pill {
+  position: absolute;
+  top: 3.958125rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 47.551875rem;
+  height: 3.75rem;
+  border-radius: 1.875rem;
+  background: #fff;
+  color: #000;
+  font-weight: 500;
+  font-size: 1.633125rem;
+  letter-spacing: 0.098125rem;
+  line-height: 3.75rem;
+  white-space: nowrap;
+}
+.fv-copy__sub {
+  position: absolute;
+  top: 10.430625rem;
+  left: 0;
+  right: 0;
+  font-weight: 700;
+  font-size: 2.855rem;
+  line-height: 3.5975rem;
+  letter-spacing: 0.17125rem;
+  white-space: nowrap;
+}
+.fv-copy__h1 {
+  position: absolute;
+  top: 15.104375rem;
+  left: 0;
+  right: 0;
+  font-weight: 700;
+  font-size: 6.1175rem;
+  line-height: 7.708125rem;
+  letter-spacing: 0.366875rem;
+  white-space: nowrap;
+  text-align: left;   /* カンプは光学中央（左座標指定）のため座標で再現 */
+}
+.fv-copy__h1-line1 {
+  display: block;
+  margin-left: 17.864375rem;   /* カンプ実測 */
+}
+.fv-copy__h1-line2 {
+  position: relative;
+  display: inline-block;
+  margin-left: 20.833125rem;   /* カンプ実測 */
+  z-index: 0;   /* marker(z-index:-1)を背景より手前・文字より奥に置くための文脈 */
+}
+/* 圏点（まるごと の上の・・・・） */
+.fv-copy__dots {
+  position: absolute;
+  top: -1.25rem;
+  left: 1.84375rem;   /* カンプ：1ドット目が「ま」の中央に乗る位置 */
+  font-weight: 500;
+  font-size: 2.775rem;
+  line-height: 3.49625rem;
+  letter-spacing: 3.690625rem;
+  pointer-events: none;
+}
+/* オレンジマーカー */
+.fv-copy__marker {
+  position: absolute;
+  left: -0.520625rem;      /* テキスト左(333.33) − バー左(325) */
+  bottom: -0.03125rem;
+  width: 49.21875rem;
+  height: 1.458125rem;
+  background: var(--fv-orange);
+  z-index: -1;
+}
+.fv-copy__lead {
+  position: absolute;
+  top: 33.176875rem;
+  left: 0;
+  right: 0;
+  font-weight: 500;
+  font-size: 1.633125rem;
+  line-height: 2.421875rem;
+  letter-spacing: 0.081875rem;
+}
+
+/* ---- 分岐カード ---- */
+.fv-branch {
+  display: flex;
+  gap: 2.239375rem;
+  padding: 0 4.84375rem;
+}
+.fv-card {
+  position: relative;
+  width: 39.010625rem;
+  height: 50.051875rem;
+  background: #fff;
+  border-radius: 0.9375rem;
+  flex: none;
+}
+.fv-card--mansion { border: 0.208125rem solid var(--fv-blue); }
+.fv-card--hotel   { border: 0.208125rem solid var(--fv-orange); }
+
+.fv-card__visual {
+  position: absolute;
+  inset: -0.208125rem -0.208125rem auto -0.208125rem;
+  height: 28.073125rem;
+  border-radius: 0.9375rem 0.9375rem 0 0;
+  overflow: hidden;
+}
+.fv-card__visual img {
+  position: absolute;
+  width: 42.435rem;
+  height: 28.29rem;
+  left: -1.71875rem;
+  top: -0.051875rem;
+  object-fit: cover;
+}
+.fv-card--hotel .fv-card__visual img {
+  width: 39.2275rem;
+  height: 29.420625rem;
+  left: -0.104375rem;
+  top: -1.041875rem;
+}
+.fv-card__body {
+  position: absolute;
+  left: -0.208125rem;
+  right: -0.208125rem;
+  top: 27.865rem;      /* 449.17 - border3.33 */
+  bottom: -0.208125rem;
+  border-radius: 0 0 0.9375rem 0.9375rem;
+  overflow: hidden;
+}
+/* 斜めウェッジ（淡色） */
+.fv-card__wedge {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 23.176875rem;
+  height: 21.979375rem;
+  clip-path: polygon(0 0, 100% 0, 65.17% 100%, 0 100%);
+  background: var(--fv-wedge-blue);
+}
+.fv-card--hotel .fv-card__wedge { background: var(--fv-wedge-orange); }
+
+/* ビルピクトグラム（マスク画像 × 塗り色） */
+.fv-card__picto {
+  position: absolute;
+}
+.fv-card__picto--mansion {
+  left: 2.03125rem;
+  top: 2.34375rem;        /* 486.67 - 449.17 */
+  width: 9.791875rem;
+  height: 17.291875rem;
+  background: var(--fv-blue);
+  -webkit-mask: url("../assets/picto_mansion_mask.png") center / contain no-repeat;
+  mask: url("../assets/picto_mansion_mask.png") center / contain no-repeat;
+}
+.fv-card__picto--hotel {
+  left: 1.09375rem;
+  top: 2.551875rem;       /* 490 - 449.17 */
+  width: 11.40625rem;
+  height: 17.03125rem;
+  background: var(--fv-orange);
+  -webkit-mask: url("../assets/picto_hotel_mask.png") -0.051875rem -0.104375rem / 11.770625rem 17.1875rem no-repeat;
+  mask: url("../assets/picto_hotel_mask.png") -0.051875rem -0.104375rem / 11.770625rem 17.1875rem no-repeat;
+}
+
+.fv-card__title {
+  position: absolute;
+  left: 13.4375rem;
+  top: 2.551875rem;       /* 1295 - 1254.17 */
+  font-weight: 900;
+  font-size: 2.036875rem;
+  line-height: 3.020625rem;
+  white-space: nowrap;
+}
+.fv-card--mansion .fv-card__title-accent { color: var(--fv-blue); }
+.fv-card--hotel   .fv-card__title-accent { color: var(--fv-orange); }
+.fv-card__title-black { color: #000; }
+
+.fv-card__desc {
+  position: absolute;
+  left: 13.4375rem;
+  font-weight: 500;
+  font-size: 1.268125rem;
+  line-height: 2.421875rem;
+  white-space: nowrap;
+}
+.fv-card--mansion .fv-card__desc { top: 12.03125rem; }   /* 1446.67 - 1254.17 */
+.fv-card--hotel   .fv-card__desc { top: 9.635rem; }  /* 1408.33 - 1254.17 */
+
+.fv-card__btn {
+  position: absolute;
+  left: 13.541875rem;
+  top: 15.5725rem;      /* 1503.33 - 1254.17 */
+  width: 22.551875rem;
+  height: 3.385625rem;
+  border-radius: 0.3125rem;
+  background: var(--fv-blue);
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.268125rem;
+  letter-spacing: 0.063125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .15s ease;
+}
+.fv-card--hotel .fv-card__btn { background: var(--fv-orange); }
+.fv-card__btn:hover { opacity: .85; }
+.fv-card__btn-arrow {
+  position: absolute;
+  right: 1.125rem;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-top: 0.0875rem solid #fff;
+  border-right: 0.0875rem solid #fff;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+/* ---- CTA ---- */
+.fv-cta-row {
+  display: flex;
+  gap: 2.239375rem;
+  padding: 0 4.84375rem;
+  margin-top: 2.604375rem;   /* カード下端(1605.8) → CTA上端(1647.5) */
+}
+.fv-cta {
+  width: 39.010625rem;
+  height: 10.729375rem;
+  background: var(--fv-blue);
+  color: #fff;
+  font-weight: 500;
+  font-size: 2.2125rem;
+  letter-spacing: 0.110625rem;
+  line-height: 4.225625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  transition: opacity .15s ease;
+}
+.fv-cta:hover { opacity: .9; }
+
+/* ---- 特徴 4カード ---- */
+.fv-features {
+  display: flex;
+  gap: 1.09375rem;
+  padding: 0 4.583125rem;
+  margin-top: 2.34375rem;    /* CTA下端(1819.2) → features上端(1856.7) */
+}
+.fv-feature {
+  position: relative;
+  width: 19.270625rem;
+  height: 10.260625rem;
+  background: #fff;
+  border: 0.051875rem solid var(--fv-blue);
+  box-shadow: 0.364375rem 0.3125rem 0 0 var(--fv-blue);
+  text-align: center;
+  flex: none;
+}
+.fv-feature__title {
+  margin-top: 2.239375rem;   /* 1892.5 - 1856.67 */
+  color: var(--fv-blue);
+  font-weight: 700;
+  font-size: 1.88rem;
+  line-height: 3.020625rem;
+  white-space: nowrap;
+}
+.fv-feature__din {
+  font-family: var(--font-din);
+  font-weight: 700;
+  font-size: 2.453125rem;
+}
+.fv-feature__sub {
+  margin-top: 0.46875rem;   /* カンプ：title下端(84.2) → sub上端(91.7) */
+  color: #000;
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 2.249375rem;
+  white-space: nowrap;
+}
+
+/* =====================  copyright  ===================== */
+.fv-footer {
+  height: 5.9375rem;
+  background: #fff;
+  border: 0.0625rem solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fv-footer p {
+  font-family: "Inter", var(--font-jp);
+  font-weight: 400;
+  font-size: 1.375rem;
+  color: #000;
+}
+
+/* =====================================================================
+   簡易レスポンシブ（カンプはPC 1440のみ。以下は独自判断の暫定対応）
+   ===================================================================== */
+@media (max-width: 1024px) {
+  .fv-header { height: auto; padding: 1rem 1.25rem; }
+  .fv-header__logo { position: static; }
+  .fv-header__logo img { width: 16.25rem; height: auto; }
+  .fv-header__contact { position: static; margin-top: 0.5rem; }
+  .fv-header__tel { font-size: 2rem; line-height: 1.2; }
+  .fv-header__hours { position: static; }
+  .fv-header__cta { position: absolute; right: 1.25rem; top: 1rem; left: auto; width: 7.5rem; height: 3.5rem; font-size: 1rem; }
+
+  .fv-copy { height: auto; padding: 2.5rem 1.25rem 2rem; }
+  .fv-copy__pill { position: static; transform: none; width: auto; display: inline-block; padding: 0 1.5rem; font-size: 1.125rem; height: 3rem; line-height: 3rem; }
+  .fv-copy__sub { position: static; margin-top: 1.25rem; font-size: 1.75rem; line-height: 1.4; white-space: normal; }
+  .fv-copy__h1 { position: static; margin-top: 0.5rem; font-size: 3.25rem; line-height: 1.35; letter-spacing: 0.1875rem; white-space: normal; }
+  .fv-copy__dots { display: none; }
+  .fv-copy__marker { width: 100%; left: 0; height: 0.875rem; }
+  .fv-copy__lead { position: static; margin-top: 1.25rem; font-size: 1.0625rem; line-height: 1.7; }
+
+  .fv-branch { flex-direction: column; align-items: center; padding: 0 1.25rem; gap: 1.5rem; }
+  .fv-card { width: 100%; max-width: 39.010625rem; }
+
+  .fv-cta-row { flex-direction: column; align-items: center; padding: 0 1.25rem; gap: 1rem; margin-top: 2rem; }
+  .fv-cta { width: 100%; max-width: 39.010625rem; height: 6rem; font-size: 1.5rem; }
+
+  .fv-features { flex-wrap: wrap; justify-content: center; padding: 0 1.25rem; margin-top: 2rem; }
+}
+
+
+/* =====================================================================
+   フルブリード背景（1440px時の見た目は不変）
+   ===================================================================== */
+.fv-main { width: 100vw; margin-left: calc(50% - 50vw); }
+.fv-main__in { position: relative; width: 90rem; margin: 0 auto; }
+
+
+/* =====================================================================
+   ヘッダーをFV（画面幅）に合わせる + TOPに戻るボタン（共通）
+   ===================================================================== */
+.fv-header { width: 100vw; margin-left: calc(50% - 50vw); }
+.fv-header__logo { left: 2.5rem; }
+.fv-header__contact { left: auto; right: 15rem; }
+.fv-header__cta { left: auto; right: 2.5rem; }
+
+.totop {
+  position: fixed; right: 2rem; bottom: 2rem; z-index: 99;
+  width: 4.2rem; height: 4.2rem; border-radius: 50%;
+  background: rgba(255,255,255,.88);
+  border: 2px solid #1A5FE0;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 0.25rem 0.7rem rgba(0,0,0,.15);
+  opacity: 0; visibility: hidden; transform: translateY(0.8rem);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
+}
+.totop i {
+  width: 1.05rem; height: 1.05rem;
+  border-top: 2px solid #1A5FE0;
+  border-right: 2px solid #1A5FE0;
+  transform: rotate(-45deg) translate(-0.12rem, 0.12rem);
+}
+.totop.is-show { opacity: 1; visibility: visible; transform: none; }
+.totop:hover { opacity: .85; }

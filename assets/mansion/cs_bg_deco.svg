@@ -1,0 +1,25 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1440" height="1092" viewBox="0 0 1440 1092" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="decoration_layer" clip-path="url(#clip0_0_17)">
+<g id="deco_diagonal_shape" filter="url(#filter0_f_0_17)">
+<ellipse cx="173.914" cy="154.604" rx="420" ry="216" transform="rotate(12 173.914 154.604)" fill="#C8DCF5" fill-opacity="0.25"/>
+</g>
+<g id="deco_diagonal_shape_2" filter="url(#filter1_f_0_17)">
+<ellipse cx="1296.21" cy="1246.65" rx="360" ry="192" transform="rotate(12 1296.21 1246.65)" fill="#CDE0F8" fill-opacity="0.22"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_0_17" x="-323.391" y="-158.07" width="994.61" height="625.348" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="42" result="effect1_foregroundBlur_0_17"/>
+</filter>
+<filter id="filter1_f_0_17" x="857.792" y="960.428" width="876.842" height="572.448" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="42" result="effect1_foregroundBlur_0_17"/>
+</filter>
+<clipPath id="clip0_0_17">
+<rect width="1440" height="1092" fill="white"/>
+</clipPath>
+</defs>
+</svg>

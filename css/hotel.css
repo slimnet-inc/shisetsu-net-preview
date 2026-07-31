@@ -1,0 +1,2606 @@
+/* =====================================================================
+   施設ネット by スリム光｜ホテル下層ページ（Figma: 393:2485 / 1440x25046）
+   カンプ実測値ベース。基準幅90rem。共通ヘッダーは style.css（.fv-header）を再利用し
+   本ページ用に h120 版（--hotel）で上書き。セクション接頭辞 .hfv / .h-〇〇。
+   ===================================================================== */
+
+:root {
+  --h-orange:      #F5821F;
+  --h-orange-deep: #F08300;
+  --h-dark:        #1A1A2E;
+}
+
+/* ---- header h120版 ---- */
+.fv-header--hotel { height: 7.5rem; }
+.fv-header--hotel .fv-header__logo { top: 1.875rem; }
+.fv-header--hotel .fv-header__contact { top: 1.25rem; }
+.fv-header--hotel .fv-header__cta { top: 1.125rem; }
+
+/* =====================  FV  ===================== */
+.hfv {
+  position: relative;
+  height: 45.625rem;
+  background:
+    radial-gradient(120% 90% at 10% 0%, rgba(255,140,20,.35) 0%, rgba(255,140,20,0) 55%),
+    linear-gradient(115deg, #FC7802 0%, #F86E01 55%, #F36B00 100%);
+  overflow: hidden;
+}
+.hfv__photo {
+  position: absolute; left: 45.625rem; top: 0;
+  width: 44.375rem; height: 45.625rem;
+}
+.hfv__eyebrow {
+  position: absolute; left: 7.625rem; top: 2rem;
+  width: 33.270625rem; height: 3.333125rem;
+  border: 0.0625rem solid #fff;
+  border-radius: 1.6875rem;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.4175rem;
+  line-height: 3.46275rem;
+  letter-spacing: 0.0625rem;
+  text-align: center;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+.hfv__h1 { position: absolute; left: 0; top: 0; margin: 0; font-weight: 700; }
+.hfv__h1-box {
+  position: absolute; left: 7.75rem; top: 6.875rem;   /* カンプ実測 */
+  width: 21.625rem; height: 6.1875rem;
+  background: #fff;
+}
+.hfv__h1-line1 {
+  position: absolute; left: 8.4375rem; top: 5.7rem;
+  line-height: 6.303125rem;
+  letter-spacing: 0.215625rem;
+  color: #fff;
+  white-space: nowrap;
+}
+.hfv__h1-weak { font-size: 3.596875rem; color: #F88727; position: relative; }
+.hfv__h1-s1 { font-size: 2.24125rem; letter-spacing: -0.045rem; }
+.hfv__h1-m1 { font-size: 3.138125rem; letter-spacing: -0.094375rem; }
+.hfv__h1-line2 {
+  position: absolute; left: 7.625rem; top: 9.49375rem;
+  font-size: 4.815rem;
+  line-height: 9.20125rem;
+  color: #fff;
+  white-space: nowrap;
+}
+.hfv__h1-s2 { font-size: 3.431875rem; }
+.hfv__lead {
+  position: absolute; left: 7.625rem; top: 18.125rem;
+  font-weight: 500;
+  font-size: 1.425rem;
+  line-height: 2.030625rem;
+  letter-spacing: 0.0625rem;
+  color: #fff;
+  white-space: nowrap;
+}
+.hfv__panel {
+  position: absolute; left: 7.625rem; top: 23.6875rem;
+  width: 37.838125rem; height: 6rem;
+  background: #fff;
+  border-radius: 0.625rem;
+}
+.hfv__panel-icon {
+  position: absolute; left: 1rem; top: 0.9375rem;
+  width: 4.125rem; height: 4.125rem;
+}
+.hfv__panel-title {
+  position: absolute; left: 6.125rem; top: 1.0625rem;
+  font-weight: 700;
+  font-size: 1.62rem;
+  color: var(--h-orange-deep);
+  white-space: nowrap;
+}
+.hfv__panel-text {
+  position: absolute; left: 6.125rem; top: 3.5rem;
+  font-weight: 500;
+  font-size: 1.029375rem;
+  color: #1A1A2E;
+  white-space: nowrap;
+}
+.hfv__btn {
+  position: absolute; top: 30.625rem;
+  height: 5.25rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  transition: opacity .15s ease;
+}
+.hfv__btn:hover { opacity: .9; }
+.hfv__btn--solid {
+  left: 7.625rem; width: 18.125rem;
+  background: #fff;
+  color: var(--h-orange-deep);
+  font-weight: 700;
+  font-size: 1.4175rem;
+  gap: 0.75rem;
+  padding-left: 0.75rem;
+}
+.hfv__btn--line {
+  left: 26.5rem; width: 18rem;
+  border: 0.09375rem solid #fff;
+  color: #fff;
+  gap: 0.625rem;
+  padding-left: 0.625rem;
+}
+.hfv__btn img { width: 3.5rem; height: 3.5rem; flex: none; }
+.hfv__btn-2line { display: flex; flex-direction: column; font-weight: 700; font-size: 1.2825rem; line-height: 1.3; }
+.hfv__btn-2line small { font-weight: 500; font-size: 0.934375rem; }
+.hfv__chev {
+  position: absolute; right: 1rem; top: 50%;
+  width: 0.5625rem; height: 0.5625rem;
+  border-top: 0.125rem solid currentColor;
+  border-right: 0.125rem solid currentColor;
+  transform: translateY(-50%) rotate(45deg);
+}
+.hfv__chev--orange { color: var(--h-orange-deep); }
+.hfv__chev--white { color: #fff; }
+.hfv__badge {
+  position: absolute; top: 37.8125rem;
+  width: 11.9375rem; height: 5.25rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5625rem;
+  padding-left: 0.6875rem;
+  box-sizing: border-box;
+  font-weight: 700;
+  font-size: 1.105625rem;
+  line-height: 1.35;
+  color: #1A1A2E;
+  letter-spacing: 0.0625rem;
+}
+.hfv__badge img { width: 2.875rem; height: 2.875rem; flex: none; }
+
+/* =====================  こんな悩みありませんか？  ===================== */
+.tx-o { color: #EA821F; }
+.h-worry {
+  position: relative;
+  height: 85.75rem;
+  background: #FEF8F2;
+  overflow: hidden;
+}
+.h-worry__deco { position: absolute; left: 47.5rem; top: 7.25rem; width: 42.5rem; height: 16.375rem; }
+.h-worry__intro { position: absolute; left: 7.370625rem; top: 5.145rem; width: 39.875rem; }
+.h-worry__pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30.9175rem; height: 4.525625rem;
+  border-radius: 2.591875rem;
+  background: #EA821F;
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.01375rem;
+  letter-spacing: 0.120625rem;
+  white-space: nowrap;
+}
+.h-worry__pill i {
+  position: absolute;
+  left: 9.009375rem; top: 3.875rem;
+  width: 0; height: 0;
+  border-left: 1.1125rem solid transparent;
+  border-right: 1.1125rem solid transparent;
+  border-top: 1.5rem solid #EA821F;
+}
+.h-worry__heading {
+  margin: 2rem 0 0;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 700;
+  font-size: 2.9825rem;
+  line-height: 3.573125rem;
+  letter-spacing: 0.17875rem;
+  color: #1A1A1A;
+  white-space: nowrap;
+}
+.h-worry__lead {
+  margin-top: 1.525rem;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 400;
+  font-size: 1.249013rem;
+  line-height: 1.7;
+  color: #4D4D4D;
+  white-space: nowrap;
+}
+/* 左カード群 */
+.h-worry__cards {
+  position: absolute; left: 7.323125rem; top: 24.629375rem;
+  width: 39.87375rem; height: 58.73875rem;
+  background: #fff;
+  border-radius: 0.771875rem;
+  box-sizing: border-box;
+  padding: 2.23875rem 1.28625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.19125rem;
+}
+.h-worry__div { height: 0.064375rem; background: #E6E6E6; flex: none; }
+.h-worry__card {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.h-worry__num {
+  flex: none;
+  width: 5.9375rem;
+  font-family: "DIN Condensed", "Arial Narrow", var(--font-din);
+  font-weight: 700;
+  font-size: 5.716875rem;
+  line-height: 6.621875rem;
+  color: #EA821F;
+  text-align: center;
+  overflow: hidden;
+}
+.h-worry__body { flex: 1; padding-left: 1.25rem; }
+.h-worry__tag {
+  display: inline-block;
+  padding: 0.25rem 0.5125rem;
+  background: #FEEBD9;
+  color: #EA821F;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 500;
+  font-size: 0.91975rem;
+}
+.h-worry__title {
+  margin-top: 0.65625rem;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 700;
+  font-size: 1.412175rem;
+  line-height: 1.35;
+  color: #1A1A1A;
+  white-space: nowrap;
+}
+.h-worry__sub {
+  margin-top: 0.3125rem;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 400;
+  font-size: 1.003437rem;
+  line-height: 1.35;
+  color: #808080;
+  white-space: nowrap;
+}
+.h-worry__icon { flex: none; width: 6.90625rem; height: 6.90625rem; }
+/* 右カラム */
+.h-worry__right {
+  position: absolute; left: 50.9125rem; top: 24.629375rem;
+  width: 31.584375rem; height: 58.73875rem;
+  background: #FEEBD9;
+  box-sizing: border-box;
+  padding: 1.905625rem 1.143125rem;
+}
+.h-worry__banner {
+  position: relative;
+  height: 4.525625rem;
+  border-radius: 0.514375rem;
+  background: #EA821F;
+  color: #fff;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 700;
+  font-size: 1.48095rem;
+  line-height: 4.887675rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.h-worry__banner i {
+  position: absolute;
+  left: 50%; bottom: -1.625rem;
+  transform: translateX(-50%);
+  font-style: normal;
+  font-size: 2.065625rem;
+  line-height: 1;
+  color: #EA821F;
+}
+.h-worry__impact {
+  position: relative;
+  margin-top: 3.3825rem;
+  height: 9.81375rem;
+  border-radius: 0.514375rem;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding-left: 2.525rem;
+  box-sizing: border-box;
+  gap: 1.4375rem;
+}
+.h-worry__impact + .h-worry__arrow + .h-worry__impact { margin-top: 0; }
+.h-worry__impact img { flex: none; width: 7.098125rem; height: 7.098125rem; }
+.h-worry__impact-title {
+  font-family: "Inter", var(--font-jp);
+  font-weight: 700;
+  font-size: 1.44045rem;
+  color: #EA821F;
+  white-space: nowrap;
+}
+.h-worry__impact-text {
+  margin-top: 0.5rem;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 400;
+  font-size: 1.003437rem;
+  line-height: 1.362563rem;
+  color: #666;
+  white-space: nowrap;
+}
+.h-worry__stars { margin-top: 0.375rem; font-size: 1.560625rem; line-height: 1.2; letter-spacing: 0.43125rem; }
+.h-worry__stars span { color: #EA821F; font-style: normal; }
+.h-worry__stars em { color: #D9D9D9; font-style: normal; }
+.h-worry__arrow {
+  height: 2.525rem;
+  text-align: center;
+  font-size: 2.065625rem;
+  line-height: 2.525rem;
+  color: #EA821F;
+}
+.h-worry__concl {
+  margin-top: 3.3825rem;
+  height: 9.146875rem;
+  border-radius: 0.643125rem;
+  background: #FEEBD9;
+  border: 0.0475rem solid #FAD6B4;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 1.6875rem;
+  padding-left: 1.715rem;
+}
+.h-worry__concl img { flex: none; width: 5.811875rem; height: 6.33625rem; border-radius: 0.714375rem; }
+.h-worry__concl p {
+  font-family: "Inter", var(--font-jp);
+  font-weight: 700;
+  font-size: 1.44045rem;
+  line-height: 1.9548rem;
+  letter-spacing: 0.053125rem;
+  color: #EA821F;
+  white-space: nowrap;
+}
+
+/* =====================  館内エリア対応  ===================== */
+.tx-o2 { color: #FD6601; }
+.h-area {
+  position: relative;
+  height: 76.354375rem;
+  background: #FDF9F6;
+  overflow: hidden;
+  font-family: "Inter", var(--font-jp);
+}
+.h-area__dash { position: absolute; height: 0.364375rem; }
+.h-area__pill, .h-area__pill2 {
+  position: absolute; left: 50%;
+  transform: translateX(-50%);
+  color: #F97316;
+  font-weight: 600;
+  font-size: 1.90875rem;
+  letter-spacing: 0.190625rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.h-area__pill {
+  top: 4.6875rem;
+  width: 21.794375rem; height: 3.38875rem;
+  line-height: 3.38875rem;
+  border: 0.05875rem solid #F97316;
+  border-radius: 1.694375rem;
+  background: #FDF9F6;
+  box-sizing: border-box;
+}
+.h-area__pill2 { top: 54.0625rem; }
+.h-area__heading {
+  position: absolute; left: 8.020625rem; top: 10.09375rem;  /* カンプ実測-3.5 */
+  margin: 0;
+  font-weight: 600;
+  font-size: 3.915625rem;
+  line-height: 3.695rem;
+  color: #1A1A1A;
+  white-space: nowrap;
+  font-family: var(--font-jp);
+}
+.h-area__lead {
+  position: absolute; left: 9.21875rem; top: 17.3125rem;  /* カンプ実測-3 */
+  font-weight: 400;
+  font-size: 1.425rem;
+  color: #444;
+  white-space: nowrap;
+}
+.h-area__card {
+  position: absolute; top: 22.03125rem;
+  width: 23.4375rem; height: 28.958125rem;
+  background: #fff;
+  border: 0.05875rem solid #F97316;
+  border-radius: 1.694375rem;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.h-area__photo {
+  position: absolute; left: -0.05875rem; top: -0.05875rem;
+  width: 23.4375rem; height: 16.375rem;
+  object-fit: cover;
+}
+.h-area__icon {
+  position: absolute; left: 7.96875rem; top: 12.604375rem;
+  width: 7.448125rem; height: 7.448125rem;
+}
+.h-area__card-title {
+  position: absolute; top: 21.510625rem;
+  font-weight: 600;
+  font-size: 1.875rem;
+  letter-spacing: 0.1875rem;
+  color: #F97316;
+  white-space: nowrap;
+}
+.h-area__card-text {
+  position: absolute; top: 24.583125rem;
+  font-weight: 400;
+  font-size: 1.1407rem;
+  line-height: 1.96115rem;
+  color: #444;
+  white-space: nowrap;
+}
+.h-area__chip {
+  position: absolute; top: 58.59375rem;
+  width: 11.71875rem; height: 3.385625rem;
+  border: 0.05875rem solid #F97316;
+  border-radius: 1.694375rem;
+  background: #fff;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  font-weight: 600;
+  font-size: 1.425rem;
+  letter-spacing: 0.125rem;
+  color: #000;
+  white-space: nowrap;
+}
+.h-area__chip img { width: 2.08875rem; height: 2.493125rem; flex: none; }
+.h-area__band {
+  position: absolute; left: 7.96875rem; top: 64.635625rem;
+  width: 74.166875rem; height: 6.510625rem;
+  border-radius: 0.6525rem;
+  background: #FDF1E6;
+  display: flex;
+  align-items: center;
+}
+.h-area__band p {
+  padding-left: 3.541875rem;
+  font-weight: 400;
+  font-size: 1.425rem;
+  letter-spacing: 0.125rem;
+  color: #000;
+  white-space: nowrap;
+}
+
+/* =====================  業務用ネットワーク分離  ===================== */
+.tx-o3 { color: #F08300; }
+.h-net {
+  position: relative;
+  height: 132.34375rem;
+  background: #fff;
+  overflow: hidden;
+}
+.h-net__head { position: absolute; left: 0; right: 0; top: 2.135625rem; text-align: center; }
+.h-net__pill {
+  display: inline-block;
+  height: 3.125rem;
+  padding: 0 5.416875rem;
+  border-radius: 9rem;
+  background: #F08300;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5552rem;
+  line-height: 3.375rem;
+  white-space: nowrap;
+}
+.h-net__headline {
+  margin: 1.510625rem 0 0;
+  font-weight: 700;
+  font-size: 4.21875rem;
+  line-height: 5.125rem;  /* Figma行ピッチ実測(1.2) */
+  color: #1B2A4A;
+  white-space: nowrap;
+}
+.h-net__lead {
+  margin-top: 1.385625rem;  /* カンプ実測-2 */
+  font-weight: 400;
+  font-size: 1.574775rem;
+  line-height: 2.268rem;
+  color: #000;
+}
+.h-net__diagram {
+  position: absolute; left: 0; top: 27.0625rem;
+  width: 90rem; height: 36.0625rem;
+}
+.h-net__merit {
+  position: absolute; left: 0; top: 62.448125rem;
+  width: 90rem; height: 69.895625rem;
+  background: #FDF8F4;
+  text-align: center;
+}
+.h-net__pill--c { margin-top: 0.833125rem; }
+.h-net__headline2 {
+  margin: 1.510625rem 0 0;
+  font-weight: 700;
+  font-size: 4.21875rem;
+  line-height: 5.125rem;  /* Figma行ピッチ実測(1.2) */
+  color: #1B2A4A;
+  white-space: nowrap;
+}
+.h-net__hl4 { font-size: 3.75rem; color: #F08300; }
+.h-net__lead2 {
+  margin-top: 1.510625rem;
+  font-weight: 400;
+  font-size: 1.574775rem;
+  line-height: 2.268rem;
+  color: #000;
+}
+.h-net__card {
+  position: absolute;
+  width: 36.18rem; height: 18.12rem;
+  border-radius: 0.6rem;
+  background: #fff;
+  text-align: left;
+}
+.h-net__card-ic { position: absolute; }
+.h-net__card-title {
+  position: absolute; left: 13.4375rem; top: 4.5625rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #1B2A4A;
+  white-space: nowrap;
+}
+.h-net__card-text {
+  position: absolute; left: 3.42rem; top: 11.28125rem;
+  width: 29.4rem;
+  font-weight: 400;
+  font-size: 1.2312rem;
+  line-height: 1.6416rem;
+  color: #5A6B85;
+}
+.h-net__card-text b { font-weight: 700; }
+.h-net__band {
+  position: absolute; left: 7.62rem; top: 55.819375rem;   /* 1892.28 - 999.17 */
+  width: 73.98rem; height: 9rem;
+  border-radius: 0.6rem;
+  background: #fff;
+  border: 0.06rem solid #FD7201;
+  box-sizing: border-box;
+  text-align: left;
+}
+.h-net__band-check {
+  position: absolute; left: 1.875rem; top: 2.875rem;
+  width: 3.176875rem; height: 3.176875rem;
+  border-radius: 50%;
+  background: #F08300;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.8925rem;
+  line-height: 3.176875rem;
+  text-align: center;
+}
+.h-net__band p {
+  position: absolute; left: 5.846875rem; top: 3.4375rem;
+  font-weight: 700;
+  font-size: 1.734375rem;
+  color: #1B2A4A;
+  white-space: nowrap;
+}
+
+/* =====================  「Wi-Fi快適」が、次の予約を呼ぶ  ===================== */
+.h-rev {
+  position: relative;
+  height: 66.04375rem;
+  background: #FDF8F4;
+  overflow: hidden;
+}
+.h-rev__wave { position: absolute; left: 0; width: 90rem; overflow: hidden; pointer-events: none; }
+.h-rev__wave img { position: absolute; left: 0; width: 100%; max-width: none; }
+.h-rev__wave--top { top: 0; height: 28.3125rem; }
+.h-rev__wave--top img { top: -0.05%; height: 178.9%; }
+.h-rev__wave--btm { top: 45.625rem; height: 20.41875rem; }
+.h-rev__wave--btm img { top: -143.2%; height: 239.77%; }
+.h-rev__head { position: absolute; left: 0; right: 0; top: 4.0625rem; text-align: center; }
+.h-rev__headline {
+  margin: 1.510625rem 0 0;
+  font-weight: 700;
+  font-size: 4.21875rem;
+  color: #1B2A4A;
+  white-space: nowrap;
+}
+.h-rev__lead {
+  margin-top: 1.510625rem;
+  font-weight: 400;
+  font-size: 1.574775rem;
+  line-height: 2.268rem;
+  color: #000;
+}
+.h-rev__num {
+  position: absolute;
+  font-family: "DIN Condensed", "Arial Narrow", var(--font-din);
+  font-weight: 700;
+  color: #E8830A;
+  text-align: center;
+}
+.h-rev__num img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.h-rev__num--1 { left: 1.5rem; top: 1.5rem; width: 6.5rem; height: 6.5rem; font-size: 3.75rem; line-height: 7.375rem; }
+.h-rev__num--2 { left: 1.5rem; top: 1.5rem; width: 5.1875rem; height: 5.1875rem; font-size: 3rem; line-height: 6rem; }
+.h-rev__c1 {
+  position: absolute; left: 6.375rem; top: 24.375rem;
+  width: 28.75rem; height: 36.8125rem;
+  border-radius: 0.25rem 0.25rem 0 0;
+  background: #FA8722;
+  overflow: hidden;
+}
+.h-rev__c1-il1 { position: absolute; left: 13.875rem; top: 0.9375rem; width: 14.376875rem; height: 18.1225rem; object-fit: cover; }
+.h-rev__c1-il2 { position: absolute; left: 0.78rem; top: 9.5625rem; width: 14.095rem; height: 6.859375rem; object-fit: cover; transform: rotate(180deg) scaleY(-1); }
+.h-rev__c1-title {
+  position: absolute; left: 1.5rem; top: 17.5rem;
+  width: 23.75rem;
+  font-weight: 900;
+  font-size: 2.25rem;
+  line-height: 3.1875rem;
+  color: #fff;
+}
+.h-rev__c1-line { position: absolute; left: 1.5rem; top: 24.8125rem; width: 3.75rem; height: 0.1875rem; border-radius: 0.125rem; background: rgba(255,255,255,.7); }
+.h-rev__c1-text {
+  position: absolute; left: 1.5rem; top: 26.125rem;
+  width: 23.75rem;
+  font-weight: 400;
+  font-size: 1.2825rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,.92);
+}
+.h-rev__c1band {
+  position: absolute; left: 6.375rem; top: 56.6875rem;
+  width: 28.75rem; height: 4.5rem;
+  border-radius: 0 0 0.25rem 0.25rem;
+  background: #fff;
+}
+.h-rev__c1band img { position: absolute; left: 3.0625rem; top: 1rem; width: 2.566875rem; height: 2.49625rem; object-fit: cover; }
+.h-rev__c1band p {
+  position: absolute; left: 7rem; top: 1.3125rem;
+  font-weight: 700;
+  font-size: 1.485rem;
+  line-height: 1.4;
+  color: #FE6A02;
+  white-space: nowrap;
+}
+.h-rev__vdash {
+  position: absolute; top: 25.625rem;
+  width: 0.0625rem; height: 34.3125rem;
+  border-left: 0.0625rem dashed #E8830A;
+}
+.h-rev__c2 {
+  position: absolute; top: 25.625rem;
+  width: 22.5rem; height: 32.5rem;
+  border-radius: 1rem;
+  background: #FCF4ED;
+  overflow: hidden;
+}
+.h-rev__c2--3 { background: #FCF5ED; }
+.h-rev__c2-il { position: absolute; object-fit: cover; }
+.h-rev__c2-title {
+  position: absolute; left: 1.5rem; top: 15rem;
+  width: 19.5rem;
+  font-weight: 900;
+  font-size: 2rem;
+  line-height: 1.3;
+  color: #1A1A1A;
+}
+.h-rev__c2-line { position: absolute; left: 1.5rem; width: 3rem; height: 0.0625rem; border-radius: 0.125rem; background: #E8830A; }
+.h-rev__c2-text {
+  position: absolute; left: 1.5rem;
+  font-weight: 400;
+  font-size: 1.22rem;
+  line-height: 1.55;
+  color: #555;
+  white-space: nowrap;
+}
+.h-rev__c2band {
+  position: absolute; left: 0; top: 28rem;
+  width: 22.5rem; height: 4.5rem;
+  border-radius: 0 0 1rem 1rem;
+  background: #FDF0E0;
+}
+.h-rev__c2band img { position: absolute; width: 2.1875rem; height: 2.1875rem; object-fit: cover; }
+.h-rev__c2band p {
+  position: absolute; top: 1.375rem;
+  font-weight: 700;
+  font-size: 1.2825rem;
+  line-height: 1.4;
+  color: #FE6A02;
+  white-space: nowrap;
+}
+
+/* =====================  一斉アクセスにも、海外ゲストにも  ===================== */
+.h-sim {
+  position: relative;
+  height: 67.8125rem;
+  background: #FDF8F4;
+  overflow: hidden;
+}
+.h-sim__head { position: absolute; left: 0; right: 0; top: 4.010625rem; text-align: center; }
+.h-sim__headline {
+  margin: 1.510625rem 0 0;
+  font-weight: 700;
+  font-size: 4.21875rem;
+  color: #1B2A4A;
+  white-space: nowrap;
+}
+.h-sim__cm { font-size: 3.75rem; }
+.h-sim__lead {
+  margin-top: 1.510625rem;
+  font-weight: 400;
+  font-size: 1.574775rem;
+  line-height: 2.268rem;
+  color: #000;
+}
+.h-sim__c1 {
+  position: absolute; left: 7.0125rem; top: 20.330625rem;
+  width: 29.2425rem; height: 37.709375rem;
+  border-radius: 0.89125rem;
+  background: #FD7201;
+  overflow: hidden;
+}
+.h-sim__diamond {
+  position: absolute; left: 21.875rem; top: -7.4375rem;
+  width: 8.11375rem; height: 8.11375rem;
+  background: #FDF8F4;
+  transform: rotate(45deg);
+}
+.h-sim__c1-num {
+  position: absolute; left: 1.34375rem; top: 1.705625rem;
+  font-family: "DIN Condensed", "Arial Narrow", var(--font-din);
+  font-weight: 700;
+  font-size: 5.026875rem;
+  letter-spacing: -0.058125rem;
+  color: #fff;
+}
+.h-sim__c1-icon { position: absolute; left: 16.983125rem; top: 1.338125rem; width: 5.9425rem; height: 5.26125rem; }
+.h-sim__c1-title {
+  position: absolute; left: 1.336875rem; top: 6.9625rem;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 700;
+  font-size: 1.67125rem;
+  line-height: 1.3;
+  color: #fff;
+  white-space: nowrap;
+}
+.h-sim__c1-line { position: absolute; left: 1.34375rem; top: 10.3575rem; width: 2.799375rem; height: 0.175rem; background: #fff; }
+.h-sim__c1-text {
+  position: absolute; left: 1.34375rem; top: 11.625rem;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 500;
+  font-size: 1.087325rem;
+  line-height: 1.7;
+  opacity: .95;
+  color: #fff;
+  white-space: nowrap;
+}
+.h-sim__c1-photo { position: absolute; left: 0; top: 15.356875rem; width: 29.24375rem; height: 22.35rem; }
+.h-sim__c2 {
+  position: absolute; top: 20.330625rem;
+  width: 22.113125rem; height: 37.709375rem;
+  border-radius: 0.89125rem;
+  background: #fff;
+  overflow: hidden;
+}
+.h-sim__c2-num {
+  position: absolute; left: 1.3675rem; top: 1.705625rem;
+  font-family: "DIN Condensed", "Arial Narrow", var(--font-din);
+  font-weight: 700;
+  font-size: 3.68rem;
+  letter-spacing: -0.058125rem;
+  color: #F07800;
+}
+.h-sim__c2-deco { position: absolute; right: 0.8125rem; top: 0.835625rem; width: 5.125rem; height: 5.125rem; }
+.h-sim__c2-title {
+  position: absolute; left: 1.3675rem; top: 5.67125rem;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 700;
+  font-size: 1.511325rem;
+  line-height: 1.3;
+  color: #1A1A1A;
+  white-space: nowrap;
+}
+.h-sim__c2-line { position: absolute; left: 1.3675rem; width: 2.3325rem; height: 0.175rem; background: #F07800; }
+.h-sim__c2-text {
+  position: absolute; left: 1.3675rem;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 400;
+  font-size: 0.995825rem;
+  line-height: 1.7;
+  color: #444;
+  white-space: nowrap;
+}
+.h-sim__c2-illust { position: absolute; left: 0; width: 22.1125rem; height: 15.65rem; object-fit: cover; }
+.h-sim__merits { position: absolute; left: 0; top: 27.125rem; width: 22.113125rem; height: 10.583125rem; }
+.h-sim__mdiv { position: absolute; top: 0.775rem; width: 0.055625rem; height: 9.079375rem; background: #E0E0E0; }
+.h-sim__merits img { position: absolute; top: 1.725rem; width: 3.89875rem; height: 3.89875rem; object-fit: cover; }
+.h-sim__merits p {
+  position: absolute; top: 6.4375rem;
+  width: 4.5rem;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 500;
+  font-size: 0.91rem;
+  line-height: 1.3rem;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+}
+.h-sim__consult { position: absolute; left: 16.64875rem; top: 60.323125rem; width: 62.5rem; height: 5.125rem; }
+.h-sim__consult img { position: absolute; left: 0; top: 0; width: 5.094375rem; height: 5.094375rem; object-fit: cover; }
+.h-sim__consult-text {
+  position: absolute; left: 6.514375rem; top: 1.605rem;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 500;
+  font-size: 1.36485rem;
+  line-height: 1.5;
+  color: #333;
+  white-space: nowrap;
+}
+.h-sim__consult-cta {
+  position: absolute; left: 45.395rem; top: 1.826875rem;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 600;
+  font-size: 1.36485rem;
+  color: #F07800;
+  white-space: nowrap;
+}
+
+/* =====================  別館・離れ・複雑な建物構造  ===================== */
+.h-bld {
+  position: relative;
+  height: 121.6125rem;
+  background: #fff;
+  overflow: hidden;
+}
+.h-bld__head { position: absolute; left: 0; right: 0; top: 0; text-align: center; }
+.h-bld__headline {
+  margin: 1.510625rem 0 0;
+  position: relative; top: -0.3125rem;  /* カンプ実測補正 */
+  font-weight: 700;
+  font-size: 3.78125rem;  /* カンプ実測（グリフ幅1164/高56より） */
+  color: #1B2A4A;
+  white-space: nowrap;
+}
+.h-bld__lead {
+  margin-top: 1.510625rem;
+  font-weight: 400;
+  font-size: 1.574775rem;
+  line-height: 2.268rem;
+  color: #000;
+}
+.h-bld__band {
+  position: absolute; left: 7.260625rem; top: 16.541875rem;
+  width: 75.4375rem; height: 5.3125rem;
+  border-radius: 0.520625rem;
+  background: #FEF9F3;
+  border: 0.051875rem solid #F08300;
+  box-sizing: border-box;
+  color: #F96D0A;
+  font-weight: 700;
+  font-size: 2.34375rem;
+  line-height: 5.20875rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.h-bld__card {
+  position: absolute;
+  width: 35.9375rem; height: 30.20875rem;
+  border-radius: 0.58625rem;
+  background: #FEFCF9;
+  box-shadow: 0 0 0.58625rem rgba(248,166,2,.5);
+  overflow: hidden;
+}
+.h-bld__no { position: absolute; left: 0; top: 0; width: 7.5rem; height: 7.5rem; z-index: 1; }
+.h-bld__photo {
+  position: absolute; left: 1.041875rem; top: 1.041875rem;
+  width: 33.854375rem; height: 18.75rem;
+  object-fit: cover;
+}
+.h-bld__title {
+  position: absolute; left: 1.041875rem; top: 20.83375rem;
+  width: 33.854375rem; height: 4.426875rem;
+  background: #F86E04;
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.34375rem;
+  line-height: 4.426875rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.h-bld__text {
+  position: absolute; left: 1.041875rem; top: 25.65625rem;  /* カンプ実測+6.3 */
+  width: 33.854375rem; height: 3.90625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2B2B2B;
+  font-weight: 700;
+  font-size: 1.574775rem;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+/* =====================  現地調査と最適配置  ===================== */
+.h-srv {
+  position: relative;
+  height: 113.375rem;
+  background: #FFFDFB;
+  overflow: hidden;
+}
+.h-srv__title {
+  position: relative;
+  margin: 0;
+  padding-top: 0.3125rem;
+  top: -0.875rem;  /* カンプ実測補正 */
+  text-align: center;
+  font-weight: 700;
+  font-size: 3.414375rem;
+  color: #1B2A4A;
+  white-space: nowrap;
+  z-index: 0;
+}
+.h-srv__title-hl {
+  position: absolute; left: 8.99375rem; top: 2.18125rem;
+  width: 72.17625rem; height: 2.22875rem;
+  background: #FFE6CB;
+  z-index: -1;
+}
+.h-srv__grad {
+  background: linear-gradient(90deg, #F96D0A 25.5%, #934006 74.5%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.h-srv__before {
+  position: absolute; left: 7.80875rem; top: 6.544375rem;
+  width: 34.8375rem; height: 57.3125rem;
+  border-radius: 0.53375rem;
+  filter: drop-shadow(0 0 0.266875rem rgba(0,0,0,.25));
+}
+.h-srv__after {
+  position: absolute; left: 47.4475rem; top: 6.544375rem;
+  width: 34.78125rem; height: 57.1875rem;
+  border-radius: 0.53375rem;
+  filter: drop-shadow(0 0 0.266875rem rgba(248,110,4,.25));
+}
+.h-srv__arrow {
+  position: absolute; left: 44.033125rem; top: 25.9375rem;
+  width: 0; height: 0;
+  border-top: 1.6875rem solid transparent;
+  border-bottom: 1.6875rem solid transparent;
+  border-left: 2.125rem solid #F96D0A;
+}
+.h-srv__points { position: absolute; left: 0; right: 0; top: 67.765625rem; text-align: center; }
+.h-srv__pill {
+  display: inline-block;
+  height: 2.845625rem;
+  padding: 0 4.931875rem;
+  border-radius: 6.82875rem;
+  background: #F08300;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.41615rem;
+  line-height: 3.073275rem;
+  white-space: nowrap;
+}
+.h-srv__points-title {
+  margin: 1.375rem 0 0;
+  font-weight: 700;
+  font-size: 3.414375rem;
+  color: #1B2A4A;
+  white-space: nowrap;
+}
+.h-srv__cards {
+  margin-top: 2.75rem;
+  display: flex;
+  justify-content: center;
+  gap: 2.46625rem;
+}
+.h-srv__card {
+  width: 23.046875rem; height: 18.446875rem;
+  background: #fff;
+  border: 0.0475rem solid #5A6270;
+  box-sizing: border-box;
+  padding-top: 2.845625rem;
+}
+.h-srv__card-ic { display: flex; height: 7.113125rem; align-items: center; justify-content: center; }
+.h-srv__card-ic img { max-height: 4.375rem; width: auto; }
+.h-srv__card-head {
+  margin-top: 0.94875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.66375rem;
+  font-weight: 700;
+  font-size: 1.5363rem;
+  color: #2B2B2B;
+  white-space: nowrap;
+}
+.h-srv__card-head span {
+  font-family: "Oswald", "Arial Narrow", sans-serif;
+  font-size: 1.896875rem;
+  color: #F96D0A;
+}
+.h-srv__card-text {
+  margin-top: 0.94875rem;
+  font-weight: 500;
+  font-size: 0.986375rem;
+  line-height: 1.6;
+  color: #2B2B2B;
+}
+.h-srv__cta {
+  margin: 2.0625rem auto 0;  /* カンプ実測-11 */
+  width: 74.405rem; height: 11.001875rem;
+  border-radius: 0.851875rem;
+  background: linear-gradient(90deg, #FD9902 0%, #F96503 100%);
+  display: flex;
+  align-items: center;
+  gap: 0.90125rem;
+  padding: 0 1.896875rem;
+  box-sizing: border-box;
+  text-align: left;
+}
+.h-srv__cta > img { flex: none; width: 4.48125rem; height: 4.48125rem; }
+.h-srv__cta-text { flex: 1; color: #fff; }
+.h-srv__cta-main { font-weight: 700; font-size: 2.2725rem; white-space: nowrap; }
+.h-srv__cta-sub { margin-top: 0.521875rem; font-weight: 700; font-size: 1.213388rem; white-space: nowrap; }
+.h-srv__cta-btn {
+  flex: none;
+  position: relative;
+  background: #fff;
+  border-radius: 0.5325rem;
+  padding: 1.064375rem 3.75rem 1.064375rem 1.33125rem;
+  color: #F86E04;
+  font-weight: 700;
+  font-size: 1.213388rem;
+  text-align: center;
+  transition: opacity .15s ease;
+}
+.h-srv__cta-btn:hover { opacity: .92; }
+.h-srv__cta-circle {
+  position: absolute; right: 1.0625rem; top: 50%;
+  margin-top: -0.75rem;
+  width: 1.5rem; height: 1.5rem;
+  border-radius: 50%;
+  background: #F86E04;
+}
+.h-srv__cta-circle::after {
+  content: "";
+  position: absolute; left: 0.5rem; top: 0.46875rem;
+  width: 0.375rem; height: 0.375rem;
+  border-top: 0.125rem solid #fff;
+  border-right: 0.125rem solid #fff;
+  transform: rotate(45deg);
+}
+
+/* =====================  料金の目安  ===================== */
+.tx-o4 { color: #F0871F; }
+.h-price {
+  position: relative;
+  height: 103.3125rem;
+  background: #FFFCF9;
+  overflow: hidden;
+}
+.h-price__pill {
+  position: absolute; left: 7.425rem; top: 4.028125rem;
+  width: 23.61625rem; height: 3.7525rem;
+  border-radius: 2.75875rem;
+  background: #F0871F;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.545rem;
+  line-height: 3.7525rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.h-price__headline {
+  position: absolute; left: 7.425rem; top: 10.208125rem;
+  margin: 0;
+  font-weight: 900;
+  font-size: 3.8625rem;
+  line-height: 4.855625rem;
+  color: #2B3442;
+  white-space: nowrap;
+}
+.h-price__lead {
+  position: absolute; left: 7.425rem; top: 21.90625rem;
+  font-weight: 400;
+  font-size: 1.430325rem;
+  line-height: 1.72;
+  color: #666E7A;
+  white-space: nowrap;
+}
+.h-price__hero {
+  position: absolute; left: 43.839375rem; top: 4.028125rem;
+  width: 38.62875rem; height: 25.710625rem;
+  object-fit: cover;
+}
+.h-price__table {
+  position: absolute; left: 7.425rem; top: 31.783125rem;
+  width: 75.043125rem; height: 28.5825rem;
+  background: #fff;
+  border: 0.055rem solid #EDE1D5;
+  border-radius: 0.883125rem;
+  box-shadow: 0 0.44125rem 1.324375rem rgba(102,64,26,.08);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.h-price__tint {
+  position: absolute; left: 0; top: 0;
+  width: 25.93375rem; height: 28.5825rem;
+  background: #FDEFE1;
+}
+.h-price__colsep { position: absolute; top: 0.993125rem; width: 0.055rem; height: 26.59625rem; background: #E5D6C7; }
+.h-price__rowsep { position: absolute; left: 1.10375rem; width: 72.83625rem; height: 0.055rem; background: #EBDBCC; }
+.h-price__fac { position: absolute; object-fit: cover; }
+.h-price__fname {
+  position: absolute; left: 11.698125rem;
+  font-weight: 700;
+  font-size: 1.430325rem;
+  color: #2B3442;
+  white-space: nowrap;
+}
+.h-price__rpill {
+  position: absolute; left: 11.698125rem;
+  width: 5.2975rem; height: 1.655625rem;
+  border: 0.071875rem solid #F0871F;
+  border-radius: 0.8275rem;
+  background: #FFF7F1;
+  box-sizing: border-box;
+  color: #F0871F;
+  font-weight: 700;
+  font-size: 1.00425rem;
+  line-height: 1.95rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.h-price__rpill b { font-family: var(--font-din); font-weight: 700; }
+.h-price__label {
+  position: absolute;
+  width: 8.05625rem; height: 1.379375rem;
+  border-radius: 1.269375rem;
+  background: #666E7A;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.975rem;
+  line-height: 1.793188rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.h-price__val {
+  position: absolute;
+  font-weight: 900;
+  font-size: 1.211612rem;
+  color: #F0871F;
+  text-align: center;
+  white-space: nowrap;
+}
+.h-price__val b { font-family: var(--font-din); font-weight: 700; font-size: 2.538125rem; }
+.h-price__val--txt { font-size: 1.655625rem; }
+.h-price__inc {
+  position: absolute; left: 61.41375rem;
+  width: 12.525625rem;
+  font-weight: 400;
+  font-size: 1.00955rem;
+  line-height: 1.55;
+  color: #2B3442;
+}
+.h-price__factor-title {
+  position: absolute; left: 32.47625rem; top: 64.46625rem;
+  margin: 0;
+  font-weight: 700;
+  font-size: 2.494375rem;
+  line-height: 1.4;
+  color: #2B3442;
+  white-space: nowrap;
+}
+.h-price__factor-title span {
+  position: absolute; left: 8.4975rem; top: 4.359375rem;
+  width: 7.945625rem; height: 0.33125rem;
+  border-radius: 1.710625rem;
+  background: #F0871F;
+}
+.h-price__fcard {
+  position: absolute; top: 70.791875rem;
+  width: 17.7675rem; height: 12.139375rem;
+  background: #fff;
+  border: 0.065625rem solid #EDE1D5;
+  box-sizing: border-box;
+  box-shadow: 0 0.263125rem 0.789375rem rgba(102,64,26,.06);
+}
+.h-price__fcard img { position: absolute; left: 2.275rem; top: 1.93125rem; width: 4.69rem; height: 4.69rem; object-fit: cover; }
+.h-price__ftitle {
+  position: absolute; left: 8.409375rem; top: 3.225rem;
+  font-weight: 700;
+  font-size: 1.545rem;
+  color: #2B3442;
+  white-space: nowrap;
+}
+.h-price__ftext {
+  position: absolute; left: 2.285rem; top: 6.841875rem;
+  width: 13.1875rem;
+  font-weight: 500;
+  font-size: 1.211612rem;
+  line-height: 1.5;
+  color: #6B7380;
+}
+.h-price__band {
+  position: absolute; left: 7.443125rem; top: 84.80125rem;
+  width: 75.0275rem; height: 13.89375rem;
+  border-radius: 0.883125rem 0 0 0.883125rem;
+  background: #FDEFE1;
+}
+.h-price__band-il { position: absolute; left: 0.53375rem; top: 0.43125rem; width: 13.1875rem; height: 13.1875rem; object-fit: cover; }
+.h-price__band-h {
+  position: absolute; left: 13.2425rem; top: 1.101875rem;
+  font-weight: 700;
+  font-size: 1.975rem;
+  line-height: 2.633125rem;
+  color: #000;
+  white-space: nowrap;
+}
+.h-price__band-o { color: #EE7817; }
+.h-price__band-list {
+  position: absolute; left: 13.223125rem; top: 6.659375rem;
+  font-weight: 500;
+  font-size: 1.311rem;
+  line-height: 1.63875rem;
+  letter-spacing: 0.0575rem;
+  color: #EE7817;
+  white-space: nowrap;
+}
+.h-price__band-note {
+  position: absolute; left: 13.2425rem; top: 11.450625rem;
+  font-weight: 400;
+  font-size: 1.250437rem;
+  color: #667385;
+  white-space: nowrap;
+}
+.h-price__band-btn {
+  position: absolute; left: 49.4775rem; top: 3.4975rem;
+  width: 21.795625rem; height: 6.8975rem;
+  border-radius: 0.661875rem;
+  background: #EE7817;
+  box-shadow: 0 0.33125rem 0.7725rem rgba(217,102,13,.4);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.635625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .15s ease;
+}
+.h-price__band-btn:hover { opacity: .9; }
+.h-price__band-btn span { position: absolute; right: 1.375rem; font-size: 1.771875rem; }
+
+/* =====================  営業しながらでも相談しやすい  ===================== */
+.h-op {
+  position: relative;
+  height: 108.8125rem;
+  background: #FFFCF9;
+  overflow: hidden;
+}
+/* Figmaのopフレームはページ x=-8 起点のため、直下要素を一括 -0.5rem 補正 */
+.h-op > * { transform: translateX(-0.5rem); }
+.h-op__hero { position: absolute; left: 12.2775rem; top: 0; width: 78.11875rem; height: 46.875rem; }
+.h-op__pill {
+  position: absolute;
+  width: 27.73625rem; height: 3.606875rem;
+  border-radius: 2.651875rem;
+  background: #F0871F;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.6038rem;
+  line-height: 3.895425rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.h-op__headline {
+  position: absolute; left: 7.9075rem; top: 10.493125rem;
+  margin: 0;
+  font-weight: 900;
+  font-size: 3.713125rem;
+  line-height: 4.6675rem;
+  color: #2B3442;
+  white-space: nowrap;
+}
+.h-op__lead {
+  position: absolute; left: 7.9075rem; top: 21.66rem;
+  font-weight: 400;
+  font-size: 1.374975rem;
+  line-height: 1.72;
+  color: #666E7A;
+  white-space: nowrap;
+}
+.h-op__card {
+  position: absolute;
+  width: 21.815rem; height: 8.238125rem;
+  background: #fff;
+  border: 0.053125rem solid #EDE1D5;
+  border-radius: 0.38875rem;
+  box-sizing: border-box;
+  box-shadow: 0 0.21375rem 0.640625rem rgba(102,64,26,.06);
+}
+.h-op__card img { position: absolute; object-fit: cover; }
+.h-op__ct {
+  position: absolute; left: 7.521875rem;
+  font-weight: 700;
+  font-size: 1.326675rem;
+  color: #2B3442;
+  white-space: nowrap;
+}
+.h-op__cx {
+  position: absolute; left: 7.520625rem;
+  width: 13.3125rem;
+  font-weight: 500;
+  font-size: 1.047313rem;
+  line-height: 1.5;
+  color: #6B7380;
+}
+.h-op__night {
+  position: absolute; left: 52.624375rem; top: 36.420625rem;
+  width: 31.0175rem; height: 8.241875rem;
+  background: #FFF7F1;
+  border: 0.079375rem solid #F0871F;
+  border-radius: 0.460625rem;
+  box-sizing: border-box;
+}
+.h-op__night img { position: absolute; object-fit: contain; }
+.h-op__night-title {
+  position: absolute; left: 6.844375rem; top: 1.6575rem;
+  width: 23.211875rem;
+  font-weight: 700;
+  font-size: 1.6038rem;
+  color: #F0871F;
+  text-align: center;
+  white-space: nowrap;
+}
+.h-op__night-text {
+  position: absolute; left: 6.844375rem; top: 3.8675rem;
+  font-weight: 500;
+  font-size: 1.154962rem;
+  line-height: 1.5;
+  color: #6B7380;
+}
+.h-op__chip {
+  position: absolute; top: 48.74375rem;
+  height: 5.57125rem;
+  background: #fff;
+  border: 0.0825rem solid #F4DEC9;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.301737rem;
+  color: #2B3442;
+  white-space: nowrap;
+}
+.h-op__chip img { width: 3.35625rem; height: 3.35625rem; object-fit: cover; flex: none; }
+.h-op__chipar {
+  position: absolute; top: 50.74rem;
+  color: #F0871F;
+  font-weight: 700;
+  font-size: 1.226212rem;
+}
+.h-op__panel {
+  position: absolute; left: 7.9175rem; top: 56.345625rem;
+  width: 75.00625rem; height: 36.051875rem;
+  background: #FDF8F3;
+  border: 0.053125rem solid #F4DEC9;
+  border-radius: 0.7425rem;
+  box-sizing: border-box;
+}
+.h-op__panel-title {
+  position: absolute; left: 10.195rem; top: 7.126875rem;
+  margin: 0;
+  font-weight: 700;
+  font-size: 2.3975rem;
+  line-height: 1.4;
+  color: #2B3442;
+  white-space: nowrap;
+}
+.h-op__panel-o { color: #EE842C; }
+.h-op__panel-bar {
+  position: absolute; left: 22.4975rem; top: 3.150625rem;   /* 下線: パネル基準 (649.76-126.68, 1065.97-901.53-...) 実測補正前提 */
+  top: 4.875rem;
+  width: 14.646875rem; height: 0.3225rem;
+  border-radius: 1.644375rem;
+  background: #F0871F;
+}
+.h-op__step {
+  position: absolute; top: 14.244375rem;
+  width: 16.705rem; height: 19.706875rem;
+  background: #fff;
+  border: 0.0825rem solid #F4DEC9;
+  box-sizing: border-box;
+}
+.h-op__stepnum {
+  position: absolute; left: 0.47875rem; top: 0.455rem;
+  width: 3.44625rem; height: 3.315rem;
+  font-family: var(--font-din);
+  font-weight: 700;
+  font-size: 1.6038rem;
+  line-height: 3.5775rem;
+  color: #fff;
+  text-align: center;
+}
+.h-op__stepnum img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.h-op__stepimg { position: absolute; object-fit: cover; }
+.h-op__steptitle {
+  position: absolute; left: 0; width: 100%; top: 11.41375rem;
+  font-weight: 700;
+  font-size: 1.49175rem;
+  color: #000;
+  text-align: center;
+  white-space: nowrap;
+}
+.h-op__steptext {
+  position: absolute; left: 2.058125rem; top: 14.13rem;
+  width: 12.5625rem;
+  font-weight: 500;
+  font-size: 1.047313rem;
+  line-height: 1.5;
+  color: #000;
+}
+.h-op__stepar {
+  position: absolute; top: 19.826875rem;
+  color: #F0871F;
+  font-weight: 700;
+  font-size: 1.226212rem;
+}
+.h-op__band {
+  position: absolute; left: 7.958125rem; top: 94.768125rem;
+  width: 74.950625rem; height: 10.714375rem;
+  border-radius: 0.88125rem 0 0 0.88125rem;
+  background: #FDEFE1;
+}
+.h-op__band img { position: absolute; left: 2.821875rem; top: 1.62625rem; width: 11.539375rem; height: 7.6925rem; object-fit: cover; }
+.h-op__band-h {
+  position: absolute; left: 16.693125rem; top: 1.67375rem;
+  font-weight: 700;
+  font-size: 2.295625rem;
+  line-height: 3.44375rem;
+  color: #000;
+  white-space: nowrap;
+}
+.h-op__band-o { color: #EE7817; }
+.h-op__band-btn {
+  position: absolute; left: 49.426875rem; top: 1.67375rem;
+  width: 21.773125rem; height: 6.885625rem;
+  border-radius: 0.66125rem;
+  background: #EE7817;
+  box-shadow: 0 0.330625rem 0.77125rem rgba(217,102,13,.4);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.633125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity .15s ease;
+}
+.h-op__band-btn:hover { opacity: .9; }
+.h-op__band-btn span { position: absolute; right: 1.375rem; font-size: 1.769375rem; }
+
+/* =====================  工事・利用イメージ素材（393:2907）  ===================== */
+.h-ij {
+  position: relative;
+  height: 150.989375rem;
+  background: #FDF8F3;
+  overflow: hidden;
+}
+
+/* 見出しブロック */
+.h-ij__head {
+  position: absolute; left: 0; right: 0; top: 4.53125rem;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 1.510625rem;
+}
+.h-ij__pill {
+  margin: 0;
+  display: flex; align-items: center; justify-content: center;
+  height: 3.125rem; padding: 0 5.416875rem;
+  background: #F08300; border-radius: 9rem;
+  font-weight: 700; font-size: 1.5552rem; color: #fff;
+  white-space: nowrap;
+}
+.h-ij__title {
+  margin: 0 0 -0.1875rem; width: 67.5rem;
+  font-weight: 700; font-size: 4.21875rem; line-height: 5.0625rem;
+  color: #1B2A4A; text-align: center;
+}
+.h-ij__lead {
+  margin: 0;
+  font-size: 1.574775rem; line-height: 2.268rem;
+  color: #000; text-align: center;
+}
+
+/* 動画ブロック */
+.h-ij__video { position: absolute; left: 10.1075rem; top: 26.614375rem; width: 69.733125rem; }
+.h-ij__video-bar {
+  position: relative;
+  width: 69.725625rem; height: 5.46375rem;
+  background: #F08300;
+  border-radius: 0.650625rem 0.650625rem 0 0;
+}
+.h-ij__video-cam {
+  position: absolute; left: 21.399375rem; top: 1.235625rem;
+  width: 4.338125rem; height: 2.96rem;
+  background: #fff;
+  -webkit-mask: url(../assets/hotel/ij_mask_cam.png) no-repeat 0 0 / 100% 100%;
+          mask: url(../assets/hotel/ij_mask_cam.png) no-repeat 0 0 / 100% 100%;
+}
+.h-ij__video-bartitle {
+  position: absolute; left: 26.8625rem; top: 1.545rem; margin: 0;
+  font-weight: 700; font-size: 1.95125rem; color: #fff; white-space: nowrap;
+}
+.h-ij__video-photo { display: block; width: 69.6875rem; height: 36rem; }
+.h-ij__thumbs {
+  list-style: none; margin: 1.25rem 0 0; padding: 0;
+  display: flex; align-items: center; gap: 1.301875rem;
+}
+.h-ij__thumbs li {
+  display: flex; flex-direction: column; align-items: center; gap: 0.625rem;
+  width: 16.455625rem;
+}
+.h-ij__thumbs img { display: block; width: 16.4375rem; height: 12.5rem; }
+.h-ij__thumbs span {
+  display: flex; align-items: center; justify-content: center;
+  padding: 0.520625rem 1.041875rem;
+  background: #F08300; border-radius: 1.5625rem;
+  font-weight: 500; font-size: 1.425rem; color: #F5F5F5; white-space: nowrap;
+}
+
+/* スタッフ対応ボックス */
+.h-ij__staff {
+  position: absolute; left: 10.11125rem; top: 86.576875rem;
+  width: 69.725625rem; height: 11.968125rem;
+  box-sizing: border-box;
+  background: #F2F7FB;
+  border: 0.065rem solid #F08300;
+  border-radius: 0.650625rem;
+  display: flex; align-items: center; justify-content: center; gap: 2.083125rem;
+}
+.h-ij__staff-icon {
+  flex: none;
+  width: 4.6175rem; height: 5.545rem;
+  background: #F08300;
+  -webkit-mask: url(../assets/hotel/ij_mask_staff.png) no-repeat 0 0 / 100% 100%;
+          mask: url(../assets/hotel/ij_mask_staff.png) no-repeat 0 0 / 100% 100%;
+}
+.h-ij__staff-text { width: 57.160625rem; display: flex; flex-direction: column; gap: 0.625rem; }
+.h-ij__staff-text h3 { margin: 0; font-weight: 700; font-size: 1.95125rem; color: #F08300; }
+.h-ij__staff-text p { margin: 0; font-size: 1.404675rem; line-height: 2.10735rem; color: #000; }
+
+/* 利用シーン */
+.h-ij__use { position: absolute; left: 10.1525rem; top: 101.145625rem; width: 69.729375rem; }
+.h-ij__use-bar {
+  height: 5.46375rem;
+  background: #E8842B;
+  border-radius: 0.650625rem 0.650625rem 0 0;
+  display: flex; align-items: center; justify-content: center; gap: 0.6875rem;
+}
+.h-ij__use-icon {
+  flex: none;
+  width: 4.785rem; height: 3.7075rem;
+  background: #fff;
+  -webkit-mask: url(../assets/hotel/ij_mask_use.png) no-repeat 0 0 / 100% 100%;
+          mask: url(../assets/hotel/ij_mask_use.png) no-repeat 0 0 / 100% 100%;
+}
+.h-ij__use-bar p { margin: 0; font-weight: 700; font-size: 1.95125rem; color: #fff; white-space: nowrap; }
+.h-ij__use-cards {
+  list-style: none; margin: 2.34375rem 0 0; padding: 0;
+  display: flex; justify-content: space-between;
+}
+.h-ij__use-cards img { display: block; width: 16.125rem; height: 15.3125rem; }
+
+/* 導入効果3点帯 */
+.h-ij__benefits {
+  position: absolute; left: 0.04125rem; top: 126.875rem;
+  width: 89.948125rem; height: 9.895625rem;
+  box-sizing: border-box;
+  padding: 1.041875rem 10.676875rem;
+  background: #FDF2E6;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.h-ij__benefit {
+  flex: 1 0 0; min-width: 0.0625rem;
+  display: flex; align-items: center; justify-content: center; gap: 0.78125rem;
+}
+.h-ij__benefit-icon { flex: none; background: #E8842B; }
+.h-ij__benefit-icon--1 {
+  width: 5.208125rem; height: 5.208125rem;
+  -webkit-mask: url(../assets/hotel/ij_mask_b1.png) no-repeat 0 0 / 100% 100%;
+          mask: url(../assets/hotel/ij_mask_b1.png) no-repeat 0 0 / 100% 100%;
+}
+.h-ij__benefit-icon--2 {
+  width: 5.208125rem; height: 5.271875rem;
+  -webkit-mask: url(../assets/hotel/ij_mask_b2.png) no-repeat 0 0 / 100% 100%;
+          mask: url(../assets/hotel/ij_mask_b2.png) no-repeat 0 0 / 100% 100%;
+}
+.h-ij__benefit-icon--3 {
+  width: 5.208125rem; height: 6.18125rem;
+  -webkit-mask: url(../assets/hotel/ij_mask_b3.png) no-repeat 0 0 / 100% 100%;
+          mask: url(../assets/hotel/ij_mask_b3.png) no-repeat 0 0 / 100% 100%;
+}
+.h-ij__benefit-text { flex: 1 0 0; min-width: 0.0625rem; display: flex; flex-direction: column; gap: 0.3125rem; }
+.h-ij__benefit-title { margin: 0; font-weight: 700; font-size: 1.425rem; color: #29292E; }
+.h-ij__benefit-desc { margin: 0; font-size: 1.187738rem; line-height: 1.7; color: #6B6B6B; }
+.h-ij__benefit-div {
+  flex: none;
+  width: 0.208125rem; height: 7.8125rem;
+  margin: 0 0.520625rem;
+  background: #FFE5CE; border-radius: 0.13rem;
+}
+
+/* クリック案内帯 */
+.h-ij__note {
+  position: absolute; left: 10.1525rem; top: 139.375rem;
+  width: 69.725625rem; height: 8.195625rem;
+  box-sizing: border-box;
+  background: #FDF2E6;
+  border: 0.065rem solid #E8842B;
+  border-radius: 0.650625rem;
+}
+.h-ij__note-icon {
+  position: absolute; left: 7.5rem; top: 2.0875rem;
+  width: 5.891875rem; height: 4.020625rem;
+  background: #E8842B;
+  -webkit-mask: url(../assets/hotel/ij_mask_note.png) no-repeat 0 0 / 100% 100%;
+          mask: url(../assets/hotel/ij_mask_note.png) no-repeat 0 0 / 100% 100%;
+}
+.h-ij__note p {
+  position: absolute; left: 15.565625rem; top: 3.13375rem; margin: 0;
+  font-size: 1.404675rem; line-height: 2.10735rem; color: #000; white-space: nowrap;
+}
+
+/* =====================  導入した施設さまの声（393:2753）  ===================== */
+.h-vo {
+  position: relative;
+  height: 123.25rem;
+  background: #FEF9F3;
+  overflow: hidden;
+}
+.h-vo__head {
+  position: absolute; left: 1.38375rem; top: 4.164375rem; width: 86.651875rem;
+  display: flex; flex-direction: column; align-items: center; gap: 1.455rem;
+}
+.h-vo__pill {
+  margin: 0;
+  display: flex; align-items: center; justify-content: center;
+  height: 3.010625rem; padding: 0 5.218125rem;
+  background: #F08300; border-radius: 7.225rem;
+  font-weight: 700; font-size: 1.4985rem; color: #fff; white-space: nowrap;
+}
+.h-vo__title {
+  margin: 0;
+  font-weight: 700; font-size: 4.064375rem; line-height: 4.875rem;
+  color: #1B2A4A; text-align: center; white-space: nowrap;
+}
+.h-vo__lead {
+  margin: 0;
+  font-size: 1.5174rem; line-height: 2.184975rem; color: #000; text-align: center;
+}
+
+/* 事例カード */
+.h-vo__case {
+  position: absolute; left: 7.469375rem;
+  width: 74.96125rem; height: 29.251875rem;
+  background: #fff;
+}
+.h-vo__photo {
+  position: absolute; top: 0;
+  width: 45.1575rem; height: 29.251875rem;
+  overflow: hidden;
+}
+.h-vo__photo > img { position: absolute; object-fit: cover; }
+.h-vo__caption {
+  position: absolute; left: 1.956875rem; bottom: 2.358125rem; width: 30.270625rem;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0.601875rem;
+}
+.h-vo__cat {
+  display: flex; align-items: center; justify-content: center;
+  height: 1.834375rem; padding: 0 0.803125rem;
+  background: #E8842B;
+  font-weight: 700; font-size: 1.278225rem; color: #fff; white-space: nowrap;
+}
+.h-vo__name {
+  margin: 0;
+  font-weight: 700; font-size: 2.85375rem; line-height: normal; color: #fff;
+  text-shadow: 0 0.261875rem 0.65375rem rgba(0,0,0,.45);
+}
+.h-vo__sub {
+  margin: 0;
+  font-size: 1.394362rem; line-height: normal; color: #fff;
+  text-shadow: 0 0.261875rem 0.65375rem rgba(0,0,0,.45);
+}
+
+/* 情報カラム */
+.h-vo__info {
+  position: absolute; top: 0;
+  width: 29.80375rem; height: 29.251875rem;
+  box-sizing: border-box; padding: 0.6525rem;
+  display: flex; flex-direction: column; gap: 0.6525rem;
+}
+.h-vo__rows { display: flex; flex-direction: column; gap: 0.501875rem; }
+.h-vo__row {
+  display: flex; align-items: center; gap: 1.505rem;
+  padding-left: 2.006875rem; padding-right: 1.00375rem;
+}
+.h-vo__ric { flex: none; width: 5.519375rem; height: 5.519375rem; display: flex; align-items: center; justify-content: center; }
+.h-vo__ric img { display: block; }
+.h-vo__rbody { flex: 1 0 0; min-width: 0.0625rem; display: flex; flex-direction: column; gap: 0.40125rem; }
+.h-vo__rt { margin: 0; font-weight: 700; font-size: 1.34235rem; color: #FE6D01; }
+.h-vo__rx { margin: 0; font-size: 1.117063rem; line-height: 1.65; color: #000; }
+.h-vo__sep { height: 0.065625rem; margin: 0 1.254375rem; background: #D9D9D9; }
+
+/* 吹き出しブロック */
+.h-vo__quote {
+  flex: 1 0 0; min-height: 0.0625rem;
+  box-sizing: border-box; padding: 1.00375rem;
+  background: #FEF2E6;
+  display: flex; align-items: center; gap: 0.501875rem;
+}
+.h-vo__person {
+  flex: none; width: 7.275625rem;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.250625rem;
+}
+.h-vo__person img { display: block; width: 5.0175rem; height: 5.0175rem; }
+.h-vo__person p { margin: 0; font-weight: 700; font-size: 1.34235rem; color: #29292E; white-space: nowrap; }
+.h-vo__bwrap {
+  flex: 1 0 0; min-width: 0.0625rem; align-self: stretch;
+  position: relative; padding-left: 0.903125rem;
+  display: flex; align-items: center;
+}
+.h-vo__tail {
+  position: absolute; left: 0; top: 2.875rem;
+  width: 1.1325rem; height: 0.98125rem;
+  transform: rotate(-90deg);
+}
+.h-vo__bubble {
+  flex: 1 0 0; min-width: 0.0625rem; align-self: stretch;
+  box-sizing: border-box; padding: 0.501875rem 1.00375rem;
+  background: #fff; border-radius: 0.65375rem;
+  display: flex; align-items: center;
+}
+.h-vo__bubble p { margin: 0; font-size: 1.192725rem; line-height: 1.58; color: #000; }
+
+/* 相談CTA帯 */
+.h-vo__cta {
+  position: absolute; left: 7.245625rem; top: 112.943125rem;
+  width: 74.96125rem; height: 6.12125rem;
+  box-sizing: border-box;
+  padding: 1.254375rem 4.415625rem 1.254375rem 2.50875rem;
+  background: #E8842B; border-radius: 0.69375rem;
+  display: flex; align-items: center;
+  text-decoration: none;
+  transition: opacity .15s ease;
+}
+.h-vo__cta:hover { opacity: .9; }
+.h-vo__cta-text {
+  flex: 1 0 0; min-width: 0.0625rem;
+  font-weight: 700; font-size: 2.408125rem; line-height: 3.6125rem;
+  color: #fff; text-align: center; white-space: nowrap;
+}
+.h-vo__cta-chev { flex: none; width: 1.495625rem; height: 0.90625rem; transform: rotate(-90deg); }
+
+/* =====================  関連サービス（393:2656）  ===================== */
+.tx-sv { color: #F0871F; }
+.tx-sv2 { color: #FC6102; }
+.h-sv {
+  position: relative;
+  height: 90.1625rem;
+  background: #FFFDFB;
+  overflow: hidden;
+}
+/* Figmaのsvフレーム(w1299.64)はページ中央配置のため、直下要素を一括 +4.375rem 補正 */
+.h-sv > * { transform: translateX(4.375rem); }
+.h-sv__dot {
+  position: absolute;
+  width: 0.37875rem; height: 0.37875rem; border-radius: 50%;
+  background: rgba(243,158,76,.5);
+}
+.h-sv__pill {
+  position: absolute; left: 26.913125rem; top: 4.440625rem;
+  width: 27.238125rem; height: 3.6825rem;
+  background: #F0871F; border-radius: 2.7075rem;
+}
+.h-sv__pill img { position: absolute; left: 7.2025rem; top: 0; width: 3.8125rem; height: 3.6875rem; }
+.h-sv__pill p {
+  position: absolute; left: 15.4475rem; top: 0.920625rem; margin: 0;
+  transform: translateX(-50%);
+  font-weight: 700; font-size: 1.63755rem; color: #fff; white-space: nowrap;
+}
+.h-sv__title {
+  position: absolute; left: 40.488125rem; top: 10.396875rem; margin: 0;
+  transform: translateX(calc(-50% + 4.375rem));
+  font-weight: 900; font-size: 3.790625rem; line-height: 4.765625rem;
+  color: #2B3442; text-align: center; white-space: nowrap;
+}
+.h-sv__lead {
+  position: absolute; left: 15.920625rem; top: 21.606875rem; margin: 0;
+  font-size: 1.403325rem; line-height: 1.72; color: #666E7A; white-space: nowrap;
+}
+
+/* サービスカード */
+.h-sv__card {
+  position: absolute;
+  width: 36.985625rem; height: 15.216875rem;
+  box-sizing: border-box;
+  background: #FFFAF4;
+  border: 0.054375rem solid #FDE5CD;
+  border-radius: 0.054375rem;
+}
+.h-sv__photo { position: absolute; left: 0.046875rem; top: 0.054375rem; width: 17.25rem; height: 15.125rem; }
+.h-sv__icon { position: absolute; left: 18.736875rem; top: 1.570625rem; width: 3.52rem; height: 3.52rem; }
+.h-sv__ct {
+  position: absolute; margin: 0;
+  transform: translateX(-50%);
+  font-weight: 700; font-size: 1.520775rem; color: #F0871F; white-space: nowrap;
+}
+.h-sv__line { position: absolute; left: 18.899375rem; width: 16.570625rem; height: 0.054375rem; background: #D9D9D9; }
+.h-sv__bul {
+  position: absolute; left: 18.899375rem;
+  width: 0.433125rem; height: 0.433125rem; border-radius: 50%;
+  background: #F0871F;
+}
+.h-sv__tx { position: absolute; left: 19.87375rem; }
+.h-sv__tx p {
+  margin: 0;
+  font-weight: 500; font-size: 1.1895rem; line-height: 1.5;
+  color: #5C636E; white-space: nowrap;
+}
+.h-sv__card .h-sv__tx[style*="width"] p { white-space: normal; }
+
+/* サポート帯 */
+.h-sv__band {
+  position: absolute; left: 3.195rem; top: 59.783125rem;
+  width: 74.945625rem; height: 16.84125rem;
+  background: #FDEEDF; border-radius: 0.86625rem;
+}
+.h-sv__band-il0 { position: absolute; left: 2.93rem; top: 3.654375rem; width: 11rem; height: 9.5rem; }
+.h-sv__band-copy {
+  position: absolute; left: 15.108125rem; top: 4.54875rem; margin: 0;
+  font-weight: 700; font-size: 1.938125rem; line-height: 2.584375rem;
+  color: #000; white-space: nowrap;
+}
+.h-sv__mini {
+  position: absolute; top: 2.761875rem;
+  width: 10.0725rem; height: 11.371875rem;
+  box-sizing: border-box;
+  background: #fff; border: 0.059375rem solid #FDEEDF;
+}
+.h-sv__mini img { position: absolute; }
+.h-sv__mini p {
+  position: absolute; margin: 0;
+  font-weight: 700; font-size: 1.056825rem; color: #2B3442; white-space: nowrap;
+}
+.h-sv__mini-c { transform: translateX(-50%); text-align: center; }
+
+/* CTA帯 */
+.h-sv__cta {
+  position: absolute; left: 3.195rem; top: 78.6825rem;
+  width: 74.945625rem; height: 7.41875rem;
+  background: #F3821B; border-radius: 0.86625rem;
+}
+.h-sv__cta-icon { position: absolute; left: 4.555rem; top: 1.3175rem; width: 4.5rem; height: 4.8125rem; }
+.h-sv__cta-text {
+  position: absolute; left: 12.20125rem; top: 2.3825rem; margin: 0;
+  font-weight: 700; font-size: 1.938125rem; line-height: 2.584375rem;
+  color: #fff; white-space: nowrap;
+}
+.h-sv__cta-btn {
+  position: absolute; left: 44.13375rem; top: 2.22rem;
+  width: 27.99625rem; height: 2.978125rem;
+  box-sizing: border-box;
+  background: #fff; border-radius: 2.111875rem;
+  box-shadow: 0 0.325rem 0.758125rem rgba(217,102,13,.4);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1.420012rem; color: #F0871F;
+  text-decoration: none; white-space: nowrap;
+  transition: opacity .15s ease;
+}
+.h-sv__cta-btn:hover { opacity: .9; }
+.h-sv__cta-btn span { position: absolute; right: 0.9375rem; font-size: 1.739375rem; }
+
+/* =====================  ご相談から運用開始まで（393:2496）  ===================== */
+.h-uk {
+  position: relative;
+  height: 129.1875rem;
+  background: #FFFBF8;
+  overflow: hidden;
+}
+.h-uk__head {
+  position: absolute; left: 0; right: 0; top: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 1.451875rem;
+}
+.h-uk__pill {
+  margin: 0;
+  display: flex; align-items: center; justify-content: center;
+  height: 3.00375rem; padding: 0 5.20625rem;
+  background: #F08300; border-radius: 9rem;
+  font-weight: 700; font-size: 1.49445rem; color: #fff; white-space: nowrap;
+}
+.h-uk__title {
+  margin: 0;
+  font-weight: 700; font-size: 4.054375rem; line-height: 4.875rem;
+  color: #1B2A4A; text-align: center; white-space: nowrap;
+}
+.h-uk__lead {
+  margin: 0;
+  font-size: 1.514025rem; line-height: 2.179575rem; color: #000; text-align: center;
+}
+
+/* ステップカード */
+.h-uk__flow { position: absolute; left: 7.606875rem; top: 16.819375rem; width: 74.78625rem; }
+.h-uk__step {
+  position: absolute; left: 0;
+  width: 74.78625rem; height: 16.383125rem;
+  background: #fff; border-radius: 0.500625rem;
+  box-shadow: 0 0 0.2rem #997340;
+  overflow: hidden;
+}
+.h-uk__stepcol {
+  position: absolute; left: 0; top: 0;
+  width: 8.9125rem; height: 100%;
+  background: #FE891F;
+}
+.h-uk__steplabel {
+  margin: 0.875rem 0 0; padding-left: 1.00125rem;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Reddit Sans Condensed", "Oswald", "Arial Narrow", sans-serif;
+  font-weight: 700; color: #fff; line-height: 1;
+}
+.h-uk__steplabel span { font-size: 2.0025rem; }
+.h-uk__steplabel b { font-size: 4.805625rem; width: 3.954375rem; text-align: center; font-weight: 700; }
+.h-uk__stepicon { position: absolute; left: 0.018125rem; top: 8.125rem; width: 8.875rem; height: 7.25rem; }
+.h-uk__stepmid {
+  position: absolute; left: 8.9125rem; top: 0;
+  width: 38.491875rem; height: 100%;
+}
+.h-uk__steptitle {
+  height: 6.006875rem;
+  box-sizing: border-box;
+  border-bottom: 0.1rem solid #FE891F;
+  display: flex; align-items: center; justify-content: center;
+}
+.h-uk__steptitle p {
+  margin: 0;
+  font-weight: 700; font-size: 2.4025rem; line-height: 1.4;
+  color: #FE891F; text-align: center; white-space: nowrap;
+}
+.h-uk__stepbody {
+  position: absolute; left: 0; right: 0; top: 6.006875rem; bottom: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.h-uk__stepbody p {
+  margin: 0;
+  font-weight: 700; font-size: 1.514025rem; line-height: 1.72;
+  color: #6B6B6B; text-align: center; white-space: nowrap;
+}
+.h-uk__stepphoto { position: absolute; left: 47.393125rem; width: 27.375rem; height: 16.375rem; }
+.h-uk__arrow { position: absolute; left: 35.393125rem; width: 4rem; height: 2.0625rem; }
+
+/* 下部インフォバー */
+.h-uk__bar {
+  position: absolute; left: 7.606875rem; top: 120.23875rem;
+  width: 74.78625rem; height: 6.4575rem;
+  background: #fff; border-radius: 0.500625rem;
+  filter: drop-shadow(0 0 0.25rem rgba(153,115,64,.25));
+}
+.h-uk__bar-circle { position: absolute; left: 2.518125rem; top: 1.07375rem; width: 4.25rem; height: 4.3125rem; }
+.h-uk__bar-text {
+  position: absolute; left: 8.760625rem; top: 1.425rem; width: 16.869375rem;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.h-uk__bar-t1 { margin: 0; font-weight: 700; font-size: 1.141425rem; line-height: 1; color: #FE891F; }
+.h-uk__bar-t2 { margin: 0; font-weight: 700; font-size: 0.975812rem; line-height: 1.4; color: #000; }
+.h-uk__bar-div {
+  position: absolute; left: 27.6325rem; top: 1.07625rem;
+  width: 0.1rem; height: 4.305rem; background: #D9D9D9;
+}
+.h-uk__bar-bubble { position: absolute; left: 29.705625rem; top: 2.1875rem; width: 9.3125rem; height: 2.0625rem; }
+.h-uk__bar-mic { position: absolute; width: 2.6875rem; height: 2.6875rem; }
+.h-uk__bar-mlabel {
+  position: absolute; top: 2.40625rem;
+  display: flex; flex-direction: column; gap: 0.25rem;
+}
+.h-uk__bar-mlabel p { margin: 0; font-weight: 700; line-height: 1; color: #000; white-space: nowrap; }
+.h-uk__bar-mlabel p:first-child { font-size: 0.975812rem; }
+.h-uk__bar-mlabel p:last-child { font-size: 0.780813rem; }
+
+/* =====================  導入前のギモン FAQ（393:4099）  ===================== */
+.h-faq {
+  position: relative;
+  height: 92.54375rem;
+  background: #FCF9F7;
+  overflow: hidden;
+}
+.h-faq__pill {
+  position: absolute; left: 50%; top: 3.905625rem; margin: 0;
+  transform: translateX(-50%);
+  display: flex; align-items: center; justify-content: center;
+  height: 2.96625rem; padding: 0 1.483125rem;
+  background: #EE842C; border-radius: 1.483125rem;
+  font-weight: 700; font-size: 1.88875rem; color: #fff; white-space: nowrap;
+}
+.h-faq__title {
+  position: absolute; left: 18.4375rem; top: 9.64rem; margin: 0;
+  font-weight: 900; font-size: 3.955rem; line-height: 4.99125rem;
+  color: #000; white-space: nowrap;
+}
+.h-faq__u {
+  text-decoration: underline;
+  text-decoration-color: #F5871F;
+  text-decoration-thickness: 0.7125rem;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 0.25rem;
+}
+.h-faq__lead {
+  position: absolute; left: 18.4375rem; top: 17.40125rem; margin: 0;
+  font-weight: 500; font-size: 1.495125rem; line-height: 1.75;
+  color: #000; white-space: nowrap;
+}
+.h-faq__list {
+  position: absolute; left: 7.454375rem; top: 26.595625rem;
+  width: 75.09125rem;
+  list-style: none; margin: 0; padding: 0;
+}
+.h-faq__list li {
+  height: 7.2175rem;
+  margin-bottom: 0.74125rem;
+  box-sizing: border-box;
+  background: #fff;
+  border: 0.07125rem solid #E6DBCE;
+  border-radius: 0.35625rem;
+  display: flex; align-items: center; gap: 2.471875rem;
+  padding-left: 2.32375rem; padding-right: 1.9775rem;
+}
+.h-faq__q {
+  flex: none;
+  width: 3.658125rem; height: 3.658125rem;
+  background: #EE842C; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Ubuntu Sans Mono", monospace;
+  font-weight: 500; font-size: 1.580625rem; color: #fff;
+}
+.h-faq__qt {
+  flex: 1 0 0; min-width: 0.0625rem; margin: 0;
+  font-weight: 700; font-size: 1.495125rem; color: #EE842C;
+}
+.h-faq__list img { flex: none; width: 2.471875rem; height: 2.471875rem; }
+
+/* =====================  CTA（393:3977）  ===================== */
+.h-cta {
+  position: relative;
+  height: 27.0425rem;
+  background: linear-gradient(163.3deg, #F89C2C 0%, #F26D11 50%, #E85B06 100%);
+  overflow: hidden;
+}
+.h-cta__deco { position: absolute; }
+.h-cta__h {
+  position: absolute; left: 44.670625rem; top: 1.076875rem; margin: 0;
+  transform: translateX(-50%);
+  font-weight: 900; font-size: 3.11875rem; line-height: 6.678125rem;
+  color: #fff; white-space: nowrap;
+}
+.h-cta__hr {
+  position: absolute; left: 8.075rem;
+  width: 32.2075rem; height: 0.066875rem;
+  background: rgba(255,255,255,.4);
+}
+.h-cta__tel-label {
+  position: absolute; left: 24.17875rem; top: 10.81125rem; margin: 0;
+  transform: translate(-50%, -50%);
+  font-weight: 700; font-size: 1.559375rem; line-height: 1.910625rem;
+  letter-spacing: 0.1275rem; color: #fff; white-space: nowrap;
+}
+.h-cta__tel-icon { position: absolute; left: 8.659375rem; top: 12.7175rem; width: 3.703125rem; height: 3.703125rem; }
+.h-cta__tel { position: absolute; left: 13.775625rem; top: 11.80625rem; margin: 0; }
+.h-cta__tel a {
+  font-family: "DIN Alternate", "Arial Narrow", sans-serif;
+  font-weight: 700; font-size: 4.4825rem; line-height: 5.095625rem;
+  color: #fff; text-decoration: none; white-space: nowrap;
+}
+.h-cta__hours { position: absolute; left: 8.27rem; top: 18.09375rem; margin: 0; transform: translateY(-50%); color: #fff; white-space: nowrap; }
+.h-cta__hours b { font-weight: 700; font-size: 1.146412rem; }
+.h-cta__hours span { margin-left: 0.8125rem; font-weight: 500; font-size: 1.22265rem; letter-spacing: 0.05375rem; }
+.h-cta__hours small { margin-left: 0.75rem; font-weight: 700; font-size: 1.063687rem; }
+.h-cta__form {
+  position: absolute; left: 42.9625rem; top: 11.060625rem;
+  width: 39.175rem; height: 6.626875rem;
+  background: #fff; border-radius: 0.974375rem;
+  text-decoration: none;
+  transition: opacity .15s ease;
+}
+.h-cta__form:hover { opacity: .92; }
+.h-cta__form img { position: absolute; left: 2.095rem; top: 1.988125rem; width: 3.703125rem; height: 2.42125rem; }
+.h-cta__form span {
+  position: absolute; left: 7.50375rem; top: 2.14375rem;
+  font-weight: 700; font-size: 2.279375rem; line-height: 3.419375rem;
+  letter-spacing: 0.228125rem; color: #E85B06; white-space: nowrap;
+}
+.h-cta__form i {
+  position: absolute; left: 36.495625rem; top: 2.8125rem;
+  width: 0.8125rem; height: 0.8125rem;
+  border-top: 0.2rem solid #E85B06;
+  border-right: 0.2rem solid #E85B06;
+  transform: rotate(45deg);
+}
+.h-cta__note {
+  position: absolute; left: 45.00875rem; top: 19.88rem; margin: 0;
+  transform: translateX(-50%);
+  font-weight: 700; font-size: 1.754375rem; line-height: 7.126875rem;
+  letter-spacing: 0.0875rem; color: #fff; text-align: center; white-space: nowrap;
+}
+
+/* =====================  コピーライト（393:4097）  ===================== */
+.h-copy {
+  height: 5.85625rem;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+}
+.h-copy p { margin: 0 0 0 -0.6875rem; font-size: 1.22rem; color: #000; }
+
+/* =====================================================================
+   フルブリード背景（画面幅1440px超で背景を左右に延長。1440px時の見た目は不変）
+   単色セクション: box-shadow(100vmax)+clip-pathで横だけ開放
+   グラデセクション(hfv/h-cta): 100vwブレイクアウト＋内側1440px固定
+   ===================================================================== */
+.h-worry { box-shadow: 0 0 0 100vmax #FEF8F2; clip-path: inset(0 -100vmax); }
+.h-area  { box-shadow: 0 0 0 100vmax #FDF9F6; clip-path: inset(0 -100vmax); }
+.h-rev   { box-shadow: 0 0 0 100vmax #FDF8F4; clip-path: inset(0 -100vmax); }
+.h-sim   { box-shadow: 0 0 0 100vmax #FDF8F4; clip-path: inset(0 -100vmax); }
+.h-srv   { box-shadow: 0 0 0 100vmax #FFFDFB; clip-path: inset(0 -100vmax); }
+.h-price { box-shadow: 0 0 0 100vmax #FFFCF9; clip-path: inset(0 -100vmax); }
+.h-op    { box-shadow: 0 0 0 100vmax #FFFCF9; clip-path: inset(0 -100vmax); }
+.h-vo    { box-shadow: 0 0 0 100vmax #FEF9F3; clip-path: inset(0 -100vmax); }
+.h-sv    { box-shadow: 0 0 0 100vmax #FFFDFB; clip-path: inset(0 -100vmax); }
+.h-uk    { box-shadow: 0 0 0 100vmax #FFFBF8; clip-path: inset(0 -100vmax); }
+.h-faq   { box-shadow: 0 0 0 100vmax #FCF9F7; clip-path: inset(0 -100vmax); }
+/* 子の色帯もフルブリード化するため、縦のはみ出しクリップをoverflowからclip-pathへ切替 */
+.h-net { overflow: visible; clip-path: inset(0 -100vmax); }
+.h-net__merit { box-shadow: 0 0 0 100vmax #FDF8F4; clip-path: inset(0 -100vmax); }
+.h-ij  { overflow: visible; box-shadow: 0 0 0 100vmax #FDF8F3; clip-path: inset(0 -100vmax); }
+.h-ij__benefits { box-shadow: 0 0 0 100vmax #FDF2E6; clip-path: inset(0 -100vmax); }
+/* グラデ2種 */
+.hfv   { width: 100vw; margin-left: calc(50% - 50vw); }
+.hfv__in   { position: relative; width: 90rem; height: 100%; margin: 0 auto; }
+.h-cta { width: 100vw; margin-left: calc(50% - 50vw); }
+.h-cta__in { position: relative; width: 90rem; height: 100%; margin: 0 auto; }
+
+/* TOPに戻る（ホテル配色・中抜き） */
+.totop { border-color: #F08300; }
+.totop i { border-color: #F08300; }
+
+/* =====================================================================
+   2026-07-29 赤丸修正バッチH①（ホテル）
+   マンション バッチ①〜⑨で確立した処理をホテルへ移植＋ホテル固有の赤丸
+   ===================================================================== */
+
+/* ---- ① FV：フルスクリーンヒーロー化（JSが --fvk / --fvgap を設定） ---- */
+.hfv { height: calc(45.625rem * var(--fvk, 1)); }
+.hfv__in {
+  position: absolute; left: 50%; top: 0;
+  width: 90rem; height: 45.625rem; margin: 0;
+  transform: translateX(-50%) scale(var(--fvk, 1));
+  transform-origin: top center;
+}
+/* 1440枠の右外側まで写真で埋める（赤丸：ここもイラストで埋まるように） */
+.hfv__photo {
+  width: calc(44.375rem + var(--fvgap, 0rem));
+  object-fit: cover;
+  object-position: left center;
+}
+
+/* ---- ② FV見出しの白背景を文字に合わせる（赤丸：本来の形に） ---- */
+.hfv__h1-box { display: none; }
+.hfv__h1-weak::before {
+  content: ""; position: absolute; z-index: -1;
+  left: -0.6875rem; right: -0.6875rem;
+  top: 50%; height: 4rem;
+  transform: translateY(-50%);
+  background: #fff;
+}
+
+/* ---- ③ セクションの懐をふくらませる（上下+2.5rem／高さ+5rem） ---- */
+.h-worry { height: 90.75rem; }
+.h-area  { height: 81.354375rem; }
+.h-net   { height: 137.34375rem; }
+.h-rev   { height: 71.04375rem; }
+.h-sim   { height: 72.8125rem; }
+.h-bld   { height: 126.6125rem; }
+.h-srv   { height: 118.375rem; }
+.h-price { height: 108.3125rem; }
+.h-op    { height: 113.8125rem; }
+.h-ij    { height: 155.989375rem; }
+.h-vo    { height: 128.25rem; }
+.h-sv    { height: 95.1625rem; }
+.h-uk    { height: 127rem; }
+.h-worry > *, .h-area > *, .h-net > *, .h-rev > *, .h-sim > *, .h-bld > *,
+.h-srv > *, .h-price > *, .h-ij > *, .h-vo > *, .h-uk > *, .h-faq > * {
+  transform: translateY(2.5rem);
+}
+/* 既存のX補正を持つセクションは複合transformで再宣言（罠1：上書き事故の回避） */
+.h-op > * { transform: translate(-0.5rem, 2.5rem); }
+.h-sv > * { transform: translate(4.375rem, 2.5rem); }
+/* 中央寄せ（translateX(-50%)）の直下要素も複合transformで再宣言 */
+.h-area > .h-area__pill,
+.h-area > .h-area__pill2,
+.h-faq  > .h-faq__pill { transform: translate(-50%, 2.5rem); }
+
+/* ---- ④ 背景・装飾を画面幅までシームレスに（赤丸：他のセクションも対象） ---- */
+/* 悩みセクション右上の写真：右端まで伸ばす */
+.h-worry { overflow: visible; }
+.h-worry__deco {
+  width: max(42.5rem, calc(50vw - 2.5rem));
+  object-fit: cover; object-position: left center;
+}
+/* ネットワーク分離図：図の地色を左右へ延長（画像自体は拡大しない） */
+.h-net__diagram { box-shadow: 0 0 0 100vmax #FFF2E5; clip-path: inset(0 -100vmax); }
+/* 「Wi-Fi快適」の波：画面幅へ */
+.h-rev { overflow: visible; }
+.h-rev__wave { left: 50%; width: 100vw; }
+.h-rev > .h-rev__wave--top { transform: translateX(-50%); }
+.h-rev > .h-rev__wave--btm { transform: translate(-50%, 5rem); }
+/* 営業しながら〜の背景写真：右端まで伸ばす */
+.h-op { overflow: visible; }
+.h-op__hero {
+  width: max(78.11875rem, calc(50vw + 33.2225rem));
+  object-fit: cover; object-position: left center;
+}
+
+/* ---- ⑤ 一斉アクセス01カードの三角を削除（赤丸：消していいよ） ---- */
+.h-sim__diamond { display: none; }
+
+/* ---- ⑥ 「営業を続けながらでも、」に軽い白フチ（赤丸） ---- */
+.h-op__headline {
+  text-shadow:
+     0.0625rem 0 0 #fff, -0.0625rem 0 0 #fff,
+     0 0.0625rem 0 #fff, 0 -0.0625rem 0 #fff,
+     0.045rem 0.045rem 0 #fff, -0.045rem -0.045rem 0 #fff,
+     0.045rem -0.045rem 0 #fff, -0.045rem 0.045rem 0 #fff,
+     0 0 0.75rem rgba(255,255,255,.9);
+}
+.h-op__lead { text-shadow: 0 0 0.5rem #fff, 0 0 1rem rgba(255,255,255,.9); }
+
+/* ---- ⑦ 導入までの流れ：丸の中の番号が円に隠れていた（赤丸：番号を入れて） ---- */
+.h-op__stepnum { z-index: 0; line-height: 3.315rem; }
+.h-op__stepnum img { z-index: -1; }
+
+/* ---- ⑧ 施設さまの声：キャプションの二重表示を解消 ---- */
+/* 原因＝写真に文字が焼き込まれた _baked 画像。HTML側で元画像へ差し替え済み */
+.h-vo__photo > img { object-fit: cover; object-position: center; }
+
+/* ---- ⑨ 「ここは消してもいいかな」2箇所（復活はこの行を消すだけ） ---- */
+.h-uk__bar   { display: none; }
+.h-faq__lead { display: none; }
+
+/* ---- ⑩ FAQ：アコーディオン化（回答は空欄で用意） ---- */
+.h-faq { height: auto; padding-bottom: 8rem; }
+.h-faq__list { position: static; margin: 21rem 0 0 7.454375rem; }
+.h-faq__list li {
+  height: auto; display: block;
+  padding: 0;
+}
+.h-faq__acc summary {
+  display: flex; align-items: center; gap: 2.471875rem;
+  height: 7.2175rem;
+  padding: 0 1.9775rem 0 2.32375rem;
+  cursor: pointer; list-style: none;
+}
+.h-faq__acc summary::-webkit-details-marker { display: none; }
+.h-faq__chev { transition: transform .2s ease; }
+.h-faq__acc[open] .h-faq__chev { transform: rotate(90deg); }
+.h-faq__a { padding: 0 2.5rem 1.9rem 8.05rem; }
+.h-faq__a p {
+  margin: 0; min-height: 1.6rem;
+  font-weight: 500; font-size: 1.25rem; line-height: 1.85; color: #333;
+}
+
+/* ---- ⑪ CTA（フッター）：枠内で途切れる装飾を撤去してシームレスに ---- */
+.h-cta__deco { display: none; }
+.h-cta { height: 30rem; }
+.h-cta__in > * { transform: translateY(1.5rem); }
+.h-cta__in > .h-cta__h,
+.h-cta__in > .h-cta__note { transform: translate(-50%, 1.5rem); }
+
+/* =====================================================================
+   2026-07-29 赤丸修正バッチH②（ホテル）
+   文字拡大に伴うはみ出し・重なりの解消（方針＝箱をコンテンツに合わせて広げる）
+   ＋ 罠1（> * transform が中央寄せ等を上書き）の取りこぼし修正
+   ===================================================================== */
+
+/* --- 罠1の取りこぼし --- */
+.h-sv > .h-sv__title { transform: translate(calc(-50% + 4.375rem), 2.5rem); }
+.h-cta__in > .h-cta__tel-label { transform: translate(-50%, calc(-50% + 1.5rem)); }
+.h-cta__in > .h-cta__hours     { transform: translateY(calc(-50% + 1.5rem)); }
+
+/* --- FV --- */
+.hfv__lead { top: 17.1rem; line-height: 1.9rem; }
+.hfv__panel { height: 6.8rem; }
+.hfv__panel-text { top: 3.35rem; width: 30.5rem; white-space: normal; line-height: 1.45; }
+
+/* --- こんなお悩み --- */
+.h-worry__intro { width: 45rem; }
+.h-worry__impact { padding-left: 1.6rem; gap: 1.1rem; }
+
+/* --- 館内エリア --- */
+.h-area__lead { left: 50%; }
+.h-area > .h-area__lead { transform: translate(-50%, 2.5rem); }
+.h-area__card-title, .h-area__card-text { left: 0 !important; width: 100%; text-align: center; }
+.h-area__band { left: 6.05rem; width: 78rem; }
+.h-area__band p { padding-left: 3rem; padding-right: 3rem; }
+
+/* --- 「Wi-Fi快適」カード --- */
+.h-rev__c2-text { line-height: 1.45; }
+
+/* --- 一斉アクセス：3点メリットのラベル --- */
+.h-sim__merits p { width: 5.6rem; margin-left: -0.55rem; }
+
+/* --- 電波が届きにくい場所（カード内キャプション） --- */
+.h-bld__text { left: 0.45rem; width: 35rem; }
+
+/* --- 料金表のラベルピル --- */
+.h-price__label { width: 9.2rem; }
+
+/* --- 営業しながら〜 --- */
+.h-op__cx { width: 14.2rem; line-height: 1.42; }
+.h-op__night-title { left: 6.2rem; width: 24.6rem; }
+
+/* --- 施設さまの声：箱をコンテンツに合わせて拡張 --- */
+.h-vo__photo, .h-vo__info { height: 31.75rem; }
+.h-vo__caption { width: 34rem; }
+.h-vo__person { width: 6.4rem; }
+.h-vo__person p { font-size: 1.2rem; }
+.h-vo__bubble { padding: 0.5rem 0.85rem; }
+.h-vo__bubble p { line-height: 1.45; }
+article.h-vo__case:nth-of-type(2) { top: 53.376875rem !important; }
+article.h-vo__case:nth-of-type(3) { top: 86.63375rem !important; }
+.h-vo__cta { top: 117.943125rem; }
+.h-vo { height: 133.25rem; }
+
+/* --- バッチH③：残りのはみ出し --- */
+.h-area__band { left: 4rem; width: 82rem; }
+.h-area__band p { padding-left: 2.5rem; padding-right: 2.5rem; }
+.h-bld__text { left: 0.15rem; width: 35.65rem; }
+.h-vo__case { height: 31.75rem; }
+.h-vo__person { width: 7rem; }
+.h-vo__person p { font-size: 1.15rem; }
+.h-bld__text { left: 0; width: 35.9375rem; letter-spacing: -0.012em; }
+.h-vo__bubble { padding: 0.4rem 0.8rem; }
+.h-vo__bubble p { line-height: 1.4; }
+/* 5ステップチップ：文字拡大で「営業しながら施工」が矢印に当たるため詰める */
+.h-op__chip { gap: 0.55rem; padding-right: 1.3rem; }
+.h-op__chip img { width: 2.6rem; height: 2.6rem; }
+/* FVボタン：文字拡大でシェブロンに当たるためアイコンを微調整 */
+.hfv__btn img { width: 3.1rem; height: 3.1rem; }
+/* 営業しながら〜のリード：写真の人物に重ならないよう3行に */
+.h-op__lead { top: 20.6rem; line-height: 2rem; }
+
+/* =====================================================================
+   2026-07-30 赤丸修正バッチH④（ホテル）
+   ① FV左カラムの整理（縦の間隔を均等化＋右端を揃える）
+   ② こんなお悩みカードのアイコンを縦一列に揃える
+   ===================================================================== */
+
+/* --- ① FV：縦のリズムを1.3rem刻みで統一（パネルとボタンがほぼ接触していた） --- */
+.hfv__panel      { top: 24.1rem; height: 6.4rem; }
+.hfv__panel-text { top: 3.35rem; width: 30.5rem; line-height: 1.5; }
+.hfv__btn        { top: 31.8rem; }
+.hfv__badge      { top: 38.35rem; }
+
+/* --- ① FV：パネル／ボタン列／バッジ列の右端を 45.463rem に揃える --- */
+.hfv__btn--solid { width: 18.6rem; }
+.hfv__btn--line  { left: 26.975rem; width: 18.488rem; }
+.hfv__badge      { width: 12.313rem; }
+
+/* --- ② お悩みカード：タイトルの文字数でアイコン位置がズレていたのを揃える --- */
+/* 原因＝bodyが flex:1 でも nowrap タイトルの実寸に押し広げられ、行ごとに幅が変わっていた */
+.h-worry__cards { width: 43.2rem; padding: 2.23875rem 0.9rem; }
+.h-worry__body  { flex: 1 1 0; min-width: 0; padding-left: 1rem; }
+.h-worry__icon  { width: 6.4rem; height: 6.4rem; }
+.hfv__panel-text { top: 3.3rem; line-height: 1.45; }   /* パネル内に収める微調整 */
+
+/* =====================================================================
+   2026-07-30 赤丸修正バッチH⑤（ホテルFV・口頭ラリー2回目）
+   ① 左カラムのギッチギチ解消＝FV枠を45.625→51remに拡張し、間隔を1.9rem刻みに統一
+   ② 「Wi-Fiが弱い」の白背景のズレ（左右パディング 0.78/1.72rem の不均等）を修正
+   ③ パネルの下寄りを解消（絶対配置→グリッドで上下中央＋均等パディング）
+   ④ 左カラムと右イラストの間に 2.54rem の余白を確保
+   ⑤ フォントサイズの階層を整える
+   ===================================================================== */
+
+/* --- ① FV枠を拡張（1440x900でも画面内に収まる上限） --- */
+.hfv    { height: calc(51rem * var(--fvk, 1)); }
+.hfv__in{ height: 51rem; }
+
+/* --- ① 縦のリズム：ブロック間を全部1.9remに（上2.5 / 下2.2rem） --- */
+.hfv__eyebrow   { top: 2.5rem; }
+.hfv__h1-line1  { top: 7.19rem; }
+.hfv__h1-line2  { top: 10.98rem; }
+.hfv__lead      { top: 19rem; }
+.hfv__panel     { top: 26.6rem; }
+.hfv__btn       { top: 36.4rem; }
+.hfv__badge     { top: 43.55rem; }
+
+/* --- ② 白背景：文字の見た目に合わせて左右対称に（右は「い」の字送りぶん詰める） --- */
+.hfv__h1-weak::before {
+  left: -1rem; right: -0.05rem;
+  height: 4.3rem;
+  transform: translateY(calc(-50% - 0.12rem));
+}
+
+/* --- ③ パネル：グリッド化して上下中央・均等パディングに --- */
+.hfv__panel {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "icon title" "icon text";
+  align-items: center;
+  justify-items: start;
+  row-gap: 0.35rem;
+  column-gap: 1.1rem;
+  padding: 0.85rem 1.15rem;
+  height: auto;
+  box-sizing: border-box;
+}
+.hfv__panel-icon  { position: static; grid-area: icon; align-self: center; }
+.hfv__panel-title { position: static; grid-area: title; align-self: end; }
+.hfv__panel-text  { position: static; grid-area: text; align-self: start; white-space: normal; width: auto; }
+
+/* --- ④ 右イラストを離す（左カラム右端45.46rem → 写真48rem＝余白2.54rem） --- */
+.hfv__photo { left: 48rem; width: calc(42rem + var(--fvgap, 0rem)); }
+
+/* --- ⑤ フォントの階層を整える（パネル本文↑・バッジ↓・ボタン注記↑） --- */
+.hfv__panel-text      { font-size: 1.2rem; line-height: 1.55; }
+.hfv__badge           { font-size: 1.13rem; }
+.hfv__btn-2line small { font-size: 1rem; }
+
+/* --- バッチH⑤-改：枠を49.5remに確定し、写真の高さ追従とボタン内の当たりを修正 --- */
+.hfv     { height: calc(49.5rem * var(--fvk, 1)); }
+.hfv__in { height: 49.5rem; }
+/* 写真も枠の高さに追従させる（45.625rem据え置きで下に隙間ができていた） */
+.hfv__photo { height: 49.5rem; }
+
+/* パネルを少し詰める（見出しの行間をnormal→1.35に） */
+.hfv__panel       { padding: 0.7rem 1.15rem; row-gap: 0.2rem; }
+.hfv__panel-title { line-height: 1.35; }
+
+/* 縦位置の再配置（ブロック間1.7rem・上下2.3rem） */
+.hfv__eyebrow  { top: 2.3rem; }
+.hfv__h1-line1 { top: 6.79rem; }
+.hfv__h1-line2 { top: 10.58rem; }
+.hfv__lead     { top: 18.4rem; }
+.hfv__panel    { top: 25.8rem; }
+.hfv__btn      { top: 35rem; }
+.hfv__badge    { top: 41.95rem; }
+
+/* ボタン：注記がシェブロンに当たっていたので詰める */
+.hfv__btn img         { width: 2.9rem; height: 2.9rem; }
+.hfv__btn--solid      { padding-left: 0.5rem; gap: 0.5rem; }
+.hfv__btn--line       { padding-left: 0.5rem; gap: 0.5rem; }
+.hfv__btn-2line small { font-size: 0.92rem; }
+.hfv__chev            { right: 0.7rem; }
+.hfv__chev { right: 0.55rem; }   /* 注記との余白を確保 */
+
+/* --- バッチH⑤-確定：枠48rem（FV写真のバブルが切れない上限）＋間隔1.6rem統一 --- */
+/* 素材 fv_photo.png は元枠ぴったりの1x書き出しなので、枠を高くするとcoverで右が切れる。
+   バブル右端＝素材の87.5%地点 → 枠48remで90%残る＝切れないギリギリの高さ */
+.hfv        { height: calc(48rem * var(--fvk, 1)); }
+.hfv__in    { height: 48rem; }
+.hfv__photo { height: 48rem; }
+
+.hfv__eyebrow  { top: 1.85rem; }
+.hfv__h1-line1 { top: 6.24rem; }
+.hfv__h1-line2 { top: 10.03rem; }
+.hfv__lead     { top: 17.73rem; }
+.hfv__panel    { top: 25.03rem; }
+.hfv__btn      { top: 34.14rem; }
+.hfv__badge    { top: 40.99rem; }
+
+/* =====================================================================
+   2026-07-30 赤丸修正バッチH⑥（ホテルFV）＝ 3案比較の「C案」採用
+   方針：ギッチギチの主因は余白の狭さより「白い箱の数」（パネル1＋ボタン2＋バッジ3＝6個）
+        → バッジの白箱を撤去して3個に減らし、階層（見出し大・脇役小）＋間隔2.1remで再構成
+   数値はFVレイアウト計算（48rem枠に均等配分）で算出したもの
+   ===================================================================== */
+.hfv__eyebrow  { font-size: 1.22rem; height: 2.867rem; line-height: 2.737rem; letter-spacing: 0.06em; top: 1.558rem; }
+.hfv__h1-weak  { font-size: 3.7407rem; }
+.hfv__h1-s1    { font-size: 2.3309rem; }
+.hfv__h1-m1    { font-size: 3.2637rem; }
+.hfv__h1-s2    { font-size: 3.5692rem; }
+.hfv__h1-line1 { top: 5.961rem; line-height: 6.5553rem; letter-spacing: -0.005em; }
+.hfv__h1-line2 { top: 9.903rem; font-size: 5.0076rem; line-height: 9.5693rem; letter-spacing: -0.005em; }
+.hfv__h1-weak::before { height: 4.472rem; transform: translateY(calc(-50% - 0.125rem)); }
+.hfv__lead     { top: 18.349rem; font-size: 1.24rem; line-height: 1.85rem; letter-spacing: 0.02em; }
+.hfv__panel    { top: 25.998rem; padding: 0.75rem 1.15rem; row-gap: 0.2rem; }
+.hfv__panel-title { font-size: 1.68rem; line-height: 1.3; }
+.hfv__panel-text  { font-size: 1.05rem; line-height: 1.6; letter-spacing: 0.02em; }
+.hfv__btn      { top: 35.343rem; height: 5.6rem; }
+.hfv__btn--solid      { font-size: 1.45rem; }
+.hfv__btn-2line       { font-size: 1.24rem; }
+.hfv__btn-2line small { font-size: 0.85rem; }
+/* バッジ：白箱・枠線を撤去して白文字＋白抜きアイコンに */
+.hfv__badge {
+  top: 43.043rem; height: 3.4rem;
+  font-size: 1.05rem; letter-spacing: 0.04em;
+  background: transparent; border: none;
+  padding-left: 0; color: #fff;
+  align-items: center;
+}
+.hfv__badge img { width: 2.5rem; height: 2.5rem; }
+
+/* =====================================================================
+   2026-07-30 赤丸修正バッチH⑦（ホテルFV・口頭ラリー4点）
+   ① リード文を縮小 ② パネルも付随して縮小 ③ ボタン内容をセンタリング
+   ④ バッジ3つに区切り線（枠を消したことによる違和感の解消）
+   縮小で空いた縦を間隔に回して 2.2rem 刻みに再配分（上下余白 1.731rem）
+   ===================================================================== */
+
+/* ① リード文（19.8px → 17.9px相当） */
+.hfv__lead { top: 18.722rem; font-size: 1.12rem; line-height: 1.72rem; }
+
+/* ② パネル：見出し・本文とも一段縮小し、箱も 7.24 → 6.79rem に */
+.hfv__panel       { top: 26.082rem; }
+.hfv__panel-title { font-size: 1.55rem; }
+.hfv__panel-text  { font-size: 0.96rem; line-height: 1.6; }
+
+/* 縮小に伴う縦位置の再配分 */
+.hfv__eyebrow  { top: 1.731rem; }
+.hfv__h1-line1 { top: 6.234rem; }
+.hfv__h1-line2 { top: 10.176rem; }
+.hfv__btn      { top: 35.069rem; }
+.hfv__badge    { top: 42.869rem; }
+
+/* ③ ボタン：中身を左寄せ→センタリング（シェブロン分の余白を右に確保して中央に） */
+.hfv__btn { justify-content: center; padding-right: 1.8rem; }
+
+/* ④ バッジ：白枠を消した代わりに縦の区切り線を入れる */
+.hfv__badge { position: absolute; }
+.hfv__badge::after {
+  content: ""; position: absolute;
+  right: -0.225rem; top: 0.35rem; bottom: 0.35rem;
+  width: 0.0875rem;
+  background: rgba(255,255,255,.45);
+}
+.hfv__badge:last-of-type::after { display: none; }
+
+/* =====================================================================
+   2026-07-30 赤丸修正バッチH⑧（ホテルFV・見出しブロックの内部調整）
+   実インク基準で測り直した結果の修正。箱座標では均等でも、見出しは
+   line-heightが大きくインクが箱の下方に寄るため、視覚的な余白がズレていた。
+     ① 見出し→リードの視覚余白が 0.21rem しかなかった（他は2.2rem）
+     ② 見出し1行目と2行目のインクが 0.89rem 重なっていた
+     ③ 「施設の改善課題に。」の句点が写真に 0.15rem 食い込んでいた
+     ④ 見出し1行目の左端揃え（＝白背景の箱の左端を 7.625rem に合わせる）
+   → 以降このFVは「箱の座標」ではなく「インクの位置」で配分している。
+      inkTop = boxTop + (line-height - font×1.451)/2 ／ inkHeight = font×1.451
+      （1.451 は Noto Sans JP のコンテンツ領域係数。実測で確認済み）
+   ===================================================================== */
+
+/* ③ 見出し2行目を 1.85% 縮小 → インク右端 48.15 → 47.4rem（写真48.0から0.6rem離す） */
+.hfv__h1-line2 { font-size: 4.915rem; }
+.hfv__h1-s2    { font-size: 3.503rem; }
+
+/* ④ 白背景の箱の左端を他要素（7.625rem）に揃える＝文字を +0.1875rem */
+.hfv__h1-line1 { left: 8.625rem; }
+
+/* ①② インク基準で再配分（ブロック間 1.85rem／上下 1.457rem／見出し2行の重なり 0.45rem） */
+.hfv__eyebrow  { top: 1.457rem; }
+.hfv__h1-line1 { top: 5.61rem; }
+.hfv__h1-line2 { top: 9.933rem; }
+.hfv__lead     { top: 20.096rem; }
+.hfv__panel    { top: 27.054rem; }
+.hfv__btn      { top: 35.694rem; }
+.hfv__badge    { top: 43.144rem; }
+/* 施設の声：事例2の吹き出しが境界でわずかに溢れていたので詰める */
+.h-vo__bubble   { padding: 0.3rem 0.8rem; }
+.h-vo__bubble p { line-height: 1.34; }
