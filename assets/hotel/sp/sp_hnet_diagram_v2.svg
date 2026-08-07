@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 374 238" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
+  <title id="title">宿泊者用Wi-Fiと業務用ネットワークの分離図</title>
+  <desc id="desc">ホテル館内のネットワークを宿泊者用と業務用に分離している構成図</desc>
+
+  <style>
+    text {
+      fill: #1A1A1A;
+      font-family: "Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+    }
+    .round {
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .heading {
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .support {
+      font-size: 9px;
+      font-weight: 400;
+    }
+    .floor-label {
+      font-size: 8.5px;
+      font-weight: 700;
+    }
+  </style>
+
+  <!-- Network lines -->
+  <g class="round" style="fill:none">
+    <path d="M117 119H130" style="stroke:#4A5568;stroke-width:1.8"/>
+    <path d="M153 116H161C167 116 171 113 171 109V72C171 68 173 66 178 66"
+          style="stroke:#F07509;stroke-width:2"/>
+    <path d="M153 122H161C167 122 171 125 171 129V169C171 172 173 173 178 173"
+          style="stroke:#4A5568;stroke-width:2"/>
+  </g>
+
+  <!-- Hotel building -->
+  <g class="round">
+    <rect x="12" y="39" width="106" height="55"
+          style="fill:#FCEFE6;stroke:none"/>
+    <rect x="12" y="94" width="106" height="55"
+          style="fill:#FCEFE6;stroke:none"/>
+    <rect x="12" y="149" width="106" height="55"
+          style="fill:#EDF0F4;stroke:none"/>
+
+    <path d="M7 39L65 12L123 39"
+          style="fill:#FCEFE6;stroke:#D8B79A;stroke-width:1.8"/>
+    <path d="M12 39H118V204H12Z"
+          style="fill:none;stroke:#D8B79A;stroke-width:1.8"/>
+    <path d="M12 94H118M12 149H118"
+          style="fill:none;stroke:#D8B79A;stroke-width:1.7"/>
+
+    <!-- Guest-room windows -->
+    <rect x="53" y="51" width="34" height="27" rx="2"
+          style="fill:none;stroke:#D8B79A;stroke-width:1.5"/>
+    <path d="M64.3 51V78M75.7 51V78"
+          style="fill:none;stroke:#D8B79A;stroke-width:1.5"/>
+
+    <rect x="53" y="106" width="34" height="27" rx="2"
+          style="fill:none;stroke:#D8B79A;stroke-width:1.5"/>
+    <path d="M64.3 106V133M75.7 106V133"
+          style="fill:none;stroke:#D8B79A;stroke-width:1.5"/>
+
+    <!-- Front desk and back-office door -->
+    <path d="M52 177H72V191H48V181C48 178.8 49.8 177 52 177Z"
+          style="fill:none;stroke:#4A5568;stroke-width:1.5"/>
+    <rect x="78" y="159" width="25" height="33" rx="2"
+          style="fill:none;stroke:#4A5568;stroke-width:1.5"/>
+    <circle cx="97" cy="176" r="1.4"
+            style="fill:#4A5568;stroke:none"/>
+  </g>
+
+  <!-- Router -->
+  <g class="round">
+    <rect x="130" y="107" width="23" height="23" rx="4"
+          style="fill:#EDF0F4;stroke:#4A5568;stroke-width:1.8"/>
+    <path d="M136 115H147M136 121H143"
+          style="fill:none;stroke:#4A5568;stroke-width:1.5"/>
+    <circle cx="147" cy="121" r="1.4"
+            style="fill:#F07509;stroke:none"/>
+  </g>
+
+  <!-- Destination boxes -->
+  <rect x="178" y="27" width="188" height="80" rx="12"
+        style="fill:#FCEFE6;stroke:#F07509;stroke-width:1.8"/>
+  <rect x="178" y="132" width="188" height="82" rx="12"
+        style="fill:#EDF0F4;stroke:#4A5568;stroke-width:1.8"/>
+
+  <!-- Wi-Fi marks in each floor -->
+  <g class="round" style="fill:none;stroke:#F07509;stroke-width:1.5">
+    <path d="M94 64Q103 56 112 64"/>
+    <path d="M97 68Q103 62 109 68"/>
+  </g>
+  <circle cx="103" cy="72" r="1.7" style="fill:#F07509;stroke:none"/>
+
+  <g class="round" style="fill:none;stroke:#F07509;stroke-width:1.5">
+    <path d="M94 119Q103 111 112 119"/>
+    <path d="M97 123Q103 117 109 123"/>
+  </g>
+  <circle cx="103" cy="127" r="1.7" style="fill:#F07509;stroke:none"/>
+
+  <g class="round" style="fill:none;stroke:#4A5568;stroke-width:1.5">
+    <path d="M94 170Q103 162 112 170"/>
+    <path d="M97 174Q103 168 109 174"/>
+  </g>
+  <circle cx="103" cy="178" r="1.7" style="fill:#4A5568;stroke:none"/>
+
+  <!-- Smartphone and laptop icons -->
+  <g class="round" style="fill:none;stroke:#F07509;stroke-width:1.6">
+    <rect x="188" y="47" width="11" height="23" rx="2"/>
+    <path d="M191 66.5H196"/>
+    <rect x="205" y="50" width="21" height="15" rx="2"/>
+    <path d="M205 65L202 69H229L226 65"/>
+  </g>
+
+  <!-- Desktop and printer icons -->
+  <g class="round" style="fill:none;stroke:#4A5568;stroke-width:1.6">
+    <rect x="187" y="151" width="21" height="16" rx="2"/>
+    <path d="M197.5 167V172M192 172H203"/>
+    <rect x="213" y="155" width="19" height="17" rx="2"/>
+    <path d="M217 155V150H228V155M217 166H228V176H217Z"/>
+    <path d="M217 160H219"/>
+  </g>
+
+  <!-- Text -->
+  <g>
+    <text x="22" y="61" class="floor-label">客室</text>
+    <text x="22" y="116" class="floor-label">客室</text>
+    <text x="21" y="160" class="floor-label">フロント</text>
+    <text x="21" y="172" class="floor-label">バックヤード</text>
+
+    <text x="143" y="101" text-anchor="middle" class="support">回線を分離</text>
+
+    <text x="239" y="56" class="heading">宿泊者用Wi-Fi</text>
+    <text x="239" y="76" class="support">客室・ロビー</text>
+
+    <text x="239" y="160" class="heading">業務用ネットワーク</text>
+    <text x="239" y="181" class="support">フロント・PMS・決済</text>
+  </g>
+</svg>
