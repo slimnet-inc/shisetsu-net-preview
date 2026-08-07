@@ -1,0 +1,216 @@
+<svg viewBox="0 0 390 330" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text{font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#1A1A2E}
+    .heading{font-size:11px;font-weight:700}
+    .body{font-size:9px;font-weight:400}
+    .room-label{font-size:9px;font-weight:700}
+    .note{font-size:7.5px;fill:#6B7A90}
+    .badge-text{font-size:8px;font-weight:700;fill:#FFFFFF}
+    .line-gray{fill:none;stroke:#6B7A90;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .line-blue{fill:none;stroke:#1A5FD0;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .net-blue{fill:none;stroke:#0455C3;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .net-orange{fill:none;stroke:#F5821F;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+
+  <!-- 左カラム -->
+  <g>
+    <circle cx="15" cy="21" r="10" fill="#0455C3"/>
+    <text x="15" y="24.5" text-anchor="middle" font-size="11" font-weight="700" style="fill:#FFFFFF">1</text>
+    <text class="heading" x="29" y="19">
+      <tspan x="29" dy="0">住戸ごとに</tspan>
+      <tspan x="29" dy="14">独立</tspan>
+    </text>
+    <text class="body" x="6" y="51">
+      <tspan x="6" dy="0">住戸間の通信を</tspan>
+      <tspan x="6" dy="13">分離します。</tspan>
+    </text>
+    <g class="line-gray" transform="translate(79 48)">
+      <path d="M0 9 11 0l11 9"/>
+      <path d="M3.5 7.5V21h15V7.5"/>
+      <path d="M9 21v-7h4v7"/>
+    </g>
+
+    <path d="M6 91H101" stroke="#E8F0FD" stroke-width="2" stroke-linecap="round"/>
+
+    <circle cx="15" cy="111" r="10" fill="#0455C3"/>
+    <text x="15" y="114.5" text-anchor="middle" font-size="11" font-weight="700" style="fill:#FFFFFF">2</text>
+    <text class="heading" x="29" y="109">
+      <tspan x="29" dy="0">共有部と住戸を</tspan>
+      <tspan x="29" dy="14">分離</tspan>
+    </text>
+    <text class="body" x="6" y="142">
+      <tspan x="6" dy="0">共有部の設備と</tspan>
+      <tspan x="6" dy="13">住戸の通信を</tspan>
+      <tspan x="6" dy="13">切り分けます。</tspan>
+    </text>
+    <g class="line-gray" transform="translate(80 139)">
+      <rect x="2" y="5" width="20" height="22" rx="1.5"/>
+      <path d="M0 5h24M7 5V0h10v5M7 11h3m4 0h3m-10 5h3m4 0h3m-10 5h3m4 0h3M10 27v-5h4v5"/>
+    </g>
+
+    <path d="M6 190H101" stroke="#E8F0FD" stroke-width="2" stroke-linecap="round"/>
+
+    <circle cx="15" cy="211" r="10" fill="#0455C3"/>
+    <text x="15" y="214.5" text-anchor="middle" font-size="11" font-weight="700" style="fill:#FFFFFF">3</text>
+    <text class="heading" x="29" y="207">
+      <tspan x="29" dy="0">管理用回線と</tspan>
+      <tspan x="29" dy="14">入居者用回線を</tspan>
+      <tspan x="29" dy="14">整理</tspan>
+    </text>
+    <text class="body" x="6" y="255">
+      <tspan x="6" dy="0">用途に応じた回線を</tspan>
+      <tspan x="6" dy="13">それぞれ最適化</tspan>
+      <tspan x="6" dy="13">します。</tspan>
+    </text>
+    <g class="line-gray" transform="translate(79 268)">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 0v4M12 20v4M0 12h4m16 0h4M3.5 3.5l2.8 2.8m11.4 11.4 2.8 2.8m0-17-2.8 2.8M6.3 17.7l-2.8 2.8"/>
+      <circle cx="12" cy="12" r="9"/>
+    </g>
+  </g>
+
+  <!-- 建物・住戸 -->
+  <g>
+    <rect x="111" y="22" width="128" height="56" rx="3" fill="#E8F0FD" stroke="#1A5FD0" stroke-width="1.5"/>
+    <rect x="253" y="22" width="128" height="56" rx="3" fill="#E8F0FD" stroke="#1A5FD0" stroke-width="1.5"/>
+    <rect x="111" y="83" width="128" height="56" rx="3" fill="#E8F0FD" stroke="#1A5FD0" stroke-width="1.5"/>
+    <rect x="253" y="83" width="128" height="56" rx="3" fill="#E8F0FD" stroke="#1A5FD0" stroke-width="1.5"/>
+    <rect x="111" y="144" width="128" height="56" rx="3" fill="#E8F0FD" stroke="#1A5FD0" stroke-width="1.5"/>
+    <rect x="253" y="144" width="128" height="56" rx="3" fill="#E8F0FD" stroke="#1A5FD0" stroke-width="1.5"/>
+
+    <text class="room-label" x="175" y="34" text-anchor="middle">住戸A</text>
+    <text class="room-label" x="317" y="34" text-anchor="middle">住戸B</text>
+    <text class="room-label" x="175" y="95" text-anchor="middle">住戸C</text>
+    <text class="room-label" x="317" y="95" text-anchor="middle">住戸D</text>
+    <text class="room-label" x="175" y="156" text-anchor="middle">住戸E</text>
+    <text class="room-label" x="317" y="156" text-anchor="middle">住戸F</text>
+
+    <!-- 回線 -->
+    <path class="net-blue" d="M244 16V315"/>
+    <path class="net-orange" d="M249 16V315"/>
+
+    <g class="net-blue">
+      <path d="M244 55H180M244 116H180M244 177H180"/>
+      <path d="M244 55H315M244 116H315M244 177H315"/>
+    </g>
+    <g class="net-orange">
+      <path d="M249 60H180M249 121H180M249 182H180"/>
+      <path d="M249 60H315M249 121H315M249 182H315"/>
+    </g>
+
+    <!-- 住戸A アイコン -->
+    <g class="line-blue">
+      <rect x="121" y="45" width="25" height="16" rx="1.5"/>
+      <path d="M118 65h31l-3-4h-25z"/>
+      <rect x="169" y="55" width="22" height="11" rx="2" fill="#E8F0FD"/>
+      <path d="M175 52c3-3 7-3 10 0M178 49c1.5-1 3.5-1 5 0"/>
+      <circle cx="175" cy="61" r="1" fill="#1A5FD0" stroke="none"/>
+      <circle cx="181" cy="61" r="1" fill="#1A5FD0" stroke="none"/>
+      <rect x="215" y="44" width="11" height="23" rx="2"/>
+      <path d="M219 63h3"/>
+    </g>
+
+    <!-- 住戸B アイコン -->
+    <g class="line-blue">
+      <rect x="263" y="45" width="25" height="16" rx="1.5"/>
+      <path d="M260 65h31l-3-4h-25z"/>
+      <rect x="311" y="55" width="22" height="11" rx="2" fill="#E8F0FD"/>
+      <path d="M317 52c3-3 7-3 10 0M320 49c1.5-1 3.5-1 5 0"/>
+      <circle cx="317" cy="61" r="1" fill="#1A5FD0" stroke="none"/>
+      <circle cx="323" cy="61" r="1" fill="#1A5FD0" stroke="none"/>
+      <rect x="357" y="44" width="11" height="23" rx="2"/>
+      <path d="M361 63h3"/>
+    </g>
+
+    <!-- 住戸C アイコン -->
+    <g class="line-blue">
+      <rect x="121" y="106" width="25" height="16" rx="1.5"/>
+      <path d="M118 126h31l-3-4h-25z"/>
+      <rect x="169" y="116" width="22" height="11" rx="2" fill="#E8F0FD"/>
+      <path d="M175 113c3-3 7-3 10 0M178 110c1.5-1 3.5-1 5 0"/>
+      <circle cx="175" cy="122" r="1" fill="#1A5FD0" stroke="none"/>
+      <circle cx="181" cy="122" r="1" fill="#1A5FD0" stroke="none"/>
+      <rect x="215" y="105" width="11" height="23" rx="2"/>
+      <path d="M219 124h3"/>
+    </g>
+
+    <!-- 住戸D アイコン -->
+    <g class="line-blue">
+      <rect x="263" y="106" width="25" height="16" rx="1.5"/>
+      <path d="M260 126h31l-3-4h-25z"/>
+      <rect x="311" y="116" width="22" height="11" rx="2" fill="#E8F0FD"/>
+      <path d="M317 113c3-3 7-3 10 0M320 110c1.5-1 3.5-1 5 0"/>
+      <circle cx="317" cy="122" r="1" fill="#1A5FD0" stroke="none"/>
+      <circle cx="323" cy="122" r="1" fill="#1A5FD0" stroke="none"/>
+      <rect x="357" y="105" width="11" height="23" rx="2"/>
+      <path d="M361 124h3"/>
+    </g>
+
+    <!-- 住戸E アイコン -->
+    <g class="line-blue">
+      <rect x="121" y="167" width="25" height="16" rx="1.5"/>
+      <path d="M118 187h31l-3-4h-25z"/>
+      <rect x="169" y="177" width="22" height="11" rx="2" fill="#E8F0FD"/>
+      <path d="M175 174c3-3 7-3 10 0M178 171c1.5-1 3.5-1 5 0"/>
+      <circle cx="175" cy="183" r="1" fill="#1A5FD0" stroke="none"/>
+      <circle cx="181" cy="183" r="1" fill="#1A5FD0" stroke="none"/>
+      <rect x="215" y="166" width="11" height="23" rx="2"/>
+      <path d="M219 185h3"/>
+    </g>
+
+    <!-- 住戸F アイコン -->
+    <g class="line-blue">
+      <rect x="263" y="167" width="25" height="16" rx="1.5"/>
+      <path d="M260 187h31l-3-4h-25z"/>
+      <rect x="311" y="177" width="22" height="11" rx="2" fill="#E8F0FD"/>
+      <path d="M317 174c3-3 7-3 10 0M320 171c1.5-1 3.5-1 5 0"/>
+      <circle cx="317" cy="183" r="1" fill="#1A5FD0" stroke="none"/>
+      <circle cx="323" cy="183" r="1" fill="#1A5FD0" stroke="none"/>
+      <rect x="357" y="166" width="11" height="23" rx="2"/>
+      <path d="M361 185h3"/>
+    </g>
+  </g>
+
+  <!-- 共有部 -->
+  <g>
+    <rect x="111" y="207" width="270" height="110" rx="4" fill="none" stroke="#6B7A90" stroke-width="1.5"/>
+    <text x="178" y="224" text-anchor="middle" font-size="11" font-weight="700">共有部設備</text>
+    <text class="note" x="178" y="238" text-anchor="middle">エレベーター／防犯カメラ／</text>
+    <text class="note" x="178" y="249" text-anchor="middle">オートロック など</text>
+
+    <path class="net-blue" d="M244 274H218"/>
+    <path class="net-orange" d="M249 286H218"/>
+
+    <!-- 防犯カメラ -->
+    <g class="line-gray" transform="translate(124 267)">
+      <path d="M3 2h26l-4 14H7z"/>
+      <circle cx="20" cy="9" r="4"/>
+      <path d="M8 16v6m0 0h-6m6 0 7 6"/>
+    </g>
+
+    <!-- オートロック操作盤 -->
+    <g class="line-gray" transform="translate(181 262)">
+      <rect x="0" y="0" width="29" height="38" rx="3"/>
+      <rect x="6" y="5" width="17" height="8" rx="1"/>
+      <circle cx="8" cy="20" r="1"/>
+      <circle cx="14.5" cy="20" r="1"/>
+      <circle cx="21" cy="20" r="1"/>
+      <circle cx="8" cy="26" r="1"/>
+      <circle cx="14.5" cy="26" r="1"/>
+      <circle cx="21" cy="26" r="1"/>
+      <path d="M10 33h9"/>
+    </g>
+
+    <path class="net-blue" d="M244 244H257"/>
+    <path class="net-orange" d="M249 283H257"/>
+
+    <rect x="257" y="229" width="119" height="29" rx="7" fill="#0455C3"/>
+    <text class="badge-text" x="316.5" y="247" text-anchor="middle">管理用回線（管理室）</text>
+
+    <rect x="257" y="265" width="119" height="39" rx="7" fill="#F5821F"/>
+    <text class="badge-text" x="316.5" y="281" text-anchor="middle">
+      <tspan x="316.5" dy="0">入居者用回線</tspan>
+      <tspan x="316.5" dy="12">（インターネット）</tspan>
+    </text>
+  </g>
+</svg>

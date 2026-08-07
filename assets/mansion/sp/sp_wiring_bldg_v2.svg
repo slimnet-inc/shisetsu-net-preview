@@ -1,0 +1,206 @@
+<svg viewBox="0 0 390 342" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text{font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#1A1A2E}
+    .badge-heading{font-size:11px;font-weight:700;fill:#0455C3}
+    .badge-sub{font-size:9px;fill:#6B7A90}
+    .orange-text{font-size:11px;font-weight:700;fill:#FFFFFF}
+    .outline{fill:none;stroke:#6B7A90;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .light-line{fill:none;stroke:#C9DCF5;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .wiring{fill:none;stroke:#0455C3;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .orange-line{fill:none;stroke:#F5821F;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  </style>
+
+  <!-- 街並み -->
+  <g fill="#EAF2FD">
+    <path d="M4 300V166h25v-18h25v152z"/>
+    <path d="M28 300V199h30v-25h22v126z"/>
+    <path d="M265 300V174h22v-28h27v154z"/>
+    <path d="M306 300V207h27v-18h21v111z"/>
+    <circle cx="27" cy="231" r="18"/>
+    <circle cx="17" cy="244" r="13"/>
+    <circle cx="39" cy="246" r="14"/>
+    <rect x="25" y="244" width="5" height="56" rx="2"/>
+    <circle cx="310" cy="222" r="16"/>
+    <circle cx="300" cy="235" r="12"/>
+    <circle cx="321" cy="236" r="13"/>
+    <rect x="308" y="236" width="5" height="64" rx="2"/>
+  </g>
+
+  <!-- 建物 -->
+  <g>
+    <rect x="68" y="74" width="214" height="226" rx="2" fill="#F5F8FD" stroke="#6B7A90" stroke-width="1.5"/>
+    <path d="M62 74h226" class="outline"/>
+    <rect x="73" y="79" width="31" height="221" fill="#E8F0FD" stroke="#6B7A90" stroke-width="1.5"/>
+    <rect x="106" y="79" width="17" height="221" fill="#EAF2FD"/>
+
+    <!-- 各階 -->
+    <g fill="#FFFFFF" stroke="#6B7A90" stroke-width="1.5">
+      <rect x="124" y="79" width="76" height="53"/>
+      <rect x="202" y="79" width="75" height="53"/>
+      <rect x="124" y="134" width="76" height="54"/>
+      <rect x="202" y="134" width="75" height="54"/>
+      <rect x="124" y="190" width="76" height="54"/>
+      <rect x="202" y="190" width="75" height="54"/>
+      <rect x="124" y="246" width="76" height="54"/>
+      <rect x="202" y="246" width="75" height="54"/>
+    </g>
+
+    <!-- エレベーター -->
+    <g class="outline">
+      <rect x="78" y="90" width="21" height="34" rx="1"/>
+      <path d="M88.5 90v34"/>
+      <rect x="78" y="145" width="21" height="34" rx="1"/>
+      <path d="M88.5 145v34"/>
+      <rect x="78" y="201" width="21" height="34" rx="1"/>
+      <path d="M88.5 201v34"/>
+      <rect x="78" y="257" width="21" height="34" rx="1"/>
+      <path d="M88.5 257v34"/>
+    </g>
+
+    <!-- 室内の簡略線画 -->
+    <g class="outline">
+      <rect x="151" y="101" width="22" height="17" rx="1" fill="#E8F0FD"/>
+      <path d="M156 118v7m12-7v7m-15 0h18"/>
+      <rect x="229" y="101" width="22" height="17" rx="1" fill="#E8F0FD"/>
+      <path d="M234 118v7m12-7v7m-15 0h18"/>
+
+      <rect x="151" y="156" width="22" height="17" rx="1" fill="#E8F0FD"/>
+      <path d="M156 173v7m12-7v7m-15 0h18"/>
+      <rect x="229" y="156" width="22" height="17" rx="1" fill="#E8F0FD"/>
+      <path d="M234 173v7m12-7v7m-15 0h18"/>
+
+      <rect x="151" y="212" width="22" height="17" rx="1" fill="#E8F0FD"/>
+      <path d="M156 229v7m12-7v7m-15 0h18"/>
+      <rect x="229" y="212" width="22" height="17" rx="1" fill="#E8F0FD"/>
+      <path d="M234 229v7m12-7v7m-15 0h18"/>
+
+      <rect x="151" y="268" width="22" height="17" rx="1" fill="#E8F0FD"/>
+      <path d="M156 285v7m12-7v7m-15 0h18"/>
+      <rect x="229" y="268" width="22" height="17" rx="1" fill="#E8F0FD"/>
+      <path d="M234 285v7m12-7v7m-15 0h18"/>
+    </g>
+
+    <!-- 屋上アンテナ・通信機器 -->
+    <g class="outline">
+      <path d="M151 74V43"/>
+      <path d="M140 74h22"/>
+      <path d="M144 52c4-4 10-4 14 0"/>
+      <path d="M139 47c7-8 18-8 25 0"/>
+      <circle cx="151" cy="57" r="2" fill="#1A5FD0" stroke="none"/>
+      <rect x="215" y="49" width="29" height="20" rx="2" fill="#E8F0FD"/>
+      <path d="M220 55h19M220 61h12"/>
+      <circle cx="237" cy="61" r="1.5" fill="#1A5FD0" stroke="none"/>
+    </g>
+
+    <!-- 1階共用部機器 -->
+    <g>
+      <rect x="105" y="266" width="19" height="25" rx="2" fill="#FFFFFF" stroke="#6B7A90" stroke-width="1.5"/>
+      <path d="M109 272h11M109 278h7M109 284h7" class="outline"/>
+      <circle cx="119" cy="284" r="1.5" fill="#1A5FD0"/>
+    </g>
+
+    <!-- 配線ルート -->
+    <g class="wiring">
+      <path d="M34 307H57V278H105"/>
+      <path d="M115 266V69H215"/>
+      <path d="M115 91H208"/>
+      <path d="M115 147H208"/>
+      <path d="M115 203H208"/>
+      <path d="M115 259H208"/>
+
+      <path d="M132 91v20"/>
+      <path d="M208 91v20"/>
+      <path d="M132 147v20"/>
+      <path d="M208 147v20"/>
+      <path d="M132 203v20"/>
+      <path d="M208 203v20"/>
+      <path d="M132 259v20"/>
+      <path d="M208 259v20"/>
+    </g>
+
+    <!-- 分岐ノード -->
+    <g fill="#0455C3">
+      <circle cx="115" cy="91" r="3"/>
+      <circle cx="132" cy="91" r="3"/>
+      <circle cx="208" cy="91" r="3"/>
+      <circle cx="115" cy="147" r="3"/>
+      <circle cx="132" cy="147" r="3"/>
+      <circle cx="208" cy="147" r="3"/>
+      <circle cx="115" cy="203" r="3"/>
+      <circle cx="132" cy="203" r="3"/>
+      <circle cx="208" cy="203" r="3"/>
+      <circle cx="115" cy="259" r="3"/>
+      <circle cx="132" cy="259" r="3"/>
+      <circle cx="208" cy="259" r="3"/>
+    </g>
+
+    <!-- 壁面ジャック -->
+    <g fill="#FFFFFF" stroke="#0455C3" stroke-width="1.5">
+      <rect x="127" y="110" width="10" height="11" rx="1"/>
+      <rect x="203" y="110" width="10" height="11" rx="1"/>
+      <rect x="127" y="166" width="10" height="11" rx="1"/>
+      <rect x="203" y="166" width="10" height="11" rx="1"/>
+      <rect x="127" y="222" width="10" height="11" rx="1"/>
+      <rect x="203" y="222" width="10" height="11" rx="1"/>
+      <rect x="127" y="278" width="10" height="11" rx="1"/>
+      <rect x="203" y="278" width="10" height="11" rx="1"/>
+    </g>
+    <g fill="#0455C3">
+      <circle cx="132" cy="116" r="1.3"/>
+      <circle cx="208" cy="116" r="1.3"/>
+      <circle cx="132" cy="172" r="1.3"/>
+      <circle cx="208" cy="172" r="1.3"/>
+      <circle cx="132" cy="228" r="1.3"/>
+      <circle cx="208" cy="228" r="1.3"/>
+      <circle cx="132" cy="284" r="1.3"/>
+      <circle cx="208" cy="284" r="1.3"/>
+    </g>
+
+    <!-- 地上引込口 -->
+    <g>
+      <rect x="28" y="298" width="13" height="18" rx="2" fill="#FFFFFF" stroke="#6B7A90" stroke-width="1.5"/>
+      <circle cx="34.5" cy="307" r="2.5" fill="#0455C3"/>
+    </g>
+  </g>
+
+  <!-- ラベル引き出し線 -->
+  <g class="light-line">
+    <path d="M290 77H274V59H244"/>
+    <path d="M290 161H278V203H208"/>
+    <path d="M290 273H283V322H34V316"/>
+  </g>
+  <g fill="#C9DCF5">
+    <circle cx="244" cy="59" r="3"/>
+    <circle cx="208" cy="203" r="3"/>
+    <circle cx="34" cy="316" r="3"/>
+  </g>
+
+  <!-- 右側ラベル -->
+  <g>
+    <rect x="290" y="54" width="94" height="47" rx="8" fill="#FFFFFF" stroke="#C9DCF5" stroke-width="1.5"/>
+    <text class="badge-heading" x="337" y="73" text-anchor="middle">共用部</text>
+    <text class="badge-sub" x="337" y="89" text-anchor="middle">通信設備</text>
+
+    <rect x="290" y="138" width="94" height="47" rx="8" fill="#FFFFFF" stroke="#C9DCF5" stroke-width="1.5"/>
+    <text class="badge-heading" x="337" y="157" text-anchor="middle">各戸内</text>
+    <text class="badge-sub" x="337" y="173" text-anchor="middle">LAN配線</text>
+
+    <rect x="290" y="250" width="94" height="47" rx="8" fill="#FFFFFF" stroke="#C9DCF5" stroke-width="1.5"/>
+    <text class="badge-heading" x="337" y="269" text-anchor="middle">引込部</text>
+    <text class="badge-sub" x="337" y="285" text-anchor="middle">光回線引込</text>
+  </g>
+
+  <!-- 既存配管 -->
+  <g>
+    <rect x="4" y="239" width="67" height="46" rx="8" fill="#F5821F"/>
+    <text class="orange-text" x="37.5" y="258" text-anchor="middle">
+      <tspan x="37.5" dy="0">既存配管の</tspan>
+      <tspan x="37.5" dy="15">活用も可能</tspan>
+    </text>
+    <path class="orange-line" d="M71 263H83L94 282H105"/>
+    <circle cx="105" cy="282" r="3" fill="#F5821F"/>
+  </g>
+
+  <!-- 地面 -->
+  <path d="M12 322H378" stroke="#6B7A90" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

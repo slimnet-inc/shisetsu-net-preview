@@ -1,0 +1,101 @@
+<svg viewBox="0 0 370 278" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L8 4L0 8Z" fill="#1A5FD0"/>
+    </marker>
+  </defs>
+
+  <style>
+    text{font-family:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;fill:#1A1A2E}
+    .cycle{fill:none;stroke:#1A5FD0;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrowhead)}
+    .icon{fill:none;stroke:#1A5FD0;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .badge{fill:#FFFFFF;stroke:#C9DCF5;stroke-width:1.5}
+    .badge-text{font-size:10.5px;font-weight:700;fill:#0455C3}
+    .center-text{fill:#FFFFFF}
+  </style>
+
+
+  <!-- 上：安定運用 -->
+  <g>
+    <rect class="badge" x="128" y="5" width="114" height="29" rx="8"/>
+    <text class="badge-text" x="185" y="24" text-anchor="middle">安定運用の継続</text>
+  </g>
+
+  <!-- 右：監視・状況確認 -->
+  <g>
+    <g class="icon">
+      <rect x="283" y="73" width="49" height="32" rx="3" fill="#E8F0FD"/>
+      <path d="M289 98h37"/>
+      <path d="M304 105v7m8-7v7m-14 0h20"/>
+      <path d="M291 93V86h6v7"/>
+      <path d="M301 93V80h6v13"/>
+      <path d="M311 93V83h6v10"/>
+      <path d="M321 93V77h5v16"/>
+    </g>
+    <rect class="badge" x="260" y="116" width="104" height="29" rx="8"/>
+    <text class="badge-text" x="312" y="135" text-anchor="middle">監視・状況確認</text>
+  </g>
+
+  <!-- 下：対応・改善 -->
+  <g>
+    <g class="icon">
+      <rect x="164" y="199" width="38" height="35" rx="3" fill="#E8F0FD"/>
+      <path d="M173 208l3 3 6-7"/>
+      <path d="M187 208h9"/>
+      <path d="M173 219l3 3 6-7"/>
+      <path d="M187 219h9"/>
+      <circle cx="211" cy="219" r="11" fill="#FFFFFF"/>
+      <path d="M205 219l4 4 8-9"/>
+    </g>
+    <rect class="badge" x="140" y="243" width="90" height="29" rx="8"/>
+    <text class="badge-text" x="185" y="262" text-anchor="middle">対応・改善</text>
+  </g>
+
+  <!-- 左：お客さま施設 -->
+  <g>
+    <g class="icon">
+      <rect x="29" y="91" width="45" height="36" rx="2" fill="#E8F0FD"/>
+      <path d="M25 127h61"/>
+      <path d="M36 91v-7h31v7"/>
+      <path d="M37 99h7m8 0h7m-22 8h7m8 0h7m-22 8h7m8 0h7"/>
+      <path d="M45 127v-8h13v8"/>
+      <circle cx="84" cy="103" r="10" fill="#E8F0FD"/>
+      <circle cx="78" cy="109" r="7" fill="#E8F0FD"/>
+      <circle cx="89" cy="111" r="7" fill="#E8F0FD"/>
+      <path d="M84 111v16"/>
+    </g>
+    <rect class="badge" x="13" y="136" width="106" height="29" rx="8"/>
+    <text class="badge-text" x="66" y="155" text-anchor="middle">お客さま施設</text>
+  </g>
+
+  <!-- 施設とサービスの接続 -->
+  <path d="M119 150C127 150 131 145 138 145" fill="none" stroke="#9DBBE8" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 5"/>
+
+  <!-- 中央サービス -->
+  <g>
+    <circle cx="185" cy="139" r="48" fill="#0455C3"/>
+
+    <!-- ヘッドセット -->
+    <g fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M168 117v-3a17 17 0 0 1 34 0v3"/>
+      <rect x="165" y="116" width="7" height="13" rx="3"/>
+      <rect x="198" y="116" width="7" height="13" rx="3"/>
+      <path d="M202 128c0 5-4 7-9 7h-3"/>
+      <circle cx="188" cy="135" r="2" fill="#FFFFFF" stroke="none"/>
+    </g>
+
+    <text class="center-text" x="185" y="151" text-anchor="middle" font-size="11.5" font-weight="700">施設ネット</text>
+    <text class="center-text" x="185" y="168" text-anchor="middle">
+      <tspan font-size="10.5">by </tspan>
+      <tspan font-size="13" font-weight="700">スリム</tspan>
+      <tspan font-size="13" font-weight="700" fill="#F5821F">光</tspan>
+    </text>
+  </g>
+  <!-- 時計回りの循環（最前面に描く） -->
+  <g>
+    <path class="cycle" d="M232 27C264 36 288 54 299 72"/>
+    <path class="cycle" d="M338 152C337 189 302 215 248 224"/>
+    <path class="cycle" d="M147 232C104 224 76 194 69 170"/>
+    <path class="cycle" d="M62 100C74 62 98 40 124 30"/>
+  </g>
+</svg>
