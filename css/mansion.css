@@ -2663,3 +2663,301 @@
 .m-merit::before { height: auto; bottom: 0; }
 /* price: ドット装飾も撤去（背景画像は不要の指示） */
 .m-price__deco { display: none; }
+
+/* =====================================================================
+   2026-08-03 バッチM⑩（マンション）＝ 01/02/03/07/08 の口頭修正
+   ===================================================================== */
+
+/* --- 01 FVのピル3つ：中身が枠を食い切っていた（3つ目は0.05remはみ出し） --- */
+/* 実測 枠13.12rem / 中身 11.34・10.69・13.22rem → 内容幅+左右パディングの箱に作り替え */
+.mfv__pill {
+  width: auto;
+  padding: 0 1.15rem;
+  display: inline-flex; align-items: center; gap: 0.62rem;
+}
+.mfv__pill--1 { left: 4.6rem; }
+.mfv__pill--2 { left: 19.35rem; }
+.mfv__pill--3 { left: 33.1rem; }
+.mfv__pill-check { position: static; flex: none; }
+
+/* --- 02 お悩み行：右端のシェブロンを削除（Toku指示・01〜04共通） --- */
+.m-worries__arrow { display: none; }
+.m-worries__text  { padding-right: 1.6rem; }
+
+/* --- 03 料金：初期費用の「30,000」と単位のベースラインが揃っていなかった --- */
+/* 実測 月額 label t20.24 / num t18.26 / yen t20.24 ＝揃い、初期費用は label20.68 / yen20.68 で
+   numだけ t18.32 と月額比+0.06、かつ label/yen が0.44rem下がっていた */
+.m-price__amount-label--i { top: 20.24rem; }
+.m-price__amount-yen--i   { top: 20.24rem; }
+.m-price__amount-num--i   { top: 18.26rem; }
+
+/* --- 03 カード注記：左右の余白がゼロだった（枠22.94rem・文字22.89rem） --- */
+.m-price__card-note { left: 1.6rem; right: 1.6rem; width: auto; text-align: center; }
+
+/* --- 03 要因3つ：アイコンとラベルの高さを中央揃えに --- */
+/* 実測 アイコン中心 9.24/15.66/22.13 に対し ラベル中心 9.48/16.01/22.54 で 0.24〜0.41rem 下 */
+.m-price__factor-label--1 { top: 8.2rem; }
+.m-price__factor-label--2 { top: 14.62rem; }
+.m-price__factor-label--3 { top: 21.09rem; }
+
+/* --- 07 サポート：テキストと枠が密着していた --- */
+.m-support__issue { padding: 0.9rem 0; box-sizing: content-box; }
+.m-support__act   { padding: 0.9rem 0; box-sizing: content-box; }
+
+/* --- 08 事例チップ：左右の余白が0.29remしかなくギチギチ --- */
+.m-case__chip { padding: 0.36rem 0.85rem; }
+/* --- 08 事例カードの幅：中身任せで 24.32/23.02/27.23rem とバラバラだった --- */
+/* おすすめ事例を広く、残り2枚は同じ幅に固定（Toku指示） */
+.m-case__card { flex: 0 0 auto; width: 22.4rem; }
+.m-case__card--featured { width: 27.9rem; }
+/* --- M⑩ 副作用対応 --- */
+/* 注記：中央寄せ用にleft/rightを効かせるため nowrap を解除して2行送りに */
+.m-price__card-note { white-space: normal; line-height: 1.5; }
+/* 事例カード幅を詰めたぶん、効果チップを折返し可に（3枚とも収まる） */
+.m-case__effects { display: flex; flex-direction: column; }
+.m-case__chips   { display: flex; flex-wrap: wrap; gap: 0.42rem; width: auto; }
+.m-case__chip    { position: static; white-space: nowrap; }
+/* mgmt右上の効果テキストが枠を9px超過 */
+.m-mgmt__effect-text { width: 16.6rem; }
+/* 注記が2行になりカード下端を12px超過 → カードを1.2rem延ばして注記も少し上げる */
+.m-price .m-price__card { height: 28.4rem; }
+.m-price .m-price__card-note { top: 23.5rem; }
+/* 注記の泣き別れ（「す。」だけ2行目）を防ぐ＝行長を自動で均す */
+.m-price .m-price__card-note { text-wrap: balance; }
+
+/* =====================================================================
+   2026-08-03 バッチM⑪（マンション）＝ 01/03/07/09 の再修正
+   前回 M⑩ で .m-support__issue / __act に content-box + padding を当てたが、
+   これらは絶対配置で top が固定のため、箱が縦に1.12rem重なっただけで
+   「テキストと枠の密着」は解消していなかった（＝Tokuの「治ってない」）。
+   → padding方式を撤回し、行間・折返し・箱サイズで解決し直す。
+   ===================================================================== */
+
+/* --- 前回のpadding指定を撤回（箱が重なる原因） --- */
+.m-support__issue, .m-support__act { padding: 0; box-sizing: border-box; }
+
+/* --- 09 サポート図：右列4つが文字4.4rem／枠8.36remで詰まって見えていた --- */
+/* 左右列とも内側に余白を作り、行間を確保 */
+.m-support__issue-title, .m-support__act-title { line-height: 1.45; }
+.m-support__issue-text,  .m-support__act-text  { line-height: 1.65; }
+.m-support__issue-text { padding-right: 1.3rem; }
+.m-support__act-text   { padding-right: 0.9rem; }
+
+/* --- 07 管理会社メリット3項目：本文が枠の下端に密着（下余白0rem） --- */
+.m-mgmt__item-text { padding: 0 1.4rem 1.5rem; line-height: 1.6; }
+.m-mgmt__item-title { margin-top: 1.15rem; }
+
+/* --- 03 料金：セクション背景を白に（ハローも白に揃える） --- */
+.m-price { background: #fff; box-shadow: 0 0 0 100vmax #fff; }
+
+/* --- 01 FVのピル3つ：上のボタン群と左端を揃える --- */
+.mfv__pill--1 { left: 5.05rem; }
+.mfv__pill--2 { left: 19.85rem; }
+.mfv__pill--3 { left: 33.6rem; }
+/* 01 ピル：親(.mfv__in)基準で3.18remオフセットしていたぶんを差し引き、CTA左端5.05remに一致させる */
+.mfv__pill--1 { left: 1.87rem; }
+.mfv__pill--2 { left: 16.67rem; }
+.mfv__pill--3 { left: 30.42rem; }
+/* 09 サポート図：右列4つが枠に密着（下0.04rem）→ 箱を広げて上下に余白を作る */
+.m-support__act { height: 5.55rem; }
+.m-support__act--1 { top: 12.9rem; }
+.m-support__act--2 { top: 21.0rem; }
+.m-support__act--3 { top: 29.1rem; }
+.m-support__act--4 { top: 37.2rem; }
+/* act: 旧ルールの min-height/auto が効いていたため打ち消して固定高に */
+.m-support .m-support__act { height: 7.6rem; min-height: 0; padding: 0; }
+.m-support .m-support__act-text { line-height: 1.5; }
+/* hub: actを4つ縦に伸ばしたぶん枠を延長 */
+.m-support__hub { height: 47.3rem; }
+.m-support { height: 75.8rem; }
+/* mgmt: 本文が帯からはみ出す → 帯を伸ばす */
+.m-mgmt__band { height: 24rem; }
+.m-mgmt { height: 65.7rem; }
+/* act: 3行送りが解消しないため、アイコン左右マージンを詰めて本文幅を確保（自然に2行へ） */
+.m-support__act-icon { margin: 0 0.75rem 0 0.85rem; }
+.m-support .m-support__act-text { padding-right: 0.85rem; line-height: 1.55; }
+.m-support .m-support__act { height: 7.6rem; }
+
+/* =====================================================================
+   2026-08-03 バッチM⑫（マンション）＝ 07/08/09 の整理
+   07 サポート図：右列を7.6remに広げた結果、左列(6.43rem)と高さ・下端が揃わず
+      右列だけ44.84remまで伸びて図が崩れていた
+   → 左右とも4段/3段の帯として上端12.94remから同じ下端に揃え、内側の余白も確保
+   ===================================================================== */
+/* 左列3つ：上端を右列と揃え、箱を広げて上下余白1.1remに */
+.m-support__issue { height: 8.2rem; }
+.m-support__issue--1 { top: 12.94rem; }
+.m-support__issue--2 { top: 23.15rem; }
+.m-support__issue--3 { top: 33.36rem; }
+.m-support__issue-title { line-height: 1.5; }
+.m-support__issue-text  { line-height: 1.6; padding-right: 0.9rem; }
+/* 右列4つ：下端を左列3つ目（41.56rem）に合わせる */
+.m-support__act--1 { top: 12.94rem; }
+.m-support__act--2 { top: 22.48rem; }
+.m-support__act--3 { top: 32.02rem; }
+.m-support__act--4 { top: 41.56rem; }
+.m-support .m-support__act { height: 7.6rem; }
+/* 中央画像：左右の帯の中央に配置し直す */
+.m-support__hub-img { top: 14.5rem; }
+/* 枠：右列の下端49.16rem＋下余白2.5rem */
+.m-support__hub { height: 51.7rem; }
+.m-support { height: 80.2rem; }
+
+/* 07 管理会社メリット：本文3〜4行になり帯を圧迫 → 帯を広げて余白確保 */
+.m-mgmt__item-text { padding: 0 1.1rem 1.6rem; }
+.m-mgmt__band { height: 25.4rem; }
+.m-mgmt { height: 67.1rem; }
+/* M⑫微調整：左3段(12.98→41.6rem)と右4段の下端を一致させる
+   右列は箱6.7rem・間隔0.61remで4段＝12.98〜41.6rem */
+.m-support .m-support__act { height: 6.7rem; }
+.m-support__act--1 { top: 12.98rem; }
+.m-support__act--2 { top: 20.52rem; }
+.m-support__act--3 { top: 28.06rem; }
+.m-support__act--4 { top: 35.6rem; }
+.m-support .m-support__act-text { line-height: 1.45; }
+/* 中央画像を左右の帯（12.98〜41.6rem）の中央へ */
+.m-support__hub-img { top: 15.24rem; }
+/* 枠：下端41.6rem＋余白2.5rem */
+.m-support__hub { height: 44.1rem; }
+.m-support { height: 72.6rem; }
+/* M⑫仕上げ：右列の内側余白が0remだったので箱を0.9rem広げて上下0.45remに（下端は左列と一致維持） */
+.m-support .m-support__act { height: 7.6rem; }
+.m-support__act--2 { top: 20.31rem; }
+.m-support__act--3 { top: 27.64rem; }
+.m-support__act--4 { top: 34.97rem; }
+
+/* 08 事例の注記：チップと2.24remしか離れておらず被って見える → 絶対配置なのでtopで下げる */
+.m-case__note { top: 80.2rem; }   /* カード下端78.71rem＋1.5rem。カード内に食い込んでいた */
+
+/* 09 フロー注記：11.1px と小さいので拡大し、位置も下げる */
+.m-flow__note { font-size: 1.16rem; top: 21.3rem; }
+.m-case { height: 86.4rem; }   /* 注記下端84.3rem＋下余白2.1rem */
+
+/* =====================================================================
+   2026-08-03 バッチM⑬（マンション）＝ 02/07/09
+   ===================================================================== */
+/* --- 02 メリットセクションの背景を白に（淡色帯も撤去） --- */
+.m-merit { background: #fff; }
+.m-merit::before { content: none; }
+
+/* --- 07 図の見出し：2行にして図に対する見出しらしく拡大 --- */
+.m-support__hub-title {
+  left: 0; right: 0; width: auto; text-align: center;
+  font-size: 1.62rem; line-height: 1.55;
+}
+/* 見出しが2行になったぶん、下の帯と中央画像を下げる */
+.m-support__issue--1 { top: 14.6rem; }
+.m-support__issue--2 { top: 24.81rem; }
+.m-support__issue--3 { top: 35.02rem; }
+.m-support__act--1 { top: 14.6rem; }
+.m-support__act--2 { top: 21.93rem; }
+.m-support__act--3 { top: 29.26rem; }
+.m-support__act--4 { top: 36.59rem; }
+.m-support__hub-img { top: 16.86rem; }
+.m-support__hub { height: 45.8rem; }
+
+/* --- 07 相談バンドを「うれしいメリット」ブロックから分離 --- */
+/* 帯(top24.69/高さ25.4rem→下端50.09rem)の中に食い込んでいたので外へ出す */
+.m-mgmt__cta { top: 52.6rem; }
+.m-mgmt { height: 61.5rem; }
+/* M⑬微調整：右列4段の下端を左列(43.26rem)に合わせる（箱7.28rem・間隔0.6rem） */
+.m-support .m-support__act { height: 7.28rem; }
+.m-support__act--2 { top: 21.83rem; }
+.m-support__act--3 { top: 29.05rem; }
+.m-support__act--4 { top: 36.27rem; }
+.m-support__hub { height: 45.8rem; }
+
+/* =====================================================================
+   2026-08-03 バッチM⑭（マンション）＝ 02/07/09 の仕上げ
+   ===================================================================== */
+/* --- 09 注記のはみ出し：飛び出していたのは .m-flow__panel（白パネル）だった --- */
+/* 前回はセクション高しか伸ばしておらずパネルは22.77remのままで0.23rem超過していた */
+.m-flow__panel { height: 24.4rem; }
+.m-flow__note  { top: 21.6rem; }
+
+/* --- 02 パターン背景を画面いっぱいに --- */
+.m-merit {
+  background: #fff url("../assets/mansion/bg_pattern.png") center top / cover no-repeat;
+}
+.m-merit::before {
+  content: ""; position: absolute; top: 0; bottom: 0;
+  left: 50%; width: 100vw; transform: translateX(-50%);
+  background: url("../assets/mansion/bg_pattern.png") center top / cover no-repeat;
+  z-index: -1;
+}
+.m-merit { background-image: none; }   /* 枠内の重複描画を止め、::before の画面幅だけに */
+
+/* --- 07 図の見出し：「導入後の運用も、まるごとお任せ。」級の大きさに --- */
+.m-support__hub-title { font-size: 2.35rem; line-height: 1.5; }
+/* 見出しが大きくなったぶん、下の帯と画像を再配置 */
+.m-support__issue--1 { top: 16.2rem; }
+.m-support__issue--2 { top: 26.41rem; }
+.m-support__issue--3 { top: 36.62rem; }
+.m-support__act--1 { top: 16.2rem; }
+.m-support__act--2 { top: 23.43rem; }
+.m-support__act--3 { top: 30.65rem; }
+.m-support__act--4 { top: 37.87rem; }
+.m-support__hub-img { top: 18.46rem; }
+.m-support__hub { height: 47.4rem; }
+.m-support { height: 75.8rem; }
+
+/* --- 07 中央画像：1410x1158の素材を29.36remに縮小＝くすみの原因 --- */
+/* 縮小時の補間品質を上げ、実寸に近い表示サイズへ広げる */
+.m-support__hub-img {
+  width: 31.5rem; height: 25.87rem;
+  left: 20.5rem;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* --- 07 相談バンドの下に余白 --- */
+.m-mgmt { height: 63.5rem; }
+/* M⑭微調整：右列下端を左列(44.86rem)に一致（箱7.2rem・間隔0.36rem） */
+.m-support .m-support__act { height: 7.2rem; }
+.m-support__act--2 { top: 23.76rem; }
+.m-support__act--3 { top: 31.32rem; }
+.m-support__act--4 { top: 38.88rem; }
+
+/* =====================================================================
+   2026-08-03 バッチM⑮（マンション）＝ 07 の見出し・間延び・メリット帯
+   ===================================================================== */
+/* --- 見出し：本体は黒、「困った」だけ青＋一回り大きく --- */
+.m-support__hub-title { color: #1A1A1A; }
+.m-support__hub-em    { color: #1A5FD0; font-size: 1.18em; }
+
+/* --- 見出しと図の間が間延び（見出し下端8.73rem→帯16.24rem＝7.5rem空き） --- */
+/* 見出しを少し下げ、帯・画像を引き上げて間隔を約2.6remに */
+.m-support__hub-title { top: 2.4rem; }
+.m-support__issue--1 { top: 12.6rem; }
+.m-support__issue--2 { top: 22.81rem; }
+.m-support__issue--3 { top: 33.02rem; }
+.m-support__act--1 { top: 12.6rem; }
+.m-support__act--2 { top: 20.16rem; }
+.m-support__act--3 { top: 27.72rem; }
+.m-support__act--4 { top: 35.28rem; }
+.m-support__hub-img { top: 14.86rem; }
+.m-support__hub { height: 43.8rem; }
+.m-support { height: 72.2rem; }
+
+/* --- 管理会社メリット帯：見出しを大きく、3カラムを下げる --- */
+.m-mgmt__band-title { font-size: 2.15rem; padding: 1.35rem 0 0; }
+.m-mgmt__items { margin-top: 2.6rem; }
+.m-mgmt__band { height: 28.2rem; }
+.m-mgmt__cta  { top: 55.4rem; }
+.m-mgmt { height: 66.3rem; }
+/* M⑮微調整：右列4段の下端を左列(41.26rem)に一致（箱6.88rem・間隔0.68rem） */
+.m-support .m-support__act { height: 6.88rem; }
+.m-support__act--2 { top: 20.16rem; }
+.m-support__act--3 { top: 27.72rem; }
+.m-support__act--4 { top: 35.28rem; }
+
+/* =====================================================================
+   2026-08-03 バッチM⑯（マンション）＝ 07 メリット帯を再度強調
+   ===================================================================== */
+/* 見出しをさらに拡大（25.8 → 31.2px）＋3カラムをさらに下へ */
+.m-mgmt__band-title { font-size: 2.6rem; padding: 1.7rem 0 0; }
+.m-mgmt__items { margin-top: 4.1rem; }
+.m-mgmt__band { height: 31.4rem; }
+.m-mgmt__cta  { top: 58.6rem; }
+.m-mgmt { height: 69.5rem; }
+/* M⑯追加：相談バンドの下の余白をさらに広げる（3.13 → 6.5rem） */
+.m-mgmt { height: 72.9rem; }

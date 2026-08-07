@@ -1,0 +1,1780 @@
+/* =====================================================================
+   施設ネット by スリム光｜マンションページ SP専用CSS（900px以下）
+   -----------------------------------------------------------------
+   ルール（2026-08-03 Toku確定）:
+   - PC版CSS（style.css / mansion.css）には一切触らない。上書きはこのファイル内だけで行う
+   - 文言はPC版が正。SPカンプ（390px幅）は見た目の正解として参照
+   - 単位は px 直（カンプpx = CSSpx）。html{font-size:75%}はPC専用ノブなので使わない
+   - コンテンツは max-width 480px で中央寄せ（タブレット幅でも破綻させない）
+   ===================================================================== */
+
+/* SP専用要素はPC幅では出さない */
+.sp-only,
+.sp-br,
+.sp-tel,
+.sp-menu,
+.sp-drawer { display: none; }
+
+@media (max-width: 900px) {
+
+  /* =====================  土台  ===================== */
+  .fv-page { max-width: none; }
+  .sp-only { display: revert; }
+  .sp-br { display: inline; }
+
+  /* PCの「懐ふくらませ」一括transform（罠リスト#1）をSPでは全解除。
+     高specificityの個別ルールも同specificityで打ち消す */
+  .m-worries > *, .m-merit > *, .m-price > *, .m-tech > *, .m-netsep > *,
+  .m-reason > *, .m-wiring > *, .m-design > *, .m-support > *, .m-mgmt > *,
+  .m-case > *, .m-flow > *, .m-faq > * { transform: none; }
+  .m-worries > .m-worries__tri { transform: translateX(-50%) rotate(180deg); }
+  .m-merit  > .m-merit__note   { transform: none; }
+  .m-price  > .m-price__note   { transform: none; }
+  .m-reason > .m-reason__pill  { transform: none; }
+  .m-price > .m-price__wave--top,
+  .m-price > .m-price__wave--btm { transform: none; }
+
+  /* 汎用：紺色のセクションラベルピル */
+  .sp-pill {
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 24px;
+    border-radius: 19px;
+    background: var(--m-blue, #0B54C7);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  /* PC専用の塊を隠す（セクションを組むたびにここへ追加） */
+  .mfv { display: none; }
+
+  /* =====================  ヘッダー  ===================== */
+  /* style.cssの1024px用指定より後に読むので、ここが勝つ */
+  .fv-header {
+    height: 80px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .fv-header__logo { position: static; flex: 0 0 auto; }
+  .fv-header__logo img { width: 158px; height: auto; }
+  .fv-header__contact { display: none; }
+  .fv-header__cta { display: none; }
+
+  .sp-tel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    height: 30px;
+    padding: 0 14px;
+    border-radius: 15px;
+    background: #0B3E96;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .sp-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  .sp-menu span {
+    display: block;
+    height: 3px;
+    background: #1A1A1A;
+    border-radius: 2px;
+  }
+
+  /* ドロワー（ハンバーガーで開閉） */
+  .sp-drawer {
+    display: block;
+    position: fixed;
+    top: 0; right: 0;
+    width: min(78vw, 320px);
+    height: 100dvh;
+    background: #fff;
+    box-shadow: -4px 0 24px rgba(0,0,0,.18);
+    padding: 72px 22px 24px;
+    transform: translateX(105%);
+    transition: transform .28s ease;
+    z-index: 60;
+  }
+  .sp-drawer.is-open { transform: translateX(0); }
+  .sp-drawer__close {
+    position: absolute;
+    top: 16px; right: 14px;
+    width: 40px; height: 40px;
+    border: none; background: transparent;
+    font-size: 26px; line-height: 1;
+    color: #1A1A1A; cursor: pointer;
+  }
+  .sp-drawer__link {
+    display: block;
+    padding: 14px 2px;
+    border-bottom: 1px solid #E3E9F2;
+    color: #1A1A1A;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .sp-drawer__tel {
+    display: block;
+    margin-top: 18px;
+    text-align: center;
+    color: #0B3E96;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+  .sp-drawer__hours {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    margin-top: 4px;
+  }
+  .sp-drawer__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 14px;
+    height: 48px;
+    border-radius: 24px;
+    background: #F88727;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  /* =====================  sp_m01  FV  ===================== */
+  .sp-mfv { display: block; background: #F7F7F7; }
+
+  .sp-mfv__blue {
+    background: #005ED1;
+    padding: 20px 24px 0;
+  }
+  .sp-mfv__blue-in {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .sp-mfv__headline {
+    color: #fff;
+    font-weight: 900;
+    line-height: 1.3;
+  }
+  /* 2026-08-05 Toku指示「左に寄って右が空いている」→ カンプ実測（390幅）に合わせて拡大。
+     accent帯=幅350px/文字40px・main=幅292px/文字30px・リード=文字19px/行送り24px */
+  .sp-mfv__headline-accent {
+    display: block;
+    background: #F88727;
+    padding: 6px 10px;
+    font-size: 39px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+  .sp-mfv__headline-main {
+    display: block;
+    margin-top: 9px;
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+
+  .sp-mfv__lead {
+    display: flex;
+    align-items: center;
+    gap: 5px;   /* 素材右側に21pxの余白が入っているので、実効の間隔は26px */
+    margin-top: 20px;
+    color: #fff;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.26;
+  }
+  /* 60px角の素材。中身（建物線画）は39×52でカンプ実寸と一致する */
+  .sp-mfv__lead-icon { width: 60px; height: 60px; flex: 0 0 auto; }
+
+  .sp-mfv__illust {
+    display: block;
+    width: calc(100% + 48px);
+    margin: 8px -24px 0;
+    max-width: none;
+  }
+  @media (min-width: 529px) {
+    /* 480px上限のとき、はみ出し分を中央に収める */
+    .sp-mfv__illust { width: 100%; margin: 8px 0 0; }
+  }
+
+  /* 下エリア：CTA〜カード。青の斜め境界（カンプ実測：右端y535→左端y880）が
+     ここ全体を貫く。イラスト画像の右下にも同じ斜めの始まりが焼き込まれている */
+  .sp-mfv__lower {
+    position: relative;
+    /* 上25px＝カンプy535-560のぶん。CTAのmargin-topにするとマージン相殺で
+       セクション外に漏れて灰色の帯が出る（罠#2）→ paddingで確保 */
+    padding: 25px 0 6px;
+  }
+  .sp-mfv__lower::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #005ED1;
+    /* 右上角→左下角の斜線（イラスト側の焼き込みは除去済みなので、どの幅でも整合する） */
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+  .sp-mfv__lower-in {
+    position: relative;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 14px;
+  }
+
+  .sp-mfv__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 50px;
+    border-radius: 25px;
+    margin: 0 10px;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+  .sp-mfv__cta--white { margin-top: 19px; }
+  .sp-mfv__cta--orange {
+    background: #F88727;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  .sp-mfv__cta--white {
+    background: #fff;
+    color: #0B3E96;
+  }
+  .sp-mfv__cta-arrow {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    width: 9px; height: 9px;
+    border-top: 3px solid currentColor;
+    border-right: 3px solid currentColor;
+    transform: translateY(-50%) rotate(45deg);
+    border-radius: 1px;
+  }
+
+  .sp-mfv__cards {
+    position: relative;
+    display: flex;
+    gap: 7px;
+    margin-top: 20px;
+  }
+  .sp-mfv__cards li {
+    flex: 1 1 0;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(10,40,90,.10);
+    padding: 8px 7px 12px;
+    text-align: center;
+  }
+  /* 2026-08-05 素材を切り直し（旧sp_card_ic*.pngは円の下端が切れていた）。
+     _v2は62px角＝円60px＋余白1pxなので、幅も58→62に上げる */
+  .sp-mfv__card-icon { display: block; width: 62px; height: auto; margin: 0 auto; }
+  .sp-mfv__card-title {
+    margin-top: 4px;
+    color: #1A5FD0;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.3;
+  }
+  .sp-mfv__card-text {
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.55;
+    color: #1A1A1A;
+    text-align: center;
+  }
+
+  /* =====================  sp_m02  お悩み  ===================== */
+  .m-worries {
+    height: auto;
+    background-image: none;
+    background: #E8F0FD;
+    padding: 30px 20px 36px;
+  }
+  .m-worries__title-wrap { margin-top: 0; }
+  .m-worries__title {
+    width: auto;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 24px;
+    border-radius: 19px;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  .m-worries__tri {
+    top: 36px;
+    width: 18px;
+    height: 15px;
+  }
+  .m-worries__headline {
+    margin-top: 22px;
+    font-size: 25px;
+    line-height: 1.6;
+    white-space: normal;
+  }
+  .m-worries__ul { text-decoration-thickness: 5px; }
+  .m-worries__sub {
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+  }
+  .m-worries__sub br { display: none; }  /* PCの改行位置はSPに合わないので自然折返し */
+  .m-worries__card { display: none; }
+
+  .sp-worries {
+    max-width: 480px;
+    margin: 20px auto 0;
+    text-align: left;
+  }
+  .sp-worries li {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px 12px 12px 8px;
+    box-shadow: 0 2px 10px rgba(10, 40, 90, .06);
+  }
+  .sp-worries li + li { margin-top: 16px; }
+  .sp-worries__num {
+    flex: none;
+    width: 44px;
+    text-align: center;
+    font-family: "DIN Condensed", "Arial Narrow", var(--font-din);
+    font-weight: 700;
+    font-size: 34px;
+    color: #F5821F;
+  }
+  /* 2026-08-05 アイコン素材を丸ごと切り直し（_v2）。丸の直径を揃えて余白付きの
+     正方形に正規化してあるので、幅はキャンバスサイズをそのまま指定する */
+  .sp-worries__icon { flex: none; width: 52px; }
+  .sp-worries__icon img { width: 100%; height: auto; }
+  .sp-worries__body { flex: 1; min-width: 0; padding-left: 10px; display: block; }
+  .sp-worries__ttl {
+    display: block;
+    color: #005ED1;
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.3;
+  }
+  .sp-worries__txt {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #1A1A1A;
+  }
+  .sp-worries__chev {
+    flex: none;
+    position: relative;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #005ED1;
+  }
+  .sp-worries__chev::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    border-top: 2.5px solid #fff;
+    border-right: 2.5px solid #fff;
+    transform: translate(-65%, -50%) rotate(45deg);
+  }
+
+  /* =====================  sp_m03  メリット  ===================== */
+  .m-merit {
+    height: auto;
+    background: #E5EFFD;
+    padding: 28px 20px 36px;
+    text-align: center;
+  }
+  .m-merit::before,
+  .m-merit__bgwrap,
+  .m-merit__bgdot,
+  .m-merit__label,
+  .m-merit__lead,
+  .m-merit__card,
+  .m-merit__center-img,
+  .m-merit__note { display: none; }
+  .m-merit__header { position: static; width: auto; }
+  .m-merit__headline {
+    position: static;           /* PCは絶対配置なので必ず戻す */
+    margin-top: 22px;
+    font-size: 25px;
+    line-height: 1.55;
+    white-space: normal;
+    text-align: center;
+  }
+  .m-merit__headline-big {
+    font-size: 1.1em;           /* SPカンプ：価値はオレンジ文字・下線なし */
+    color: #F5821F;
+    text-decoration: none;
+  }
+  .sp-hl-blue { color: #005ED1; }
+
+  .sp-merit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    max-width: 480px;
+    margin: 24px auto 0;
+  }
+  .sp-merit li {
+    background: #fff;
+    border: 2px solid #005ED1;
+    border-radius: 10px;
+    padding: 14px 10px 16px;
+    text-align: center;
+  }
+  .sp-merit__icon { width: 106px; height: auto; margin: 0 auto; }
+  .sp-merit__ttl {
+    margin-top: 8px;
+    color: #005ED1;
+    font-size: 17px;
+    font-weight: 900;
+    line-height: 1.35;
+  }
+  .sp-merit__txt {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #1A1A1A;
+  }
+
+  /* SPでだけ隠す（PC文の後半行など） */
+  .sp-hide { display: none; }
+
+  /* =====================  sp_m04  料金の目安  ===================== */
+  .m-price {
+    height: auto;
+    overflow: visible;
+    padding: 26px 20px 30px;
+    text-align: center;
+  }
+  .m-price__wave, .m-price__deco { display: none; }
+  .m-price__pill {
+    position: static;
+    display: inline-block;
+    width: auto;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 24px;
+    border-radius: 19px;
+    font-size: 15px;
+  }
+  .m-price__headline {
+    position: static;
+    margin-top: 18px;
+    font-size: 24px;
+    line-height: 1.55;
+    white-space: normal;
+  }
+  .m-price__lead {
+    position: static;
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 1.8;
+    white-space: normal;
+    text-align: left;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 月額・初期費用カード：左に青パネル＋右に金額 */
+  /* ⚠️ position:relative にするとPCの left/top がオフセットとして効く → 必ず auto に戻す */
+  .m-price__card { position: static; width: auto; height: auto; left: auto; top: auto; }
+  /* PCに .m-price .m-price__card { height:28.4rem }（0-2-0）があるため同格で打ち消す */
+  .m-price .m-price__card { width: auto; height: auto; }
+  .m-price__card--monthly,
+  .m-price__card--initial {
+    position: relative;
+    left: auto; top: auto;
+    width: auto; height: auto;
+    max-width: 480px;
+    min-height: 116px;
+    margin: 16px auto 0;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(10, 40, 90, .10);
+    padding: 14px 14px 12px 128px;
+    text-align: left;
+  }
+  .m-price__card--initial { margin-top: 14px; }
+  .m-price__card--monthly::before,
+  .m-price__card--initial::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 112px;
+    background: #0455C3;
+    border-radius: 10px 0 0 10px;
+  }
+  .m-price__card-icon {
+    position: absolute;
+    left: 28px; top: 14px;
+    width: 56px; height: auto;
+  }
+  .m-price__card-head {
+    position: absolute;
+    left: 0; top: auto; bottom: 12px;
+    width: 112px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .m-price__unit-pill {
+    position: static;
+    display: inline-block;
+    width: auto; height: auto;
+    transform: none;
+    background: #E9EEF5;
+    color: #14385F;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 5px 12px;
+    border-radius: 3px;
+  }
+  .m-price__amount {
+    position: static;
+    width: auto; height: auto;      /* PCは height:0 の座標原点なので必ず戻す */
+    margin: 6px 0 0;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    white-space: nowrap;
+  }
+  .m-price__amount-label,
+  .m-price__amount-num,
+  .m-price__amount-yen { position: static; left: auto; top: auto; }
+  .m-price__amount-label { font-size: 15px; }
+  .m-price__amount-num { font-size: 34px; }
+  .m-price__amount-yen { font-size: 15px; font-weight: 700; color: #F5821F; }
+  .m-price__card-divider { display: none; }
+  .m-price .m-price__card-note {     /* PCに0-2-0のtop指定があるため同格で */
+    position: static;
+    top: auto;
+    margin-top: 6px;
+    font-size: 11px;
+    color: #555;
+  }
+  .m-price__band-btn-arrow { position: static; margin-left: 6px; }
+
+  /* 要因カード：3カラム＋説明文（SP専用） */
+  .m-price__card--factor {
+    position: relative;
+    max-width: 480px;
+    margin: 22px auto 0;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(10, 40, 90, .10);
+    padding: 18px 12px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 12px;
+  }
+  .m-price__card--factor .m-price__card-head {
+    position: static;
+    grid-column: 1 / -1;
+    width: auto;
+    justify-self: center;
+    background: var(--m-blue, #0B54C7);
+    color: #fff;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 24px;
+    border-radius: 18px;
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  .m-price__factor-divider { display: none; }
+  .m-price__card--factor::before,
+  .m-price__card--factor::after {
+    content: "";
+    position: absolute;
+    top: 78px; bottom: 20px;
+    border-left: 1.5px dashed #9DBBE8;
+  }
+  .m-price__card--factor::before { left: 33.3%; }
+  .m-price__card--factor::after  { left: 66.6%; }
+  .m-price__factor-icon {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .m-price__factor-icon--1 { grid-column: 1; grid-row: 2; }
+  .m-price__factor-icon--2 { grid-column: 2; grid-row: 2; }
+  .m-price__factor-icon--3 { grid-column: 3; grid-row: 2; }
+  .m-price__factor-icon img { width: 46px; height: auto; }
+  .m-price__factor-label {
+    position: static;
+    color: #0455C3;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-top: 8px;
+  }
+  .m-price__factor-label--1 { grid-column: 1; grid-row: 3; }
+  .m-price__factor-label--2 { grid-column: 2; grid-row: 3; }
+  .m-price__factor-label--3 { grid-column: 3; grid-row: 3; }
+  .sp-factor-txt {
+    font-size: 11.5px;
+    line-height: 1.65;
+    text-align: left;
+    margin-top: 8px;
+    color: #1A1A1A;
+  }
+  .sp-factor-txt--1 { grid-column: 1; grid-row: 4; }
+  .sp-factor-txt--2 { grid-column: 2; grid-row: 4; }
+  .sp-factor-txt--3 { grid-column: 3; grid-row: 4; }
+
+  /* 相談帯（PCバッチでflex化されているのでblockに戻す） */
+  .m-price__band {
+    position: relative;
+    display: block;
+    left: auto; top: auto;
+    width: auto; height: auto;
+    max-width: 480px;
+    margin: 18px auto 0;
+    background: #EAF2FD;
+    border-radius: 10px;
+    padding: 16px 14px 16px 76px;
+    text-align: left;
+  }
+  .m-price__band-tx { display: block; }
+  .m-price__band-icon {
+    position: absolute;
+    left: 16px; top: 20px;
+    width: 48px; height: auto;
+  }
+  .m-price__band-heading {
+    position: static;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.65;
+  }
+  .m-price__band-list, .m-price__band-note { display: none; }
+  .m-price__band-btn {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 210px;
+    height: 40px;
+    margin: 12px auto 0;
+    background: #F5821F;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .m-price__note {
+    position: static;
+    width: auto;
+    margin: 16px auto 0;
+    font-size: 10.5px;
+    color: #777;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* =====================  sp_m05  技術訴求  ===================== */
+  .m-tech { width: 100%; margin-left: 0; height: auto; }
+  .m-tech__in {
+    width: auto;
+    height: auto;
+    padding: 24px 20px 28px;
+  }
+  .m-tech__bg, .m-tech__panel, .m-tech__pill,
+  .m-tech__lead, .m-tech__card, .m-tech__divider { display: none; }
+  .sp-tech-logo { text-align: center; }
+  .sp-tech-logo img {
+    display: inline-block;
+    width: 210px;
+    background: #fff;
+    border-radius: 26px;
+    padding: 10px 20px;
+  }
+  .m-tech__headline {
+    position: static;
+    margin-top: 18px;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1.5;
+    white-space: normal;
+    text-align: center;
+  }
+  .m-tech__ul {
+    color: #F5821F;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+  .sp-tech-lead {
+    margin-top: 12px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.75;
+    text-align: center;
+  }
+  .sp-tech-values {
+    display: flex;
+    max-width: 480px;
+    margin: 22px auto 0;
+  }
+  .sp-tech-values li {
+    flex: 1 1 0;
+    text-align: center;
+    padding: 0 6px;
+  }
+  .sp-tech-values li + li { border-left: 1px solid rgba(255,255,255,.4); }
+  .sp-tech-values img {
+    width: 74px; height: auto;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  .sp-tech-v {
+    margin-top: 12px;
+    color: #fff;
+    font-weight: 900;
+    line-height: 1.3;
+  }
+  .sp-tech-v span { display: block; }
+  .sp-tech-v-s { font-size: 14px; }
+  .sp-tech-v-num {
+    font-family: var(--font-din);
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.15;
+  }
+  .sp-tech-v-num--sm { font-size: 32px; }
+  .sp-tech-v-num small {
+    font-size: 15px;
+    font-weight: 900;
+    font-family: var(--font-jp);
+  }
+  .sp-tech-v-or { color: #F5821F; font-size: 15px; margin-top: 2px; }
+  .sp-tech-note {
+    max-width: 480px;
+    margin: 24px auto 0;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 8px;
+    color: #0B3E96;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .sp-tech-note-check { margin-right: 4px; }
+
+  /* =====================  sp_m06  ネットワーク分離  ===================== */
+  .m-netsep {
+    height: auto;
+    overflow: visible;
+    padding: 26px 20px 30px;
+    text-align: center;
+    background: #F1F6FC;
+    box-shadow: 0 0 0 100vmax #F1F6FC;
+  }
+  .m-netsep__dots, .m-netsep__pill,
+  .m-netsep__lead, .m-netsep__diagram { display: none; }
+  .m-netsep__headline {
+    position: static;
+    margin-top: 18px;
+    font-size: 25px;
+    line-height: 1.5;
+    white-space: normal;
+  }
+  .m-netsep__hl-big {
+    font-size: 1.1em;
+    text-decoration: none;
+  }
+  .sp-hl-orange { color: #F5821F; }
+  .sp-netsep-lead {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.7;
+  }
+  .sp-netsep-diagram {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: 8px auto 0;
+  }
+  .sp-netsep-cards {
+    display: flex;
+    gap: 8px;
+    max-width: 480px;
+    margin: 4px auto 0;
+  }
+  .sp-netsep-cards li {
+    flex: 1 1 0;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 8px 14px;
+    box-shadow: 0 2px 8px rgba(10, 40, 90, .06);
+  }
+  .sp-netsep-cards img { width: 56px; height: auto; margin: 0 auto; }
+  .sp-netsep-ttl {
+    margin-top: 6px;
+    color: #0455C3;
+    font-size: 14.5px;
+    font-weight: 900;
+  }
+  .sp-netsep-txt {
+    margin-top: 6px;
+    font-size: 11px;
+    line-height: 1.6;
+    text-align: left;
+    color: #1A1A1A;
+  }
+  .sp-netsep-note {
+    margin-top: 14px;
+    font-size: 11px;
+    color: #333;
+  }
+
+  /* =====================  sp_m07  分離の理由  ===================== */
+  .m-reason {
+    height: auto;
+    overflow: visible;
+    padding: 26px 20px 30px;
+    text-align: center;
+  }
+  .m-reason__pill, .m-reason__lead,
+  .m-reason__cards, .m-reason__band { display: none; }
+  .m-reason__headline {
+    position: static;
+    margin-top: 18px;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1.5;
+    white-space: normal;
+  }
+  .sp-reason-lead {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.7;
+  }
+  .sp-reason-cards {
+    max-width: 480px;
+    margin: 18px auto 0;
+    text-align: left;
+  }
+  .sp-reason-cards li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 2px solid #0455C3;
+    border-radius: 12px;
+    padding: 16px 14px;
+  }
+  .sp-reason-cards li + li { margin-top: 16px; }
+  .sp-reason-icon { flex: none; width: 64px; height: auto; }
+  .sp-reason-ttl {
+    font-size: 16px;
+    font-weight: 900;
+    color: #1A1A1A;
+    line-height: 1.4;
+  }
+  .sp-reason-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: #0455C3;
+    color: #fff;
+    font-family: var(--font-din);
+    font-size: 13px;
+    vertical-align: 2px;
+  }
+  .sp-reason-txt { margin-top: 6px; font-size: 13px; line-height: 1.65; }
+  .sp-reason-band {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 480px;
+    margin: 18px auto 0;
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-shadow: 0 2px 8px rgba(10, 40, 90, .06);
+    text-align: left;
+    font-size: 13.5px;
+    font-weight: 700;
+    line-height: 1.6;
+  }
+  .sp-reason-band img { flex: none; width: 56px; height: auto; }
+
+  /* =====================  sp_m08  配線から設計  ===================== */
+  .m-wiring {
+    height: auto;
+    overflow: visible;
+    padding: 26px 20px 30px;
+    text-align: center;
+    background: #FCFCFD;
+    box-shadow: 0 0 0 100vmax #FCFCFD;
+  }
+  .m-wiring__diagram, .m-wiring__pill,
+  .m-wiring__lead, .m-wiring__card { display: none; }
+  .m-wiring__headline {
+    position: static;
+    margin-top: 18px;
+    font-size: 25px;
+    line-height: 1.5;
+    white-space: normal;
+  }
+  .m-wiring__hl-big { font-size: 1.1em; text-decoration: none; }
+  .sp-wiring-bldg {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: 12px auto 0;
+  }
+  .sp-wiring-cards {
+    max-width: 480px;
+    margin: 14px auto 0;
+    text-align: left;
+  }
+  .sp-wiring-cards li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 2px 10px rgba(10, 40, 90, .08);
+  }
+  .sp-wiring-cards li + li { margin-top: 14px; }
+  .sp-wiring-icon { flex: none; width: 64px; height: auto; }
+  .sp-wiring-body { flex: 1; min-width: 0; }
+  .sp-wiring-ttl { color: #0455C3; font-size: 16px; font-weight: 900; }
+  .sp-wiring-txt { margin-top: 5px; font-size: 12.5px; line-height: 1.65; }
+  .sp-wiring-chev {
+    flex: none;
+    width: 10px; height: 10px;
+    border-top: 3px solid #F5821F;
+    border-right: 3px solid #F5821F;
+    border-radius: 1px;
+    transform: rotate(45deg);
+  }
+
+  /* =====================  sp_m09  設計のポイント  ===================== */
+  .m-design {
+    height: auto;
+    overflow: visible;
+    padding: 26px 20px 30px;
+    text-align: center;
+  }
+  .m-design__pill, .m-design__lead,
+  .m-design__cards, .m-design__band { display: none; }
+  .m-design__headline {
+    position: static;
+    margin-top: 4px;
+    font-size: 25px;
+    line-height: 1.5;
+    white-space: normal;
+  }
+  .m-design__hl-big { font-size: 1.05em; text-decoration: none; }
+  .sp-design-lead {
+    max-width: 480px;
+    margin: 12px auto 0;
+    font-size: 13.5px;
+    line-height: 1.8;
+    text-align: left;
+  }
+  .sp-design-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 480px;
+    margin: 18px auto 0;
+  }
+  .sp-design-cards li {
+    background: #fff;
+    border-radius: 10px;
+    padding: 16px 10px;
+    box-shadow: 0 2px 10px rgba(10, 40, 90, .08);
+  }
+  .sp-design-icon { width: 74px; height: auto; margin: 0 auto; }
+  .sp-design-ttl {
+    display: inline-block;
+    margin-top: 10px;
+    color: #0455C3;
+    font-size: 16px;
+    font-weight: 900;
+    padding-bottom: 6px;
+    border-bottom: 2px dotted #F5A623;
+  }
+  .sp-design-txt {
+    margin-top: 8px;
+    font-size: 12.5px;
+    line-height: 1.65;
+    text-align: left;
+  }
+  .sp-design-band {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 480px;
+    margin: 20px auto 0;
+    background: #EAF2FD;
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.7;
+  }
+  .sp-design-band img { flex: none; width: 64px; height: auto; }
+
+  /* =====================  sp_m10  運用サポート  ===================== */
+  .m-support {
+    height: auto;
+    overflow: visible;
+    padding: 26px 20px 30px;
+    text-align: center;
+  }
+  .m-support__deco, .m-support__pill,
+  .m-support__headline, .m-support__lead, .m-support__hub { display: none; }
+  .m-support__header { position: static; left: auto; top: auto; width: auto; }
+  .sp-support-headline {
+    margin-top: 18px;
+    font-size: 25px;
+    font-weight: 900;
+    line-height: 1.5;
+    color: #1B2A4A;
+  }
+  .sp-support-lead { margin-top: 12px; font-size: 14px; font-weight: 700; line-height: 1.7; }
+  .sp-sup-circle { display: block; width: 100%; max-width: 480px; margin: 10px auto 0; }
+  .sp-sup-cards { display: flex; gap: 10px; max-width: 480px; margin: 8px auto 0; }
+  .sp-sup-cards li {
+    flex: 1 1 0;
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px 8px 14px;
+    box-shadow: 0 2px 8px rgba(10, 40, 90, .06);
+  }
+  .sp-sup-icon { width: 72px; height: auto; margin: 0 auto; }
+  .sp-sup-ttl { margin-top: 8px; font-size: 13px; font-weight: 900; color: #1A1A1A; }
+  .sp-sup-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px; height: 18px;
+    margin-right: 4px;
+    border-radius: 50%;
+    background: #0455C3;
+    color: #fff;
+    font-size: 11px;
+    vertical-align: 1px;
+  }
+  .sp-sup-txt { margin-top: 6px; font-size: 11px; line-height: 1.6; text-align: left; }
+  .sp-sup-band {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 480px;
+    margin: 18px auto 0;
+    background: #EAF2FD;
+    border: 2px solid #0455C3;
+    border-radius: 10px;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .sp-sup-band img { flex: none; width: 40px; height: auto; }
+  .sp-sup-band-ttl { color: #0455C3; font-size: 14px; font-weight: 900; }
+
+  /* =====================  sp_m11  管理負担軽減  ===================== */
+  .m-mgmt {
+    height: auto;
+    overflow: visible;
+    padding: 26px 20px 30px;
+    text-align: center;
+  }
+  .m-mgmt__pill, .m-mgmt__lead,
+  .m-mgmt__effect, .m-mgmt__band, .m-mgmt__cta { display: none; }
+  .m-mgmt__header { position: static; left: auto; top: auto; width: auto; }
+  .m-mgmt__headline {
+    position: static;
+    margin-top: 18px;
+    font-size: 25px;
+    line-height: 1.5;
+    white-space: normal;
+  }
+  .sp-mgmt-lead { margin-top: 12px; font-size: 14px; font-weight: 700; line-height: 1.7; }
+  .sp-mgmt-illust { display: block; width: 100%; max-width: 480px; margin: 12px auto 0; }
+  .sp-mgmt-cards { max-width: 480px; margin: 14px auto 0; text-align: left; }
+  .sp-mgmt-cards li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 2px solid #0455C3;
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .sp-mgmt-cards li + li { margin-top: 14px; }
+  .sp-mgmt-icon { flex: none; width: 66px; height: auto; }
+  .sp-mgmt-body { flex: 1; min-width: 0; }
+  .sp-mgmt-ttl { color: #0455C3; font-size: 16px; font-weight: 900; }
+  .sp-mgmt-txt { margin-top: 5px; font-size: 12.5px; line-height: 1.65; }
+  .sp-mgmt-chev {
+    flex: none;
+    width: 10px; height: 10px;
+    border-top: 3px solid #0455C3;
+    border-right: 3px solid #0455C3;
+    border-radius: 1px;
+    transform: rotate(45deg);
+  }
+
+  /* =====================  sp_m12  導入イメージ  ===================== */
+  .m-case { width: 100%; margin-left: 0; height: auto; }
+  .m-case__in { position: static; width: auto; height: auto; padding: 0 0 26px; }
+  .m-case__header {
+    position: static;
+    width: auto;
+    padding: 24px 20px 0;
+    text-align: center;
+  }
+  .m-case__pill {
+    position: static;
+    display: inline-block;
+    width: auto;
+    height: 38px;
+    line-height: 34px;
+    padding: 0 24px;
+    border-radius: 19px;
+    background: var(--m-blue, #0B54C7);
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .m-case__headline {
+    position: static;
+    margin-top: 14px;
+    /* SPのm-case背景は淡いグラデ（#E7F0FB→#F7FAFE）。白文字だと読めない */
+    color: #1B2A4A;
+    font-size: 24px;
+    line-height: 1.5;
+    white-space: normal;
+    text-align: center;
+  }
+  .m-case__lead, .m-case__cards, .m-case__note { display: none; }
+  .sp-case-cards { max-width: 508px; margin: 18px auto 0; padding: 0 14px; text-align: left; }
+  .sp-case-cards li {
+    background: #fff;
+    border: 2px solid #0455C3;
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .sp-case-cards li + li { margin-top: 16px; }
+  .sp-case-head { display: flex; align-items: center; gap: 10px; }
+  .sp-case-ttl { flex: 1; font-size: 19px; font-weight: 900; color: #1B2A4A; line-height: 1.4; }
+  .sp-case-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px; height: 34px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: #F5821F;
+    color: #fff;
+    font-family: var(--font-din);
+    font-size: 17px;
+    vertical-align: middle;
+  }
+  .sp-case-img { flex: none; width: 52%; max-width: 170px; border-radius: 8px; }
+  .sp-case-txt { margin-top: 10px; font-size: 13px; line-height: 1.7; }
+  .sp-case-chips { display: block; width: 100%; margin-top: 10px; }
+  .sp-case-note {
+    max-width: 480px;
+    margin: 16px auto 0;
+    padding: 10px 14px;
+    background: #EAF2FD;
+    font-size: 11px;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  /* =====================  sp_m13  導入フロー  ===================== */
+  .m-flow {
+    height: auto;
+    overflow: visible;
+    padding: 26px 20px 30px;
+    text-align: center;
+  }
+  .m-flow__illust, .m-flow__pill, .m-flow__lead,
+  .m-flow__panel, .m-flow__cta { display: none; }
+  .m-flow__header { position: static; left: auto; top: auto; width: auto; }
+  .m-flow__headline {
+    position: static;
+    font-size: 22px;
+    line-height: 1.5;
+    white-space: normal;
+  }
+  .m-flow__hl { font-size: 1.15em; }
+  .m-flow__hl-sm { font-size: 1em; }
+  .sp-flow-lead { margin-top: 12px; font-size: 14px; font-weight: 700; line-height: 1.7; }
+  .sp-flow-steps { max-width: 480px; margin: 16px auto 0; text-align: left; }
+  .sp-flow-steps li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1.5px solid #C9DCF5;
+    border-radius: 12px;
+    padding: 14px 12px;
+  }
+  .sp-flow-steps li + li { margin-top: 18px; }
+  .sp-flow-steps li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 33px;
+    top: calc(100% + 1px);
+    height: 17px;
+    border-left: 2px dashed #0455C3;
+  }
+  .sp-flow-badge {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: #0455C3;
+    color: #fff;
+    font-family: var(--font-din);
+    font-size: 19px;
+    line-height: 1;
+  }
+  .sp-flow-badge small {
+    font-size: 8px;
+    font-family: var(--font-jp);
+    font-weight: 700;
+    letter-spacing: .5px;
+    margin-bottom: 1px;
+  }
+  .sp-flow-icon { flex: none; width: 44px; height: auto; }
+  .sp-flow-body { flex: 1; min-width: 0; }
+  .sp-flow-ttl { color: #0455C3; font-size: 16px; font-weight: 900; }
+  .sp-flow-txt { margin-top: 4px; font-size: 12.5px; line-height: 1.6; }
+  .sp-flow-band {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 480px;
+    margin: 18px auto 0;
+    background: #EAF2FD;
+    border-radius: 10px;
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.7;
+  }
+  .sp-flow-band img { flex: none; width: 44px; height: auto; }
+
+  /* =====================  sp_m14  FAQ  ===================== */
+  .m-faq {
+    height: auto;
+    padding: 26px 20px 30px;
+    text-align: center;
+  }
+  .m-faq__pill {
+    position: static;
+    display: inline-block;
+    width: auto;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 24px;
+    border-radius: 19px;
+    font-size: 15px;
+  }
+  .m-faq__headline {
+    position: static;
+    margin-top: 16px;
+    font-size: 25px;
+    line-height: 1.5;
+    white-space: normal;
+  }
+  .m-faq__lead { display: none; }
+  .m-faq__ul { color: #F5821F; text-decoration: none; }
+  /* Q番号はSPの4問構成に合わせて連番を振り直す（display:noneの項目はカウントされない） */
+  .m-faq__list { counter-reset: spfaq; }
+  .m-faq__item { counter-increment: spfaq; }
+  .m-faq__q { position: relative; }
+  .m-faq__q i { display: none; }
+  .m-faq__q::after {
+    content: "Q" counter(spfaq);
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    font-style: normal;
+  }
+  .sp-faq-lead { margin-top: 12px; font-size: 13.5px; line-height: 1.8; }
+  .m-faq__list {
+    position: static;
+    width: auto;
+    max-width: 480px;
+    margin: 16px auto 0;
+    text-align: left;
+  }
+  .m-faq__item { position: static; width: auto; margin: 12px 0 0; }
+  /* 2026-08-04 Toku指示「PC準拠」により全8問を表示に戻した
+     （SPカンプは4問だったが、カンプ側の省略と判断） */
+  .m-faq__acc {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(10, 40, 90, .06);
+  }
+  .m-faq__acc summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: auto;
+    padding: 12px 14px;
+  }
+  .m-faq__q { position: static; width: 30px; height: 30px; flex: none; }
+  .m-faq__q img { width: 30px; height: 30px; }
+  .m-faq__question {
+    position: static;
+    flex: 1;
+    min-width: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    white-space: normal;
+  }
+  .m-faq__chev { position: static; flex: none; width: 14px; height: auto; margin-left: auto; }
+  .m-faq__a { padding: 0 14px 12px; font-size: 13px; line-height: 1.7; }
+  .m-faq__cta { display: none; }
+  .sp-faq-note {
+    max-width: 480px;
+    margin: 14px auto 0;
+    background: #EEF1F6;
+    padding: 10px;
+    font-size: 11.5px;
+    line-height: 1.7;
+  }
+  .sp-faq-cta {
+    position: relative;
+    max-width: 480px;
+    margin: 20px auto 0;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(10, 40, 90, .08);
+    padding: 16px 14px 18px 96px;
+    text-align: left;
+  }
+  .sp-faq-cta-icon { position: absolute; left: 16px; top: 20px; width: 64px; }
+  .sp-faq-cta-ttl { color: #0455C3; font-size: 16px; font-weight: 900; }
+  .sp-faq-cta-txt { margin-top: 6px; font-size: 12px; line-height: 1.65; }
+  .sp-faq-cta-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 40px;
+    margin-top: 14px;
+    left: 50%;
+    transform: translateX(calc(-50% - 41px));
+    background: #F5821F;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* =====================  sp_m15  最終CTA・フッター  ===================== */
+  .m-footer { background: #fff; }
+  .m-footer__hero {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 20px 14px 0;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 22px 18px 0;
+    box-shadow: none;
+    clip-path: none;
+    text-align: center;
+  }
+  .m-footer__bg {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .m-footer__toppill, .m-footer__lead, .m-footer__mainbtn,
+  .m-footer__telrow, .m-footer__ok, .m-footer__trust, .m-footer__ctas { display: none; }
+  .sp-ft-bldg { position: relative; display: block; width: 76px; height: auto; margin: 0 auto; }
+  .m-footer__headline {
+    position: relative;
+    left: auto; top: auto;
+    margin-top: 14px;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1.5;
+    white-space: normal;
+  }
+  .m-footer__hl-big { font-size: 1.05em; text-decoration: none; }
+  .sp-ft-lead { position: relative; margin-top: 10px; color: #fff; font-size: 13.5px; line-height: 1.75; }
+  .sp-ft-tel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    max-width: 480px;
+    margin: 14px auto 0;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 12px;
+  }
+  .sp-ft-tel-icon {
+    flex: none;
+    width: 36px; height: 36px;
+    background: url("../assets/mansion/ft_phone_icon.png") center / contain no-repeat;
+  }
+  .sp-ft-tel-num {
+    display: block;
+    color: #0455C3;
+    font-family: var(--font-din);
+    font-weight: 700;
+    font-size: 27px;
+    letter-spacing: 1px;
+    line-height: 1.1;
+  }
+  .sp-ft-tel-hours { margin-top: 2px; font-size: 11px; color: #333; text-align: left; }
+  .sp-ft-tel-hours strong { font-size: 13px; }
+  .sp-ft-cta {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    max-width: 480px;
+    margin: 14px auto 0;
+    border-radius: 24px;
+    font-size: 15.5px;
+    font-weight: 900;
+    color: #fff;
+  }
+  .sp-ft-cta--orange { background: #F5821F; border: 2px solid #fff; }
+  .sp-ft-cta--navy { background: #0B3E96; border: 2px solid #fff; }
+  .sp-ft-trust {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    max-width: 480px;
+    margin: 16px auto 0;
+    border: 1px solid rgba(255, 255, 255, .55);
+    background: rgba(255, 255, 255, .55);
+  }
+  .sp-ft-trust li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(6, 40, 110, .88);
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 10px;
+  }
+  .sp-ft-trust li img { width: 20px; height: auto; }
+  .sp-ft-band {
+    position: relative;
+    margin: 16px -18px 0;
+    padding: 9px 0 11px;
+    background: rgba(255, 255, 255, .18);
+    color: #fff;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .m-footer__copy {
+    position: static;
+    height: auto;
+    padding: 14px 0 16px;
+    text-align: center;
+  }
+  .m-footer__copy p { position: static; font-size: 10px; }
+
+
+  /* =====================================================================
+     2026-08-05 口頭ラリー修正（マンション01〜15）
+     後勝ちで上書きするブロック。必ずメディアクエリ内の末尾に置くこと
+     ===================================================================== */
+
+  /* m02 / m08：リンクが無い矢印ボタンは出さない */
+  .sp-worries__chev,
+  .sp-wiring-chev { display: none; }
+
+  /* m04：リード文を中央揃えに */
+  .m-price__lead { text-align: center; }
+
+  /* m04：カードのアイコンを白の線画に差し替え。
+     元素材は淡い青の丸を含んでいて、それが濃い青のパネルからはみ出していた */
+  .m-price__card-icon { display: none; }
+  .sp-price-icon {
+    position: absolute;
+    left: 0; top: 15px;
+    width: 112px;          /* 濃い青パネルと同じ幅。中身は contain で内側に収める */
+    height: 46px;
+    object-fit: contain;
+  }
+
+  /* m04：3カラムを均等・中央揃えに（3列目が長く、右へはみ出して点線と重なっていた） */
+  .m-price__card--factor {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 18px 10px 20px;
+    column-gap: 8px;
+  }
+  .m-price__factor-label { text-align: center; font-size: 13px; }
+  .sp-factor-txt { text-align: center; font-size: 11px; }
+  .m-price__card--factor::before { left: calc(10px + (100% - 20px) / 3); }
+  .m-price__card--factor::after  { left: calc(10px + (100% - 20px) * 2 / 3); }
+
+  /* m04：相談帯はアイコン・見出し・ボタンとも中央揃え */
+  .m-price__band { padding: 18px 14px; text-align: center; }
+  .m-price__band-icon { position: static; display: block; width: 48px; margin: 0 auto 8px; }
+  .m-price__band-heading { text-align: center; }
+
+  /* m05：チェックの絵文字はAIっぽいので外す */
+  .sp-tech-note-check { display: none; }
+
+  /* m05：背景が寂しいので幾何学模様を足す。
+     PCのグラデーション（linear-gradient）も background-image なので、
+     模様だけ足すと消える → 最後に同じグラデーションを重ね直している */
+  .m-tech {
+    background-image:
+      radial-gradient(rgba(255, 255, 255, .09) 1.5px, transparent 1.6px),
+      repeating-linear-gradient(135deg, rgba(255, 255, 255, .05) 0 1px, transparent 1px 15px),
+      radial-gradient(circle at 8% 16%, transparent 60px,
+        rgba(255, 255, 255, .07) 61px, rgba(255, 255, 255, .07) 63px, transparent 64px),
+      radial-gradient(circle at 96% 72%, transparent 86px,
+        rgba(255, 255, 255, .06) 87px, rgba(255, 255, 255, .06) 89px, transparent 90px),
+      linear-gradient(180deg, #06194A 0%, #0B378C 55%, #1A5FE0 100%);
+    background-size: 24px 24px, auto, 100% 100%, 100% 100%, 100% 100%;
+  }
+
+  /* m09：リード文を中央揃えに */
+  .sp-design-lead { text-align: center; }
+
+  /* m12：番号を大きくして改行（01 → 募集時の → 訴求力アップ の3行） */
+  .sp-case-num {
+    display: flex;
+    width: 44px; height: 44px;
+    margin: 0 0 6px;
+    font-size: 20px;
+  }
+
+  /* m13：ステップ間の破線をやめて青い▼に */
+  .sp-flow-steps li:not(:last-child)::after {
+    left: 50%;
+    top: calc(100% + 2px);
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 11px solid #0455C3;
+    transform: translateX(-50%);
+  }
+
+  /* m14：Q番号が丸の中に入らず、白文字が質問文の上に重なっていた。
+     原因は .m-faq__q を position:static に戻したこと（::after の inset:0 が
+     祖先まで広がっていた）。PCと同じく <i> を丸の中央に置く */
+  /* ⚠️ position:relative にするとPC側の left/top がオフセットとして効く（罠#1）。必ず0に戻す */
+  .m-faq__q { position: relative; left: 0; top: 0; }
+  .m-faq__q::after { content: none; }
+  .m-faq__q i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0; top: 0;
+    width: 30px; height: 30px;
+    font-size: 12.5px;
+    color: #fff;
+  }
+
+  /* m07 / m09 / m13：バンド左の画像は背景（淡い青の四角）を透過に抜いた_v2に差し替え。
+     四角が消えたぶん余白が減るので、表示も一回り大きくする */
+  .sp-reason-band img { width: 66px; }
+  .sp-design-band img { width: 78px; }
+  .sp-flow-band img   { width: 56px; }
+
+  /* m15：上の建物アイコンは外す／フッターは全面を青に */
+  .sp-ft-bldg { display: none; }
+  .m-footer { background: #0146AF; }          /* footer_bg_new.png の地色 */
+  .m-footer__hero { margin: 0; border-radius: 0; padding: 26px 18px 0; }
+  .m-footer__copy { background: transparent; }
+  .m-footer__copy p { color: #fff; }
+
+
+  /* =====================================================================
+     2026-08-05 口頭ラリー修正（2巡目）
+     ===================================================================== */
+
+  /* m02：矢印ボタンを消したぶん右が空いたので、番号・アイコン・文字を大きくして詰める */
+  .sp-worries li { padding: 13px 16px 13px 8px; }
+  .sp-worries__num { width: 48px; font-size: 37px; }
+  .sp-worries__icon { width: 60px; }
+  .sp-worries__body { padding-left: 12px; }
+  .sp-worries__ttl { font-size: 18.5px; }
+  .sp-worries__txt { margin-top: 5px; font-size: 14px; }
+
+  /* m04：カード見出しの背景（PCの #1668C9）が濃い青パネルの上に乗って
+     「薄い方の青」に見えていた。パネルの色だけにする */
+  .m-price__card-head {
+    background: transparent;
+    height: auto;
+    line-height: 1.4;
+    border-radius: 0;
+  }
+
+  /* m04：アイコンだけ左に寄っていた。
+     ⚠️ この span 自体が淡い青の丸（背景色＋border-radius）なので、幅100%にすると
+     楕円に伸びる。正円のまま margin:auto でセルの中央に置く */
+  .m-price__factor-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+  /* m04：3列目のラベルだけ9文字あってはみ出すので、そこだけ小さく */
+  .m-price__factor-label--3 { font-size: 10.5px; }
+
+  /* m07：番号をアイコンと同じ大きさにして、アイコンの上へ（HTML構造も変更済み）。
+     見出しも一段大きく */
+  .sp-reason-mark {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 64px;
+  }
+  .sp-reason-num {
+    display: flex;
+    width: 44px; height: 44px;
+    margin-right: 0;
+    font-size: 20px;
+    font-weight: 700;
+    vertical-align: baseline;
+  }
+  .sp-reason-icon { width: 64px; }
+  .sp-reason-ttl { font-size: 19px; }
+  .sp-reason-txt { font-size: 13.5px; }
+
+  /* m12：タイトルを大きく／チップは3枚に分けてゆとりを持たせた */
+  .sp-case-ttl { font-size: 23px; }
+  .sp-case-chips {
+    display: flex;
+    gap: 6px;
+    width: 100%;
+    margin-top: 12px;
+  }
+  .sp-case-chips li {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1.5px solid #C9DCF5;
+    border-radius: 8px;
+    padding: 9px 5px;
+  }
+  .sp-case-chips li img { width: 100%; height: auto; }
+
+  /* m14：CTAアイコンは背景（淡い青の丸）を抜いた_v2に差し替え。比率が変わるので位置も調整 */
+  .sp-faq-cta-icon { left: 18px; top: 24px; width: 62px; }
+
+  /* m15：コピーライトだけ白地に戻し、下の余白を詰める */
+  .m-footer__copy { background: #fff; padding: 12px 0 12px; }
+  .m-footer__copy p { color: #000; }
+
+
+  /* =====================================================================
+     2026-08-05 口頭ラリー修正（3巡目）
+     ===================================================================== */
+
+  /* m02：まだ右が空いていた。本文の固定改行を外して行幅いっぱいまで使わせる。
+     01だけ1行になって高さが崩れるので min-height で揃える */
+  .sp-worries__txt br { display: none; }
+  .sp-worries__txt { font-size: 15px; line-height: 1.55; }
+  .sp-worries__ttl { font-size: 19px; }
+  .sp-worries li { min-height: 98px; padding: 12px 14px 12px 6px; }
+  .sp-worries__num { width: 46px; font-size: 38px; }
+  .sp-worries__body { padding-left: 10px; }
+
+  /* m04：見出しの「費用感」だけ大きく出す（オレンジのアピール箇所） */
+  .m-price__headline { line-height: 1.45; }
+  .m-price__hl-orange {
+    font-size: 1.5em;
+    font-weight: 900;
+    letter-spacing: 1px;
+  }
+
+  /* m12：タイトルをさらに大きく */
+  .sp-case-ttl { font-size: 26px; line-height: 1.35; }
+
+  /* m12：チップは3枚とも同じ高さに揃える（中身の比率差で高さがズレていた） */
+  .sp-case-chips { align-items: stretch; }
+  /* ⚠️ 親カードの `.sp-case-cards li + li { margin-top:16px }` が横並びのチップにも効き、
+     2枚目以降だけ stretch の高さが margin ぶん縮んでいた（1枚目だけ高く見えた原因） */
+  .sp-case-chips li + li { margin-top: 0; }
+  .sp-case-chips li { min-height: 58px; padding: 8px 6px; }
+  .sp-case-chips li img { width: 100%; height: auto; }
+
+}

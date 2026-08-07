@@ -1,0 +1,175 @@
+/* =====================================================================
+   施設ネット by スリム光｜分岐トップ（index）SP専用CSS（900px以下）
+   -----------------------------------------------------------------
+   ルール（mansion-sp.css / hotel-sp.css と同じ）:
+   - PC版CSS（style.css）には一切触らない。上書きはこのファイル内だけで行う
+   - 単位は px 直（style.css の rem は html{font-size:75%} 前提のPC用ノブ）
+   - コンテンツは max-width 480px で中央寄せ（タブレット幅でも破綻させない）
+
+   前提メモ：
+   style.css には 1024px以下の簡易レスポンシブが既にあるが、その **後ろ** に
+   `.fv-main__in { width: 90rem }` が書かれており、SPでも固定幅のままだった。
+   このファイルを style.css の後ろで読み込んで打ち消す。
+   ===================================================================== */
+
+@media (max-width: 900px) {
+
+  /* =====================  土台  ===================== */
+  /* ここが崩れの主因。90rem固定を解除する */
+  .fv-main__in {
+    width: auto;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+  .fv-main { padding-bottom: 28px; }
+  /* 青の弧は高さがPC実測（86.5rem）なのでSPでは深すぎる。
+     PCと同じく「1枚目のカードの途中で青が終わる」比率に合わせる */
+  .fv-main::before {
+    height: 680px;
+    border-radius: 0 0 50% 50% / 0 0 60px 60px;
+    background-size: cover;
+  }
+
+  /* =====================  ヘッダー  ===================== */
+  .fv-header { padding: 12px 14px; }
+  .fv-header__logo img { width: 158px; }
+  .fv-header__contact { margin-top: 6px; }
+  .fv-header__tel { font-size: 22px; letter-spacing: 0.5px; }
+  .fv-header__hours { margin-top: 1px; }
+  .fv-header__hours-label { font-size: 10px; }
+  .fv-header__hours-time { font-size: 11px; }
+  .fv-header__cta {
+    right: 14px; top: 14px;
+    width: 92px; height: 38px;
+    font-size: 13px;
+    border-radius: 6px;
+  }
+
+  /* =====================  キャッチコピー  ===================== */
+  .fv-copy { padding: 22px 0 20px; }
+  .fv-copy__pill { padding: 0 16px; font-size: 12px; height: 30px; line-height: 30px; }
+  .fv-copy__sub { margin-top: 14px; font-size: 17px; }
+  /* 横幅いっぱいまで使う。1行目「建物のネット環境、」9文字が最長で、
+     9×38 + 字間0.5×8 = 346px（コンテンツ幅358px）がぎりぎり収まる上限 */
+  .fv-copy__h1 {
+    margin-top: 6px;
+    font-size: 38px;
+    line-height: 1.32;
+    letter-spacing: 0.5px;
+    /* ⚠️ PC側で h1 に text-align:left が入っている（親の.fv-copyはcenter）。
+       ここで戻さないと2行とも左に寄る */
+    text-align: center;
+    /* 行末が「、」「。」で、その右半分が空白のぶん視覚的に左へ寄る。
+       約物を詰め（palt）、残る8pxのズレはパディングで合わせる */
+    font-feature-settings: "palt" 1;
+    padding-left: 8px;
+  }
+  /* PCは実測値で左マージンを持たせている。SPは中央揃えなので解除 */
+  .fv-copy__h1-line1 { margin-left: 0; }
+  .fv-copy__h1-line2 { margin-left: 0; }
+  .fv-copy__marker { height: 8px; bottom: 1px; }
+  .fv-copy__lead { margin-top: 12px; font-size: 12.5px; line-height: 1.8; }
+  .fv-copy__lead br { display: none; }   /* 行幅いっぱいまで使わせる */
+
+  /* =====================  分岐カード  ===================== */
+  .fv-branch { padding: 0; gap: 16px; }
+  .fv-card {
+    width: 100%;
+    max-width: none;
+    height: auto;          /* PCは50.05rem固定。中身が絶対配置なので全部staticに戻す */
+  }
+  .fv-card__visual {
+    position: static;
+    inset: auto;
+    height: auto;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+  }
+  .fv-card__visual img,
+  .fv-card--hotel .fv-card__visual img {
+    position: static;
+    width: 100%;
+    height: auto;
+    left: auto; top: auto;
+  }
+  /* ボタンを枠内いっぱいに出すため、bodyの左パディングは14pxにして、
+     ピクトを避けるオフセットは見出しと説明文だけに持たせる */
+  .fv-card__body {
+    position: relative;
+    left: auto; right: auto; top: auto; bottom: auto;
+    padding: 16px 14px;
+  }
+  /* 斜めのくさびはPCの実寸（23rem角）でSPだと本文を覆ってしまう */
+  .fv-card__wedge { display: none; }
+  .fv-card__picto { left: 12px; top: 18px; }
+  .fv-card__picto--mansion { width: 58px; height: 102px; }
+  /* ⚠️ ホテルのピクトはマスクに固定サイズ（11.77rem×17.19rem）が入っていて、
+     要素だけ縮めても絵が縮まない。SPでは contain に上書きする */
+  .fv-card__picto--hotel {
+    width: 62px; height: 93px;
+    -webkit-mask: url("../assets/picto_hotel_mask.png") center / contain no-repeat;
+    mask: url("../assets/picto_hotel_mask.png") center / contain no-repeat;
+  }
+  .fv-card__title {
+    position: static;
+    margin-left: 78px;
+    font-size: 17px;
+    line-height: 1.45;
+  }
+  .fv-card__desc {
+    position: static;
+    top: auto;
+    margin: 8px 0 0 78px;
+    font-size: 12px;
+    line-height: 1.6;
+    white-space: normal;
+  }
+  .fv-card--mansion .fv-card__desc,
+  .fv-card--hotel .fv-card__desc { top: auto; }
+  /* ホテル側の `<br>` はそのまま活かす（外すと「インバウンド」の"ド"だけ折り返す） */
+  .fv-card__btn {
+    position: static;
+    width: 100%;
+    height: 44px;
+    margin-top: 14px;
+    font-size: 14px;
+  }
+  .fv-card__btn-arrow { right: 14px; }
+
+  /* =====================  CTA 2本  ===================== */
+  .fv-cta-row { padding: 0; gap: 12px; margin-top: 20px; }
+  .fv-cta {
+    width: 100%;
+    max-width: none;
+    height: 56px;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+
+  /* =====================  特徴 4カード  ===================== */
+  /* PCは4枚横並び。SPは2×2にする（1枚あたり19.27rem＝231pxで2枚並べると溢れるため） */
+  .fv-features {
+    padding: 0;
+    gap: 10px;
+    margin-top: 18px;
+  }
+  .fv-feature {
+    width: calc(50% - 5px);
+    height: auto;
+    min-height: 78px;
+    padding: 12px 8px 14px;
+    border-radius: 8px;
+  }
+  .fv-feature__title { margin-top: 0; font-size: 15px; line-height: 1.35; }
+  .fv-feature__din { font-size: 18px; }
+  .fv-feature__sub { margin-top: 4px; font-size: 11px; line-height: 1.4; }
+
+  /* =====================  フッター  ===================== */
+  .fv-footer { height: auto; padding: 12px 0; }
+  .fv-footer p { font-size: 10px; }
+
+  /* TOPに戻るボタンは指がかぶらない大きさに */
+  .totop { right: 14px; bottom: 14px; width: 42px; height: 42px; }
+
+}

@@ -488,3 +488,25 @@ body {
 }
 .totop.is-show { opacity: 1; visibility: visible; transform: none; }
 .totop:hover { opacity: .85; }
+
+/* =====================================================================
+   2026-08-03 index：青背景の終端をカンプに合わせる
+   カンプでは青背景がカード途中（1440幅で y=1389）で終わり、CTA行・特徴カードは
+   白地に乗る。実装は .fv-main 全体が青のままで、青ボタンが背景と同化していた。
+   → 青をbeforeに分離し、カード内73%地点（rem換算77.92rem）で終わらせる
+   ===================================================================== */
+.fv-main { background: #fff; }
+.fv-main::before {
+  content: ""; position: absolute; top: 0;
+  /* 弧が横に伸びるよう、画面より広く取って左右をはみ出させる */
+  left: 50%; width: 128%; transform: translateX(-50%);
+  height: 86.5rem;                /* 弧の最深部＝カード下端の少し上（Toku指示で上げた） */
+  background: var(--fv-blue) url("../assets/bg_hero_baked.jpg") top center / 100% auto no-repeat;
+  /* 下端だけを円弧に（横長の楕円） */
+  border-radius: 0 0 50% 50% / 0 0 16rem 16rem;
+  z-index: 0;
+}
+.fv-main__in { z-index: 1; }
+
+/* コピーライト：4辺の枠線を上線のみに（Toku指示） */
+.fv-footer { border: none; border-top: 0.0625rem solid #ccc; }

@@ -1,0 +1,1342 @@
+/* =====================================================================
+   施設ネット by スリム光｜ホテルページ SP専用CSS（900px以下）
+   ルールはマンションSP（mansion-sp.css）と同じ：
+   - PC版CSSには触らない／px直／max-width 480px中央寄せ／.sp-onlyパターン
+   - 基底ユーティリティはmansion-sp.cssと同内容（ページ別読み込みのため重複定義）
+   ===================================================================== */
+
+.sp-only,
+.sp-br,
+.sp-tel,
+.sp-menu,
+.sp-drawer { display: none; }
+
+@media (max-width: 900px) {
+
+  /* =====================  土台・ユーティリティ  ===================== */
+  .fv-page { max-width: none; }
+  .sp-only { display: revert; }
+  .sp-br { display: inline; }
+  .sp-hl-o { color: #F07509; }
+  .sp-hl-u {
+    color: #F07509;
+    text-decoration: underline;
+    text-decoration-color: #F07509;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 4px;
+    text-decoration-skip-ink: none;
+  }
+
+  /* ピル（白地オレンジ枠 / オレンジ塗り） */
+  .sp-hpill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 34px;
+    padding: 0 20px;
+    border-radius: 17px;
+    border: 1.5px solid #F07509;
+    background: #fff;
+    color: #F07509;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .sp-hpill--solid { background: #F07509; border-color: #F07509; color: #fff; }
+  .sp-hpill-q {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: #F07509;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .sp-hbar { display: block; width: 46px; height: 4px; background: #F07509; margin: 12px auto 0; border-radius: 2px; }
+  .sp-hnum {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px; height: 22px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background: #F07509;
+    color: #fff;
+    font-family: var(--font-din);
+    font-size: 13px;
+    vertical-align: 2px;
+  }
+  .sp-hnote { max-width: 480px; margin: 12px auto 0; font-size: 10.5px; color: #666; line-height: 1.7; }
+  .sp-hchev {
+    flex: none;
+    width: 9px; height: 9px;
+    border-top: 2.5px solid #F07509;
+    border-right: 2.5px solid #F07509;
+    transform: rotate(45deg);
+  }
+
+  /* =====================  ヘッダー・ドロワー  ===================== */
+  .fv-header {
+    height: 80px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .fv-header__logo { position: static; flex: 0 0 auto; }
+  .fv-header__logo img { width: 158px; height: auto; }
+  .fv-header__contact { display: none; }
+  .fv-header__cta { display: none; }
+  .sp-tel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    height: 30px;
+    padding: 0 14px;
+    border-radius: 15px;
+    background: #0B3E96;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .sp-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    width: 44px; height: 44px;
+    padding: 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  .sp-menu span { display: block; height: 3px; background: #1A1A1A; border-radius: 2px; }
+  .sp-drawer {
+    display: block;
+    position: fixed;
+    top: 0; right: 0;
+    width: min(78vw, 320px);
+    height: 100dvh;
+    background: #fff;
+    box-shadow: -4px 0 24px rgba(0,0,0,.18);
+    padding: 72px 22px 24px;
+    transform: translateX(105%);
+    transition: transform .28s ease;
+    z-index: 60;
+  }
+  .sp-drawer.is-open { transform: translateX(0); }
+  .sp-drawer__close {
+    position: absolute;
+    top: 16px; right: 14px;
+    width: 40px; height: 40px;
+    border: none; background: transparent;
+    font-size: 26px; line-height: 1;
+    color: #1A1A1A; cursor: pointer;
+  }
+  .sp-drawer__link {
+    display: block;
+    padding: 14px 2px;
+    border-bottom: 1px solid #F2E3D5;
+    color: #1A1A1A;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .sp-drawer__tel {
+    display: block;
+    margin-top: 18px;
+    text-align: center;
+    color: #F07509;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+  .sp-drawer__hours { text-align: center; font-size: 12px; color: #555; margin-top: 4px; }
+  .sp-drawer__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 14px;
+    height: 48px;
+    border-radius: 24px;
+    background: #F07509;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  /* PCの「懐ふくらませ」一括transform（罠#1）をSPでは全解除 */
+  .h-op > *, .h-sv > *, .h-srv > *, .h-price > *, .h-ij > *,
+  .h-vo > *, .h-uk > *, .h-faq > *, .h-cta__in > *,
+  .h-worry > *, .h-net > * { transform: none; }
+  .h-faq > .h-faq__pill { transform: none; }   /* 0-2-0の個別ルールは同格で打ち消す */
+
+  /* セクション間のインライン白ギャップdivはSPでは不要 */
+  main > div[style] { display: none; }
+
+  /* =====================  PC専用セクションを非表示  ===================== */
+  .hfv { display: none; }
+
+  /* 2026-08-04 Toku指示「PC準拠」により、カンプに無かった5セクションを復活。
+     セクションの箱は残し、PC用の中身だけ隠してSP版を出す */
+  .h-rev, .h-sim, .h-bld, .h-srv, .h-vo {
+    height: auto;
+    overflow: visible;
+    padding: 28px 20px 32px;
+    text-align: center;
+  }
+  .h-rev > *:not(.sp-only),
+  .h-sim > *:not(.sp-only),
+  .h-bld > *:not(.sp-only),
+  .h-srv > *:not(.sp-only),
+  .h-vo  > *:not(.sp-only) { display: none; }
+
+  /* =====================  sp_h01  FV  ===================== */
+  .sp-hfv {
+    display: block;
+    background: #FCEFE6;
+    border-radius: 0 0 0 40px;
+    padding: 24px 22px 26px;
+    text-align: left;
+  }
+  .sp-hfv__h1 {
+    font-size: 27px;
+    font-weight: 900;
+    line-height: 1.45;
+    color: #1A1A1A;
+  }
+  .sp-hfv__h1-box {
+    display: inline-block;
+    background: #fff;
+    border-radius: 8px;
+    padding: 2px 10px;
+  }
+  .sp-hfv__lead {
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.75;
+  }
+  .sp-hfv__photo {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: 12px auto 0;
+    border-radius: 12px;
+  }
+  .sp-hfv__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    max-width: 480px;
+    height: 50px;
+    margin: 14px auto 0;
+    border-radius: 25px;
+    font-size: 15.5px;
+    font-weight: 900;
+  }
+  .sp-hfv__cta img { width: 28px; height: auto; }
+  .sp-hfv__cta--solid { background: #F07509; color: #fff; }
+  .sp-hfv__cta--line { background: #fff; color: #F07509; border: 2px solid #F07509; }
+  .sp-hfv__chev {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    width: 9px; height: 9px;
+    border-top: 3px solid #fff;
+    border-right: 3px solid #fff;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .sp-hfv__chev--o { border-color: #F07509; }
+  .sp-hfv__vals {
+    display: flex;
+    max-width: 480px;
+    margin: 18px auto 0;
+  }
+  .sp-hfv__vals li {
+    flex: 1 1 0;
+    text-align: center;
+  }
+  .sp-hfv__vals li + li { border-left: 1px solid #E8D5C4; }
+  .sp-hfv__vals img { width: 56px; height: auto; margin: 0 auto; }
+  .sp-hfv__vals span { display: block; margin-top: 6px; font-size: 13px; font-weight: 700; }
+  .sp-hfv__note { margin-top: 14px; font-size: 10.5px; color: #666; text-align: center; }
+
+  /* =====================  sp_h02  お悩み  ===================== */
+  .h-worry { height: auto; overflow: visible; padding: 0; background: #fff; }
+  .h-worry__deco, .h-worry__intro, .h-worry__cards, .h-worry__right { display: none; }
+  .sp-hwr { padding: 30px 20px 34px; text-align: center; }
+  .sp-hwr__h { margin-top: 16px; font-size: 24px; font-weight: 900; line-height: 1.5; }
+  .sp-hwr__lead { margin-top: 14px; font-size: 13.5px; font-weight: 700; line-height: 1.8; }
+  .sp-hwr__cards { max-width: 480px; margin: 16px auto 0; text-align: left; }
+  .sp-hwr__cards li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #fff;
+    border: 1.5px solid #F3D9C2;
+    border-radius: 12px;
+    padding: 12px 14px;
+    box-shadow: 0 2px 8px rgba(120, 70, 20, .05);
+  }
+  .sp-hwr__cards li + li { margin-top: 12px; }
+  .sp-hwr__cards img {
+    flex: none;
+    width: 74px; height: 74px;
+    object-fit: contain;
+    background: #FCEFE6;
+    border-radius: 10px;
+    padding: 8px;
+  }
+  .sp-hwr__cards p { font-size: 16px; font-weight: 900; line-height: 1.5; }
+
+  /* =====================  sp_h03  分離  ===================== */
+  .h-net { height: auto; overflow: visible; padding: 0; }
+  .h-net__head, .h-net__diagram, .h-net__merit { display: none; }
+  .sp-hnet { padding: 28px 20px 32px; text-align: center; background: #fff; }
+  .sp-hnet__h { margin-top: 14px; font-size: 25px; font-weight: 900; line-height: 1.5; }
+  .sp-hnet__lead { margin-top: 12px; font-size: 13.5px; font-weight: 700; line-height: 1.8; }
+  .sp-hnet__diagram { display: block; width: 100%; max-width: 480px; margin: 10px auto 0; }
+  .sp-hnet__bands { max-width: 480px; margin: 10px auto 0; text-align: left; }
+  .sp-hnet__bands li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1.5px solid #F3D9C2;
+    border-radius: 12px;
+    padding: 10px 14px;
+  }
+  .sp-hnet__bands li + li { margin-top: 10px; }
+  .sp-hnet__bands img { flex: none; width: 46px; height: auto; }
+  .sp-hnet__bands > li > div { flex: 1; min-width: 0; }
+  .sp-hnet__bt { font-size: 15px; font-weight: 900; color: #1A1A1A; }
+  .sp-hnet__bx { margin-top: 3px; font-size: 12px; line-height: 1.6; color: #333; }
+
+  /* =====================  sp_h04  館内全域カバー  ===================== */
+  .h-area { display: none; }
+  .sp-harea { padding: 28px 20px 32px; text-align: center; background: #fff; }
+  .sp-harea__h { margin-top: 14px; font-size: 25px; font-weight: 900; line-height: 1.5; }
+  .sp-harea__lead { margin-top: 12px; font-size: 13.5px; font-weight: 700; line-height: 1.8; }
+  .sp-harea__house { display: block; width: 100%; max-width: 480px; margin: 10px auto 0; }
+  .sp-harea__cards { display: flex; gap: 10px; max-width: 480px; margin: 12px auto 0; }
+  .sp-harea__cards li {
+    flex: 1 1 0;
+    position: relative;
+    background: #fff;
+    border: 1.5px solid #F3D9C2;
+    border-radius: 12px;
+    padding: 14px 8px 36px;
+    box-shadow: 0 2px 8px rgba(120, 70, 20, .05);
+  }
+  .sp-harea__cards img { width: 56px; height: auto; margin: 0 auto; }
+  .sp-harea__ct { margin-top: 8px; font-size: 15px; font-weight: 900; }
+  .sp-harea__cx { margin-top: 5px; font-size: 11px; line-height: 1.55; color: #333; }
+  .sp-hchev--c {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    width: 8px; height: 8px;
+    border-width: 2px;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  .sp-harea__band { display: block; width: 100%; max-width: 480px; margin: 16px auto 0; }
+
+  /* =====================  sp_h05  費用感の目安  ===================== */
+  .h-price { height: auto; overflow: visible; padding: 28px 20px 32px; background: #fff; }
+  .h-price__pill, .h-price__headline, .h-price__lead, .h-price__hero,
+  .h-price__table, .h-price__factor-title, .h-price__fcard, .h-price__band { display: none; }
+  .sp-hpr { text-align: center; }
+  .sp-hpr__head {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    max-width: 480px;
+    margin: 14px auto 0;
+    text-align: left;
+  }
+  .sp-hpr__h { flex: 1; font-size: 21px; font-weight: 900; line-height: 1.55; }
+  .sp-hpr__hero { flex: none; width: 38%; max-width: 150px; height: auto; }
+  .sp-hpr__lead {
+    max-width: 480px;
+    margin: 10px auto 0;
+    font-size: 13.5px;
+    font-weight: 700;
+    line-height: 1.8;
+    text-align: left;
+  }
+  .sp-hpr__cards { max-width: 480px; margin: 12px auto 0; text-align: left; }
+  .sp-hpr__cards li {
+    position: relative;
+    background: #fff;
+    border: 1.5px solid #F3D9C2;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 2px 8px rgba(120, 70, 20, .05);
+  }
+  .sp-hpr__cards li + li { margin-top: 12px; }
+  .sp-hpr__badge {
+    position: absolute;
+    right: 12px; top: 12px;
+    border: 1.5px solid #F07509;
+    color: #F07509;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+  }
+  .sp-hpr__row { display: flex; align-items: center; gap: 10px; }
+  .sp-hpr__row img { flex: none; width: 64px; height: auto; }
+  .sp-hpr__name { color: #F07509; font-size: 16px; font-weight: 900; }
+  .sp-hpr__rooms { margin-top: 3px; font-size: 12.5px; font-weight: 700; color: #333; }
+  .sp-hpr__price {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1.5px dotted #F3D9C2;
+    font-weight: 900;
+    color: #1A1A1A;
+    font-size: 14px;
+  }
+  .sp-hpr__price b { color: #F07509; font-size: 26px; font-family: var(--font-din); letter-spacing: 1px; margin: 0 2px; }
+  .sp-hpr__price small { font-size: 12px; font-weight: 700; margin-left: 2px; }
+  .sp-hpr__plabel {
+    display: inline-block;
+    background: #FCEFE6;
+    color: #B25406;
+    border-radius: 4px;
+    font-size: 11.5px;
+    padding: 3px 8px;
+    margin-right: 8px;
+    vertical-align: 3px;
+  }
+  .sp-hpr__tag { margin-top: 6px; font-size: 12px; color: #333; }
+  .sp-hpr__factors {
+    max-width: 480px;
+    margin: 16px auto 0;
+    background: #FCEFE6;
+    border-radius: 12px;
+    padding: 14px 10px 16px;
+  }
+  .sp-hpr__ftitle { font-size: 14.5px; font-weight: 900; }
+  .sp-hpr__factors ul { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px; margin-top: 12px; }
+  .sp-hpr__factors ul img { width: 40px; height: 40px; object-fit: contain; margin: 0 auto; }
+  .sp-hpr__fname { margin-top: 6px; font-size: 12px; font-weight: 900; }
+  .sp-hpr__ftext { margin-top: 4px; font-size: 9.5px; line-height: 1.5; color: #444; }
+  .sp-hcta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    max-width: 480px;
+    height: 50px;
+    margin: 18px auto 0;
+    border-radius: 25px;
+    background: #F07509;
+    color: #fff;
+    font-size: 15.5px;
+    font-weight: 900;
+  }
+  .sp-hcta-btn img { width: 26px; height: auto; }
+  .sp-hpr__free { margin-top: 8px; font-size: 12px; font-weight: 700; color: #F07509; }
+
+  /* =====================  sp_h06  営業しながらの工事  ===================== */
+  .h-op { height: auto; overflow: visible; padding: 28px 20px 32px; background: #fff; }
+  .h-op__hero, .h-op__pill, .h-op__headline, .h-op__lead, .h-op__card,
+  .h-op__night, .h-op__chip, .h-op__chipar, .h-op__panel, .h-op__band { display: none; }
+  .sp-hop { text-align: center; }
+  .sp-hop__h { font-size: 25px; font-weight: 900; line-height: 1.5; }
+  .sp-hop__lead { margin-top: 12px; font-size: 13.5px; font-weight: 700; line-height: 1.8; }
+  .sp-hop__photo { display: block; width: 100%; max-width: 480px; margin: 12px auto 0; border-radius: 12px; }
+  .sp-hop__cards { display: flex; gap: 10px; max-width: 480px; margin: 14px auto 0; }
+  .sp-hop__cards li {
+    flex: 1 1 0;
+    background: #fff;
+    border: 1.5px solid #F3D9C2;
+    border-radius: 12px;
+    padding: 12px 8px 14px;
+  }
+  .sp-hnum--t { width: 26px; height: 26px; font-size: 13px; margin: 0 auto; display: flex; }
+  .sp-hop__cards img { width: 52px; height: auto; margin: 8px auto 0; }
+  .sp-hop__ct { margin-top: 8px; font-size: 13.5px; font-weight: 900; line-height: 1.4; }
+  .sp-hop__cx { margin-top: 6px; font-size: 10.5px; line-height: 1.6; color: #333; text-align: left; }
+  .sp-hop__check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 480px;
+    margin: 10px auto 0;
+    background: #FCEFE6;
+    border-radius: 20px;
+    padding: 9px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+  }
+  .sp-hop__check span {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: #F07509;
+    color: #fff;
+    font-size: 12px;
+  }
+
+  /* =====================  sp_h07  対応イメージ  ===================== */
+  .h-ij { display: none; }
+  .sp-hij { padding: 28px 20px 32px; text-align: center; background: #fff; }
+  .sp-hij__h { margin-top: 14px; font-size: 24px; font-weight: 900; line-height: 1.55; }
+  .sp-hij__lead { margin-top: 12px; font-size: 13.5px; font-weight: 700; line-height: 1.8; }
+  .sp-hij__cards { max-width: 480px; margin: 14px auto 0; text-align: left; }
+  .sp-hij__cards li {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    background: #fff;
+    border: 1.5px solid #F3D9C2;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .sp-hij__cards li + li { margin-top: 12px; }
+  .sp-hij__photo { flex: none; width: 46%; max-width: 190px; object-fit: cover; }
+  .sp-hij__body { flex: 1; min-width: 0; padding: 12px; }
+  .sp-hij__ct { font-size: 15px; font-weight: 900; color: #F07509; }
+  .sp-hij__cx { margin-top: 6px; font-size: 12px; line-height: 1.65; color: #333; }
+
+  /* =====================  sp_h08  Wi-Fi以外の設備  ===================== */
+  .h-sv { display: none; }
+  .sp-hsv { padding: 28px 20px 32px; text-align: center; background: #FCF7F2; }
+  .sp-hsv__h { font-size: 21px; font-weight: 900; line-height: 1.6; }
+  .sp-hsv__lead { margin-top: 12px; font-size: 13.5px; font-weight: 700; line-height: 1.8; }
+  .sp-hsv__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 480px;
+    margin: 14px auto 0;
+  }
+  .sp-hsv__cards li {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px 8px;
+    box-shadow: 0 2px 8px rgba(120, 70, 20, .06);
+  }
+  .sp-hsv__cards img { width: 74px; height: 64px; object-fit: contain; margin: 0 auto; }
+  .sp-hsv__cards p { margin-top: 8px; font-size: 14px; font-weight: 900; }
+  .sp-hsv__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 340px;
+    height: 46px;
+    margin: 16px auto 0;
+    border-radius: 23px;
+    border: 2px solid #F07509;
+    background: #fff;
+    color: #F07509;
+    font-size: 14.5px;
+    font-weight: 900;
+  }
+
+  /* =====================  sp_h09  フロー  ===================== */
+  .h-uk { display: none; }
+  .sp-huk { padding: 28px 20px 32px; text-align: center; background: #fff; }
+  .sp-huk__h { font-size: 24px; font-weight: 900; line-height: 1.55; }
+  .sp-huk__lead { margin-top: 12px; font-size: 13px; font-weight: 700; line-height: 1.8; }
+  .sp-huk__steps { max-width: 480px; margin: 14px auto 0; text-align: left; }
+  .sp-huk__steps li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1.5px solid #F3D9C2;
+    border-radius: 12px;
+    padding: 12px 14px;
+  }
+  .sp-huk__steps li + li { margin-top: 16px; }
+  .sp-huk__steps li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 100%;
+    height: 15px;
+    border-left: 2px dashed #F07509;
+  }
+  .sp-hnum--big { flex: none; width: 34px; height: 34px; font-size: 16px; margin: 0; }
+  .sp-huk__steps img { flex: none; width: 46px; height: 46px; object-fit: contain; }
+  .sp-huk__steps > li > div { flex: 1; min-width: 0; }
+  .sp-huk__st { font-size: 15.5px; font-weight: 900; color: #F07509; }
+  .sp-huk__sx { margin-top: 4px; font-size: 12px; line-height: 1.6; color: #333; }
+  .sp-huk__band {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 480px;
+    margin: 16px auto 0;
+    background: #FCEFE6;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1.65;
+  }
+  .sp-huk__band img { flex: none; width: 40px; height: auto; }
+
+  /* =====================  sp_h10  FAQ  ===================== */
+  .h-faq { height: auto; overflow: visible; padding: 28px 20px 32px; text-align: center; background: #fff; }
+  .h-faq__pill {
+    position: static;
+    display: inline-block;
+    width: auto;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 22px;
+    border-radius: 18px;
+    background: #F07509;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .h-faq__title {
+    position: static;
+    margin-top: 16px;
+    font-size: 25px;
+    line-height: 1.5;
+    white-space: normal;
+  }
+  .h-faq__u { color: #F07509; text-decoration: none; }
+  .h-faq__lead { display: none; }
+  .sp-hfaq-lead { margin-top: 12px; font-size: 13.5px; font-weight: 700; line-height: 1.8; }
+  .h-faq__list {
+    position: static;
+    width: auto;
+    max-width: 480px;
+    margin: 16px auto 0;
+    text-align: left;
+  }
+  .h-faq__list > li { position: static; width: auto; margin: 10px 0 0; }
+  /* 2026-08-04 Toku指示「PC準拠」により全8問を表示に戻した
+     （SPカンプは5問だったが、カンプ側の省略と判断） */
+  .h-faq__acc {
+    background: #fff;
+    border: 1.5px solid #F3D9C2;
+    border-radius: 10px;
+  }
+  .h-faq__acc summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: auto;
+    padding: 12px 14px;
+  }
+  .h-faq__q {
+    position: static;
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: #F07509;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .h-faq__qt {
+    position: static;
+    flex: 1;
+    min-width: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    white-space: normal;
+    color: #1A1A1A;
+  }
+  .h-faq__chev { position: static; flex: none; width: 14px; height: auto; margin-left: auto; }
+  .h-faq__a { padding: 0 14px 12px; font-size: 13px; line-height: 1.7; text-align: left; }
+  .sp-hfaq-cta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    max-width: 480px;
+    margin: 20px auto 28px;
+    background: #FCEFE6;
+    border-radius: 12px;
+    padding: 14px;
+    text-align: left;
+  }
+  .sp-hfaq-cta img { flex: none; width: 86px; height: auto; }
+  .sp-hfaq-cta__t { font-size: 13.5px; font-weight: 700; line-height: 1.65; }
+  .sp-hfaq-cta__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 200px;
+    height: 42px;
+    margin-top: 10px;
+    border-radius: 21px;
+    background: #F07509;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 900;
+  }
+
+  /* =====================  sp_h11  最終CTA  ===================== */
+  .h-cta { height: auto; background: #F07509; }
+  .h-cta__in { width: auto; height: auto; position: static; padding: 30px 20px 34px; }
+  .h-cta__deco, .h-cta__h, .h-cta__hr, .h-cta__tel-label, .h-cta__tel-icon,
+  .h-cta__tel, .h-cta__hours, .h-cta__form, .h-cta__note { display: none; }
+  .sp-hcta { text-align: center; color: #fff; }
+  .sp-hcta__pill {
+    display: inline-block;
+    height: 34px;
+    line-height: 31px;
+    padding: 0 20px;
+    border-radius: 17px;
+    border: 1.5px solid #fff;
+    color: #fff;
+    font-size: 13.5px;
+    font-weight: 700;
+  }
+  .sp-hcta__h { margin-top: 14px; font-size: 25px; font-weight: 900; line-height: 1.55; color: #fff; }
+  .sp-hcta__h .sp-hl-u { color: #fff; text-decoration-color: #fff; }
+  .sp-hcta__lead { margin-top: 10px; font-size: 13.5px; font-weight: 700; line-height: 1.8; }
+  .sp-hcta__tel {
+    max-width: 480px;
+    margin: 14px auto 0;
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px 14px 14px;
+    color: #1A1A1A;
+  }
+  .sp-hcta__tel-label { font-size: 12.5px; font-weight: 700; }
+  .sp-hcta__tel-label small { font-size: 10px; font-weight: 500; color: #555; }
+  .sp-hcta__tel-num {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    color: #F07509;
+    font-family: var(--font-din);
+    font-weight: 700;
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+  .sp-hcta__tel-ic {
+    width: 30px; height: 30px;
+    border-radius: 8px;
+    background: #F07509;
+    position: relative;
+  }
+  .sp-hcta__tel-ic::after {
+    content: "✆";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 19px;
+  }
+  .sp-hcta__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    max-width: 480px;
+    height: 52px;
+    margin: 14px auto 0;
+    border-radius: 26px;
+    font-size: 15.5px;
+    font-weight: 900;
+  }
+  .sp-hcta__btn img { width: 28px; height: auto; }
+  .sp-hcta__btn--solid { background: #F07509; color: #fff; border: 2px solid #fff; }
+  .sp-hcta__btn--white { background: #fff; color: #F07509; }
+  .sp-hcta__chips {
+    display: flex;
+    gap: 8px;
+    max-width: 480px;
+    margin: 18px auto 0;
+  }
+  .sp-hcta__chips li {
+    flex: 1 1 0;
+    background: #fff;
+    border-radius: 10px;
+    padding: 8px 4px;
+  }
+  .sp-hcta__chips img { width: 100%; max-width: 84px; height: auto; margin: 0 auto; }
+
+  /* コピーライト */
+  .h-copy { height: auto; padding: 14px 0 16px; text-align: center; }
+  .h-copy p { position: static; font-size: 10px; }
+
+  /* =====================================================================
+     2026-08-04 追加分（PC準拠でカンプに無かった5セクションをSP化）
+     ===================================================================== */
+
+  /* 共通：見出し・リード */
+  .sp-hrev__h, .sp-hsim__h, .sp-hbld__h, .sp-hsrv__h, .sp-hvo__h {
+    margin-top: 16px;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.5;
+    color: #1A1A2E;
+  }
+  .sp-hrev__lead, .sp-hsim__lead, .sp-hbld__lead, .sp-hvo__lead {
+    max-width: 480px;
+    margin: 12px auto 0;
+    font-size: 13.5px;
+    font-weight: 500;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  /* ---------- 予約訴求（h-rev） ---------- */
+  .sp-hrev__cards { max-width: 480px; margin: 18px auto 0; text-align: left; }
+  .sp-hrev__cards > li {
+    background: #fff;
+    border: 1.5px solid #F6DCC4;
+    border-radius: 14px;
+    padding: 16px 14px 14px;
+  }
+  .sp-hrev__cards > li + li { margin-top: 16px; }
+  .sp-hrev__il { display: block; width: 62%; max-width: 220px; height: auto; margin: 0 auto; }
+  .sp-hrev__ct { margin-top: 10px; font-size: 19px; font-weight: 900; line-height: 1.4; color: #1A1A2E; }
+  .sp-hrev__cx { margin-top: 8px; font-size: 13px; line-height: 1.75; }
+  .sp-hrev__band {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    background: #FDF1E6;
+    border-radius: 8px;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #C75B00;
+  }
+  .sp-hrev__band img { flex: none; width: 26px; height: auto; }
+
+  /* ---------- 一斉アクセス（h-sim） ---------- */
+  .sp-hsim__cards { max-width: 480px; margin: 18px auto 0; text-align: left; }
+  .sp-hsim__cards > li {
+    background: #fff;
+    border: 1.5px solid #F6DCC4;
+    border-radius: 14px;
+    padding: 14px;
+  }
+  .sp-hsim__cards > li + li { margin-top: 16px; }
+  .sp-hsim__ct { font-size: 18px; font-weight: 900; line-height: 1.4; color: #1A1A2E; }
+  .sp-hsim__ph, .sp-hsim__il {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 10px auto 0;
+    border-radius: 8px;
+  }
+  .sp-hsim__il { width: 76%; max-width: 260px; }
+  .sp-hsim__cx { margin-top: 10px; font-size: 13px; line-height: 1.75; }
+  .sp-hsim__mini { display: flex; gap: 8px; margin-top: 12px; }
+  .sp-hsim__mini > li {
+    flex: 1 1 0;
+    background: #FDF6F0;
+    border-radius: 8px;
+    padding: 10px 4px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #333;
+  }
+  .sp-hsim__mini img { display: block; width: 30px; height: auto; margin: 0 auto 5px; }
+  .sp-hsim__consult {
+    max-width: 480px;
+    margin: 18px auto 0;
+    background: #fff;
+    border: 2px solid #F07509;
+    border-radius: 12px;
+    padding: 14px;
+  }
+  .sp-hsim__consult img { display: block; width: 42px; height: auto; margin: 0 auto; }
+  .sp-hsim__consult p { margin-top: 8px; font-size: 13px; font-weight: 700; line-height: 1.7; }
+  .sp-hsim__consult-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+    height: 44px;
+    border-radius: 22px;
+    background: #F07509;
+    color: #fff;
+    font-size: 14.5px;
+    font-weight: 700;
+  }
+  .sp-hsim__consult-cta .sp-hchev { border-color: #fff; }
+
+  /* ---------- 電波設計（h-bld） ---------- */
+  .sp-hbld__sub {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 7px 18px;
+    border-radius: 16px;
+    background: #F07509;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .sp-hbld__cards { max-width: 480px; margin: 14px auto 0; text-align: left; }
+  .sp-hbld__cards > li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1.5px solid #EFE2D6;
+    border-radius: 12px;
+    padding: 10px;
+  }
+  .sp-hbld__cards > li + li { margin-top: 12px; }
+  .sp-hbld__ph { flex: none; width: 38%; max-width: 150px; height: auto; border-radius: 8px; }
+  .sp-hbld__body { flex: 1; min-width: 0; }
+  /* 番号はbld_phN.pngの左上に焼き込み済み（罠#3）。タイトル側には出さない */
+  .sp-hbld__ct {
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.35;
+    color: #1A1A2E;
+  }
+  .sp-hbld__cx { margin-top: 6px; font-size: 12px; line-height: 1.65; }
+
+  /* ---------- 現地調査（h-srv） ---------- */
+  .sp-hsrv__figs { max-width: 480px; margin: 16px auto 0; }
+  .sp-hsrv__figs > li + li { margin-top: 14px; }
+  .sp-hsrv__figs img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1.5px solid #EFE2D6;
+    border-radius: 10px;
+  }
+  .sp-hsrv__pill { margin-top: 22px; }
+  .sp-hsrv__sub { margin-top: 10px; font-size: 14px; font-weight: 700; }
+  .sp-hsrv__pts { max-width: 480px; margin: 14px auto 0; text-align: left; }
+  .sp-hsrv__pts > li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1.5px solid #F6DCC4;
+    border-radius: 12px;
+    padding: 14px 12px;
+  }
+  .sp-hsrv__pts > li + li { margin-top: 12px; }
+  .sp-hsrv__pts img { flex: none; width: 44px; height: auto; }
+  .sp-hsrv__ct { font-size: 15.5px; font-weight: 900; color: #1A1A2E; }
+  .sp-hsrv__cx { margin-top: 5px; font-size: 12.5px; line-height: 1.7; }
+  .sp-hsrv__cta {
+    max-width: 480px;
+    margin: 18px auto 0;
+    background: #fff;
+    border: 2px solid #F07509;
+    border-radius: 12px;
+    padding: 16px 14px;
+  }
+  .sp-hsrv__cta > img { display: block; width: 64px; height: auto; margin: 0 auto; }
+  .sp-hsrv__cta-h { margin-top: 8px; font-size: 16px; font-weight: 900; line-height: 1.5; color: #C75B00; }
+  .sp-hsrv__cta-x { margin-top: 8px; font-size: 12.5px; line-height: 1.7; }
+  .sp-hsrv__cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+    height: 46px;
+    border-radius: 23px;
+    background: #F07509;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .sp-hsrv__cta-btn .sp-hchev { border-color: #fff; }
+
+  /* ---------- 施設さまの声（h-vo） ---------- */
+  .sp-hvo__cards { max-width: 480px; margin: 18px auto 0; text-align: left; }
+  .sp-hvo__cards > li {
+    background: #fff;
+    border: 1.5px solid #F6DCC4;
+    border-radius: 14px;
+    padding: 0 0 14px;
+    overflow: hidden;
+  }
+  .sp-hvo__cards > li + li { margin-top: 18px; }
+  .sp-hvo__photo { display: block; width: 100%; height: auto; }
+  .sp-hvo__tag {
+    display: inline-block;
+    margin: 12px 0 0 14px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    background: #FDF1E6;
+    color: #C75B00;
+    font-size: 11.5px;
+    font-weight: 700;
+  }
+  .sp-hvo__name { margin: 6px 14px 0; font-size: 18px; font-weight: 900; color: #1A1A2E; }
+  .sp-hvo__spec { margin: 3px 14px 0; font-size: 12px; color: #666; }
+  .sp-hvo__rows { margin: 12px 14px 0; }
+  .sp-hvo__rows dt {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #C75B00;
+  }
+  .sp-hvo__rows dt img { flex: none; width: 20px; height: auto; }
+  .sp-hvo__rows dd { margin-top: 3px; font-size: 12.5px; line-height: 1.7; }
+  .sp-hvo__voice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 14px 14px 0;
+    background: #FDF6F0;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 12.5px;
+    line-height: 1.7;
+  }
+  .sp-hvo__voice img { flex: none; width: 38px; height: auto; }
+  .sp-hvo__voice b { display: block; font-size: 13px; color: #C75B00; }
+  .sp-hvo__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    max-width: 480px;
+    height: 52px;
+    margin: 18px auto 0;
+    border-radius: 26px;
+    background: #F07509;
+    color: #fff;
+    font-size: 14.5px;
+    font-weight: 700;
+  }
+  .sp-hvo__cta .sp-hchev { border-color: #fff; }
+
+
+  /* =====================================================================
+     2026-08-05 口頭ラリー修正（ホテル）
+     後勝ちで上書きするブロック。必ずメディアクエリ内の末尾に置くこと
+     ===================================================================== */
+
+  /* h01：FVの写真を横いっぱい＋高さを出して大きく見せる */
+  .sp-hfv { overflow: hidden; }
+  .sp-hfv__photo {
+    width: calc(100% + 44px);
+    max-width: none;
+    height: 250px;
+    margin: 14px -22px 0;
+    object-fit: cover;
+    border-radius: 0;
+  }
+  @media (min-width: 529px) {
+    /* 480px上限のときは、はみ出し分を中央に収める */
+    .sp-hfv__photo { width: 100%; margin: 14px auto 0; border-radius: 12px; }
+  }
+
+  /* h01：CTA左のアイコンは台座（下線）を落とした_v2に差し替え済み。表示も大きく */
+  .sp-hfv__cta img { width: 34px; }
+
+  /* h01：3カラムのアイコンは白い下地を透過に抜いた_v2へ。サイズを揃える */
+  .sp-hfv__vals img { width: 50px; height: 50px; object-fit: contain; }
+
+  /* h02：4項目のアイコンも透過済み。CSS側の淡いオレンジの下地だけを残す */
+  .sp-hwr__cards img { width: 74px; height: 74px; padding: 10px; }
+
+  /* h03：下3項目のアイコンを52px角に正規化した_v2へ */
+  .sp-hnet-bicon, .sp-hnet__bic img { width: 52px; height: 52px; object-fit: contain; }
+
+  /* h04：3カラムのアイコンに白い四角が重なって見えていた（素材の白地）。
+     透過素材に合わせてサイズを固定する */
+  .sp-harea__cards img { width: 56px; height: 56px; object-fit: contain; }
+
+  /* h05：番号を独立した行にして、タイトルの行頭を揃える。
+     ⚠️ display:block だと中央揃えが効かず数字が切れる。flexのまま幅だけ指定する */
+  .sp-hrev__ct .sp-hnum {
+    display: flex;
+    width: 34px; height: 34px;
+    margin: 0 0 8px;
+    font-size: 15px;
+    vertical-align: baseline;
+  }
+  /* h05：下の薄いオレンジ帯は中身を中央に */
+  .sp-hrev__band { justify-content: center; text-align: center; }
+
+  /* h07：番号は写真の左上に焼き込まれている。角丸で数字の左上が欠けていたので、
+     左上だけ直角にして写真も一回り大きく */
+  .sp-hbld__ph { width: 45%; max-width: 172px; border-radius: 0 8px 8px 8px; }
+
+  /* h09：アイコン・施設名・客室数が左に寄りすぎていたので内側に余白を足す */
+  .sp-hpr__row { padding-left: 6px; }
+  .sp-hpr__cards > li { padding-left: 16px; padding-right: 16px; }
+  /* h09：概算費用とその下の一文は中央揃えに */
+  .sp-hpr__price, .sp-hpr__tag { text-align: center; justify-content: center; }
+
+  /* h16：受付時間は「受付時間」の後ろで改行して2行に */
+  .sp-hcta__tel-label small { display: block; margin-top: 3px; }
+  /* h16：電話アイコンを大きく */
+  .sp-hcta__tel-ic { width: 40px; height: 40px; border-radius: 10px; }
+  .sp-hcta__tel-ic::after { font-size: 22px; }
+  /* h16：下の3カラムは54px角に正規化した_v2に合わせ、高さも揃える */
+  .sp-hcta__chips { align-items: stretch; }
+  .sp-hcta__chips li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 6px 12px;
+  }
+  /* チップはアイコン＋文字で1枚の画像。3枚とも90x86のキャンバスを保ったまま
+     白だけ透過してあるので、幅を揃えれば中身の縮尺も揃う */
+  .sp-hcta__chips img { width: 100%; max-width: 90px; height: auto; }
+  /* h10：左のグラデーション（フェード）を切り落とした写真に差し替え。
+     縦横比が変わるので高さを固定してcoverで収める */
+  .sp-hop__photo { height: 232px; object-fit: cover; }
+
+  /* h06：ミニアイコンの白地を抜いた_v2へ。サイズを揃える */
+  .sp-hsim__mini img { width: 44px; height: 44px; object-fit: contain; }
+
+  /* h14：ステップのアイコンをオレンジ線画に統一（1・2をop_f系に差し替え済み）。
+     線画は余白が違うので表示サイズを揃える */
+  .sp-huk__steps img { width: 40px; height: 40px; object-fit: contain; }
+  /* h14：一番下の帯は右耳が欠けた旧ヘッドセットだったので完全版に差し替え済み */
+  .sp-huk__band img { width: 34px; height: 34px; object-fit: contain; }
+
+  /* h15：FAQ下のCTAアイコンは背景を抜いて横長になったので、幅と位置を合わせる */
+  .sp-hfaq-cta img { width: 96px; align-self: center; }
+
+  /* h16：コピーライトの下が空きすぎていたので詰める */
+  .h-copy { padding: 10px 0 12px; }
+
+
+  /* =====================================================================
+     2026-08-05 口頭ラリー修正（ホテル・2巡目）
+     ===================================================================== */
+
+  /* h02：右が空いていたので、固定改行を外して行幅いっぱいまで使わせる */
+  .sp-hwr__cards p br { display: none; }
+  .sp-hwr__cards p { font-size: 17px; }
+  .sp-hwr__cards li { padding-right: 16px; }
+
+  /* h03：リンクの無い矢印を消し、空いた右側まで本文を伸ばす */
+  .sp-hnet__bands .sp-hchev { display: none; }
+  .sp-hnet__bx br { display: none; }
+  .sp-hnet__bt { font-size: 16px; }
+  .sp-hnet__bx { font-size: 12.5px; }
+  .sp-hnet__bands li { padding-right: 16px; }
+
+  /* h04：矢印を消したぶん、カード下の余白も詰める。アイコンも一回り小さく */
+  .sp-harea__cards .sp-hchev--c { display: none; }
+  .sp-harea__cards li { padding: 14px 8px 14px; }
+  .sp-harea__cards img { width: 46px; height: 46px; }
+
+  /* h05：番号を大きくし、番号とタイトルを縦に並べて中央揃え */
+  .sp-hrev__ct { text-align: center; }
+  .sp-hrev__ct .sp-hnum {
+    width: 44px; height: 44px;
+    margin: 0 auto 10px;
+    font-size: 19px;
+  }
+
+  /* h06：ミニアイコンの白地を抜いた_v2へ／02・03の図は枠いっぱいに */
+  .sp-hsim__mini img { width: 46px; height: 46px; object-fit: contain; }
+  .sp-hsim__il { width: 100%; max-width: none; }
+
+  /* h07：番号は写真に焼き込まれた三角の中にあり、三角ごと小さいので拡大しても読めない。
+     写真を大きくしたうえで、同じ位置にCSSのバッジを重ねて三角を覆う */
+  .sp-hbld__ph { width: 52%; max-width: 196px; }
+  .sp-hbld__cards { counter-reset: hbld; }
+  .sp-hbld__cards > li { position: relative; counter-increment: hbld; overflow: hidden; }
+  .sp-hbld__cards > li::before {
+    content: "0" counter(hbld);
+    position: absolute;
+    left: 0; top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px; height: 34px;
+    padding-right: 4px;
+    background: #F07509;
+    color: #fff;
+    font-family: var(--font-din);
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 0 0 14px 0;
+  }
+
+  /* h14：流れの破線をやめて、オレンジの▼を中央に置く */
+  .sp-huk__steps li:not(:last-child)::after {
+    left: 50%;
+    top: calc(100% + 2px);
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid #F07509;
+    transform: translateX(-50%);
+  }
+
+  /* h15：FAQ下のCTAは、アイコンを縦中央に揃える */
+  .sp-hfaq-cta { align-items: center; }
+  .sp-hfaq-cta img { width: 92px; align-self: center; margin: 0; }
+
+  /* h16：電話・吹き出しのアイコンをさらに大きく */
+  .sp-hcta__tel-ic { width: 52px; height: 52px; border-radius: 12px; }
+  .sp-hcta__tel-ic::after { font-size: 28px; }
+  .sp-hcta__btn img { width: 40px; }
+  /* h16：3カラムは枠の中で中央に。アイコンの下地は素材側で抜いてある */
+  .sp-hcta__chips li { justify-content: center; padding: 12px 6px; }
+  .sp-hcta__chips img { max-width: 82px; }
+  /* h16：コピーライトまわりの余白。オレンジ帯の下端と白帯の両方を詰める
+     （文字14px＋上下6pxで20px。これ以上は文字が枠に触る） */
+  .h-copy { padding: 6px 0 7px; }
+  .h-copy p { line-height: 1.35; }
+  .h-cta__in { padding-bottom: 18px; }
+
+
+  /* =====================================================================
+     2026-08-05 口頭ラリー修正（ホテル・3巡目）
+     ===================================================================== */
+
+  /* h02：まだ右が空いていたので、本文をさらに大きくして行を使い切る */
+  .sp-hwr__cards p { font-size: 18px; line-height: 1.45; }
+  .sp-hwr__cards li { padding: 12px 14px 12px 12px; gap: 12px; }
+  .sp-hwr__cards img { width: 66px; height: 66px; padding: 9px; }
+
+  /* h15：CTAの人物イラストが上に寄っていたので、縦中央＋左に余白 */
+  .sp-hfaq-cta { align-items: center; padding-left: 8px; }
+  .sp-hfaq-cta img { width: 84px; align-self: center; margin: 0 2px 0 4px; }
+
+  /* h16：電話アイコンをさらに大きく（電話番号の文字とバランスを取る） */
+  .sp-hcta__tel-ic { width: 64px; height: 64px; border-radius: 14px; }
+  .sp-hcta__tel-ic::after { font-size: 34px; }
+
+  /* h16：ボタン左のアイコンは、幅ではなく高さで揃える。
+     吹き出しは横長・電卓は縦長なので、幅を揃えると電卓だけ大きく見える */
+  .sp-hcta__btn img { width: auto; height: 26px; }
+
+  /* h16：3カラムはアイコンの下地を素材側で完全に抜いた。枠内で上下も中央に */
+  .sp-hcta__chips li { justify-content: center; align-items: center; padding: 12px 6px; }
+  .sp-hcta__chips img { width: 100%; max-width: 84px; height: auto; margin: 0 auto; }
+
+
+  /* =====================================================================
+     2026-08-05 口頭ラリー修正（ホテル・4巡目）
+     ===================================================================== */
+
+  /* h15：上段にイラスト＋文言を横並び、下段にボタンを中央。
+     （ボタンを文言と同じ箱に入れたままだと中央に置けないのでHTML側で外に出した） */
+  .sp-hfaq-cta {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 16px 20px;
+  }
+  .sp-hfaq-cta__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
+  .sp-hfaq-cta img { width: 104px; flex: none; align-self: center; margin: 0; }
+  .sp-hfaq-cta__t { text-align: left; font-size: 14.5px; }
+  .sp-hfaq-cta__btn { margin: 0 auto; }
+
+
+  /* =====================================================================
+     2026-08-05 FV刷新＋アイコン調整（ホテル）
+     ===================================================================== */
+
+  /* h01：写真を背景に敷き、その上に見出しとリードを重ねる（Tokuのモック準拠） */
+  .sp-hfv { padding: 0; border-radius: 0; }   /* 左下の丸みは無し */
+  .sp-hfv__hero { position: relative; overflow: hidden; }
+  .sp-hfv__photo {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: 468px;
+    margin: 0;
+    object-fit: cover;
+    object-position: center 42%;
+    border-radius: 0;
+  }
+  .sp-hfv__hero-in {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 26px 22px 22px;
+    /* 写真が明るい個体でも文字が読めるよう、上下だけ軽く沈める */
+    background: linear-gradient(180deg, rgba(0,0,0,.34) 0%, rgba(0,0,0,0) 34%,
+                                        rgba(0,0,0,0) 58%, rgba(0,0,0,.52) 100%);
+  }
+  /* 見出しとリードは写真の上なので、思い切って大きく。
+     リードは `<br>` の位置で2行のまま収まる上限が15.5px（1行あたり最長22文字×15.5≒341px < 346px） */
+  .sp-hfv__h1 {
+    color: #fff; margin: 0;
+    font-size: 32px;
+    line-height: 1.4;
+    text-shadow: 0 2px 10px rgba(0,0,0,.45);
+  }
+  .sp-hfv__h1-box { color: #F07509; text-shadow: none; padding: 3px 12px; }
+  .sp-hfv__lead {
+    color: #fff; margin: 0;
+    font-size: 15.5px;
+    line-height: 1.7;
+    white-space: nowrap;   /* 指定した位置以外では折り返さない */
+    text-shadow: 0 1px 8px rgba(0,0,0,.55);
+  }
+  /* CTA以下は写真の外。セクションのpaddingを外したぶんここで持たせる */
+  .sp-hfv__cta { margin-left: 22px; margin-right: 22px; max-width: calc(480px - 44px); }
+  .sp-hfv__cta:first-of-type { margin-top: 18px; }
+  .sp-hfv__vals { padding: 0 22px; }
+  .sp-hfv__note { padding: 0 22px 24px; }
+  @media (min-width: 529px) {
+    .sp-hfv__cta { margin-left: auto; margin-right: auto; }
+  }
+
+  /* 電卓アイコンがサイト全体で大きすぎたので、吹き出しと同じく高さで揃える
+     （縦長の電卓を幅で揃えると1つだけ大きく見える） */
+  .sp-hfv__cta img,
+  .sp-hcta-btn img { width: auto; height: 24px; }
+
+  /* h16：「✆」の文字は字面が小さく、四角の中で余りが出ていた。
+     受話器を白で描いたSVGに置き換えて、四角いっぱいまで使う */
+  .sp-hcta__tel-ic {
+    width: 64px; height: 64px;
+    border-radius: 14px;
+    background: #F07509;
+  }
+  .sp-hcta__tel-ic::after {
+    content: "";
+    inset: 11px;
+    background: url("../assets/hotel/sp/sp_hcta_tel_w.svg") center / contain no-repeat;
+  }
+
+}

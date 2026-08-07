@@ -2604,3 +2604,590 @@ article.h-vo__case:nth-of-type(3) { top: 86.63375rem !important; }
 /* 施設の声：事例2の吹き出しが境界でわずかに溢れていたので詰める */
 .h-vo__bubble   { padding: 0.3rem 0.8rem; }
 .h-vo__bubble p { line-height: 1.34; }
+
+/* =====================================================================
+   2026-07-30 バッチH⑨（ホテル）＝ Toku がブラウザ上で直接調整したCSSを反映
+   ※ Toku提供のコードをそのまま貼り付け（重複セレクタも原文どおり／後勝ちで意図通り）
+   HTML側の直書き変更（h-netカード4枚のtop / h-opカード4枚の位置・見出しtop）も同時に反映済み
+   ===================================================================== */
+.hfv__h1-weak::before {
+    height: 5.2rem;
+    transform: translateY(calc(-50% - 0.125rem));
+}
+.hfv__h1-weak {
+    font-size: 3.7407rem;
+    margin-right: .6rem;
+    padding-right: .6rem;
+    padding-bottom: .4rem;
+}
+.hfv__lead {
+    top: 18.696rem;
+}
+.hfv__lead {
+    /* top: 18.722rem; */
+    font-size: 1.42rem;
+    line-height: 2.22rem;
+}
+.hfv__panel-text {
+    font-size: .98rem;
+    line-height: 1.6;
+    margin-top: .4rem;
+}
+.hfv__panel {
+    top: 26.54rem;
+}
+.hfv__chev {
+    right: 1.65rem;
+}
+.hfv__btn {
+    top: 35rem;
+}
+.hfv__badge img {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 1rem;
+}
+.h-worry__lead {
+    margin: 1.525rem 0;
+    font-family: "Inter", var(--font-jp);
+    font-weight: 400;
+    font-size: 1.249013rem;
+    line-height: 1.7;
+    color: #4D4D4D;
+    white-space: nowrap;
+}
+.h-worry__title {
+    margin-top: 1.4rem;
+    font-family: "Inter", var(--font-jp);
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1.35;
+    color: #1A1A1A;
+    white-space: nowrap;
+}
+.h-worry__sub {
+    margin-top: 0.7125rem;
+    font-family: "Inter", var(--font-jp);
+    font-weight: 400;
+    font-size: 1.103437rem;
+    line-height: 1.35;
+    color: #808080;
+    white-space: nowrap;
+}
+.h-worry__cards {
+    width: 41.2rem;
+    padding: 2.23875rem 2.4rem;
+}
+.h-worry__cards {
+    width: 41.2rem;
+    padding: 2.23875rem 2.4rem;
+    margin-top: 2rem;
+}
+.h-worry__right {
+    position: absolute;
+    left: 50.9125rem;
+    top: 26.629375rem;
+    width: 31.584375rem;
+    height: 58.73875rem;
+    background: #FEEBD9;
+    box-sizing: border-box;
+    padding: 1.905625rem;
+}
+.h-net__pill--c {
+    margin-top: 6.833125rem;
+}
+.h-net__band {
+    position: absolute;
+    left: 7.62rem;
+    top: 61.819375rem;
+    width: 73.98rem;
+    height: 9rem;
+    border-radius: 0.6rem;
+    background: #fff;
+    border: 0.06rem solid #FD7201;
+    box-sizing: border-box;
+    text-align: left;
+}
+.h-net__merit {
+    position: absolute;
+    left: 0;
+    top: 62.448125rem;
+    width: 90rem;
+    height: 82.895625rem;
+    background: #FDF8F4;
+    text-align: center;
+}
+.h-net {
+    height: 144.34375rem;
+}
+.h-sim__c1 {
+    position: absolute;
+    left: 7.0125rem;
+    top: 23.330625rem;
+    width: 29.2425rem;
+    height: 37.709375rem;
+    border-radius: 0.89125rem;
+    background: #FD7201;
+    overflow: hidden;
+}
+.h-sim__c2 {
+    position: absolute;
+    top: 23.330625rem;
+    width: 22.113125rem;
+    height: 37.709375rem;
+    border-radius: 0.89125rem;
+    background: #fff;
+    overflow: hidden;
+}
+.h-sim__consult {
+    position: absolute;
+    left: 16.64875rem;
+    top: 63.023125rem;
+    width: 62.5rem;
+    height: 5.125rem;
+}
+.h-sim {
+    height: 76.8125rem;
+}
+.h-bld__band {
+    position: absolute;
+    left: 7.260625rem;
+    top: 17.541875rem;
+    width: 75.4375rem;
+    height: 5.3125rem;
+    border-radius: 0.520625rem;
+    background: #FEF9F3;
+    border: 0.051875rem solid #F08300;
+    box-sizing: border-box;
+    color: #F96D0A;
+    font-weight: 700;
+    font-size: 2.34375rem;
+    line-height: 5.20875rem;
+    text-align: center;
+    white-space: nowrap;
+}
+.h-srv__card-ic img {
+    max-height: 6.375rem;
+    width: auto;
+}
+.h-srv__card-text {
+    margin-top: 0.94875rem;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #2B2B2B;
+}
+.h-srv__card {
+    width: 23.046875rem;
+    height: 22.446875rem;
+    background: #fff;
+    border: 0.0475rem solid #5A6270;
+    box-sizing: border-box;
+    padding: 2rem;
+}
+.h-srv__cta-sub {
+    margin-top: 0.521875rem;
+    font-weight: 700;
+    font-size: 1.213388rem;
+    white-space: nowrap;
+    /* width: 2rem;  ← Toku確認のうえ無効化（1行テキストが2remに閉じ込められ627px溢れていた） */
+}
+.h-price__band-h {
+    position: absolute;
+    left: 14.2425rem;
+    top: 2.6rem;
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 2.933125rem;
+    color: #000;
+    white-space: nowrap;
+}
+.h-price__band-list {
+    position: absolute;
+    left: 14.4125rem;
+    top: 9.2rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.875rem;
+    letter-spacing: 0.0575rem;
+    color: #EE7817;
+    white-space: nowrap;
+}
+.h-price__band-note {
+    position: absolute;
+    left: 14.2425rem;
+    top: 15.4506rem;
+    font-weight: 400;
+    font-size: 1.250437rem;
+    color: #667385;
+    white-space: nowrap;
+}
+.h-price__band-il {
+    position: absolute;
+    left: 0.53375rem;
+    top: 0.43125rem;
+    width: 13.1875rem;
+    height: 17.1875rem;
+    object-fit: cover;
+}
+.h-price__band {
+    position: absolute;
+    left: 7.443125rem;
+    top: 84.80125rem;
+    width: 75.0275rem;
+    height: 20rem;
+    border-radius: 0.883125rem 0 0 0.883125rem;
+    background: #FDEFE1;
+}
+.h-price__band-btn {
+    position: absolute;
+    left: 55.4775rem;
+    top: 2.2rem;
+    width: 15.8975rem;
+    height: 15.8975rem;
+    border-radius: 85%;
+    background: #EE7817;
+    box-shadow: 0 0.33125rem 0.7725rem rgba(217, 102, 13, .4);
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity .15s ease;
+}
+.h-op__card {
+    position: absolute;
+    width: 23.815rem;
+    height: 8.238125rem;
+    background: #fff;
+    border: 0.053125rem solid #EDE1D5;
+    border-radius: 0.38875rem;
+    box-sizing: border-box;
+    box-shadow: 0 0.21375rem 0.640625rem rgba(102, 64, 26, .06);
+}
+.h-op__ct {
+    position: absolute;
+    left: 7.521875rem;
+    font-weight: 700;
+    font-size: 1.326675rem;
+    color: #2B3442;
+    white-space: nowrap;
+}
+.h-op__cx {
+    width: 14.2rem;
+    line-height: 1.42;
+}
+.h-op__night {
+    position: absolute;
+    left: 56.624375rem;
+    top: 27.500625rem;
+    width: 27.0175rem;
+    height: 9.3rem;
+    background: #FFF7F1;
+    border: 0.079375rem solid #F0871F;
+    border-radius: 0.460625rem;
+    box-sizing: border-box;
+}
+
+/* --- バッチH⑨の副作用対応（Toku承認済み・①カード幅は現状維持） --- */
+/* ③ 夜間・空室ボックスが 31.0→27.0rem に縮んだので、中の見出し幅を追従させる */
+.h-op__night-title { width: 20.6rem; font-size: 1.35rem; }  /* 幅だけ縮めるとnowrapで切れるため文字も追従 */
+
+/* =====================================================================
+   2026-07-31 バッチH⑩（ホテル）＝ 02_こんな悩み の口頭修正4点
+   ① 左カラム：タイトル/本文がアイコンに重なっていた
+      → 数字とアイコンを縮めて本文の使える幅を +2.0rem、タイトルを1.6→1.38rem、
+        nowrap解除で自然折返しに（サブの固定<br>はHTML側で撤去）
+   ② 右カラム：「満足度が低下」「再予約・紹介機会の損失」のテキストはみ出し
+      → アイコン縮小で確保した幅で解消
+   ③ 右カラムのアイコンを左カラムに合わせて 7.10 → 5.4rem
+   ④ 「Wi-Fi環境の印象が…」のアイコンが土台からはみ出て見切れていた
+      → 素材側の問題（グリフが角丸枠いっぱい）。中央に収め直した wr_concl_v2.png を新規作成
+   ===================================================================== */
+.h-worry__num   { width: 5.2rem; font-size: 5rem; line-height: 5.8rem; }
+.h-worry__icon  { width: 5.4rem; height: 5.4rem; }
+.h-worry__body  { padding-left: 0.75rem; }
+.h-worry__title { font-size: 1.38rem; white-space: normal; }
+.h-worry__sub   { white-space: normal; }
+.h-worry__impact img { width: 5.4rem; height: 5.4rem; }
+.h-worry__concl img  { width: 5.4rem; height: 5.4rem; }
+/* 折返し後の泣き別れ（01の「す。」だけ2行目に落ちる等）を防ぐ＝行長を自動で均す */
+.h-worry__title, .h-worry__sub { text-wrap: balance; }
+
+/* =====================================================================
+   2026-07-31 バッチH⑪（ホテル）＝ 04_ネットワーク分離 図の上下余白
+   指示：図の薄オレンジ背景の上下を広げ、余白を均等に
+   実測：焼き込み画像は図の中身が上端0pxから始まり（上余白ゼロ・下71px）、
+        さらに下端10pxに次ブロックの背景色が焼き込まれていた
+   対応：上下とも余白5.5remに統一
+     ・図を6.15rem下げ、上方向は box-shadow の地色をclip-pathで5.5rem開放
+     ・下端の焼き込みストリップは height+object-fit(top) で切除し、
+       不足分1.2remは下方向のclip-path開放で地色を継ぎ足し
+     ・メリットブロックを7.26rem下げ、セクション高も同量延長（下の余白は従来どおり）
+     ・リード文→オレンジ上端は2.5rem確保
+   ===================================================================== */
+.h-net__diagram {
+  top: 33.2125rem;
+  height: 35.4375rem;
+  object-fit: cover;
+  object-position: top;
+  clip-path: inset(-5.5rem -100vmax -1.2rem);
+}
+.h-net__merit { top: 69.708125rem; }
+.h-net { height: 151.6rem; }
+
+/* =====================================================================
+   2026-07-31 バッチH⑫（ホテル）＝ 05_Wi-Fi快適 カード01の2点
+   ① 「01」が見えない＝白丸SVG(fill-opacity .95)が数字の上に描画されていた（罠5と同型）
+      → 番号をstacking context化しSVGを背面へ。数字は既存の#E8830A（オレンジ）で表示される
+   ② 本文の下がギチギチ（バンドまで実測0.23rem）
+      → カードを1.5rem延長しバンドを追随（本文↔バンドが1.7remに）
+   ===================================================================== */
+.h-rev__num     { z-index: 0; }
+.h-rev__num img { z-index: -1; }
+.h-rev__c1     { height: 38.3125rem; }
+.h-rev__c1band { top: 58.1875rem; }
+
+/* =====================================================================
+   2026-07-31 バッチH⑬（ホテル）＝ 07_現地調査 CTA帯
+   指示：サブ文言を折返してボタンを帯内に納め、帯を下に伸ばす
+   実測：文言54.3rem+ボタン17.2remで帯74.4remに入らず、ボタンが5.27remはみ出していた
+   ===================================================================== */
+.h-srv__cta-sub { white-space: normal; }  /* 折返しは文の切れ目のbrで制御 */
+.h-srv__cta     { height: 12.5rem; }                          /* 2行化に合わせ 11.0 → 12.5rem */
+.h-srv          { height: 121.7rem; }                         /* 帯の延長ぶんセクションも延長（下余白2.5rem確保） */
+
+/* =====================================================================
+   2026-07-31 バッチH⑭（ホテル）＝ 05_一斉アクセス の3点
+   ① カード01：本文下端と写真の隙間が0.04rem → 写真を下げて1.4rem確保（下端は据え置きcoverで吸収）
+   ② カード02：イラストが本文2行目に1.09rem被り「多言語案内の掲示も想定。」を隠していた
+      → HTML側でイラストを13.3remへ（本文との間0.74rem・下の3点メリットとは接触せず）
+   ③ 相談バー：CTAが説明文に1.93rem被り → オレンジ枠線・角丸のボタン化。
+      幅が足りないためバーを62.5→70remに広げて中央配置（left 10rem）
+   ===================================================================== */
+.h-sim__c1-photo { top: 16.7rem; height: 21.009375rem; object-fit: cover; }
+.h-sim__consult  { left: 10rem; width: 70rem; }
+.h-sim__consult-cta {
+  left: auto; right: 0; top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex; align-items: center; gap: 0.55rem;
+  height: 3.7rem; padding: 0 1.9rem;
+  background: #fff;
+  border: 0.15rem solid #F07800;
+  border-radius: 1.85rem;
+  transition: opacity .15s ease;
+}
+.h-sim__consult-cta:hover { opacity: .8; cursor: pointer; }
+
+/* =====================================================================
+   2026-07-31 バッチH⑮（ホテル）＝ 08_料金 の3点
+   ① 表内の楕円ピルが下寄り＝line-height(1.79rem)が箱(1.38rem)を超えていた
+      → flexセンタリングに置き換え（高さを少し確保し、増えた分はmarginで相殺）
+   ② 要因4カード：説明文が2行/3行混在で下余白バラバラ（3行組は-0.2remはみ出し）
+      → 文字1.1rem・幅13.45remで全カード2行に揃え、カードを伸ばして下余白2.6remに統一
+   ③ 相談バンド：アイコンを縮小して上下中央に／丸ボタンは「無料で¶概算相談する」の2行組に
+   ===================================================================== */
+/* ① ピル */
+.h-price__label {
+  display: flex; align-items: center; justify-content: center;
+  height: 1.9rem; line-height: 1; margin-top: -0.26rem;
+}
+.h-price__rpill {
+  display: flex; align-items: center; justify-content: center;
+  height: 2rem; line-height: 1; margin-top: -0.17rem;
+}
+/* ② 要因カード */
+.h-price__ftext { font-size: 1.1rem; width: 13.45rem; }
+.h-price__fcard { height: 12.75rem; }
+.h-price__band  { top: 85.70125rem; }
+.h-price        { height: 110.3rem; }
+/* ③ バンドのアイコンとボタン */
+.h-price__band-il {
+  left: 1.2rem; top: 2.5rem;
+  width: 11.5rem; height: 15rem;   /* 縦横比は元のまま(0.767)縮小・上下中央 */
+}
+.h-price__band-btn {
+  display: block; box-sizing: border-box;
+  text-align: center; line-height: 1.5;
+  padding: 5.1rem 0 0;
+  top: 2.05rem;                    /* 帯の上下中央へ */
+}
+.h-price__band-btn span { margin-left: 0.4rem; }
+
+/* =====================================================================
+   2026-08-03 バッチH⑯（ホテル）＝ 07図差し替え・08の3点・09の2点
+   ・07: 現地調査の館内図をCodex作成版(1600x2640)へ差し替え（HTML側・旧ファイル残置）
+   ・08: リード3行化で絵との被り解消／含まれる内容ピル拡幅／施設名を1.32remに統一
+   ・09: 夜間ボックスをカード2段の3列目として整列／チップ矢印を前面化+境界線センターへ
+   ===================================================================== */
+/* 08 */
+.h-price__label--wide-not-needed { }
+.h-price__label { width: auto; min-width: 9.2rem; padding: 0 1.05rem; }
+.h-price__fname { font-size: 1.32rem; }
+/* 09: 夜間ボックス＝カード群(上30.08/下48.74・右列右端55.18)に揃えた3列目 */
+.h-op__night { left: 56.624375rem; top: 27.58125rem; width: 26.3rem; height: 18.65625rem; }
+.h-op__night > * { transform: translateY(4.68rem); }  /* 中身を上下中央へ（内容高≈9.3remぶんの再センタリング） */
+/* 09: チップ矢印を境界線の真上・前面に */
+.h-op__chipar { top: 50.64rem; z-index: 1; }
+/* H⑯微調整: 夜間ボックス（枠26.3remに合わせ見出し追随・中身の上下センター補正） */
+.h-op__night > * { transform: translateY(3.93rem); }
+.h-op__night-title { left: 6.4rem; width: 19.6rem; font-size: 1.28rem; }
+.h-op__night-text  { left: 6.4rem; }
+.h-op__night > * { transform: translateY(4.79rem); }  /* センター最終値 */
+
+/* =====================================================================
+   2026-08-03 バッチH⑰（ホテル）＝ 07/09/11/12/14/15 の6点
+   ===================================================================== */
+/* 07: チェックアイコン＝素材の円が下端で欠けていたため透過で描き直し(v2)。サイズ据え置き */
+
+/* 09: 夜間ボックス＝月を上部中央・タイトルと説明文をセンタリング */
+.h-op__night > * { transform: none; }
+.h-op__night-title { left: 0; width: 100%; text-align: center; top: 9.03rem; }
+.h-op__night-text  { left: 0; width: 100%; text-align: center; top: 11.44rem; }
+
+/* 11: 吹き出しの上下余白（カードを+1.5rem伸ばして吹き出しに配分） */
+.h-vo__case, .h-vo__photo, .h-vo__info { height: 33.25rem; }
+article.h-vo__case:nth-of-type(2) { top: 54.876875rem !important; }
+article.h-vo__case:nth-of-type(3) { top: 89.63375rem !important; }
+.h-vo__cta { top: 122.443125rem; }
+.h-vo { height: 137.75rem; }
+.h-vo__bubble   { padding: 0.85rem 1rem; }
+.h-vo__bubble p { line-height: 1.5; }
+
+/* 12: リスト＝折返しに弾が追従しないため、p自身の::beforeで弾を描く方式に変更 */
+.h-sv__bul { display: none; }
+.h-sv__tx  { right: 1rem; }
+.h-sv__tx p {
+  position: relative;
+  padding-left: 1.05rem;
+  margin-bottom: 0.5rem;
+  white-space: normal;
+}
+.h-sv__tx p::before {
+  content: ""; position: absolute;
+  left: 0; top: 0.68rem;
+  width: 0.433125rem; height: 0.433125rem;
+  border-radius: 50%; background: #F0871F;
+}
+/* 12: 折返しぶんカードを拡張し、下段・帯・CTA・セクションを追随 */
+.h-sv__card { height: 17.8rem; }
+.h-sv__band { top: 64.94rem; }
+.h-sv__cta  { top: 83.84rem; }
+.h-sv       { height: 100.33rem; }
+
+/* 15: 受付時間の「※年末年始を除く」を2行目へ（フォームボタンとの被り解消） */
+.h-cta__hours small { display: block; margin-left: 0; margin-top: 0.3rem; }
+/* H⑰微調整: 5行になるカードがあったため 19rem に（band/cta/セクション追随） */
+.h-sv__card { height: 19rem; }
+.h-sv__band { top: 67.34rem; }
+.h-sv__cta  { top: 86.24rem; }
+.h-sv       { height: 102.73rem; }
+
+/* =====================================================================
+   2026-08-03 バッチH⑱（ホテル）＝ 11/12/13/15 の4点
+   ・11: 事例2の吹き出しだけ4行で上下余白0.07remだった → カード+2remで全て0.9rem超に
+   ・12: アイコン中心3.37rem／タイトル中心3.64rem のズレを解消（中心を揃える）
+   ・13: STEP本文を 1.214025rem に変更（Toku指定）
+   ・15: 受付時間と注記を電話番号ブロックの中心(23.8rem)に対してセンタリング
+   ===================================================================== */
+/* 11 */
+.h-vo__case, .h-vo__photo, .h-vo__info { height: 35.25rem; }
+article.h-vo__case:nth-of-type(2) { top: 56.876875rem !important; }
+article.h-vo__case:nth-of-type(3) { top: 93.63375rem !important; }
+.h-vo__cta { top: 128.443125rem; }
+.h-vo { height: 143.75rem; }
+
+/* 12 */
+.h-sv__ct { margin-top: -0.27rem; }
+
+/* 13 */
+.h-uk__stepbody p { font-size: 1.214025rem; }
+
+/* 15 */
+.h-cta__hours {
+  left: 23.8rem; transform: translate(-50%, -50%);
+  text-align: center; white-space: normal;
+}
+.h-cta__hours b, .h-cta__hours span { white-space: nowrap; }
+/* H⑱微調整: 受付時間ブロックの幅を電話番号ブロック幅に固定（横に伸びてフォームと重なるため） */
+.h-cta__hours { width: 30rem; }
+.h-cta__hours b { display: block; margin-bottom: 0.15rem; }
+.h-cta__hours span { margin-left: 0; }
+/* H⑱: 罠1の再発 —— `.h-cta__in > *` の一括translateYが上のセンタリングを上書きしていた */
+.h-cta__in > .h-cta__hours { transform: translate(-50%, calc(-50% + 1.5rem)); }
+/* H⑱: 「受付時間」を1行目に立てた分ブロックが上に伸びて電話番号に被ったため下げる */
+.h-cta__hours { top: 19.35rem; }
+.h-cta__in > .h-cta__hours { transform: translate(-50%, 1.5rem); }
+/* H⑱ 最終: 受付時間は「受付時間 平日〜/土日祝〜」を1行＋「（※年末年始を除く）」を2行目の2行組。
+   フォーム(左端42.34rem)に当たらない幅37remで、電話番号ブロック中心23.8remにセンタリング */
+.h-cta__hours { top: 18.09375rem; width: 37rem; }
+.h-cta__in > .h-cta__hours { transform: translate(-50%, calc(-50% + 1.5rem)); }
+.h-cta__hours b { display: inline; margin-bottom: 0; }
+.h-cta__hours span { margin-left: 0.8125rem; }
+
+/* =====================================================================
+   2026-08-03 バッチH⑲（ホテル）＝ 11/13
+   ・11: 相談CTAが事例3に0.44rem食い込んでいた（カード高を何度も伸ばした際にCTAのtopが
+         追従しきれず、事例ブロックと干渉）→ 事例3の下端から3.5rem離して独立配置
+   ・13: STEP本文の太さを 400 に（Toku指定）
+   ===================================================================== */
+.h-vo__cta { top: 134.88rem; }   /* 事例3下端131.38 + 3.5rem */
+.h-vo      { height: 144.5rem; } /* CTA下端141.0 + 下余白3.5rem */
+.h-uk__stepbody p { font-weight: 400; }
+/* H⑲微調整: CTA上下の余白を3.5rem均等に */
+.h-vo__cta { top: 132.38rem; }
+.h-vo      { height: 142rem; }
+
+/* =====================================================================
+   2026-08-03 バッチH⑳（ホテル）＝ 15 受付時間の位置をToku指定へ
+   .h-cta__hours を top:18.7375rem にすると、下端22.03remが
+   区切り線(21.54rem)に0.49rem・注記文(21.38rem)に0.65rem被るため両方を下げる
+   ===================================================================== */
+.h-cta__hours { top: 18.7375rem; }
+.h-cta__in > .h-cta__hr:last-of-type { top: 22.7rem !important; }
+.h-cta__note { top: 22.9rem; }
+.h-cta { height: 32rem; }
+/* H⑳微調整: 注記はline-height 7.13remで箱が実体より大きいため、インク基準で配置 */
+.h-cta__note { top: 21.85rem; line-height: 5rem; }
+.h-cta { height: 30.8rem; }
+
+/* =====================================================================
+   2026-08-03 バッチH㉑（ホテル）＝ 10 動画ブロックを「近日公開」表示に（A案）
+   目的：社内共有用にイメージは見せたいが、動画は未完成。
+        素材(ij_video.png)には再生ボタン▶と尺「1:25」が焼き込まれており
+        「押せそうに見える」ため、暗幕で覆って押せないことを明示する。
+   ▼公開前に必ず判断：動画が用意できたら .h-ij__video-veil を削除して
+     クリックでモーダル/リンクを開く実装に差し替えること。
+   ===================================================================== */
+.h-ij__video-wrap { position: relative; display: block; line-height: 0; }
+.h-ij__video-veil {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.9rem;
+  background: rgba(26,26,46,.62);
+  cursor: not-allowed;
+}
+.h-ij__video-soon {
+  margin: 0;
+  font-family: "Inter", var(--font-jp);
+  font-weight: 700; font-size: 2.6rem; line-height: 1.2;
+  letter-spacing: 0.12em;
+  color: #fff;
+}
+.h-ij__video-soonjp {
+  margin: 0;
+  font-weight: 700; font-size: 1.35rem; line-height: 1.4;
+  letter-spacing: 0.06em;
+  color: #fff;
+  padding: 0.5rem 1.6rem;
+  border: 0.13rem solid rgba(255,255,255,.85);
+  border-radius: 2rem;
+}
+/* H㉑補: 注記帯を2行に（文言追加ぶん）。左のアイコンと合わせて上下中央に */
+.h-ij__note p { top: 2.1rem; line-height: 1.75; white-space: normal; }
+/* H㉑補2: 焼き込みの▶と尺「1:25」が暗幕を透けるため、写真自体をぼかして完全に無効化 */
+.h-ij__video-wrap .h-ij__video-photo { filter: blur(0.55rem) grayscale(.35) brightness(.82); }
+.h-ij__video-wrap { overflow: hidden; }
+.h-ij__video-veil { background: rgba(26,26,46,.5); }
