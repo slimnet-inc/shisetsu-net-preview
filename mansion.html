@@ -2,7 +2,6 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>マンション・アパート向け 無料インターネット設備｜施設ネット by スリム光</title>
   <meta name="description" content="ネット無料物件化で選ばれる賃貸へ。集合住宅向け全戸一括インターネットの導入・入れ替えを、配線設計から保守までワンストップで支援します。">
@@ -11,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/mansion.css">
+  <link rel="stylesheet" href="css/mansion-sp.css">
 </head>
 <body>
 <div class="fv-page">
@@ -28,7 +28,23 @@
       </p>
     </div>
     <a class="fv-header__cta" href="#">無料相談</a>
+
+    <!-- SP専用（900px以下でのみ表示） -->
+    <a class="sp-tel" href="tel:0120363624">電話で相談</a>
+    <button class="sp-menu" type="button" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <!-- SP専用ドロワー -->
+  <nav class="sp-drawer" aria-label="メニュー">
+    <button class="sp-drawer__close" type="button" aria-label="メニューを閉じる">×</button>
+    <a class="sp-drawer__link" href="#price">料金の目安</a>
+    <a class="sp-drawer__link" href="#faq">よくあるご質問</a>
+    <a class="sp-drawer__tel" href="tel:0120363624">0120-36-3624</a>
+    <p class="sp-drawer__hours">受付時間　平日 10:00-19:00</p>
+    <a class="sp-drawer__cta" href="#">無料相談</a>
+  </nav>
 
   <main>
 
@@ -90,6 +106,46 @@
       </div>
     </section>
 
+    <!-- ===== FV（SP専用・900px以下でのみ表示） ===== -->
+    <section class="sp-mfv sp-only">
+      <div class="sp-mfv__blue">
+        <div class="sp-mfv__blue-in">
+          <div class="sp-mfv__headline">
+            <span class="sp-mfv__headline-accent">ネット無料物件化</span>
+            <span class="sp-mfv__headline-main">で、選ばれる賃貸へ。</span>
+          </div>
+          <p class="sp-mfv__lead">
+            <img class="sp-mfv__lead-icon" src="assets/mansion/sp/sp_fv_ic_lead.png" alt="" aria-hidden="true">
+            <span>マンション・アパート向けの<br>全戸一括インターネット設備を<br>建物に合わせて提案します。</span>
+          </p>
+          <img class="sp-mfv__illust" src="assets/mansion/sp/sp_fv_illust.png" alt="無料インターネット完備の賃貸マンションのイラスト">
+        </div>
+      </div>
+      <div class="sp-mfv__lower">
+        <div class="sp-mfv__lower-in">
+          <a class="sp-mfv__cta sp-mfv__cta--orange" href="#">戸数から概算費用を聞く<span class="sp-mfv__cta-arrow" aria-hidden="true"></span></a>
+          <a class="sp-mfv__cta sp-mfv__cta--white" href="#">無料ネット設備を相談する<span class="sp-mfv__cta-arrow" aria-hidden="true"></span></a>
+          <ul class="sp-mfv__cards">
+          <li>
+            <img class="sp-mfv__card-icon" src="assets/mansion/sp/sp_card_ic1_v2.png" alt="" aria-hidden="true">
+            <p class="sp-mfv__card-title">入居者に<br>選ばれる</p>
+            <p class="sp-mfv__card-text">インターネット無料は今や入居条件の必須項目に。</p>
+          </li>
+          <li>
+            <img class="sp-mfv__card-icon" src="assets/mansion/sp/sp_card_ic2_v2.png" alt="" aria-hidden="true">
+            <p class="sp-mfv__card-title">物件価値が<br>向上</p>
+            <p class="sp-mfv__card-text">差別化で競合物件に負けない魅力ある設備。</p>
+          </li>
+          <li>
+            <img class="sp-mfv__card-icon" src="assets/mansion/sp/sp_card_ic3_v2.png" alt="" aria-hidden="true">
+            <p class="sp-mfv__card-title">管理の手間を<br>軽減</p>
+            <p class="sp-mfv__card-text">トラブル対応もまとめてサポート。</p>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== こんなお悩みありませんか？ ===== -->
     <section class="m-worries">
       <div class="m-worries__title-wrap">
@@ -97,8 +153,8 @@
         <img class="m-worries__tri" src="assets/mansion/worry_triangle.svg" alt="" aria-hidden="true">
       </div>
       <h2 class="m-worries__headline">
-        <span class="tx-dark">入居者は</span><span class="tx-blue">「</span><span class="tx-blue m-worries__ul">ネット無料が当たり前</span><span class="tx-blue">」</span><br>
-        <span class="tx-dark">設備が選ばれる時代になっています。</span>
+        <span class="tx-dark">入居者は</span><br class="sp-br"><span class="tx-blue">「</span><span class="tx-blue m-worries__ul">ネット無料が当たり前</span><span class="tx-blue">」</span><br>
+        <span class="tx-dark">設備が選ばれる<br class="sp-br">時代になっています。</span>
       </h2>
       <p class="m-worries__sub">
         いまや「ネット無料」は付加価値ではなく、入居者に選ばれるための基本設備。<br>
@@ -130,6 +186,46 @@
           <img class="m-worries__arrow" src="assets/mansion/worry_chevron.svg" alt="" aria-hidden="true">
         </li>
       </ul>
+
+      <!-- SP専用のお悩みカード（900px以下でのみ表示） -->
+      <ul class="sp-worries sp-only">
+        <li>
+          <span class="sp-worries__num">01</span>
+          <span class="sp-worries__icon"><img src="assets/mansion/sp/sp_worry_ic1_v2.png" alt=""></span>
+          <span class="sp-worries__body">
+            <span class="sp-worries__ttl">空室対策</span>
+            <span class="sp-worries__txt">魅力的な設備で<br>空室リスク軽減。</span>
+          </span>
+          <span class="sp-worries__chev" aria-hidden="true"></span>
+        </li>
+        <li>
+          <span class="sp-worries__num">02</span>
+          <span class="sp-worries__icon"><img src="assets/mansion/sp/sp_worry_ic2_v2.png" alt=""></span>
+          <span class="sp-worries__body">
+            <span class="sp-worries__ttl">他物件と差別化</span>
+            <span class="sp-worries__txt">ネット無料で物件の<br>魅力をアピール。</span>
+          </span>
+          <span class="sp-worries__chev" aria-hidden="true"></span>
+        </li>
+        <li>
+          <span class="sp-worries__num">03</span>
+          <span class="sp-worries__icon"><img src="assets/mansion/sp/sp_worry_ic3_v2.png" alt=""></span>
+          <span class="sp-worries__body">
+            <span class="sp-worries__ttl">入居満足度向上</span>
+            <span class="sp-worries__txt">快適なネット環境で<br>入居者の満足度アップ。</span>
+          </span>
+          <span class="sp-worries__chev" aria-hidden="true"></span>
+        </li>
+        <li>
+          <span class="sp-worries__num">04</span>
+          <span class="sp-worries__icon"><img src="assets/mansion/sp/sp_worry_ic4_v2.png" alt=""></span>
+          <span class="sp-worries__body">
+            <span class="sp-worries__ttl">長期入居の後押し</span>
+            <span class="sp-worries__txt">満足度の高い環境が<br>長期入居につながる。</span>
+          </span>
+          <span class="sp-worries__chev" aria-hidden="true"></span>
+        </li>
+      </ul>
     </section>
 
     <!-- ===== S03 ネット無料メリット ===== -->
@@ -139,7 +235,8 @@
 
       <div class="m-merit__header">
         <p class="m-merit__label">ネット無料物件化のメリット</p>
-        <h2 class="m-merit__headline">「無料」になるだけで、物件の<span class="m-merit__headline-big">価値</span>が変わる。</h2>
+        <p class="sp-pill sp-only">オーナー様・管理会社様</p>
+        <h2 class="m-merit__headline">「無料」になるだけで、<br class="sp-br"><span class="sp-hl-blue">物件</span>の<span class="m-merit__headline-big">価値</span>が変わる。</h2>
         <p class="m-merit__lead">
           入居者にとってのメリットはもちろん、オーナー様・管理会社様にとっても多くの効果があります。<br>
           物件の魅力を高め、安定した運用を支える「ネット無料設備」の４つのメリットをご紹介します。
@@ -194,6 +291,30 @@
 
       <img class="m-merit__center-img" src="assets/mansion/merit_img_center.png" alt="">
       <p class="m-merit__note">※効果には物件やエリア・導入状況などによる個人差があります。</p>
+
+      <!-- SP専用のメリット2x2カード（900px以下でのみ表示） -->
+      <ul class="sp-merit sp-only">
+        <li>
+          <img class="sp-merit__icon" src="assets/mansion/sp/sp_merit_ic1_v2.png" alt="">
+          <p class="sp-merit__ttl">物件訴求の強化</p>
+          <p class="sp-merit__txt">ネット無料を強みに、他物件との差別化で成約率をアップ。</p>
+        </li>
+        <li>
+          <img class="sp-merit__icon" src="assets/mansion/sp/sp_merit_ic2_v2.png" alt="">
+          <p class="sp-merit__ttl">空室対策</p>
+          <p class="sp-merit__txt">魅力的な設備で入居検討者を引きつけ、空室リスクを軽減。</p>
+        </li>
+        <li>
+          <img class="sp-merit__icon" src="assets/mansion/sp/sp_merit_ic3_v2.png" alt="">
+          <p class="sp-merit__ttl">入居者満足度向上</p>
+          <p class="sp-merit__txt">快適なネット環境で入居後の満足度が高まり、長期入居につながる。</p>
+        </li>
+        <li>
+          <img class="sp-merit__icon" src="assets/mansion/sp/sp_merit_ic4_v2.png" alt="">
+          <p class="sp-merit__ttl">オーナー負担軽減</p>
+          <p class="sp-merit__txt">入居者の通信環境を整えても、オーナー様の費用負担は不要。</p>
+        </li>
+      </ul>
     </section>
 
     <!-- ===== 料金の目安 ===== -->
@@ -204,18 +325,19 @@
 
       <p class="m-price__pill">料金の目安</p>
       <h2 class="m-price__headline">
-        <span class="m-price__hl-blue">全戸一括インターネット</span>の<span class="m-price__hl-orange">費用感</span>も、<br>
+        <span class="m-price__hl-blue">全戸一括インターネット</span>の<br class="sp-br"><span class="m-price__hl-orange">費用感</span>も、<br>
         わかりやすくご案内します。
       </h2>
       <p class="m-price__lead">
-        建物規模や配線状況に応じて、無理のない導入プランをご提案します。<br>
-        まずは概算の目安からご確認いただけます。
+        建物規模や配線状況に応じて、無理のない導入プランをご提案します。<span class="sp-hide"><br>
+        まずは概算の目安からご確認いただけます。</span>
       </p>
 
       <!-- 月額カード -->
       <div class="m-price__card m-price__card--monthly">
         <p class="m-price__card-head">月額費用の目安</p>
         <img class="m-price__card-icon" src="assets/mansion/price_icon_monthly.png" alt="">
+        <img class="sp-price-icon sp-only" src="assets/mansion/sp/sp_price_ic_monthly.png" alt="" aria-hidden="true">
         <span class="m-price__unit-pill">1戸あたり</span>
         <p class="m-price__amount">
           <span class="m-price__amount-label m-price__amount-label--m">月額</span>
@@ -230,6 +352,7 @@
       <div class="m-price__card m-price__card--initial">
         <p class="m-price__card-head">初期費用の目安</p>
         <img class="m-price__card-icon" src="assets/mansion/price_icon_initial.png" alt="">
+        <img class="sp-price-icon sp-only" src="assets/mansion/sp/sp_price_ic_initial.png" alt="" aria-hidden="true">
         <span class="m-price__unit-pill">1戸あたり</span>
         <p class="m-price__amount">
           <span class="m-price__amount-label m-price__amount-label--i">初期費用</span>
@@ -251,6 +374,9 @@
         <span class="m-price__factor-divider m-price__factor-divider--2" aria-hidden="true"></span>
         <span class="m-price__factor-icon m-price__factor-icon--3"><img src="assets/mansion/price_factor_icon3.png" alt=""></span>
         <p class="m-price__factor-label m-price__factor-label--3">既存配線・設備状況</p>
+        <p class="sp-only sp-factor-txt sp-factor-txt--1">戸数が多いほど1戸あたりの費用は抑えやすくなります。</p>
+        <p class="sp-only sp-factor-txt sp-factor-txt--2">建物の構造や共用設備の有無で費用が変わります。</p>
+        <p class="sp-only sp-factor-txt sp-factor-txt--3">既存の配線や設備の状況により、工事費が変動する場合があります。</p>
       </div>
 
       <!-- 相談帯 -->
@@ -273,8 +399,10 @@
       <img class="m-tech__bg" src="assets/mansion/tech_bg_2x.png" alt="" aria-hidden="true">
       <div class="m-tech__panel" aria-hidden="true"></div>
 
+      <p class="sp-tech-logo sp-only"><img src="assets/logo.png" alt="施設ネット by スリム光"></p>
       <p class="m-tech__pill">同時利用に強い設計</p>
-      <h2 class="m-tech__headline">全戸で一斉に使っても、<span class="m-tech__ul">遅くならない</span>。</h2>
+      <h2 class="m-tech__headline">全戸で一斉に使っても、<br class="sp-br"><span class="m-tech__ul">遅くならない</span>。</h2>
+      <p class="sp-tech-lead sp-only">建物規模に応じた回線設計で、<br>安定した利用環境を整えます。</p>
       <p class="m-tech__lead">
         最大10Gクラスの回線と、同時接続数（NATセッション数）を踏まえた機器設計で、<br>
         夜間のピークタイムでも安定。「無料にしたら遅くなった」を起こさせません。
@@ -313,6 +441,23 @@
       <span class="m-tech__divider m-tech__divider--1" aria-hidden="true"></span>
       <span class="m-tech__divider m-tech__divider--2" aria-hidden="true"></span>
 
+      <!-- SP専用の3カラム値表示（900px以下でのみ表示） -->
+      <ul class="sp-tech-values sp-only">
+        <li>
+          <img src="assets/mansion/sp/sp_tech_ic1.png" alt="">
+          <p class="sp-tech-v"><span class="sp-tech-v-s">最大</span><span class="sp-tech-v-num">10G</span><span class="sp-tech-v-s">クラスまで</span><span class="sp-tech-v-or">対応可能</span></p>
+        </li>
+        <li>
+          <img src="assets/mansion/sp/sp_tech_ic2.png" alt="">
+          <p class="sp-tech-v"><span class="sp-tech-v-num">NAT</span><span class="sp-tech-v-or">対応</span></p>
+        </li>
+        <li>
+          <img src="assets/mansion/sp/sp_tech_ic3.png" alt="">
+          <p class="sp-tech-v"><span class="sp-tech-v-num sp-tech-v-num--sm">24<small>時間</small></span><span class="sp-tech-v-num sp-tech-v-num--sm">365<small>日</small></span><span class="sp-tech-v-or">サポート</span></p>
+        </li>
+      </ul>
+      <p class="sp-tech-note sp-only"><span class="sp-tech-note-check" aria-hidden="true">✅</span>安定・安心のインターネット環境を<br>すべての入居者様へ。</p>
+
       <!-- デザイナーメモ（公開前削除指示 2026-07-28） <p class="m-tech__note">
         <img src="assets/mansion/tech_note_icon.png" alt="" aria-hidden="true">
         数値は要確認。「同時利用に強い」根拠を数字で明示します。
@@ -323,19 +468,43 @@
     <!-- ===== 住戸ごとの通信分離 ===== -->
     <section class="m-netsep">
       <img class="m-netsep__dots" src="assets/mansion/netsep_dots.svg" alt="" aria-hidden="true">
+      <p class="sp-pill sp-only">ネットワーク設計の特長</p>
       <p class="m-netsep__pill">住戸ごとの通信分離</p>
-      <h2 class="m-netsep__headline">隣の住戸とは、<span class="m-netsep__hl-big">ネットワークを分離</span>。</h2>
+      <h2 class="m-netsep__headline">隣の住戸とは、<br class="sp-br"><span class="m-netsep__hl-big">ネットワークを<span class="sp-hl-orange">分離</span></span>。</h2>
       <p class="m-netsep__lead">VLANで住戸ごとに通信を分離。他の住戸から見えない・つながらない。セキュアでプライバシーに配慮した設計です。</p>
+      <p class="sp-netsep-lead sp-only">住宅ごと・用途ごとに分けて、<br>安心して使える環境を整えます。</p>
       <!-- 図解ブロック（Figma書き出し画像。文言修正時は差し替え） -->
       <img class="m-netsep__diagram" src="assets/mansion/netsep_diagram@2x.png"
            alt="通信の流れ（イメージ）：インターネットから共用部の主装置（MDF）で受信し、VLANで各住戸A〜Dへ分離して分配。他の住戸から見えない・つながらない安心の設計">
+      <img class="sp-netsep-diagram sp-only" src="assets/mansion/sp/sp_netsep_diagram_v2.svg"
+           alt="（図）1.住戸ごとに独立 2.共有部と住戸を分離 3.管理用回線と入居者用回線を整理">
+      <ul class="sp-netsep-cards sp-only">
+        <li>
+          <img src="assets/mansion/sp/sp_netsep_ic1.png" alt="">
+          <p class="sp-netsep-ttl">セキュリティ</p>
+          <p class="sp-netsep-txt">住戸間の通信を分離し、情報漏えいや不正アクセスを防止。</p>
+        </li>
+        <li>
+          <img src="assets/mansion/sp/sp_netsep_ic2.png" alt="">
+          <p class="sp-netsep-ttl">安定運用</p>
+          <p class="sp-netsep-txt">用途ごとに最適化された回線で、安定した通信品質を実現。</p>
+        </li>
+        <li>
+          <img src="assets/mansion/sp/sp_netsep_ic3.png" alt="">
+          <p class="sp-netsep-ttl">トラブル軽減</p>
+          <p class="sp-netsep-txt">原因の切り分けがしやすく、障害時の影響を最小限に抑えます。</p>
+        </li>
+      </ul>
+      <p class="sp-netsep-note sp-only">※図はイメージです。建物により構成は異なります。</p>
     </section>
 
     <!-- ===== 住戸ごとに分けるから、安心して使える ===== -->
     <section class="m-reason">
+      <p class="sp-pill sp-only">ネットワーク分離の補足</p>
       <p class="m-reason__pill">住戸ごとの通信分離</p>
-      <h2 class="m-reason__headline">住戸ごとに分けるから、安心して使える</h2>
+      <h2 class="m-reason__headline">住戸ごとに分けるから、<br class="sp-br"><span class="sp-hl-blue">安心</span>して使える</h2>
       <p class="m-reason__lead">セキュリティ・プライバシー・安定性を、建物全体でしっかり支えます。</p>
+      <p class="sp-reason-lead sp-only">住宅ごと・用途ごとに分けて管理しやすく、<br><span class="sp-hl-blue">安心して使える</span>環境を整えます。</p>
 
       <div class="m-reason__cards">
         <div class="m-reason__card m-reason__card--1">
@@ -372,6 +541,44 @@
         </div>
         <img class="m-reason__band-illust" src="assets/mansion/reason_band_illust.png" alt="" aria-hidden="true">
       </div>
+
+      <!-- SP専用の理由カード（900px以下でのみ表示） -->
+      <ul class="sp-reason-cards sp-only">
+        <li>
+          <span class="sp-reason-mark">
+            <span class="sp-reason-num">01</span>
+            <img class="sp-reason-icon" src="assets/mansion/sp/sp_reason_ic1.png" alt="">
+          </span>
+          <div class="sp-reason-body">
+            <p class="sp-reason-ttl"><span class="sp-hl-orange">セキュリティ</span>面の安心</p>
+            <p class="sp-reason-txt">住戸ごとにネットワークを分離することで、他の住戸や共用部からの<span class="sp-hl-orange">不正アクセスリスクを低減</span>します。</p>
+          </div>
+        </li>
+        <li>
+          <span class="sp-reason-mark">
+            <span class="sp-reason-num">02</span>
+            <img class="sp-reason-icon" src="assets/mansion/sp/sp_reason_ic2.png" alt="">
+          </span>
+          <div class="sp-reason-body">
+            <p class="sp-reason-ttl"><span class="sp-hl-orange">通信トラブル</span>の影響を抑えやすい</p>
+            <p class="sp-reason-txt">1住戸の通信トラブルが、他の住戸に広がりにくく、<span class="sp-hl-orange">安定した利用環境を維持</span>しやすくなります。</p>
+          </div>
+        </li>
+        <li>
+          <span class="sp-reason-mark">
+            <span class="sp-reason-num">03</span>
+            <img class="sp-reason-icon" src="assets/mansion/sp/sp_reason_ic3.png" alt="">
+          </span>
+          <div class="sp-reason-body">
+            <p class="sp-reason-ttl"><span class="sp-hl-orange">管理</span>しやすい設計</p>
+            <p class="sp-reason-txt">住戸・共用部それぞれで管理が可能。トラブル時の切り分けや運用も<span class="sp-hl-orange">スムーズに行えます。</span></p>
+          </div>
+        </li>
+      </ul>
+      <p class="sp-reason-band sp-only">
+        <img src="assets/mansion/sp/sp_reason_band_ic_v2.png" alt="">
+        <span>安心・安全・運用効率の<br><span class="sp-hl-orange">バランスを考えた</span>ネットワーク設計です。</span>
+      </p>
     </section>
 
     <!-- ===== 配線から設計（wiring） ===== -->
@@ -380,10 +587,39 @@
       <img class="m-wiring__diagram" src="assets/mansion/wiring_diagram@2x.png"
            alt="建物断面の配線イメージ：屋外アンテナからMDF/IDF（既存設備）・通信機器（ルーター・スイッチ）・電源設備（UPS等）、共用配管・配線ルートを通じて各階のWi-Fiアクセスポイントへ">
 
+      <p class="sp-pill sp-only">設計・施工</p>
       <p class="m-wiring__pill m-wiring__pill--1">配線</p>
       <p class="m-wiring__pill m-wiring__pill--2">Wi-Fi設計</p>
-      <h2 class="m-wiring__headline">建物構造に合わせて、<br><span class="m-wiring__hl-big">配線から設計</span>。</h2>
+      <h2 class="m-wiring__headline">建物構造に合わせて、<br><span class="m-wiring__hl-big"><span class="sp-hl-orange">配線から</span>設計</span>。</h2>
       <p class="m-wiring__lead">マンション・アパートごとに異なる構造や配管・設備環境をふまえ、最適な配線ルートと機器配置を設計します。</p>
+      <img class="sp-wiring-bldg sp-only" src="assets/mansion/sp/sp_wiring_bldg_v2.svg"
+           alt="建物断面の配線イメージ：共用部の通信設備から各戸内のLAN配線へ。既存配管の活用も可能">
+      <ul class="sp-wiring-cards sp-only">
+        <li>
+          <img class="sp-wiring-icon" src="assets/mansion/sp/sp_wiring_ic1_v2.png" alt="">
+          <div class="sp-wiring-body">
+            <p class="sp-wiring-ttl">建物に合わせた配線計画</p>
+            <p class="sp-wiring-txt">構造や用途に合わせて、最適なルートを設計。無理のない通信環境を実現します。</p>
+          </div>
+          <span class="sp-wiring-chev" aria-hidden="true"></span>
+        </li>
+        <li>
+          <img class="sp-wiring-icon" src="assets/mansion/sp/sp_wiring_ic2_v2.png" alt="">
+          <div class="sp-wiring-body">
+            <p class="sp-wiring-ttl">既存設備も確認</p>
+            <p class="sp-wiring-txt">配管・設備の状況を事前に確認し、既存資産を活かした計画をご提案します。</p>
+          </div>
+          <span class="sp-wiring-chev" aria-hidden="true"></span>
+        </li>
+        <li>
+          <img class="sp-wiring-icon" src="assets/mansion/sp/sp_wiring_ic3_v2.png" alt="">
+          <div class="sp-wiring-body">
+            <p class="sp-wiring-ttl">見た目や管理性にも配慮</p>
+            <p class="sp-wiring-txt">美観や将来のメンテナンス性まで考えた、使いやすい配線設計を行います。</p>
+          </div>
+          <span class="sp-wiring-chev" aria-hidden="true"></span>
+        </li>
+      </ul>
 
       <div class="m-wiring__card">
         <p class="m-wiring__card-head">対応建物</p>
@@ -410,8 +646,35 @@
     <!-- ===== 設計のポイント ===== -->
     <section class="m-design">
       <p class="m-design__pill">設計のポイント</p>
-      <h2 class="m-design__headline">建物ごとに、<span class="m-design__hl-big">最適な設計</span>を行います。</h2>
+      <h2 class="m-design__headline">建物ごとに、<br class="sp-br"><span class="m-design__hl-big">最適な<span class="sp-hl-orange">設計</span></span>を行います。</h2>
       <p class="m-design__lead">既存設備や配線ルート、Wi-Fiの届き方まで確認し、無理のない構成をご提案します。</p>
+      <p class="sp-design-lead sp-only">建物条件や利用環境に合わせて、<br>無理のないネットワーク構成をご提案します。</p>
+      <ul class="sp-design-cards sp-only">
+        <li>
+          <img class="sp-design-icon" src="assets/mansion/sp/sp_design_ic1_v2.png" alt="">
+          <p class="sp-design-ttl">配線計画</p>
+          <p class="sp-design-txt">建物の構造や用途に合わせて、最適な配線ルートを計画します。</p>
+        </li>
+        <li>
+          <img class="sp-design-icon" src="assets/mansion/sp/sp_design_ic2.png" alt="">
+          <p class="sp-design-ttl">Wi-Fiエリア設計</p>
+          <p class="sp-design-txt">共用部や各部屋の利用状況に合わせて、快適につながるエリアを設計します。</p>
+        </li>
+        <li>
+          <img class="sp-design-icon" src="assets/mansion/sp/sp_design_ic3.png" alt="">
+          <p class="sp-design-ttl">引き込み・機器構成</p>
+          <p class="sp-design-txt">建物に適した回線の引き込み方法や、必要な機器構成をご提案します。</p>
+        </li>
+        <li>
+          <img class="sp-design-icon" src="assets/mansion/sp/sp_design_ic4.png" alt="">
+          <p class="sp-design-ttl">保守性への配慮</p>
+          <p class="sp-design-txt">将来の増設やトラブル対応も見据えた、保守しやすい設計を行います。</p>
+        </li>
+      </ul>
+      <p class="sp-design-band sp-only">
+        <img src="assets/mansion/sp/sp_design_band_ic_v2.png" alt="">
+        <span>施設の形や使い方は一つひとつ異なります。<br><span class="sp-hl-orange">最適なネットワーク設計</span>で、快適な環境を実現します。</span>
+      </p>
 
       <div class="m-design__cards">
         <div class="m-design__card">
@@ -430,7 +693,7 @@
           <img class="m-design__card-img" src="assets/mansion/dp_card3.png" alt="">
           <p class="m-design__card-title">現地調査・事前検証</p>
           <span class="m-design__accent" aria-hidden="true"></span>
-          <p class="m-design__card-text m-design__card-text--3">導入前に現地を開査・検証し、無理のない最適プランをご提案します。</p>
+          <p class="m-design__card-text m-design__card-text--3">導入前に現地を調査・検証し、無理のない最適プランをご提案します。</p>
         </div>
       </div>
 
@@ -453,6 +716,9 @@
       <img class="m-support__deco" src="assets/mansion/sup_deco_2x.png" alt="" aria-hidden="true">
 
       <div class="m-support__header">
+        <p class="sp-pill sp-only">連携サポート</p>
+        <h2 class="sp-support-headline sp-only">導入後の運用も、<br><span class="sp-hl-orange">まるごと</span>お任せ。</h2>
+        <p class="sp-support-lead sp-only">導入後の問い合わせ対応や保守まで、<br>継続的にサポートします。</p>
         <p class="m-support__pill">管理</p>
         <p class="m-support__pill m-support__pill--2">保守</p>
         <!-- ※カンプ準拠：「まるごと」が2回続く表記（要確認・誤植の可能性） -->
@@ -464,7 +730,7 @@
       </div>
 
       <div class="m-support__hub">
-        <p class="m-support__hub-title">建物の「困った」を、施設ネットがまとめて受け止めます。</p>
+        <p class="m-support__hub-title">建物の<span class="m-support__hub-em">「困った」</span>を、<br>施設ネットがまとめて受け止めます。</p>
 
         <!-- 左：困りごとカード -->
         <div class="m-support__issue m-support__issue--1">
@@ -473,7 +739,7 @@
         </div>
         <div class="m-support__issue m-support__issue--2">
           <img src="assets/mansion/sup_face2.png" alt="">
-          <div><p class="m-support__issue-title">入居者・利用者</p><p class="m-support__issue-text">Wi-Fiがつがらない、<br>速度が遅いなど</p></div>
+          <div><p class="m-support__issue-title">入居者・利用者</p><p class="m-support__issue-text">Wi-Fiがつながらない、<br>速度が遅いなど</p></div>
         </div>
         <div class="m-support__issue m-support__issue--3">
           <img src="assets/mansion/sup_face3.png" alt="">
@@ -481,7 +747,7 @@
         </div>
 
         <!-- 中央：ハブ図 -->
-        <img class="m-support__hub-img" src="assets/mansion/sup_hub.png" alt="施設ネットのサポート窓口が建物・入居者・管理者からの問い合わせをまとめて受け付けるイメージ">
+        <img class="m-support__hub-img" src="assets/mansion/sup_hub_v2.png" alt="施設ネットのサポート窓口が建物・入居者・管理者からの問い合わせをまとめて受け付けるイメージ">
 
         <!-- 右：対応カード -->
         <div class="m-support__act m-support__act--1">
@@ -501,15 +767,70 @@
           <div><p class="m-support__act-title">保守手配・復旧対応</p><p class="m-support__act-text">必要に応じて専門スタッフを手配し、<br>復旧までサポートします。</p></div>
         </div>
       </div>
+
+      <!-- SP専用（900px以下でのみ表示） -->
+      <img class="sp-sup-circle sp-only" src="assets/mansion/sp/sp_sup_circle_v2.svg"
+           alt="お客さま施設・監視・対応改善を施設ネットがまとめて循環サポートするイメージ図">
+      <ul class="sp-sup-cards sp-only">
+        <li>
+          <img class="sp-sup-icon" src="assets/mansion/sp/sp_sup_ic1_v2.png" alt="">
+          <p class="sp-sup-ttl"><span class="sp-sup-num">1</span>問い合わせ対応</p>
+          <p class="sp-sup-txt">専門スタッフが迅速・丁寧に対応します。</p>
+        </li>
+        <li>
+          <img class="sp-sup-icon" src="assets/mansion/sp/sp_sup_ic2_v2.png" alt="">
+          <p class="sp-sup-ttl"><span class="sp-sup-num">2</span>保守サポート</p>
+          <p class="sp-sup-txt">障害対応や設定変更もしっかりサポート。</p>
+        </li>
+        <li>
+          <img class="sp-sup-icon" src="assets/mansion/sp/sp_sup_ic3_v2.png" alt="">
+          <p class="sp-sup-ttl"><span class="sp-sup-num">3</span>管理のしやすさ</p>
+          <p class="sp-sup-txt">管理画面で状況を可視化。運用負担を軽減します。</p>
+        </li>
+      </ul>
+      <p class="sp-sup-band sp-only">
+        <img src="assets/mansion/sp/sp_sup_shield.png" alt="">
+        <span><span class="sp-sup-band-ttl">はじめてでも安心のサポート体制</span><br>導入後も長期的に寄り添い、安心した運用を支えます。</span>
+      </p>
     </section>
 
     <!-- ===== 管理会社・オーナーの負担軽減 ===== -->
     <section class="m-mgmt">
       <div class="m-mgmt__header">
+        <p class="sp-pill sp-only">導入メリット</p>
         <p class="m-mgmt__pill">管理会社・オーナーにうれしいメリット</p>
-        <h2 class="m-mgmt__headline">管理会社・オーナーの<br>負担を軽くします。</h2>
-        <p class="m-mgmt__lead">問い合わせ対応や保守手配をまとめて任せられるため、<br>日々の管理業務をスーズに進められます。</p>
+        <h2 class="m-mgmt__headline"><span class="sp-hl-blue">管理会社・オーナー</span>の<br><span class="sp-hl-orange">負担</span>を軽くします。</h2>
+        <p class="m-mgmt__lead">問い合わせ対応や保守手配をまとめて任せられるため、<br>日々の管理業務をスムーズに進められます。</p>
+        <p class="sp-mgmt-lead sp-only">問い合わせ負担や管理の手間を<br>抑えやすい運用体制をご提案します。</p>
       </div>
+      <img class="sp-mgmt-illust sp-only" src="assets/mansion/sp/sp_mgmt_illust.png"
+           alt="管理会社・オーナーが施設ネットに相談しているイメージイラスト">
+      <ul class="sp-mgmt-cards sp-only">
+        <li>
+          <img class="sp-mgmt-icon" src="assets/mansion/sp/sp_mgmt_ic1_v2.png" alt="">
+          <div class="sp-mgmt-body">
+            <p class="sp-mgmt-ttl">問い合わせ負担の軽減</p>
+            <p class="sp-mgmt-txt">入居者からの問い合わせ対応を代行し、管理会社・オーナー様の負担を軽減します。</p>
+          </div>
+          <span class="sp-mgmt-chev" aria-hidden="true"></span>
+        </li>
+        <li>
+          <img class="sp-mgmt-icon" src="assets/mansion/sp/sp_mgmt_ic2_v2.png" alt="">
+          <div class="sp-mgmt-body">
+            <p class="sp-mgmt-ttl">管理しやすい</p>
+            <p class="sp-mgmt-txt">一元管理の仕組みで、状況把握や状況共有がスムーズに行えます。</p>
+          </div>
+          <span class="sp-mgmt-chev" aria-hidden="true"></span>
+        </li>
+        <li>
+          <img class="sp-mgmt-icon" src="assets/mansion/sp/sp_mgmt_ic3_v2.png" alt="">
+          <div class="sp-mgmt-body">
+            <p class="sp-mgmt-ttl">長期運用しやすい</p>
+            <p class="sp-mgmt-txt">安定したサポート体制と設備で、長く安心して運用できます。</p>
+          </div>
+          <span class="sp-mgmt-chev" aria-hidden="true"></span>
+        </li>
+      </ul>
 
       <div class="m-mgmt__effect">
         <img class="m-mgmt__effect-img" src="assets/mansion/mg_people_2x.png" alt="">
@@ -535,7 +856,7 @@
           <div class="m-mgmt__item">
             <span class="m-mgmt__item-icon"><img src="assets/mansion/mg_icon3.svg" alt="" style="width:3.728125rem;height:4.658125rem;"></span>
             <p class="m-mgmt__item-title">管理負担を軽減し、安心</p>
-            <p class="m-mgmt__item-text">専門チームが継続的にサポートするので、<br>本業に集中できます。</p>
+            <p class="m-mgmt__item-text">専門チームが継続的にサポートするので、本業に集中できます。</p>
           </div>
         </div>
       </div>
@@ -639,6 +960,37 @@
       </div>
 
       <p class="m-case__note"><img src="assets/mansion/cs_ic_mega.svg" alt="" aria-hidden="true">※掲載内容は一部のお客さまの声を抜粋しています。効果には個人差があり、すべての物件で同様の結果を保証するものではありません。</p>
+
+      <!-- SP専用の導入イメージカード（900px以下でのみ表示） -->
+      <ul class="sp-case-cards sp-only">
+        <li>
+          <div class="sp-case-head">
+            <p class="sp-case-ttl"><span class="sp-case-num">01</span>募集時の<br>訴求力アップ</p>
+            <img class="sp-case-img" src="assets/mansion/sp/sp_case_img1.png" alt="ネット無料を訴求する物件掲載イメージ">
+          </div>
+          <p class="sp-case-txt">ネット無料を強みに、他物件との差別化ができ、問い合わせや内見数の増加が期待できます。</p>
+        </li>
+        <li>
+          <div class="sp-case-head">
+            <p class="sp-case-ttl"><span class="sp-case-num">02</span>入居者<br>満足度向上</p>
+            <img class="sp-case-img" src="assets/mansion/sp/sp_case_photo2.png" alt="快適にインターネットを使う入居者のイメージ">
+          </div>
+          <p class="sp-case-txt">高速・安定のインターネット環境は、快適な暮らしを支え、入居者の満足度向上・長期入居にもつながります。</p>
+          <ul class="sp-case-chips">
+            <li><img src="assets/mansion/sp/sp_case_chip1.png" alt="動画視聴もサクサク"></li>
+            <li><img src="assets/mansion/sp/sp_case_chip2.png" alt="オンラインゲームも快適"></li>
+            <li><img src="assets/mansion/sp/sp_case_chip3.png" alt="テレワーク・学習もスムーズ"></li>
+          </ul>
+        </li>
+        <li>
+          <div class="sp-case-head">
+            <p class="sp-case-ttl"><span class="sp-case-num">03</span>管理面の<br>負担軽減</p>
+            <img class="sp-case-img" src="assets/mansion/sp/sp_case_illust3.png" alt="問い合わせ減少・トラブル対応の負担軽減・業務効率化のイメージ">
+          </div>
+          <p class="sp-case-txt">インターネットに関する問い合わせやトラブル対応を軽減し、管理業務の効率化につながります。</p>
+        </li>
+      </ul>
+      <p class="sp-case-note sp-only">上記は導入により期待される変化のイメージです。<br>効果を保証するものではありません。</p>
     </div>
     </section>
 
@@ -653,7 +1005,56 @@
         <p class="m-flow__pill">導入イメージ</p>
         <h2 class="m-flow__headline"><span class="m-flow__hl">ご相談</span><span class="m-flow__hl-sm">から</span><span class="m-flow__hl">運用開始</span><span class="m-flow__hl-sm">まで。</span></h2>
         <p class="m-flow__lead">スリム光のネット無料設備を導入いただいた<br>オーナーさま・管理会社さまの事例をご紹介します。</p>
+        <p class="sp-flow-lead sp-only">建物確認からご提案、工事、利用開始後の<br>サポートまで対応します。</p>
       </div>
+
+      <!-- SP専用の縦型ステップ（900px以下でのみ表示） -->
+      <ol class="sp-flow-steps sp-only">
+        <li>
+          <span class="sp-flow-badge"><small>STEP</small>1</span>
+          <img class="sp-flow-icon" src="assets/mansion/flow_icon1.png" alt="">
+          <div class="sp-flow-body">
+            <p class="sp-flow-ttl">ご相談</p>
+            <p class="sp-flow-txt">物件情報やご要望をお伺いし、最適な進め方をご提案します。</p>
+          </div>
+        </li>
+        <li>
+          <span class="sp-flow-badge"><small>STEP</small>2</span>
+          <img class="sp-flow-icon" src="assets/mansion/flow_icon2.png" alt="">
+          <div class="sp-flow-body">
+            <p class="sp-flow-ttl">現地確認</p>
+            <p class="sp-flow-txt">建物の構造や配線状況を確認し、最適な環境を調査します。</p>
+          </div>
+        </li>
+        <li>
+          <span class="sp-flow-badge"><small>STEP</small>3</span>
+          <img class="sp-flow-icon" src="assets/mansion/flow_icon3.png" alt="">
+          <div class="sp-flow-body">
+            <p class="sp-flow-ttl">ご提案・お見積り</p>
+            <p class="sp-flow-txt">調査内容をもとに、最適なプランとお見積りをご提案します。</p>
+          </div>
+        </li>
+        <li>
+          <span class="sp-flow-badge"><small>STEP</small>4</span>
+          <img class="sp-flow-icon" src="assets/mansion/flow_icon4.png" alt="">
+          <div class="sp-flow-body">
+            <p class="sp-flow-ttl">工事・設定</p>
+            <p class="sp-flow-txt">配管工事や機器の設置・設定を行い、安定した環境を構築します。</p>
+          </div>
+        </li>
+        <li>
+          <span class="sp-flow-badge"><small>STEP</small>5</span>
+          <img class="sp-flow-icon" src="assets/mansion/flow_icon5.png" alt="">
+          <div class="sp-flow-body">
+            <p class="sp-flow-ttl">利用開始・サポート</p>
+            <p class="sp-flow-txt">ご利用開始後も、問い合わせ対応や保守サポートまでしっかり対応します。</p>
+          </div>
+        </li>
+      </ol>
+      <p class="sp-flow-band sp-only">
+        <img src="assets/mansion/sp/sp_flow_band_ic_v2.png" alt="">
+        <span>導入後も安心してご利用いただけるよう、<br>継続的にサポートします。</span>
+      </p>
 
       <div class="m-flow__panel">
         <div class="m-flow__steps">
@@ -662,7 +1063,7 @@
             <img class="m-flow__icon" src="assets/mansion/flow_icon1.png" alt="">
             <p class="m-flow__step-title">無料相談</p>
             <span class="m-flow__dash" aria-hidden="true"></span>
-            <p class="m-flow__step-text">お電話・Webから、<br>建物やご褒美を<br>ヒアリングします。</p>
+            <p class="m-flow__step-text">お電話・Webから、<br>建物やご要望を<br>ヒアリングします。</p>
           </div>
           <div class="m-flow__step">
             <span class="m-flow__num">2</span>
@@ -709,8 +1110,9 @@
     <!-- ===== FAQ ===== -->
     <section class="m-faq" id="faq">
       <p class="m-faq__pill">導入をご検討中の方へ</p>
-      <h2 class="m-faq__headline">導入前の<span class="m-faq__ul">ギモン</span>にお答えします</h2>
+      <h2 class="m-faq__headline">導入前の<span class="m-faq__ul">ギモン</span>に<br class="sp-br">お答えします</h2>
       <p class="m-faq__lead">はじめての方にもあんしんしてご検討いただけるよう、よくいただくご質問をまとめました。</p>
+      <p class="sp-faq-lead sp-only">よくいただくご質問をまとめました。<br>その他のご相談もお気軽に<br>お問い合わせください。</p>
 
       <ul class="m-faq__list">
         <li class="m-faq__item"><details class="m-faq__acc"><summary><span class="m-faq__q"><img src="assets/mansion/faq_qcircle.svg" alt=""><i>Q1</i></span><p class="m-faq__question">費用はどれくらいかかりますか？</p><img class="m-faq__chev" src="assets/mansion/faq_chev.svg" alt="" aria-hidden="true"></summary><div class="m-faq__a"><p>建物の規模・戸数・配線状況によって変わるため一律ではありませんが、上の「料金の目安」の水準からご案内しています。現地調査のうえ、無料でお見積りをご提示しますので、まずは概算からお気軽にご相談ください。</p></div></details></li>
@@ -742,6 +1144,15 @@
           <img src="assets/mansion/faq_arrow_w.svg" alt="" aria-hidden="true">
         </a>
       </div>
+
+      <!-- SP専用（900px以下でのみ表示） -->
+      <p class="sp-faq-note sp-only">※内容は建物やプランによって異なります。<br>詳しくはお問い合わせください。</p>
+      <div class="sp-faq-cta sp-only">
+        <img class="sp-faq-cta-icon" src="assets/mansion/sp/sp_cta_headset_v2.png" alt="">
+        <p class="sp-faq-cta-ttl">ご相談・お見積もりはこちら</p>
+        <p class="sp-faq-cta-txt">建物やご要望に合わせた最適なプランをご提案します。まずはお気軽にご相談ください。</p>
+        <a class="sp-faq-cta-btn" href="#">無料で相談する<span class="sp-mfv__cta-arrow" aria-hidden="true"></span></a>
+      </div>
     </section>
 
     <!-- 白スペーサー（カンプ：FAQ下166px） -->
@@ -759,11 +1170,29 @@
         ご相談・お見積り無料
       </div>
 
-      <h2 class="m-footer__headline">建物のネット環境、<br><span class="m-footer__hl-big">まずはご相談ください。</span></h2>
+      <img class="sp-ft-bldg sp-only" src="assets/mansion/sp/sp_ft_bldg.png" alt="" aria-hidden="true">
+      <h2 class="m-footer__headline">建物のネット環境、<br><span class="m-footer__hl-big">まずは<span class="sp-hl-orange">ご相談</span>ください。</span></h2>
       <p class="m-footer__lead">
         ネット無料物件化や館内Wi-Fiなど、建物に最適なネット環境をご提案します。<br>
         ご相談・お見積り・現地調査まで、すべて無料で対応します。
       </p>
+      <p class="sp-ft-lead sp-only">戸数や建物情報がわかれば、<br>概算費用のご相談も可能です。</p>
+      <div class="sp-ft-tel sp-only">
+        <span class="sp-ft-tel-icon" aria-hidden="true"></span>
+        <div>
+          <a class="sp-ft-tel-num" href="tel:0120363624">0120-36-3624</a>
+          <p class="sp-ft-tel-hours">受付時間　平日 <strong>10:00-19:00</strong></p>
+        </div>
+      </div>
+      <a class="sp-ft-cta sp-ft-cta--orange sp-only" href="#">戸数から概算費用を聞く<span class="sp-mfv__cta-arrow" aria-hidden="true"></span></a>
+      <a class="sp-ft-cta sp-ft-cta--navy sp-only" href="#">無料ネット設備を相談する<span class="sp-mfv__cta-arrow" aria-hidden="true"></span></a>
+      <ul class="sp-ft-trust sp-only">
+        <li><img src="assets/mansion/ft_trust1.png" alt="">相談・見積り無料</li>
+        <li><img src="assets/mansion/ft_trust2.png" alt="">現地調査に対応</li>
+        <li><img src="assets/mansion/ft_trust3.png" alt="">導入後も一括保守</li>
+        <li><img src="assets/mansion/ft_trust4.png" alt="">資料ダウンロード可</li>
+      </ul>
+      <p class="sp-ft-band sp-only">お気軽にお問い合わせください</p>
 
       <a class="m-footer__mainbtn" href="#">
         <span class="m-footer__mainbtn-doc" aria-hidden="true"></span>
@@ -810,6 +1239,7 @@
   var mfv = document.querySelector('.mfv');
   if (!mfv) return;
   function fit(){
+    if (window.matchMedia('(max-width: 900px)').matches) return; // SPはSP専用FVを使う
     var rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
     var header = document.querySelector('.fv-header');
     var avail = window.innerHeight - (header ? header.offsetHeight : 0);
@@ -818,6 +1248,16 @@
     mfv.style.setProperty('--fvk', k.toFixed(4));
   }
   fit(); window.addEventListener('resize', fit);
+})();
+(function(){
+  var menu = document.querySelector('.sp-menu');
+  var drawer = document.querySelector('.sp-drawer');
+  if (!menu || !drawer) return;
+  function toggle(open){ drawer.classList.toggle('is-open', open); }
+  menu.addEventListener('click', function(){ toggle(!drawer.classList.contains('is-open')); });
+  drawer.addEventListener('click', function(e){
+    if (e.target.closest('.sp-drawer__close') || e.target.closest('a')) toggle(false);
+  });
 })();
 </script>
 <a class="totop" href="#" aria-label="ページ上部へ戻る"><i aria-hidden="true"></i></a>

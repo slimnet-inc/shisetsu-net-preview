@@ -2,7 +2,6 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="robots" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ホテル・旅館・民宿向け 館内Wi-Fi設備｜施設ネット by スリム光</title>
   <meta name="description" content="「Wi-Fiが弱い」の口コミを施設の改善課題に。客室・ロビー・宴会場・別館まで、宿泊者用と業務用を分けながら館内まるごとWi-Fi環境を整備します。">
@@ -11,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&family=Inter:wght@400;700&family=Oswald:wght@700&family=Reddit+Sans+Condensed:wght@700&family=Ubuntu+Sans+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/hotel.css">
+  <link rel="stylesheet" href="css/hotel-sp.css">
 </head>
 <body>
 <div class="fv-page">
@@ -28,7 +28,23 @@
       </p>
     </div>
     <a class="fv-header__cta" href="#">無料相談</a>
+
+    <!-- SP専用（900px以下でのみ表示） -->
+    <a class="sp-tel" href="tel:0120363624">電話で相談</a>
+    <button class="sp-menu" type="button" aria-label="メニューを開く">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <!-- SP専用ドロワー -->
+  <nav class="sp-drawer" aria-label="メニュー">
+    <button class="sp-drawer__close" type="button" aria-label="メニューを閉じる">×</button>
+    <a class="sp-drawer__link" href="#price">料金の目安</a>
+    <a class="sp-drawer__link" href="#faq">よくあるご質問</a>
+    <a class="sp-drawer__tel" href="tel:0120363624">0120-36-3624</a>
+    <p class="sp-drawer__hours">受付時間　平日 10:00-19:00</p>
+    <a class="sp-drawer__cta" href="#">無料相談</a>
+  </nav>
 
   <main>
 
@@ -76,6 +92,25 @@
     </div>
     </section>
 
+    <!-- ===== FV（SP専用・900px以下でのみ表示） ===== -->
+    <section class="sp-hfv sp-only">
+      <div class="sp-hfv__hero">
+        <img class="sp-hfv__photo" src="assets/hotel/sp/sp_hfv_photo_v2.png" alt="夕暮れの旅館の外観">
+        <div class="sp-hfv__hero-in">
+          <h1 class="sp-hfv__h1"><span class="sp-hfv__h1-box">「Wi-Fiが弱い」</span><br>の口コミを、<br>施設の改善課題に。</h1>
+          <p class="sp-hfv__lead">客室・ロビー・レストラン・別館まで、<br>館内環境に合わせてWi-Fi改善をご提案します。</p>
+        </div>
+      </div>
+      <a class="sp-hfv__cta sp-hfv__cta--solid" href="#"><img src="assets/hotel/sp/sp_hfv_cta1ic_v2.png" alt="">客室Wi-Fiの改善を相談する<span class="sp-hfv__chev" aria-hidden="true"></span></a>
+      <a class="sp-hfv__cta sp-hfv__cta--line" href="#price"><img src="assets/hotel/sp/sp_hfv_cta2ic_v2.png" alt="">館内Wi-Fiの概算費用を聞く<span class="sp-hfv__chev sp-hfv__chev--o" aria-hidden="true"></span></a>
+      <ul class="sp-hfv__vals">
+        <li><img src="assets/hotel/sp/sp_hfv_ic1_v2.png" alt=""><span>現地調査</span></li>
+        <li><img src="assets/hotel/sp/sp_hfv_ic2_v2.png" alt=""><span>館内設計</span></li>
+        <li><img src="assets/hotel/sp/sp_hfv_ic3_v2.png" alt=""><span>保守対応</span></li>
+      </ul>
+      <p class="sp-hfv__note">※ご相談・お見積もりは無料です。お気軽にご相談ください。</p>
+    </section>
+
     <!-- ===== こんな悩みありませんか？ ===== -->
     <section class="h-worry">
       <img class="h-worry__deco" src="assets/hotel/wr_deco.png" alt="" aria-hidden="true">
@@ -106,7 +141,7 @@
           <div class="h-worry__body">
             <span class="h-worry__tag">同時接続の集中</span>
             <p class="h-worry__title">団体・宴会で一斉に接続が集中すると、<br>つながりにくくなる。</p>
-            <p class="h-worry__sub">チェックイン・夕食後など、利用が集中する時間帯に速度が<br>低下します。</p>
+            <p class="h-worry__sub">チェックイン・夕食後など、利用が集中する時間帯に速度が低下します。</p>
           </div>
           <img class="h-worry__icon" src="assets/hotel/wr_ic2.png" alt="">
         </div>
@@ -116,7 +151,7 @@
           <div class="h-worry__body">
             <span class="h-worry__tag">セキュリティ・分離</span>
             <p class="h-worry__title">宿泊者用と業務用（予約・決済）が<br>同じ回線で、セキュリティが不安。</p>
-            <p class="h-worry__sub">情報漏えいや不正アクセスのリスクが高まり、安心して<br>運用できません。</p>
+            <p class="h-worry__sub">情報漏えいや不正アクセスのリスクが高まり、安心して運用できません。</p>
           </div>
           <img class="h-worry__icon" src="assets/hotel/wr_ic3.png" alt="">
         </div>
@@ -126,7 +161,7 @@
           <div class="h-worry__body">
             <span class="h-worry__tag">電波の届きにくさ</span>
             <p class="h-worry__title">別館・離れ・木造で<br>電波が届きにくい部屋がある。</p>
-            <p class="h-worry__sub">構造や距離の影響で電波が弱く、客室間の満足度に差が<br>出てしまいます。</p>
+            <p class="h-worry__sub">構造や距離の影響で電波が弱く、客室間の満足度に差が出てしまいます。</p>
           </div>
           <img class="h-worry__icon" src="assets/hotel/wr_ic4.png" alt="">
         </div>
@@ -160,9 +195,23 @@
           </div>
         </div>
         <div class="h-worry__concl">
-          <img src="assets/hotel/wr_concl.png" alt="">
+          <img src="assets/hotel/wr_concl_v2.png" alt="">
           <p>Wi-Fi環境の印象が、<br>そのまま施設全体の印象に<br>つながります。</p>
         </div>
+      </div>
+
+      <!-- SP専用（900px以下） -->
+      <div class="sp-hwr sp-only">
+        <p class="sp-hpill"><span class="sp-hpill-q" aria-hidden="true">?</span>お悩み</p>
+        <h2 class="sp-hwr__h">こんなお悩み、ありませんか？</h2>
+        <span class="sp-hbar" aria-hidden="true"></span>
+        <p class="sp-hwr__lead">客室や共用部のWi-Fi環境は、<br>宿泊者満足度や口コミにも影響します。</p>
+        <ul class="sp-hwr__cards">
+          <li><img src="assets/hotel/sp/sp_hwr_ic1_v2.png" alt=""><p><span class="sp-hnum">1</span>客室でWi-Fiが<br>つながりにくい</p></li>
+          <li><img src="assets/hotel/sp/sp_hwr_ic2_v2.png" alt=""><p><span class="sp-hnum">2</span>ロビー・共用部で<br>通信が不安定</p></li>
+          <li><img src="assets/hotel/sp/sp_hwr_ic3_v2.png" alt=""><p><span class="sp-hnum">3</span>業務用ネットワーク<br>と分けたい</p></li>
+          <li><img src="assets/hotel/sp/sp_hwr_ic4_v2.png" alt=""><p><span class="sp-hnum">4</span>工事中の<br>営業影響が不安</p></li>
+        </ul>
       </div>
     </section>
 
@@ -177,19 +226,19 @@
 
       <div class="h-area__card" style="left:7.96875rem;">
         <img class="h-area__photo" src="assets/hotel/area_ph1.png" alt="客室でWi-Fiを利用するイメージ">
-        <img class="h-area__icon" src="assets/hotel/area_ic1.png" alt="">
+        <img class="h-area__icon" src="assets/hotel/sp/sp_harea_ic1_v2.png" alt="">
         <p class="h-area__card-title" style="left:5.625rem;">対応エリア例</p>
         <p class="h-area__card-text" style="left:3.541875rem;">快適な滞在を支える安定したWi-Fi環境</p>
       </div>
       <div class="h-area__card" style="left:33.333125rem;">
         <img class="h-area__photo" src="assets/hotel/area_ph2.png" alt="共用部のイメージ">
-        <img class="h-area__icon" src="assets/hotel/area_ic2.png" alt="">
+        <img class="h-area__icon" src="assets/hotel/sp/sp_harea_ic2_v2.png" alt="">
         <p class="h-area__card-title" style="left:8.698125rem;">共用部</p>
         <p class="h-area__card-text" style="left:5.15625rem;">室内でのつながりやすさを向上</p>
       </div>
       <div class="h-area__card" style="left:58.698125rem;">
         <img class="h-area__photo" src="assets/hotel/area_ph3.png" alt="業務エリアのイメージ">
-        <img class="h-area__icon" src="assets/hotel/area_ic3.png" alt="">
+        <img class="h-area__icon" src="assets/hotel/sp/sp_harea_ic3_v2.png" alt="">
         <p class="h-area__card-title" style="left:6.66625rem;">業務エリア</p>
         <p class="h-area__card-text" style="left:4.739375rem;">業務効率化とセキュリティを両立</p>
       </div>
@@ -230,22 +279,22 @@
         <h2 class="h-net__headline2">ネットワークを分離する<span class="h-net__hl4">4つのメリット</span>。</h2>
         <p class="h-net__lead2">宿泊者の快適な利用と、業務システムの安定運用を両立できます。</p>
 
-        <div class="h-net__card" style="left:7.62rem; top:16.42125rem;">
+        <div class="h-net__card" style="left:7.62rem;top: 22.42125rem;">
           <img class="h-net__card-ic" src="assets/hotel/net_ic1.png" alt="" style="left:2.15625rem; top:2.01625rem; width:6.4375rem;">
           <p class="h-net__card-title">セキュリティを確保</p>
           <p class="h-net__card-text">ゲスト端末から社内システムへの不正アクセスを防ぎ、<b class="tx-o3">情報漏えいリスクを低減</b>します。</p>
         </div>
-        <div class="h-net__card" style="left:45.42rem; top:16.42125rem;">
+        <div class="h-net__card" style="left:45.42rem;top: 22.42125rem;">
           <img class="h-net__card-ic" src="assets/hotel/net_ic2.png" alt="" style="left:2.4rem; top:1.74rem; width:9.5rem;">
           <p class="h-net__card-title">通信の安定性を維持</p>
           <p class="h-net__card-text">ゲストの利用状況に左右されず、予約・決済・PMSなどの業務通信を<b class="tx-o3">安定して確保</b>します。</p>
         </div>
-        <div class="h-net__card" style="left:7.62rem; top:36.16125rem;">
+        <div class="h-net__card" style="left:7.62rem;top: 42.16125rem;">
           <img class="h-net__card-ic" src="assets/hotel/net_ic3.png" alt="" style="left:3.421875rem; top:1.65125rem; width:7.875rem;">
           <p class="h-net__card-title">障害時の影響を抑える</p>
           <p class="h-net__card-text">片方のネットワークで障害が発生しても、もう一方への<b class="tx-o3">影響を最小限</b>に抑えます。</p>
         </div>
-        <div class="h-net__card" style="left:45.42rem; top:36.16125rem;">
+        <div class="h-net__card" style="left:45.42rem;top: 42.16125rem;">
           <img class="h-net__card-ic" src="assets/hotel/net_ic4.png" alt="" style="left:2.705rem; top:1.8075rem; width:8.9375rem;">
           <p class="h-net__card-title">運用・保守がしやすい</p>
           <p class="h-net__card-text">ネットワーク構成を明確化し、トラブル時の切り分けやサポート対応も<b class="tx-o3">スムーズに</b>します。</p>
@@ -256,7 +305,34 @@
           <p>宿泊施設に合わせたネットワーク設計で<span class="tx-o3">、安心して使える館内</span>環境を支えます。</p>
         </div>
       </div>
+
+      <!-- SP専用（900px以下） -->
+      <div class="sp-hnet sp-only">
+        <p class="sp-hpill sp-hpill--solid"><span class="sp-hpill-wifi" aria-hidden="true"></span>ネットワーク設計</p>
+        <h2 class="sp-hnet__h">宿泊者用と業務用は、<br><span class="sp-hl-o">しっかり分離。</span></h2>
+        <p class="sp-hnet__lead">宿泊者向けWi-Fiと、フロント・予約管理・<br>決済端末などの業務用ネットワークを分けて<br>設計できます。</p>
+        <img class="sp-hnet__diagram" src="assets/hotel/sp/sp_hnet_diagram_v2.svg" alt="宿泊者用Wi-Fi・業務用ネットワーク・管理用回線を分けて設計する構成図">
+        <ul class="sp-hnet__bands">
+          <li><img src="assets/hotel/sp/sp_hnet_bic1_v2.png" alt=""><div><p class="sp-hnet__bt">安定した通信環境</p><p class="sp-hnet__bx">宿泊者の利用が増えても、<br>業務に影響しにくい設計です。</p></div><span class="sp-hchev" aria-hidden="true"></span></li>
+          <li><img src="assets/hotel/sp/sp_hnet_bic2_v2.png" alt=""><div><p class="sp-hnet__bt">セキュリティ面に配慮</p><p class="sp-hnet__bx">ネットワークを分離することで、<br>情報漏えいや不正アクセスのリスクを低減。</p></div><span class="sp-hchev" aria-hidden="true"></span></li>
+          <li><img src="assets/hotel/sp/sp_hnet_bic3_v2.png" alt=""><div><p class="sp-hnet__bt">業務通信を分けて管理</p><p class="sp-hnet__bx">用途ごとにネットワークを分けて、<br>運用・トラブル切り分けをスムーズに。</p></div><span class="sp-hchev" aria-hidden="true"></span></li>
+        </ul>
+        <p class="sp-hnote">※構成は一例です。施設の規模やご要望に合わせて最適な設計をご提案します。</p>
+      </div>
     </section>
+
+    <div class="sp-harea sp-only">
+      <p class="sp-hpill sp-hpill--solid"><span class="sp-hpill-wifi" aria-hidden="true"></span>館内全域をカバー</p>
+      <h2 class="sp-harea__h">館内のさまざまな場所で、<br><span class="sp-hl-o">快適につながる</span>環境へ。</h2>
+      <p class="sp-harea__lead">客室はもちろん、ロビー・レストラン・宴会場・<br>別館など、施設の使われ方に合わせて<br>Wi-Fi環境を整えます。</p>
+      <img class="sp-harea__house" src="assets/hotel/sp/sp_harea_house.png" alt="館内各所にWi-Fiが行き渡る建物断面のイラスト">
+      <ul class="sp-harea__cards">
+        <li><img src="assets/hotel/sp/sp_harea_ic1_v2.png" alt=""><p class="sp-harea__ct">客室</p><p class="sp-harea__cx">動画視聴も快適に。</p><span class="sp-hchev sp-hchev--c" aria-hidden="true"></span></li>
+        <li><img src="assets/hotel/sp/sp_harea_ic2_v2.png" alt=""><p class="sp-harea__ct">共用部</p><p class="sp-harea__cx">くつろぎの時間もスムーズに。</p><span class="sp-hchev sp-hchev--c" aria-hidden="true"></span></li>
+        <li><img src="assets/hotel/sp/sp_harea_ic3_v2.png" alt=""><p class="sp-harea__ct">業務エリア</p><p class="sp-harea__cx">業務システムも安定して利用可能に。</p><span class="sp-hchev sp-hchev--c" aria-hidden="true"></span></li>
+      </ul>
+      <img class="sp-harea__band" src="assets/hotel/sp/sp_harea_band.png" alt="こんなエリアもカバーします：ロビー・レストラン・宴会場・大浴場・別館・バックヤード">
+    </div>
 
     <!-- ===== 「Wi-Fi快適」が、次の予約を呼ぶ ===== -->
     <section class="h-rev">
@@ -304,6 +380,33 @@
         <p class="h-rev__c2-text" style="top:22.5rem;">滞在体験の質を底上げし、リピートや<br>ご紹介につながります。</p>
         <div class="h-rev__c2band"><img src="assets/hotel/rev_band3.png" alt="" style="left:3.875rem; top:1.25rem;"><p style="left:7.1875rem;">再予約・再来訪を促進</p></div>
       </div>
+
+      <!-- SP専用（900px以下） -->
+      <div class="sp-hrev sp-only">
+        <p class="sp-hpill">快適なWi-Fiが、宿泊体験の価値を高める</p>
+        <h2 class="sp-hrev__h">「Wi-Fi快適」が、<br><span class="sp-hl-u">次の予約</span>を呼ぶ。</h2>
+        <p class="sp-hrev__lead">旅行者は“つながる環境”を重視する時代へ。<br>Wi-Fiの快適さが、口コミでの高評価や<br>再予約・再来訪につながります。</p>
+        <ul class="sp-hrev__cards">
+          <li>
+            <img class="sp-hrev__il" src="assets/hotel/rev_il1.png" alt="">
+            <p class="sp-hrev__ct"><span class="sp-hnum">01</span>レビュー評価を、<br>底上げする。</p>
+            <p class="sp-hrev__cx">「Wi-Fiが快適だった」は宿泊レビューの定番ポイント。マイナス評価の芽を摘み、次の予約につながる滞在体験へ。</p>
+            <p class="sp-hrev__band"><img src="assets/hotel/rev_band1.png" alt="">口コミが増え、集客力が向上</p>
+          </li>
+          <li>
+            <img class="sp-hrev__il" src="assets/hotel/rev_il2.png" alt="">
+            <p class="sp-hrev__ct"><span class="sp-hnum">02</span>全室で快適。</p>
+            <p class="sp-hrev__cx">どの部屋でも安定したWi-Fi環境が、動画視聴やビデオ会議もスムーズに。ストレスのない“当たり前の快適さ”を提供します。</p>
+            <p class="sp-hrev__band"><img src="assets/hotel/rev_band2.png" alt="">クレーム・問い合わせを削減</p>
+          </li>
+          <li>
+            <img class="sp-hrev__il" src="assets/hotel/rev_il3.png" alt="">
+            <p class="sp-hrev__ct"><span class="sp-hnum">03</span>満足度・再訪に<br>つながる。</p>
+            <p class="sp-hrev__cx">滞在体験の質を底上げし、リピートやご紹介につながります。</p>
+            <p class="sp-hrev__band"><img src="assets/hotel/rev_band3.png" alt="">再予約・再来訪を促進</p>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- ===== 一斉アクセスにも、海外ゲストにも ===== -->
@@ -332,7 +435,7 @@
         <p class="h-sim__c2-title">インバウンド対応</p>
         <span class="h-sim__c2-line" style="top:8.2375rem;" aria-hidden="true"></span>
         <p class="h-sim__c2-text" style="top:9.170625rem;">海外ゲストもSSID接続だけで快適に。<br>多言語案内の掲示も想定。</p>
-        <img class="h-sim__c2-illust" src="assets/hotel/sim_c2_illust.png" alt="多言語のWi-Fi案内イメージ" style="top:11.475rem;">
+        <img class="h-sim__c2-illust" src="assets/hotel/sim_c2_illust.png" alt="多言語のWi-Fi案内イメージ" style="top:13.3rem; height:13.6rem; object-fit:cover;">
         <div class="h-sim__merits">
           <span class="h-sim__mdiv" style="left:7.360625rem;" aria-hidden="true"></span>
           <span class="h-sim__mdiv" style="left:14.824375rem;" aria-hidden="true"></span>
@@ -369,6 +472,46 @@
         <img src="assets/hotel/sim_consult_ic.png" alt="">
         <p class="h-sim__consult-text">宿泊施設の運用に合わせたネット環境をご提案・構築いたします。</p>
         <p class="h-sim__consult-cta">まずはご相談ください <span aria-hidden="true">›</span></p>
+      </div>
+
+      <!-- SP専用（900px以下） -->
+      <div class="sp-hsim sp-only">
+        <p class="sp-hpill">宴会場・団体利用・インバウンド対応</p>
+        <h2 class="sp-hsim__h"><span class="sp-hl-u">一斉アクセス</span>にも、<br><span class="sp-hl-u">海外ゲスト</span>にも。</h2>
+        <p class="sp-hsim__lead">ロビーや客室など、利用が集中する場面でも快適につながる。多言語対応で、海外からのお客様にも安心してご利用いただけます。</p>
+        <ul class="sp-hsim__cards">
+          <li>
+            <p class="sp-hsim__ct"><span class="sp-hnum">01</span>接続集中に強い</p>
+            <img class="sp-hsim__ph" src="assets/hotel/sim_c1_photo.png" alt="宴会場での一斉接続イメージ">
+            <p class="sp-hsim__cx">宴会・会議・団体客の一斉接続を見込んだ機器・帯域設計で、混雑時も快適。</p>
+          </li>
+          <li>
+            <p class="sp-hsim__ct"><span class="sp-hnum">02</span>インバウンド対応</p>
+            <!-- 元のsim_c2_illust.pngは上部26pxに文字が焼き込まれているためSP用に切り落とし済み -->
+            <img class="sp-hsim__il" src="assets/hotel/sp/sp_hsim_c2.png" alt="">
+            <p class="sp-hsim__cx">海外ゲストもSSID接続だけで快適に。多言語案内の掲示も想定。</p>
+            <ul class="sp-hsim__mini">
+              <li><img src="assets/hotel/sp/sp_hsim_c2m1_v2.png" alt="">多言語での<br>案内表示</li>
+              <li><img src="assets/hotel/sp/sp_hsim_c2m2_v2.png" alt="">シンプルな<br>接続フロー</li>
+              <li><img src="assets/hotel/sp/sp_hsim_c2m3_v2.png" alt="">安心の<br>セキュリティ</li>
+            </ul>
+          </li>
+          <li>
+            <p class="sp-hsim__ct"><span class="sp-hnum">03</span>館内どこでも使いやすい</p>
+            <img class="sp-hsim__il" src="assets/hotel/sim_c3_illust.png" alt="">
+            <p class="sp-hsim__cx">ロビー・客室・レストラン・会議室など、館内のさまざまな場所で快適につながる。</p>
+            <ul class="sp-hsim__mini">
+              <li><img src="assets/hotel/sp/sp_hsim_m1_v2.png" alt="">館内全域を<br>カバー</li>
+              <li><img src="assets/hotel/sp/sp_hsim_m2_v2.png" alt="">さまざまな<br>端末に対応</li>
+              <li><img src="assets/hotel/sp/sp_hsim_m3_v2.png" alt="">設置・運用も<br>スムーズ</li>
+            </ul>
+          </li>
+        </ul>
+        <div class="sp-hsim__consult">
+          <img src="assets/hotel/sim_consult_ic.png" alt="">
+          <p>宿泊施設の運用に合わせたネット環境をご提案・構築いたします。</p>
+          <a class="sp-hsim__consult-cta" href="#">まずはご相談ください<span class="sp-hchev" aria-hidden="true"></span></a>
+        </div>
       </div>
     </section>
 
@@ -414,6 +557,51 @@
         <p class="h-bld__title">屋外・露天・駐車場</p>
         <p class="h-bld__text">屋外や遮蔽物や距離の影響で不安定になりやすい。</p>
       </div>
+
+      <!-- SP専用（900px以下） -->
+      <div class="sp-hbld sp-only">
+        <p class="sp-hpill">別館・離れ・複雑な建物構造への対応</p>
+        <h2 class="sp-hbld__h">電波が届きにくい場所こそが、<br><span class="sp-hl-u">設計で解決。</span></h2>
+        <p class="sp-hbld__lead">構造や利用シーンを踏まえた現地調査と最適な機器配置・配線設計で、館内のすみずみまで快適につながる環境を実現します。</p>
+        <p class="sp-hbld__sub">電波が届きにくい場所の例</p>
+        <ul class="sp-hbld__cards">
+          <li>
+            <img class="sp-hbld__ph" src="assets/hotel/bld_ph1.png" alt="奥まった客室のイメージ">
+            <div class="sp-hbld__body">
+              <p class="sp-hbld__ct">奥まった客室</p>
+              <p class="sp-hbld__cx">壁やドアが多く、電波が減衰してつながりにくい。</p>
+            </div>
+          </li>
+          <li>
+            <img class="sp-hbld__ph" src="assets/hotel/bld_ph2.png" alt="長い廊下・通路のイメージ">
+            <div class="sp-hbld__body">
+              <p class="sp-hbld__ct">長い廊下・通路</p>
+              <p class="sp-hbld__cx">距離が長く、途中の壁で電波が弱くなる。</p>
+            </div>
+          </li>
+          <li>
+            <img class="sp-hbld__ph" src="assets/hotel/bld_ph3.png" alt="ロビーの端・ラウンジのイメージ">
+            <div class="sp-hbld__body">
+              <p class="sp-hbld__ct">ロビーの端・ラウンジ</p>
+              <p class="sp-hbld__cx">大空間の端や柱の裏側で電波が届きにくい。</p>
+            </div>
+          </li>
+          <li>
+            <img class="sp-hbld__ph" src="assets/hotel/bld_ph4.png" alt="別館・離れ・渡り廊下のイメージ">
+            <div class="sp-hbld__body">
+              <p class="sp-hbld__ct">別館・離れ・渡り廊下</p>
+              <p class="sp-hbld__cx">本館から離れており、電波が届きにくい。</p>
+            </div>
+          </li>
+          <li>
+            <img class="sp-hbld__ph" src="assets/hotel/bld_ph5.png" alt="屋外・露天・駐車場のイメージ">
+            <div class="sp-hbld__body">
+              <p class="sp-hbld__ct">屋外・露天・駐車場</p>
+              <p class="sp-hbld__cx">屋外や遮蔽物や距離の影響で不安定になりやすい。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- 白ギャップ（カンプ 9719-9813.7） -->
@@ -423,9 +611,9 @@
     <section class="h-srv">
       <h2 class="h-srv__title"><span class="h-srv__title-hl" aria-hidden="true"></span>現地調査と<span class="h-srv__grad">最適配置</span>で、こんなに変わります。</h2>
 
-      <img class="h-srv__before" src="assets/hotel/srv_before.png" alt="改善前（電波が弱いエリア）：館内図面上に電波が弱い・つながりにくいエリアが点在しているイメージ">
+      <img class="h-srv__before" src="assets/hotel/srv_before_v2.png" alt="改善前（電波が弱いエリア）：館内図面上に電波が弱い・つながりにくいエリアが点在しているイメージ">
       <span class="h-srv__arrow" aria-hidden="true"></span>
-      <img class="h-srv__after" src="assets/hotel/srv_after.png" alt="改善後（設計による最適化）：アクセスポイントの最適配置と有線LANで館内全域をWi-Fiカバーするイメージ">
+      <img class="h-srv__after" src="assets/hotel/srv_after_v2.png" alt="改善後（設計による最適化）：アクセスポイントの最適配置と有線LANで館内全域をWi-Fiカバーするイメージ">
 
       <div class="h-srv__points">
         <p class="h-srv__pill">設計だからできる3つのポイント</p>
@@ -448,12 +636,52 @@
           </div>
         </div>
         <div class="h-srv__cta">
-          <img src="assets/hotel/srv_cta_ic.png" alt="">
+          <img src="assets/hotel/srv_cta_ic_v2.png" alt="">
           <div class="h-srv__cta-text">
             <p class="h-srv__cta-main">電波の弱い場所でも、設計でつながる環境へ。</p>
-            <p class="h-srv__cta-sub">調査から設計・運用までワンストップで対応。館内すべてで快適に使えるネット環境をつくります。</p>
+            <p class="h-srv__cta-sub">調査から設計・運用までワンストップで対応。<br>館内すべてで快適に使えるネット環境をつくります。</p>
           </div>
           <a class="h-srv__cta-btn" href="#">機器配置・電波調査の<br>ご相談はこちら<span class="h-srv__cta-circle" aria-hidden="true"></span></a>
+        </div>
+      </div>
+
+      <!-- SP専用（900px以下） -->
+      <div class="sp-hsrv sp-only">
+        <h2 class="sp-hsrv__h"><span class="sp-hl-u">現地調査と最適配置</span>で、<br>こんなに変わります。</h2>
+        <ul class="sp-hsrv__figs">
+          <li><img src="assets/hotel/srv_before_v2.png" alt="改善前：電波が弱いエリアが点在する館内図"></li>
+          <li><img src="assets/hotel/srv_after_v2.png" alt="改善後：アクセスポイントの最適配置と有線LANで館内全域をカバーした館内図"></li>
+        </ul>
+        <p class="sp-hpill sp-hpill--solid sp-hsrv__pill">設計だからできる3つのポイント</p>
+        <p class="sp-hsrv__sub">現地に合わせて、つながる環境を作ります</p>
+        <ul class="sp-hsrv__pts">
+          <li>
+            <img src="assets/hotel/srv_pt1.png" alt="">
+            <div>
+              <p class="sp-hsrv__ct"><span class="sp-hnum">01</span>課題の可視化</p>
+              <p class="sp-hsrv__cx">現地調査で建物構造や利用状況を確認し、電波の弱い場所を特定。</p>
+            </div>
+          </li>
+          <li>
+            <img src="assets/hotel/srv_pt2.png" alt="">
+            <div>
+              <p class="sp-hsrv__ct"><span class="sp-hnum">02</span>最適配置・配線設計</p>
+              <p class="sp-hsrv__cx">アクセスポイントの配置と有線LANのルートを最適化し、安定した通信を実現。</p>
+            </div>
+          </li>
+          <li>
+            <img src="assets/hotel/srv_pt3.png" alt="">
+            <div>
+              <p class="sp-hsrv__ct"><span class="sp-hnum">03</span>将来も安心の設計</p>
+              <p class="sp-hsrv__cx">増築や用途変更にも対応できる余裕のある設計で、長く安心して使えます。</p>
+            </div>
+          </li>
+        </ul>
+        <div class="sp-hsrv__cta">
+          <img src="assets/hotel/srv_cta_ic_v2.png" alt="">
+          <p class="sp-hsrv__cta-h">電波の弱い場所でも、<br>設計でつながる環境へ。</p>
+          <p class="sp-hsrv__cta-x">調査から設計・運用までワンストップで対応。館内すべてで快適に使えるネット環境をつくります。</p>
+          <a class="sp-hsrv__cta-btn" href="#">機器配置・電波調査のご相談はこちら<span class="sp-hchev" aria-hidden="true"></span></a>
         </div>
       </div>
     </section>
@@ -465,7 +693,7 @@
     <section class="h-price" id="price">
       <p class="h-price__pill">料金の目安</p>
       <h2 class="h-price__headline">宿泊施設に合わせて、<br><span class="tx-o4">費用</span>は変わります。</h2>
-      <p class="h-price__lead">客室数や建物構造、必要なアクセスポイント数によって<br>導入費用は異なります。まずは概算の目安をご覧ください。</p>
+      <p class="h-price__lead">客室数や建物構造、必要なアクセスポイント数によって<br>導入費用は異なります。<br>まずは概算の目安をご覧ください。</p>
       <img class="h-price__hero" src="assets/hotel/pr_hero.png" alt="ホテルと電卓・費用イメージのイラスト">
 
       <!-- 料金表 -->
@@ -521,7 +749,51 @@
         <p class="h-price__band-h">ご要望に応じて、<br><span class="h-price__band-o">最適な構成</span>で概算をご案内します。</p>
         <p class="h-price__band-list">◯概算費用を知りたい。◯現地調査について相談したい。<br>◯建物に合う構成を知りたい。◯客室Wi-Fiの改善を相談する。<br>◯館内Wi-Fiの概算費用を聞く。</p>
         <p class="h-price__band-note">現地調査・館内確認のうえ、お見積りをご提案します。</p>
-        <a class="h-price__band-btn" href="#">無料で概算相談する<span aria-hidden="true">›</span></a>
+        <a class="h-price__band-btn" href="#">無料で<br>概算相談する<span aria-hidden="true">›</span></a>
+      </div>
+
+      <!-- SP専用（900px以下） -->
+      <div class="sp-hpr sp-only">
+        <p class="sp-hpill sp-hpill--solid">費用感の目安</p>
+        <div class="sp-hpr__head">
+          <h2 class="sp-hpr__h">宿泊施設に合わせて、<br><span class="sp-hl-o">費用</span>は変わります。</h2>
+          <img class="sp-hpr__hero" src="assets/hotel/pr_hero.png" alt="">
+        </div>
+        <p class="sp-hpr__lead">客室数や建物構造、必要なアクセスポイント数によって導入費用は異なります。</p>
+        <p class="sp-hnote">※下記はあくまで目安です。詳細は概算相談でご確認ください。</p>
+        <ul class="sp-hpr__cards">
+          <li>
+            <span class="sp-hpr__badge">目安</span>
+            <div class="sp-hpr__row"><img src="assets/hotel/pr_fac1.png" alt=""><div><p class="sp-hpr__name">小規模旅館・民宿</p><p class="sp-hpr__rooms">客室数：〜30室程度</p></div></div>
+            <p class="sp-hpr__price"><span class="sp-hpr__plabel">概算費用</span><b>25〜60</b>万円<small>程度</small></p>
+            <p class="sp-hpr__tag">最低限のWi-Fi環境を整えたい方向け</p>
+          </li>
+          <li>
+            <span class="sp-hpr__badge">目安</span>
+            <div class="sp-hpr__row"><img src="assets/hotel/pr_fac2.png" alt=""><div><p class="sp-hpr__name">中規模ホテル</p><p class="sp-hpr__rooms">客室数：31〜80室</p></div></div>
+            <p class="sp-hpr__price"><span class="sp-hpr__plabel">概算費用</span><b>60〜150</b>万円<small>程度</small></p>
+            <p class="sp-hpr__tag">安定した通信と快適性を両立したい方向け</p>
+          </li>
+          <li>
+            <span class="sp-hpr__badge">目安</span>
+            <div class="sp-hpr__row"><img src="assets/hotel/pr_fac3.png" alt=""><div><p class="sp-hpr__name">大型ホテル・複合施設</p><p class="sp-hpr__rooms">客室数：81室〜</p></div></div>
+            <p class="sp-hpr__price"><span class="sp-hpr__plabel">概算費用</span><b>個別見積</b></p>
+            <p class="sp-hpr__tag">建物構造や要件に合わせて最適設計</p>
+          </li>
+        </ul>
+        <p class="sp-hnote">※上記は代表的なケースの概算目安です。現地調査後に正式なお見積りをご提示します。</p>
+        <div class="sp-hpr__factors">
+          <p class="sp-hpr__ftitle">＼＼ 費用が変わる主な要因 ／／</p>
+          <ul>
+            <li><img src="assets/hotel/pr_ic1.png" alt=""><p class="sp-hpr__fname">客室数</p><p class="sp-hpr__ftext">多いほど費用が上がります</p></li>
+            <li><img src="assets/hotel/pr_ic2.png" alt=""><p class="sp-hpr__fname">建物構造</p><p class="sp-hpr__ftext">階数・構造により工事内容が変動</p></li>
+            <li><img src="assets/hotel/pr_ic3.png" alt=""><p class="sp-hpr__fname">既存配線</p><p class="sp-hpr__ftext">配線の有無で工事費が変動</p></li>
+            <li><img src="assets/hotel/pr_ic4.png" alt=""><p class="sp-hpr__fname">必要AP数</p><p class="sp-hpr__ftext">カバー範囲により台数が変動</p></li>
+          </ul>
+        </div>
+        <a class="sp-hcta-btn" href="#"><img src="assets/hotel/sp/sp_hfv_cta2ic_v2.png" alt="">館内Wi-Fiの概算費用を聞く<span class="sp-hfv__chev" aria-hidden="true"></span></a>
+        <p class="sp-hpr__free">無料・最短1分で入力完了</p>
+        <p class="sp-hnote">※正式なお見積もりは現地調査後にご提示します。まずはお気軽にご相談ください。</p>
       </div>
     </section>
 
@@ -533,27 +805,27 @@
       <h2 class="h-op__headline">営業を続けながらでも、<br>工事の<span class="tx-o4">ご相談は可能</span>です。</h2>
       <p class="h-op__lead">お客様へのサービスやホテル運営に影響が出ないよう、<br>スケジュールや作業エリア、<br>施工の流れを柔軟に調整します。</p>
 
-      <div class="h-op__card" style="left:7.10375rem; top:27.58rem;"><img src="assets/hotel/op_c1.png" style="left:0.954375rem; top:1.1875rem; width:5.86375rem;" alt=""><p class="h-op__ct" style="top:1.593125rem;">事前ヒアリング</p><p class="h-op__cx" style="top:3.4375rem;">お客様の動線や混雑時間帯を事前に確認し、最適な進め方をご提案します。</p></div>
-      <div class="h-op__card" style="left:29.565rem; top:27.58rem;"><img src="assets/hotel/op_c2.png" style="left:0.954375rem; top:1.1875rem; width:5.855625rem;" alt=""><p class="h-op__ct" style="top:2.020625rem;">時間帯・エリア調整</p><p class="h-op__cx" style="top:3.864375rem;">作業時間や作業エリアを柔軟に調整し、影響を最小限に抑えます。</p></div>
-      <div class="h-op__card" style="left:7.10375rem; top:36.40125rem;"><img src="assets/hotel/op_c3.png" style="left:0.90625rem; top:1.1875rem; width:5.90375rem;" alt=""><p class="h-op__ct" style="top:1.30375rem;">段階施工で対応</p><p class="h-op__cx" style="top:3.1475rem;">フロアやエリアごとに分けて施工することで、営業を続けながら進められます。</p></div>
-      <div class="h-op__card" style="left:29.565rem; top:36.40125rem;"><img src="assets/hotel/op_c4.png" style="left:0.94625rem; top:1.1875rem; width:5.86375rem;" alt=""><p class="h-op__ct" style="top:1.593125rem;">開通確認・運用サポート</p><p class="h-op__cx" style="top:3.419375rem;">施工後は開通確認を実施し、スムーズな引き渡しと運用までしっかりサポートします。</p></div>
+      <div class="h-op__card" style="left:7.10375rem; top:27.58rem;"><img src="assets/hotel/op_c1.png" style="left:0.954375rem; top:1.1875rem; width:5.86375rem;" alt=""><p class="h-op__ct" style="top: 1.2rem;">事前ヒアリング</p><p class="h-op__cx" style="top:3.4375rem;">お客様の動線や混雑時間帯を事前に確認し、最適な進め方をご提案します。</p></div>
+      <div class="h-op__card" style="left: 31.865rem;top: 27.58rem;"><img src="assets/hotel/op_c2.png" style="left:0.954375rem; top:1.1875rem; width:5.855625rem;" alt=""><p class="h-op__ct" style="top: 1.2rem;">時間帯・エリア調整</p><p class="h-op__cx" style="top:3.1475rem;">作業時間や作業エリアを柔軟に調整し、影響を最小限に抑えます。</p></div>
+      <div class="h-op__card" style="left: 7.10375rem;top: 38.00125rem;"><img src="assets/hotel/op_c3.png" style="left:0.90625rem; top:1.1875rem; width:5.90375rem;" alt=""><p class="h-op__ct" style="top:1.2rem;">段階施工で対応</p><p class="h-op__cx" style="top:3.1475rem;">フロアやエリアごとに分けて施工することで、営業を続けながら進められます。</p></div>
+      <div class="h-op__card" style="left: 31.865rem;top: 38.00125rem;"><img src="assets/hotel/op_c4.png" style="left:0.94625rem; top:1.1875rem; width:5.86375rem;" alt=""><p class="h-op__ct" style="top:1.2rem;">開通確認・運用サポート</p><p class="h-op__cx" style="top:3.419375rem;">施工後は開通確認を実施し、スムーズな引き渡しと運用までしっかりサポートします。</p></div>
 
       <div class="h-op__night">
-        <img src="assets/hotel/op_pill_moon.svg" style="left:1.19625rem; top:1.841875rem; width:5.07375rem; height:4.834375rem;" alt="">
-        <img src="assets/hotel/op_pill_moon2.svg" style="left:3.11125rem; top:1.841875rem; width:3.44625rem; height:3.4075rem;" alt="">
+        <img src="assets/hotel/op_pill_moon.svg" style="left:10.47rem; top:3.5rem; width:5.07375rem; height:4.834375rem;" alt="">
+        <img src="assets/hotel/op_pill_moon2.svg" style="left:12.385rem; top:3.5rem; width:3.44625rem; height:3.4075rem;" alt="">
         <p class="h-op__night-title">夜間・空室中心の調整も可能です</p>
         <p class="h-op__night-text">ご要望に応じて、夜間や空室を中心に<br>工事を行うことも可能です。</p>
       </div>
 
       <!-- 5ステップチップ -->
       <div class="h-op__chip" style="left:7.9175rem; width:15.03rem;"><img src="assets/hotel/op_f1.png" alt="">ご相談</div>
-      <p class="h-op__chipar" style="left:22.46875rem;" aria-hidden="true">▶</p>
+      <p class="h-op__chipar" style="left:22.34rem;" aria-hidden="true">▶</p>
       <div class="h-op__chip" style="left:22.9475rem; width:14.981875rem;"><img src="assets/hotel/op_f2.png" alt="">現地確認</div>
-      <p class="h-op__chipar" style="left:36.7325rem;" aria-hidden="true">▶</p>
+      <p class="h-op__chipar" style="left:37.32rem;" aria-hidden="true">▶</p>
       <div class="h-op__chip" style="left:37.929375rem; width:14.981875rem;"><img src="assets/hotel/op_f3.png" alt="">工程調整</div>
-      <p class="h-op__chipar" style="left:51.714375rem;" aria-hidden="true">▶</p>
+      <p class="h-op__chipar" style="left:52.30rem;" aria-hidden="true">▶</p>
       <div class="h-op__chip" style="left:52.91125rem; width:15.03rem;"><img src="assets/hotel/op_f4.png" alt="">営業しながら施工</div>
-      <p class="h-op__chipar" style="left:66.744375rem;" aria-hidden="true">▶</p>
+      <p class="h-op__chipar" style="left:67.33rem;" aria-hidden="true">▶</p>
       <div class="h-op__chip" style="left:67.94125rem; width:14.981875rem;"><img src="assets/hotel/op_f5.png" alt="">利用開始</div>
 
       <!-- フロー詳細パネル -->
@@ -596,6 +868,20 @@
         <p class="h-op__band-h"><span class="h-op__band-o">営業しながらの工事</span>に関する<br>ご相談を受け付けております。</p>
         <a class="h-op__band-btn" href="#">無料で改善相談する<span aria-hidden="true">›</span></a>
       </div>
+
+      <!-- SP専用（900px以下） -->
+      <div class="sp-hop sp-only">
+        <h2 class="sp-hop__h"><span class="sp-hl-o">営業しながら</span>の工事も<br>ご相談ください。</h2>
+        <p class="sp-hop__lead">客室稼働や館内利用に配慮しながら、<br>工事日程や作業エリアを調整します。</p>
+        <img class="sp-hop__photo" src="assets/hotel/sp/sp_hop_hero_v2.png" alt="営業中のフロントで工事担当者と相談するイメージ">
+        <ul class="sp-hop__cards">
+          <li><span class="sp-hnum sp-hnum--t">01</span><img src="assets/hotel/sp/sp_hop_ic1_v2.png" alt=""><p class="sp-hop__ct">稼働状況に<br>合わせた調整</p><p class="sp-hop__cx">繁忙期やイベント時期も考慮し、最適な日程をご提案します。</p></li>
+          <li><span class="sp-hnum sp-hnum--t">02</span><img src="assets/hotel/sp/sp_hop_ic2_v2.png" alt=""><p class="sp-hop__ct">フロア単位の<br>段階工事</p><p class="sp-hop__cx">エリアを区切って進めることで、影響を最小限に抑えます。</p></li>
+          <li><span class="sp-hnum sp-hnum--t">03</span><img src="assets/hotel/sp/sp_hop_ic3_v2.png" alt=""><p class="sp-hop__ct">既存設備を<br>生かした構成提案</p><p class="sp-hop__cx">現在の設備や配線環境を活かし、コストと負担を抑えたご提案をします。</p></li>
+        </ul>
+        <p class="sp-hop__check"><span aria-hidden="true">✓</span>チェックアウト後〜チェックイン前の作業相談</p>
+        <p class="sp-hop__check"><span aria-hidden="true">✓</span>共用部・バックヤードの先行整備</p>
+      </div>
     </section>
 
     <!-- 白ギャップ（カンプ 15035-15102） -->
@@ -614,9 +900,15 @@
       <div class="h-ij__video">
         <div class="h-ij__video-bar">
           <span class="h-ij__video-cam" aria-hidden="true"></span>
-          <p class="h-ij__video-bartitle">工事の様子を動画で見る</p>
+          <p class="h-ij__video-bartitle">工事の様子（動画は近日公開）</p>
         </div>
-        <img class="h-ij__video-photo" src="assets/hotel/ij_video.png" alt="工事の様子の動画サムネイル（再生ボタン・1:25）">
+        <div class="h-ij__video-wrap">
+          <img class="h-ij__video-photo" src="assets/hotel/ij_video.png" alt="工事の様子のイメージ写真（動画は近日公開）">
+          <div class="h-ij__video-veil" aria-hidden="true">
+            <p class="h-ij__video-soon">Coming Soon</p>
+            <p class="h-ij__video-soonjp">動画は撮影・編集中です</p>
+          </div>
+        </div>
         <ul class="h-ij__thumbs">
           <li><img src="assets/hotel/ij_thumb1.png" alt="機器の設置作業の写真"><span>機器の設置</span></li>
           <li><img src="assets/hotel/ij_thumb2.png" alt="配線・配管の施工の写真"><span>配線・配管の施工</span></li>
@@ -678,10 +970,30 @@
       <!-- クリック案内帯 -->
       <div class="h-ij__note">
         <span class="h-ij__note-icon" aria-hidden="true"></span>
-        <p>動画・写真をクリックすると、実際の工事・利用イメージをご覧いただけます。</p>
+        <p>写真をクリックすると、実際の工事・利用イメージをご覧いただけます。<br>動画は近日公開予定です。</p>
       </div>
 
     </section>
+
+    <div class="sp-hij sp-only">
+      <p class="sp-hpill sp-hpill--solid">対応イメージ</p>
+      <h2 class="sp-hij__h">実際の工事・利用シーンを、<br>具体的に<span class="sp-hl-u">イメージできます。</span></h2>
+      <p class="sp-hij__lead">作業エリアや館内環境にあわせて、<br>無理のない進め方をご提案します。</p>
+      <ul class="sp-hij__cards">
+        <li>
+          <img class="sp-hij__photo" src="assets/hotel/sp/sp_hij_photo1.png" alt="機器の設置作業の写真">
+          <div class="sp-hij__body"><p class="sp-hij__ct">工事・配線確認</p><p class="sp-hij__cx">館内の設備や配線を確認し、最適な工事計画をご提案します。</p></div>
+        </li>
+        <li>
+          <img class="sp-hij__photo" src="assets/hotel/sp/sp_hij_photo2.png" alt="客室のWi-Fi利用イメージ">
+          <div class="sp-hij__body"><p class="sp-hij__ct">客室Wi-Fi改善</p><p class="sp-hij__cx">客室内でのWi-Fi通信を確認し、快適に使える環境へ改善します。</p></div>
+        </li>
+        <li>
+          <img class="sp-hij__photo" src="assets/hotel/sp/sp_hij_photo3.png" alt="共用部のWi-Fi利用イメージ">
+          <div class="sp-hij__body"><p class="sp-hij__ct">共用部Wi-Fi改善</p><p class="sp-hij__cx">ロビーやレストランなどの共用エリアでの接続状況を確認・改善します。</p></div>
+        </li>
+      </ul>
+    </div>
 
     <!-- ===== 導入した施設さまの声 ===== -->
     <section class="h-vo">
@@ -845,6 +1157,61 @@
         <img class="h-vo__cta-chev" src="assets/hotel/vo_chev.svg" alt="" aria-hidden="true">
       </a>
 
+      <!-- SP専用（900px以下） -->
+      <div class="sp-hvo sp-only">
+        <p class="sp-hpill">導入事例イメージ</p>
+        <h2 class="sp-hvo__h">導入した<span class="sp-hl-u">施設さまの声。</span></h2>
+        <p class="sp-hvo__lead">Wi-Fi環境の改善で、お客様満足度の向上や運営効率化を実現しています。</p>
+        <ul class="sp-hvo__cards">
+          <li>
+            <img class="sp-hvo__photo" src="assets/hotel/vo_photo1.png" alt="ビジネスホテルの導入イメージ">
+            <p class="sp-hvo__tag">ビジネスホテル</p>
+            <p class="sp-hvo__name">オーロラホテル東京 様</p>
+            <p class="sp-hvo__spec">客室数：120室 ／ 東京都</p>
+            <dl class="sp-hvo__rows">
+              <dt><img src="assets/hotel/vo_ic_bg.png" alt="">導入背景</dt>
+              <dd>客室でのWi-Fi接続が不安定で、口コミ評価の低下が課題に。</dd>
+              <dt><img src="assets/hotel/vo_ic_sv.png" alt="">導入サービス</dt>
+              <dd>全館Wi-Fi設計・10G回線・アクセスポイント増設。</dd>
+              <dt><img src="assets/hotel/vo_ic_ch.png" alt="">導入後の変化</dt>
+              <dd>口コミ評価が3.2から4.6に向上。フロントへの接続問い合わせが約70%減少。</dd>
+            </dl>
+            <p class="sp-hvo__voice"><img src="assets/hotel/vo_avatar.png" alt=""><span><b>支配人 T様</b>お客さまからの「Wi-Fiが快適」という声が増え、口コミ評価が大きく改善しました。</span></p>
+          </li>
+          <li>
+            <img class="sp-hvo__photo" src="assets/hotel/vo_photo2.png" alt="温泉旅館の導入イメージ">
+            <p class="sp-hvo__tag">温泉旅館</p>
+            <p class="sp-hvo__name">さくら庵 様</p>
+            <p class="sp-hvo__spec">客室数：45室 ／ 長野県</p>
+            <dl class="sp-hvo__rows">
+              <dt><img src="assets/hotel/vo_ic_bg.png" alt="">導入背景</dt>
+              <dd>館内のWi-Fiが届きにくく、客室やロビーでの満足度が低い。</dd>
+              <dt><img src="assets/hotel/vo_ic_sv.png" alt="">導入サービス</dt>
+              <dd>館内Wi-Fi設計・VLAN分離・アクセスポイント最適配置。</dd>
+              <dt><img src="assets/hotel/vo_ic_ch.png" alt="">導入後の変化</dt>
+              <dd>利用者アンケートのWi-Fi満足度が向上。SNS投稿・長期滞在のお客様が増加。</dd>
+            </dl>
+            <p class="sp-hvo__voice"><img src="assets/hotel/vo_avatar.png" alt=""><span><b>女将 S様</b>館内のどこでも快適につながるようになり、お客さまの満足度が目に見えて上がりました。</span></p>
+          </li>
+          <li>
+            <img class="sp-hvo__photo" src="assets/hotel/vo_photo3.png" alt="貸会議室・イベント施設の導入イメージ">
+            <p class="sp-hvo__tag">貸会議室・イベント施設</p>
+            <p class="sp-hvo__name">イベントホール新宿 様</p>
+            <p class="sp-hvo__spec">収容人数：300名 ／ 東京都</p>
+            <dl class="sp-hvo__rows">
+              <dt><img src="assets/hotel/vo_ic_bg.png" alt="">導入背景</dt>
+              <dd>イベント時に接続が集中し、通信遅延や切断が多発していた。</dd>
+              <dt><img src="assets/hotel/vo_ic_sv.png" alt="">導入サービス</dt>
+              <dd>高速回線（10G）・VLAN分離・一括管理ソリューション。</dd>
+              <dt><img src="assets/hotel/vo_ic_ch.png" alt="">導入後の変化</dt>
+              <dd>イベント時の通信トラブルがほぼゼロに。運営スタッフの対応工数を約50%削減。</dd>
+            </dl>
+            <p class="sp-hvo__voice"><img src="assets/hotel/vo_avatar.png" alt=""><span><b>施設担当 M様</b>安定した通信環境で、イベント運営がスムーズに。スタッフの負担も減りました。</span></p>
+          </li>
+        </ul>
+        <a class="sp-hvo__cta" href="#">客室Wi-Fiの改善に関するご相談はコチラ<span class="sp-hchev" aria-hidden="true"></span></a>
+      </div>
+
     </section>
 
     <!-- ===== 関連サービス ===== -->
@@ -895,7 +1262,7 @@
         </div>
       </article>
 
-      <article class="h-sv__card" style="left:3.140625rem; top:42.400625rem;">
+      <article class="h-sv__card" style="left:3.140625rem; top:46.18rem;">
         <img class="h-sv__photo" src="assets/hotel/sv_photo2.png" alt="共用部Wi-Fiのイメージ">
         <img class="h-sv__icon" src="assets/hotel/sv_ic2.png" style="top:2.0575rem;" alt="">
         <p class="h-sv__ct" style="left:28.135rem; top:2.978125rem;">共用部Wi-Fi</p>
@@ -903,14 +1270,14 @@
         <span class="h-sv__bul" style="top:7.96rem;" aria-hidden="true"></span>
         <span class="h-sv__bul" style="top:10.884375rem;" aria-hidden="true"></span>
         <span class="h-sv__bul" style="top:12.2925rem;" aria-hidden="true"></span>
-        <div class="h-sv__tx" style="top:7.364375rem; width:15.595625rem;">
+        <div class="h-sv__tx" style="top:7.364375rem;">
           <p>ロビー・ラウンジ・レストラン・宴会場などの</p>
           <p>快適な通信環境を提供</p>
           <p>エリア設計から最適化</p>
         </div>
       </article>
 
-      <article class="h-sv__card" style="left:41.155rem; top:42.400625rem;">
+      <article class="h-sv__card" style="left:41.155rem; top:46.18rem;">
         <img class="h-sv__photo" src="assets/hotel/sv_photo4.png" alt="保守・遠隔サポートのイメージ">
         <img class="h-sv__icon" src="assets/hotel/sv_ic4.png" style="top:2.0575rem;" alt="">
         <p class="h-sv__ct" style="left:29.141875rem; top:2.978125rem;">保守・遠隔サポート</p>
@@ -918,7 +1285,7 @@
         <span class="h-sv__bul" style="top:7.96rem;" aria-hidden="true"></span>
         <span class="h-sv__bul" style="top:10.884375rem;" aria-hidden="true"></span>
         <span class="h-sv__bul" style="top:12.2925rem;" aria-hidden="true"></span>
-        <div class="h-sv__tx" style="top:7.364375rem; width:15.595625rem;">
+        <div class="h-sv__tx" style="top:7.364375rem;">
           <p>導入後の問い合わせ・トラブルに対応</p>
           <p>遠隔監視による安定運用を支援</p>
           <p>保守体制で長期的に安心</p>
@@ -954,6 +1321,18 @@
 
     <!-- 白ギャップ（カンプ 20933-20971） -->
     <div style="height:2.4rem;background:#fff;"></div>
+
+    <div class="sp-hsv sp-only">
+      <h2 class="sp-hsv__h"><span class="sp-hl-o">Wi-Fi以外</span>の設備も、<br>必要に応じてご相談いただけます。</h2>
+      <p class="sp-hsv__lead">館内Wi-Fiとあわせて、<br>関連設備や通信まわりのご相談も可能です。</p>
+      <ul class="sp-hsv__cards">
+        <li><img src="assets/hotel/sv_ic1.png" alt=""><p>防犯カメラ</p></li>
+        <li><img src="assets/hotel/sv_ic3.png" alt=""><p>業務用ネットワーク</p></li>
+        <li><img src="assets/hotel/sv_ic2.png" alt=""><p>共用部Wi-Fi</p></li>
+        <li><img src="assets/hotel/sv_ic4.png" alt=""><p>保守・遠隔サポート</p></li>
+      </ul>
+      <a class="sp-hsv__btn" href="#">関連サービスも相談する<span class="sp-hfv__chev sp-hfv__chev--o" aria-hidden="true"></span></a>
+    </div>
 
     <!-- ===== ご相談から運用開始まで ===== -->
     <section class="h-uk">
@@ -1051,10 +1430,23 @@
     </section>
 
     <!-- ===== 導入前のギモン（FAQ） ===== -->
-    <section class="h-faq">
+    <div class="sp-huk sp-only">
+      <h2 class="sp-huk__h">ご相談から<span class="sp-hl-u">運用開始</span>まで<br>スムーズに進行します。</h2>
+      <p class="sp-huk__lead">施設の営業状況や館内環境に配慮しながら、<br>現地確認から導入後の運用までサポートします。</p>
+      <ol class="sp-huk__steps">
+        <li><span class="sp-hnum sp-hnum--big">1</span><img src="assets/hotel/op_f1.png" alt=""><div><p class="sp-huk__st">ご相談・お問い合わせ</p><p class="sp-huk__sx">お困りごとやご要望をお伺いし、進め方をご提案します。</p></div></li>
+        <li><span class="sp-hnum sp-hnum--big">2</span><img src="assets/hotel/op_f2.png" alt=""><div><p class="sp-huk__st">現地確認・概算提案</p><p class="sp-huk__sx">現地確認を行い、最適な構成と概算費用をご提案します。</p></div></li>
+        <li><span class="sp-hnum sp-hnum--big">3</span><img src="assets/hotel/op_f3.png" alt=""><div><p class="sp-huk__st">工事日程の調整</p><p class="sp-huk__sx">施設のご都合を伺いながら、工事日程を調整します。</p></div></li>
+        <li><span class="sp-hnum sp-hnum--big">4</span><img src="assets/hotel/op_f5.png" alt=""><div><p class="sp-huk__st">導入・運用開始</p><p class="sp-huk__sx">工事完了後、動作確認を行い、運用を開始します。</p></div></li>
+      </ol>
+      <p class="sp-huk__band"><img src="assets/hotel/fv_ic_head_v2@3x.png" alt="">導入後も安心のサポート体制で、<br>安定した運用も支えます。</p>
+    </div>
+
+    <section class="h-faq" id="faq">
       <p class="h-faq__pill">導入をご検討中の方へ</p>
       <h2 class="h-faq__title">導入前の<span class="h-faq__u">ギモン</span>にお答えします</h2>
       <p class="h-faq__lead">Wi-Fi設備の導入を検討する際に、多くの宿泊施設様が気になるポイントをまとめました。</p>
+      <p class="sp-hfaq-lead sp-only">よくいただくご質問をまとめました。<br>その他のご相談もお気軽に<br>お問い合わせください。</p>
 
       <ul class="h-faq__list">
         <li>
@@ -1064,7 +1456,7 @@
               <p class="h-faq__qt">費用はどれくらいですか？</p>
               <img class="h-faq__chev" src="assets/hotel/faq_plus.svg" alt="" aria-hidden="true">
             </summary>
-            <div class="h-faq__a"><p><!-- 回答テキスト（Q1）をここに --></p></div>
+            <div class="h-faq__a"><p>客室数や建物構造、必要なアクセスポイントの数によって変わります。目安として、小規模な旅館・民宿さまで初期費用25〜60万円、中規模ホテルさまで60〜150万円程度です。現地調査のうえ、無料でお見積りをご提案します。</p></div>
           </details>
         </li>
         <li>
@@ -1074,7 +1466,7 @@
               <p class="h-faq__qt">古い建物でも導入できますか？</p>
               <img class="h-faq__chev" src="assets/hotel/faq_plus.svg" alt="" aria-hidden="true">
             </summary>
-            <div class="h-faq__a"><p><!-- 回答テキスト（Q2）をここに --></p></div>
+            <div class="h-faq__a"><p>はい、可能です。木造・鉄筋を問わず、現地調査で建物の構造や配線ルートを確認し、最適な機器配置を設計します。配線が難しい箇所には、建物に合わせた施工方法をご提案します。</p></div>
           </details>
         </li>
         <li>
@@ -1084,7 +1476,7 @@
               <p class="h-faq__qt">既存の回線やWi-Fiを活かせますか？</p>
               <img class="h-faq__chev" src="assets/hotel/faq_plus.svg" alt="" aria-hidden="true">
             </summary>
-            <div class="h-faq__a"><p><!-- 回答テキスト（Q3）をここに --></p></div>
+            <div class="h-faq__a"><p>活かせる設備は最大限活用します。現地調査で既存の回線・配線・機器の状態を確認し、使えるものは残してコストを抑えた構成をご提案します。</p></div>
           </details>
         </li>
         <li>
@@ -1094,7 +1486,7 @@
               <p class="h-faq__qt">工事中に宿泊者への影響はありますか？</p>
               <img class="h-faq__chev" src="assets/hotel/faq_plus.svg" alt="" aria-hidden="true">
             </summary>
-            <div class="h-faq__a"><p><!-- 回答テキスト（Q4）をここに --></p></div>
+            <div class="h-faq__a"><p>影響を最小限に抑えて施工します。作業の時間帯やエリアを事前に調整し、音の出る作業は空室や利用の少ない時間帯を中心に行います。</p></div>
           </details>
         </li>
         <li>
@@ -1104,7 +1496,7 @@
               <p class="h-faq__qt">ホテル営業中でも工事できますか？</p>
               <img class="h-faq__chev" src="assets/hotel/faq_plus.svg" alt="" aria-hidden="true">
             </summary>
-            <div class="h-faq__a"><p><!-- 回答テキスト（Q5）をここに --></p></div>
+            <div class="h-faq__a"><p>はい、営業を続けながらの施工が可能です。フロアやエリアごとに分けた段階施工で、お客さまの動線を避けながら進めます。</p></div>
           </details>
         </li>
         <li>
@@ -1114,7 +1506,7 @@
               <p class="h-faq__qt">宿泊者用と業務用ネットワークは分けられますか？</p>
               <img class="h-faq__chev" src="assets/hotel/faq_plus.svg" alt="" aria-hidden="true">
             </summary>
-            <div class="h-faq__a"><p><!-- 回答テキスト（Q6）をここに --></p></div>
+            <div class="h-faq__a"><p>はい、分けられます。VLAN分離により、宿泊者用Wi-Fiと予約・決済などの業務用ネットワークを分離し、セキュリティと通信の安定性を両立します。</p></div>
           </details>
         </li>
         <li>
@@ -1124,7 +1516,7 @@
               <p class="h-faq__qt">保守対応はありますか？</p>
               <img class="h-faq__chev" src="assets/hotel/faq_plus.svg" alt="" aria-hidden="true">
             </summary>
-            <div class="h-faq__a"><p><!-- 回答テキスト（Q7）をここに --></p></div>
+            <div class="h-faq__a"><p>はい。導入後のお問い合わせ窓口に加え、遠隔監視による安定運用の支援や、トラブル時の切り分け・復旧対応など、保守体制をご用意しています。</p></div>
           </details>
         </li>
         <li>
@@ -1134,13 +1526,21 @@
               <p class="h-faq__qt">現地調査だけでも依頼できますか？</p>
               <img class="h-faq__chev" src="assets/hotel/faq_plus.svg" alt="" aria-hidden="true">
             </summary>
-            <div class="h-faq__a"><p><!-- 回答テキスト（Q8）をここに --></p></div>
+            <div class="h-faq__a"><p>はい、現地調査とお見積りだけのご依頼も歓迎です。調査・お見積りは無料で、無理な営業は一切いたしませんので、お気軽にご相談ください。</p></div>
           </details>
         </li>
       </ul>
     </section>
 
     <!-- ===== CTA ===== -->
+    <div class="sp-hfaq-cta sp-only">
+      <div class="sp-hfaq-cta__row">
+        <img src="assets/hotel/sp/sp_hfaq_woman_v2.png" alt="">
+        <p class="sp-hfaq-cta__t">その他のご不明点も<br>お気軽にご相談ください。</p>
+      </div>
+      <a class="sp-hfaq-cta__btn" href="#">無料で相談する<span class="sp-hfv__chev" aria-hidden="true"></span></a>
+    </div>
+
     <section class="h-cta">
       <div class="h-cta__in">
       <img class="h-cta__deco" src="assets/hotel/cta_blob.png" style="left:0; top:0; width:8rem; height:27.0625rem;" alt="" aria-hidden="true">
@@ -1155,7 +1555,7 @@
       <p class="h-cta__tel-label">お電話でのお問合せ（通話無料）</p>
       <img class="h-cta__tel-icon" src="assets/hotel/cta_tel.svg" alt="">
       <p class="h-cta__tel"><a href="tel:0120363624">0120-36-3624</a></p>
-      <p class="h-cta__hours"><b>受付時間</b><span>平日10:00-19:00 / 土日祝10:00-17:00</span><small>※年末年始を除く</small></p>
+      <p class="h-cta__hours"><b>受付時間</b><span>平日10:00-19:00 / 土日祝10:00-17:00</span><small>（※年末年始を除く）</small></p>
       <span class="h-cta__hr" style="top:20.041875rem;" aria-hidden="true"></span>
 
       <a class="h-cta__form" href="#">
@@ -1165,6 +1565,24 @@
       </a>
 
       <p class="h-cta__note">現地調査・ご相談・お見積もりはすべて無料です。お気軽にお問い合わせください。</p>
+
+      <!-- SP専用（900px以下） -->
+      <div class="sp-hcta sp-only">
+        <p class="sp-hcta__pill">ご相談・お見積もり無料</p>
+        <h2 class="sp-hcta__h">館内のネット環境、<br><span class="sp-hl-u">まずはご相談</span>ください。</h2>
+        <p class="sp-hcta__lead">客室数や館内状況が分かれば、<br>概算費用のご相談も可能です。</p>
+        <div class="sp-hcta__tel">
+          <p class="sp-hcta__tel-label">お電話でのお問合せ<small>（受付時間　平日10:00-19:00 / 土日祝10:00-17:00）</small></p>
+          <a class="sp-hcta__tel-num" href="tel:0120363624"><span class="sp-hcta__tel-ic" aria-hidden="true"></span>0120-36-3624</a>
+        </div>
+        <a class="sp-hcta__btn sp-hcta__btn--solid" href="#"><img src="assets/hotel/sp/sp_hfv_cta1ic_v2.png" alt="">客室Wi-Fiの改善を相談する<span class="sp-hfv__chev" aria-hidden="true"></span></a>
+        <a class="sp-hcta__btn sp-hcta__btn--white" href="#"><img src="assets/hotel/sp/sp_hfv_cta2ic_v2.png" alt="">館内Wi-Fiの概算費用を聞く<span class="sp-hfv__chev sp-hfv__chev--o" aria-hidden="true"></span></a>
+        <ul class="sp-hcta__chips">
+          <li><img src="assets/hotel/sp/sp_hcta_chip1_v2.png" alt="現地調査・お見積もり無料"></li>
+          <li><img src="assets/hotel/sp/sp_hcta_chip2_v2.png" alt="無理な営業はいたしません"></li>
+          <li><img src="assets/hotel/sp/sp_hcta_chip3_v2.png" alt="営業中の工事相談も可能"></li>
+        </ul>
+      </div>
     </div>
     </section>
 
@@ -1179,9 +1597,22 @@
 <a class="totop" href="#" aria-label="ページ上部へ戻る"><i aria-hidden="true"></i></a>
 <script>
 (function(){
+  var menu = document.querySelector('.sp-menu');
+  var drawer = document.querySelector('.sp-drawer');
+  if (!menu || !drawer) return;
+  function toggle(open){ drawer.classList.toggle('is-open', open); }
+  menu.addEventListener('click', function(){ toggle(!drawer.classList.contains('is-open')); });
+  drawer.addEventListener('click', function(e){
+    if (e.target.closest('.sp-drawer__close') || e.target.closest('a')) toggle(false);
+  });
+})();
+</script>
+<script>
+(function(){
   var hfv = document.querySelector('.hfv');
   if (!hfv) return;
   function fit(){
+    if (window.matchMedia('(max-width: 900px)').matches) return; // SPはSP専用FVを使う
     var rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
     var header = document.querySelector('.fv-header');
     var avail = window.innerHeight - (header ? header.offsetHeight : 0);
