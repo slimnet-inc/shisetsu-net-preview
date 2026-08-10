@@ -3207,3 +3207,41 @@ article.h-vo__case:nth-of-type(3) { top: 93.63375rem !important; }
   line-height: 1.7;
   color: #8A8378;
 }
+
+/* =====================================================================
+   2026-08-10 石躍さん再指摘②：担当者の声を「導入後に期待できる変化」へ置換
+   （架空の証言に見える形式を回避。実際の許諾が取れたら声形式に戻す）
+   ===================================================================== */
+.h-vo__quote--expect {
+  display: block;
+  padding: 0.9rem 1.4rem;
+}
+.h-vo__expect-t {
+  margin: 0 0 0.45rem;
+  font-weight: 700;
+  font-size: 1.32rem;
+  color: #C75B00;
+}
+.h-vo__expect {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.h-vo__expect li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 1.28rem;
+  line-height: 1.75;
+  color: #1A1A1A;
+}
+.h-vo__expect li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.72rem;
+  width: 0.72rem;
+  height: 0.42rem;
+  border-left: 0.18rem solid #E8842B;
+  border-bottom: 0.18rem solid #E8842B;
+  transform: rotate(-45deg);
+}

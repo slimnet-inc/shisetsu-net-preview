@@ -1339,4 +1339,31 @@
     background: url("../assets/hotel/sp/sp_hcta_tel_w.svg") center / contain no-repeat;
   }
 
+
+  /* 2026-08-10 石躍さん再指摘②：担当者の声 → 期待できる変化の箇条書き */
+  .sp-hvo__expect {
+    margin: 14px 14px 0;
+    background: #FDF6F0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-align: left;
+  }
+  .sp-hvo__expect-t { font-size: 13px; font-weight: 700; color: #C75B00; }
+  .sp-hvo__expect ul { margin: 6px 0 0; padding: 0; list-style: none; }
+  .sp-hvo__expect li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 12.5px;
+    line-height: 1.8;
+  }
+  .sp-hvo__expect li::before {
+    content: "";
+    position: absolute;
+    left: 2px; top: 8px;
+    width: 8px; height: 5px;
+    border-left: 2px solid #E8842B;
+    border-bottom: 2px solid #E8842B;
+    transform: rotate(-45deg);
+  }
+
 }
