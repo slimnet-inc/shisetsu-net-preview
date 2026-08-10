@@ -2446,6 +2446,12 @@
 .mfv { height: calc(50.25rem * var(--fvk, 1)); }
 .mfv__in { transform: scale(var(--fvk, 1)); transform-origin: top center; }
 .mfv::after { height: calc(28.352875rem * var(--fvk, 1)); }
+/* 2026-08-06 石躍さんレビュー後のToku指摘：FVの左右に白い隙間。
+   デザイン本体は --fvk で拡縮するのに、左右を埋める青帯の幅だけが
+   等倍（45rem）計算のままで、1440px相当以外の画面幅すべてでズレていた。
+   幅にも --fvk を掛けて、常にデザインの端にぴったり接続させる */
+.mfv::before { width: calc(50% - 45rem * var(--fvk, 1) + 1px); }
+.mfv::after  { width: calc(50% - 45rem * var(--fvk, 1) + 1px); }
 
 /* セクションの上下余白を拡張（各±2.5rem、スペーサー方式は撤回） */
 .m-worries { height: 79.010625rem; }

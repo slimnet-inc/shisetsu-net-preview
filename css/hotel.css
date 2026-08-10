@@ -3191,3 +3191,19 @@ article.h-vo__case:nth-of-type(3) { top: 93.63375rem !important; }
 .h-ij__video-wrap .h-ij__video-photo { filter: blur(0.55rem) grayscale(.35) brightness(.82); }
 .h-ij__video-wrap { overflow: hidden; }
 .h-ij__video-veil { background: rgba(26,26,46,.5); }
+
+/* =====================================================================
+   2026-08-06 石躍さん指摘A：事例セクションをイメージ形式へ
+   （施設名・数値を削除、注釈を追加。文言変更はHTML側）
+   ===================================================================== */
+.h-vo { height: 145.5rem; }
+.h-vo__note {
+  position: absolute;
+  left: 0; right: 0;
+  top: 139.8rem;
+  margin: 0;
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #8A8378;
+}
