@@ -176,4 +176,10 @@
   /* 2026-08-11 「by スリム光」削除：ロゴv2（幅75.2%）に合わせて縮小 */
   .fv-header__logo img { width: 195px; width: 12.22rem; }
 
+
+  /* フッターのコピーライト行：運営リンクが増えたぶん折り返せるように */
+  .fv-footer p { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 12px; padding: 0 14px; }
+  .fv-footer .copy-links { display: contents; }
+  .fv-footer .copy-links a { margin-left: 0; }
+
 }

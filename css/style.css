@@ -541,53 +541,106 @@ body {
 .gl-nav a:hover { color: #1A5FE0; }
 @media (max-width: 1024px) { .gl-nav { display: none; } }
 
-/* マンション⇄ホテルの相互リンクバナー（2026-08-12 石躍さん指摘で高さを出してバナー化） */
+/* マンション⇄ホテルの相互リンクバナー
+   2026-08-12 Toku指摘「安っぽい」→ 濃色ベタ＋幾何学模様＋ピクトで作り込み */
 .switch-band {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
+  display: block;
+  position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
-  padding: 2.4rem 1.4rem;
+  padding: 3.6rem 1.4rem;
   text-decoration: none;
-  position: relative;
+  overflow: hidden;
   z-index: 1;
-  text-align: center;
-  border-top: 0.25rem solid currentColor;
-  border-bottom: 0.25rem solid currentColor;
+  color: #fff;
 }
-.switch-band__sub {
-  font-size: 1.25rem;
-  font-weight: 700;
-  opacity: .85;
+/* 背景の幾何学模様（ドット＋斜線＋大きな円） */
+.switch-band__deco {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(255,255,255,.14) 1.5px, transparent 1.6px),
+    repeating-linear-gradient(135deg, rgba(255,255,255,.055) 0 1px, transparent 1px 16px),
+    radial-gradient(circle at 8% 50%, transparent 7.4rem,
+      rgba(255,255,255,.10) 7.5rem, rgba(255,255,255,.10) 7.9rem, transparent 8rem),
+    radial-gradient(circle at 94% 50%, transparent 10.4rem,
+      rgba(255,255,255,.08) 10.5rem, rgba(255,255,255,.08) 11rem, transparent 11.1rem);
+  background-size: 26px 26px, auto, 100% 100%, 100% 100%;
 }
-.switch-band__main {
+.switch-band__inner {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  font-size: 2.05rem;
-  font-weight: 900;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 78rem;
+  margin: 0 auto;
+}
+/* ピクトは白い丸で抜く */
+.switch-band__icon {
+  flex: none;
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,.16);
+  padding: 0.5rem;
+  object-fit: contain;
+}
+.switch-band__tx { display: flex; flex-direction: column; gap: 0.4rem; }
+.switch-band__sub {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  height: 2.4rem;
+  padding: 0 1rem;
+  border-radius: 1.2rem;
+  background: rgba(255,255,255,.2);
+  font-size: 1.24rem;
+  font-weight: 700;
   letter-spacing: .04em;
 }
-.switch-band__main::after {
-  content: "";
-  flex: none;
-  width: 0.85rem;
-  height: 0.85rem;
-  border-top: 0.25rem solid currentColor;
-  border-right: 0.25rem solid currentColor;
-  transform: rotate(45deg);
+.switch-band__main {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  line-height: 1.35;
 }
-.switch-band--to-hotel   { color: #E96D00; background: #FDF1E4; }
-.switch-band--to-mansion { color: #0455C3; background: #EAF2FC; }
-.switch-band:hover { filter: brightness(.97); }
+/* 右端の丸ボタン */
+.switch-band__go {
+  flex: none;
+  position: relative;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+  background: #fff;
+}
+.switch-band__go::after {
+  content: "";
+  position: absolute;
+  left: 45%; top: 50%;
+  width: 0.85rem; height: 0.85rem;
+  border-top: 0.26rem solid currentColor;
+  border-right: 0.26rem solid currentColor;
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+.switch-band--to-hotel   { background: #E96D00; }
+.switch-band--to-mansion { background: #0B54C7; }
+.switch-band--to-hotel   .switch-band__go { color: #E96D00; }
+.switch-band--to-mansion .switch-band__go { color: #0B54C7; }
+.switch-band:hover .switch-band__go { transform: translateX(0.3rem); transition: transform .2s ease; }
+
 @media (max-width: 900px) {
-  .switch-band { padding: 18px 14px; gap: 3px; }
-  .switch-band__sub { font-size: 12px; }
-  .switch-band__main { font-size: 16px; gap: 7px; }
-  .switch-band__main::after { width: 8px; height: 8px; border-width: 2.5px; }
+  .switch-band { padding: 26px 16px; }
+  .switch-band__inner { gap: 12px; }
+  .switch-band__icon { width: 54px; height: 54px; padding: 4px; }
+  .switch-band__sub { height: 20px; padding: 0 9px; font-size: 11px; border-radius: 10px; }
+  /* 主文はSPだと2行に折り返すので、文字を詰めて「のページ」を省く */
+  .switch-band__main { font-size: 15.5px; line-height: 1.4; white-space: nowrap; }
+  .switch-band__opt { display: none; }
+  .switch-band__go { width: 34px; height: 34px; }
+  .switch-band__go::after { width: 7px; height: 7px; border-width: 2.5px; }
+  .switch-band__deco { background-size: 20px 20px, auto, 100% 100%, 100% 100%; }
 }
 
 /* フッターの運営リンク */
@@ -598,3 +651,6 @@ body {
   text-decoration: underline;
 }
 .copy-links a:hover { color: #1A5FE0; }
+
+/* ページ内アンカーの目印（高さ0・見えない。ヘッダー分だけ上に余白を取る） */
+.anchor-mark { display: block; height: 0; scroll-margin-top: 1rem; }

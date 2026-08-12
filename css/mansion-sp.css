@@ -1790,4 +1790,11 @@
   .fv-header__logo img { width: 119px; }
   .sp-tech-logo img { width: 158px; }
 
+
+  /* フッターのコピーライト行：運営リンクが増えたぶん折り返せるように */
+  .m-footer__copy { padding: 10px 14px 12px; }
+  .m-footer__copy p { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 12px; }
+  .m-footer__copy .copy-links { display: contents; }
+  .m-footer__copy .copy-links a { margin-left: 0; }
+
 }
