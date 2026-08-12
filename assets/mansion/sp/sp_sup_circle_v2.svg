@@ -84,12 +84,7 @@
       <circle cx="188" cy="135" r="2" fill="#FFFFFF" stroke="none"/>
     </g>
 
-    <text class="center-text" x="185" y="151" text-anchor="middle" font-size="11.5" font-weight="700">施設ネット</text>
-    <text class="center-text" x="185" y="168" text-anchor="middle">
-      <tspan font-size="10.5">by </tspan>
-      <tspan font-size="13" font-weight="700">スリム</tspan>
-      <tspan font-size="13" font-weight="700" fill="#F5821F">光</tspan>
-    </text>
+    <text class="center-text" x="185" y="160" text-anchor="middle" font-size="14" font-weight="700">施設ネット</text>
   </g>
   <!-- 時計回りの循環（最前面に描く） -->
   <g>

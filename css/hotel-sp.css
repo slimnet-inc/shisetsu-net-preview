@@ -1366,4 +1366,8 @@
     transform: rotate(-45deg);
   }
 
+
+  /* 2026-08-11 「by スリム光」削除：ロゴv2（幅75.2%）に合わせて縮小 */
+  .fv-header__logo img { width: 119px; }
+
 }
